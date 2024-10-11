@@ -1,5 +1,6 @@
-import RightSide from "../components/rightSide";
-import LeftSide from "../components/leftSide";
+// import RightSide from "../components/rightSide";
+// import LeftSide from "../components/leftSide";
+// import Header from "../components/Header";
 import "../styles/home.css"
 
 function Home () {
@@ -8,8 +9,13 @@ function Home () {
     return(
         <>
         <body className="body-container">
-        <LeftSide/>
-        <RightSide/>
+                <section className="leftSide">
+                    <h2>Lado Esquerdo</h2>
+                </section>
+
+                <section className="rightSide">
+                        <h2>Lado Direito</h2>
+                </section>
         </body>
         </>
     )

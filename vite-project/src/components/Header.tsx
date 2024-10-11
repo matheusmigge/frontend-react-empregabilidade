@@ -1,3 +1,4 @@
+import "../styles/header.css"
 
 
 
@@ -6,7 +7,7 @@ function Header () {
     return(
         <>
         <header>
-            <h1>Header Component</h1>
+          <h2>Header Component</h2>
         </header>
         </>
     )
