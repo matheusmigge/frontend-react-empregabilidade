@@ -1,7 +1,7 @@
-// import RightSide from "../components/rightSide";
-// import LeftSide from "../components/leftSide";
-// import Header from "../components/Header";
-import "../styles/home.css"
+import "../styles/pages-css/home.css"
+import MapsIcon from "../assets/assetsHeader/2703072_maker_map_marker_icon 1.svg"
+import ListIcon from "../assets/assetsHeader/iconList.svg"
+import Header from "../components/Header";
 
 function Home () {
 
@@ -9,13 +9,13 @@ function Home () {
     return(
         <>
         <body className="body-container">
-                <section className="leftSide">
-                    <h2>Lado Esquerdo</h2>
-                </section>
-
-                <section className="rightSide">
-                        <h2>Lado Direito</h2>
-                </section>
+              <Header
+              titulo="Vagas disponíveis"
+              icon1={MapsIcon}
+              icon2={ListIcon}
+              btnFilterMap="Mapa"
+              btnFilterList="Lista"
+              />
         </body>
         </>
     )
