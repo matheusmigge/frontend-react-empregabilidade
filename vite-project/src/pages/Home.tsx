@@ -1,7 +1,4 @@
-// import RightSide from "../components/rightSide";
-// import LeftSide from "../components/leftSide";
-// import Header from "../components/Header";
-import "../styles/components-css/header.css"
+import "../styles/pages-css/home.css"
 
 function Home() {
 
