@@ -2,7 +2,6 @@ import "../styles/components-css/header.css"
 import Menu from "../assets/assetsHeader/Menu.svg"
 import Notification from "../assets/assetsHeader/bell.svg"
 import Profile from "../assets/assetsHeader/Ellipse 1.svg"
-// import Search from "../assets/assetsHeader/search.svg"
 
 interface HeaderProps {
   titulo: string;
@@ -24,13 +23,13 @@ function Header ({titulo, btnFilterMap, btnFilterList, icon1, icon2}: HeaderProp
               <h2>{titulo}</h2>
         </section>
 
-        <div className="filterBtn">
+        <span className="filterBtn">
               <button type="button" className="buttonFilter"> <img src={icon1} alt="icone do mapa" className="iconFilter" />{btnFilterMap}</button>
               <button type="button" className="buttonFilter"><img src={icon2} alt="" className="iconFilter" />{btnFilterList}</button>
-        </div>
+        </span>
 
         <section className="right-Header">
-              <input type="text" placeholder="Pesquisar..." className="input-Src"/>
+              <input type="text" placeholder="Pesquisar..." className="input-Src"/>      
               <img src={Notification} alt="Sino de notificação" className="sino" />
               <img src={Profile} alt="Icone de perfil" className="perfil" />
         </section>
