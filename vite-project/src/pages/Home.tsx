@@ -1,18 +1,18 @@
 import "../styles/pages-css/home.css"
 
-function Home () {
+function Home() {
 
-    return(
+    return (
         <>
-        <body className="body-container">
-            <section className="leftSide">
-                <h2>Lado Esquerdo</h2>
-            </section>
+            <body className="body-container">
+                <section className="leftSide">
+                    <h2>Lado Esquerdo</h2>
+                </section>
 
-            <section className="rightSide">
-                <h2>Lado Direito</h2>
-            </section>
-        </body>
+                <section className="rightSide">
+                    <h2>Lado Direito</h2>
+                </section>
+            </body>
         </>
     )
 }
