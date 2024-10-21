@@ -2,7 +2,6 @@ import "../styles/pages-css/home.css"
 
 function Home() {
 
-
     return (
         <>
             <body className="body-container">
