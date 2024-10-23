@@ -1,7 +1,7 @@
-import "../styles/components-css/header.css"
-import Menu from "../assets/assetsHeader/Menu.svg"
-import Notification from "../assets/assetsHeader/bell.svg"
-import Profile from "../assets/assetsHeader/Ellipse 1.svg"
+import "./Header.css"
+import Menu from "./assets/Menu.svg"
+import Notification from "./assets/bell.svg"
+import Profile from "./assets/Ellipse 1.svg"
 
 interface HeaderProps {
   titulo: string;

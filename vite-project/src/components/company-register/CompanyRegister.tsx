@@ -1,5 +1,5 @@
-import "../styles/pages-css/CompanyLogin.css"
-import TextualButton from '../components/TextualButton';
+import "./CompanyLogin.css"
+import TextualButton from '../textual-button/TextualButton';
 
 function CompanyLogin() {
     return (
