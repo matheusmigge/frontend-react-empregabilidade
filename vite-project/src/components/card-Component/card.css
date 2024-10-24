@@ -1,0 +1,49 @@
+.card-container{
+    margin-top: 10rem;
+    min-height: 100vh;
+    max-width: 69%;
+    padding: 0.5rem;
+    gap: 1rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content:center;
+    flex-flow: wrap;
+    position: relative;
+}
+
+.card{
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    height: 10rem;
+    width: 325px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.2rem;
+    margin: 0.1rem;
+}
+
+
+.name{
+    border: 1px solid black;
+}
+
+.title{
+    border: 1px solid black;
+}
+
+.status{
+    border: 1px solid black;
+    
+}
+
+.info{
+    border: 1px solid black;
+}
+
+.amount{
+    border: 1px solid black;
+}
+
