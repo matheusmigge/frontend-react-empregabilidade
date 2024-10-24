@@ -6,7 +6,18 @@
     background-color: #fff;
     border-radius: 25px;
     border: none;
-    width: 80%;
+    max-width: 50px;
+}
+
+.button-container.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    border: none;
+    max-width: 100%;
 }
 
 .toggle {
@@ -15,8 +26,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    padding: 12px;
-    border-radius: 25px;
+    padding: 10px;
+    border-radius: 50px;
     border: none;
     width: 70px;
     transition: width 0.5s ease;
@@ -24,14 +35,14 @@
 }
 
 .toggle.open {
-    width: 100%;
+    width: 200px;
 }
 
 .toggle img {
     height: 20px;
 }
 
-.checkbox {
+input {
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -55,11 +66,10 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.5s ease, opacity 1s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .filter-form.open {
     max-height: 300px;
     opacity: 1;
-    margin-top: 10px;
 }
