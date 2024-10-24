@@ -11,7 +11,6 @@
     align-items: center;
     flex-direction: column;
     background-color: #5F5F5F;
-    backdrop-filter: blur(10px);
     height: 100%;
     width: 150px;
     gap: 10px;
