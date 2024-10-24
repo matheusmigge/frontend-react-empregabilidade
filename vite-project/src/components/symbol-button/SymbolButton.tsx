@@ -1,4 +1,4 @@
-import "../styles/components-css/SymbolButton.css"
+import "./SymbolButton.css"
 
 interface SymbolButtonProps {
     imageUrl: string;
