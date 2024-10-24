@@ -14,7 +14,7 @@ function Header ({title, className}: HeaderProps) {
     <>
       <header className="header-container">
         <section className="left-Header">
-              <img src={Menu} alt="Menu Hamburguer" className={className} />
+              <img src={Menu} alt="Menu Hamburguer" className="menu" />
               <h2>{title}</h2>
         </section>
 
@@ -22,10 +22,10 @@ function Header ({title, className}: HeaderProps) {
           {/* Aqui fica o toggle */}
         </section>
 
-        <section className={className}>
-              <input type="text" placeholder="Pesquisar..." className={className}/>      
-              <img src={Notification} alt="Sino de notificação" className={className} />
-              <img src={Profile} alt="Icone de perfil" className={className} />
+        <section className="right-Header">
+              <input type="text" placeholder="Pesquisar..." className="input-Src"/>      
+              <img src={Notification} alt="Sino de notificação" className="sino" />
+              <img src={Profile} alt="Icone de perfil" className="perfil" />
         </section>
 
        

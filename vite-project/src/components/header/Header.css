@@ -3,7 +3,7 @@
     height: 8%;
     background-color: #012369;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     flex-flow: wrap
 }
 
@@ -13,7 +13,6 @@
     align-items: center;
     color: white;
     gap: 7rem;
-    margin-bottom: 1rem;
     display: flex;
 }
 
@@ -21,19 +20,8 @@
     width: 30%;
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
     display: flex;
-}
-
-.filterBtn{
-    width: 15%;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    margin-top: 2.3rem;
-    background-color:#259821 ;
-    border-radius: 1rem;
-    display: flex;
+    gap: 2rem;
 }
 
 @media (max-width: 1008px) { /* Ajustar o breakpoint conforme necessário*/
@@ -57,7 +45,6 @@
     width: 15rem;
     height: 2rem;
     border-radius: 1.5rem;
-    margin-left: 10rem;
     padding: 1rem;
     border: none;
 }
@@ -69,7 +56,6 @@
 
 .sino{
     height: 2.5rem;
-    margin-left: 11rem;
 }
 
 .perfil{
