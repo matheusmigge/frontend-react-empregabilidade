@@ -4,14 +4,13 @@ interface SymbolButtonProps {
     imageUrl: string;
     className?: string;
     alt?: string;
-    onClick?: () => void;
 }
 
-function SymbolButton({ imageUrl, className, alt, onClick }: SymbolButtonProps) {
+function SymbolButton({ imageUrl, className, alt }: SymbolButtonProps) {
     return (
-        <div className="container">
-            <button className={className} onClick={onClick}>
-                <img src={imageUrl} alt={alt} />
+        <div>
+            <button>
+                <img src={imageUrl} className={className} alt={alt}/>
             </button>
         </div>
     )

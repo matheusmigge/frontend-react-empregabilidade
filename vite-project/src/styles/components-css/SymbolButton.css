@@ -1,10 +1,16 @@
-.container button {
+button {
+    padding: 20px;
     border-radius: 50%;
     border: none;
+    background-color: #259821;
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
-.container img {
-    width: 30px;
+button:hover {
+    background-color: #33b833;
+}
+
+img {
+    width: 50px;
 }
