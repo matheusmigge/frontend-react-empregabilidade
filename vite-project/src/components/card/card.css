@@ -1,4 +1,4 @@
-.card-container{
+/* .card-container{
     margin-top: 10rem;
     min-height: 100vh;
     max-width: 69%;
@@ -9,13 +9,14 @@
     justify-content:center;
     flex-flow: wrap;
     position: relative;
-}
+} */
 
 .card{
     border: 1px solid black;
+    box-shadow: 2px 2px 2px 2px rgb(94, 93, 93) , inset 1px 1px 1px 1px white;
     border-radius: 0.5rem;
     height: 10rem;
-    width: 325px;
+    width: 21.5rem;
     display: flex;
     flex-flow: wrap;
     justify-content: center;
