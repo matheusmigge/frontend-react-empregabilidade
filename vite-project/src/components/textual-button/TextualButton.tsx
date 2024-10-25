@@ -1,4 +1,4 @@
-import "../styles/components-css/textualbutton.css";
+import "./textualbutton.css";
 
 interface TextButtonProps {
   text: string;
