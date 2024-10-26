@@ -1,0 +1,14 @@
+.grid-container {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1.25em;
+
+    .grid-item {
+        background-color: #ccc;
+        padding: 20px;
+        border: 1px solid blue;
+        height: 13em;
+    }
+
+}
