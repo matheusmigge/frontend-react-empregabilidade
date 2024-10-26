@@ -1,26 +1,27 @@
-.container {
+.company-register {
   max-width: 500px;
   padding: 0 20px;
+  text-align: left;
 }
 
-h1 {
+.company-register h1 {
   font-size: 20px;
     margin-bottom: 30px;
 }
 
-form {
+.company-register form {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
 }
 
-label {
+.company-register label {
     width: 100%;
     padding: 10px 20px;
     font-weight: bold;
 }
 
-input {
+.company-register input {
     width: 100%;
     padding: 20px 40px;
     background-color: #f2f2f2;
@@ -29,11 +30,11 @@ input {
     margin-bottom: 8px;
 }
 
-input::placeholder {
+.company-register input::placeholder {
     color: #adabc3;
 }
 
-.submit {
+.company-register .submit {
     margin-top: 40px;
     padding: 30px 0;
     width: 100%;
@@ -41,20 +42,20 @@ input::placeholder {
     font-size: 16px;
 }
 
-P {
+.company-register P {
     margin-bottom: 20px;
     text-align: center;
 }
 
-a {
+.company-register a {
     font-style: italic;
 }
 
-.p1, .a1 {
+.company-register .p1, .a1 {
     color: #393939;
 }
 
-.p2, .a2 {
+.company-register .p2, .a2 {
     color: #959595;
     font-size: 14px;
 }

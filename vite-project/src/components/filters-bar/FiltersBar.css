@@ -1,0 +1,45 @@
+.filters-bar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.filters-bar .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #5F5F5F;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 150px;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    transition: width 0.5s ease;
+}
+
+.filters-bar.open .buttons-container {
+    width: 250px;
+}
+
+.filters-bar .symbol-button {
+    background-color: #012369;
+    position: absolute;
+    right: -12px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.filters-bar .symbol-button:hover {
+    background-color: #2b3b5a;
+}
+
+.filters-bar .symbol-button img {
+    transition: rotate 0.5s ease;
+}
+
+.filters-bar.open .symbol-button img {
+    rotate: 180deg;
+}

@@ -3,14 +3,14 @@ import "./SymbolButton.css"
 interface SymbolButtonProps {
     imageUrl: string;
     className?: string;
-    alt?: string;
+    onClick?: () => void;
 }
 
-function SymbolButton({ imageUrl, className, alt }: SymbolButtonProps) {
+function SymbolButton({ imageUrl, className, onClick }: SymbolButtonProps) {
     return (
-        <div>
-            <button>
-                <img src={imageUrl} className={className} alt={alt}/>
+        <div className={className} >
+            <button className="symbol-button">
+                <img src={imageUrl} onClick={onClick}/>
             </button>
         </div>
     )
