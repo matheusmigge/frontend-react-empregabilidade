@@ -8,7 +8,7 @@ function Register() {
   return (
     <>
       <body className="body-container">
-        
+
         <section className="leftSide">
           <div className="logoContainer">
             <img src={logoCompletaVetor} alt="Logo da RE9AÇÃO" />
@@ -28,8 +28,9 @@ function Register() {
         </section>
 
         <section className="rightSide">
-          
+
         </section>
+        
       </body>
     </>
   );
