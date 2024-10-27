@@ -1,9 +1,9 @@
-import "./CompanyLogin.css"
+import "./CompanyRegister.css"
 import TextualButton from '../textual-button/TextualButton';
 
-function CompanyLogin() {
+function CompanyRegister() {
     return (
-        <div className="container">
+        <div className="company-register">
             <h1>Receba aplicações dos melhores candidatos</h1>
 
             <form action="/submit" method="post">
@@ -30,4 +30,4 @@ function CompanyLogin() {
     );
 }
 
-export default CompanyLogin;
+export default CompanyRegister;
