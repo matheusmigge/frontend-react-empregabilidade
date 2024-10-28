@@ -1,0 +1,63 @@
+.toggle-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 3rem;
+    background-color: green;
+    border-radius: 2rem;
+}
+
+.toggle-container .buttonFilter{
+    background-color: transparent;
+    color: white;
+}
+
+.toggle-container .slider{
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 2.2rem;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    transition: .3s;
+}
+
+.toggle-container .slider::before{
+    content: "Card";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    border-radius: 1.5rem;
+    width: 5rem;
+    height: 2.5rem;
+    left: -5.5rem;
+    color: black;
+    transition: .2s;
+}
+
+.toggle-container .slider::after{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: black;
+    top: 0;
+    transition: .1s;
+}
+
+.toggle-container .slider:checked{
+    background-color: transparent;
+}
+
+.toggle-container .slider:checked::before{
+    content: "Mapa";
+    background-color: white;
+    left: 3.5rem;
+}
