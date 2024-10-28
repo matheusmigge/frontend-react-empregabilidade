@@ -1,0 +1,49 @@
+/* .card-container{
+    margin-top: 10rem;
+    min-height: 100vh;
+    max-width: 69%;
+    padding: 0.5rem;
+    gap: 1rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content:center;
+    flex-flow: wrap;
+    position: relative;
+} */
+
+.card{
+    border: 1px solid black;
+    border-radius: 1.5rem;
+    height: 10rem;
+    width: 21.5rem;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.2rem;
+    margin: 0.1rem;
+}
+
+
+.card .name{
+    border: 1px solid black;
+}
+
+.card .title{
+    border: 1px solid black;
+}
+
+.card .status{
+    border: 1px solid black;
+    
+}
+
+.card .info{
+    border: 1px solid black;
+}
+
+.card .amount{
+    border: 1px solid black;
+}
+
