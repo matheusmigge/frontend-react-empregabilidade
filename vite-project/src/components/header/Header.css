@@ -48,17 +48,17 @@
 
 
 @media (max-width: 1008px) { /* Ajustar o breakpoint conforme necessário*/
-    .left-Header {
+    .header-container .left-Header {
       width: 100%;
       margin-bottom: 1rem;
     }
   
-    .right-Header {
+    .header-container .right-Header {
       width: 100%;
       margin-bottom: 1rem;
     }
   
-    .filterBtn {
+    .header-container .filterBtn {
       width: 100%;
       margin-top: 0;
     }
