@@ -7,7 +7,7 @@
     flex-flow: wrap
 }
 
-.left-Header{
+.header-container .left-Header{
     width: 40%;
     display: flex;
     align-items: center;
@@ -16,13 +16,36 @@
     display: flex;
 }
 
-.right-Header{
+.header-container .right-Header{
     width: 30%;
     display: flex;
     align-items: center;
     display: flex;
     gap: 2rem;
 }
+
+.header-container .input-Src {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    border: none;
+}
+
+.header-container .menu{
+    width: 2.5rem;
+    margin-left: 1rem;
+}
+
+.header-container .sino{
+    height: 2.5rem;
+}
+
+.header-container .perfil{
+    width: 2.5rem;
+    margin-left: 3rem;
+}
+
 
 @media (max-width: 1008px) { /* Ajustar o breakpoint conforme necessário*/
     .left-Header {
@@ -40,53 +63,3 @@
       margin-top: 0;
     }
   } 
-
-.input-Src {
-    width: 15rem;
-    height: 2rem;
-    border-radius: 1.5rem;
-    padding: 1rem;
-    border: none;
-}
-
-.menu{
-    width: 2.5rem;
-    margin-left: 1rem;
-}
-
-.sino{
-    height: 2.5rem;
-}
-
-.perfil{
-    width: 2.5rem;
-    margin-left: 3rem;
-}
-
-.buttonFilter{
-    width: 50%;
-    height: 0.5rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: transparent;
-    color: white;
-    transition: background-color white 0.3s;
-    cursor: pointer;
-    font-size: large;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
-    padding: 1.5rem;
-}
-
-.iconFilter{
-    width: 2rem;
-    color: white;
-}
-
-.buttonFilter:hover {
-    background-color: #e0e0e0;
-    color: black;
-    height: 0.5rem;
-}
