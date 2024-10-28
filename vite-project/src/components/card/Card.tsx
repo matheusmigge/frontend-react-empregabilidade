@@ -1,7 +1,7 @@
 import "../card/card.css"
 
 interface CardProps{
-    title: string,
+    title?: string,
     name?: string,
     status?: string,
     info?: string,
