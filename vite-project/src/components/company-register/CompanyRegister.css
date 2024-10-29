@@ -17,6 +17,7 @@
         width: 100%;
         padding: 10px 20px;
         font-weight: bold;
+        text-align: left;
     }
 
     input {
