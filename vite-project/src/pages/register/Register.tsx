@@ -3,6 +3,7 @@ import logoCompletaVetor from "../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../assets/maletaVetor.svg";
 import usuarioVetor from "../../assets/usuarioVetor.svg";
 import TextualButton from "../../components/textual-button/TextualButton";
+import Card from "../../components/card/Card";
 
 function Register() {
   return (
@@ -28,7 +29,7 @@ function Register() {
         </section>
 
         <section className="rightSide">
-          
+          <Card></Card>
         </section>
       </body>
     </>

@@ -18,7 +18,7 @@
     width: 21.5rem;
     display: flex;
     flex-flow: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 0.2rem;
@@ -27,23 +27,50 @@
 
 
 .card .name{
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    gap: 5px;
 }
 
 .card .title{
-    border: 1px solid black;
+    position: fixed;
+    margin-left: 6.5rem;
 }
 
 .card .status{
-    border: 1px solid black;
+    margin-right: 1rem;
+    margin-bottom: 2.7rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    img{
+        width: 1.5rem;
+    }
     
 }
 
 .card .info{
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 0.5rem;
+
+    img{
+        width: 1.5rem;
+    }
 }
 
 .card .amount{
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-right: 0.5rem;
+
+
+    img{
+        width: 1.5rem;
+    }
 }
 

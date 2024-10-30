@@ -1,24 +1,23 @@
 import "../card/card.css"
+import Logo from "../card/assets/Logo.svg"
+import Status from "../card/assets/Status.svg"
+import Case from "../card/assets/case.svg"
+import User from "../card/assets/users.svg"
 
 interface CardProps{
-    title?: string,
-    name?: string,
-    status?: string,
-    info?: string,
-    amount?: string
     className?: string
 }
 
-function Card ({title, name, status, info,amount, className}: CardProps) {
+function Card ({className}: CardProps) {
 
     return(
         <>
             <div className="card">
-                <p className={className}>{name}</p>
-                <p className={className}>{title}</p>
-                <p className={className}>{status}</p>
-                <p className={className}>{info}</p>
-                <p className={className}>{amount}</p>
+                <p className="name"><img src={Logo} alt="Logo empresa"/>Tecnorte</p>
+                <p className="title"> Desenvolvedor Web</p>
+                <p className="status">Status <img src={Status} alt="" /></p>
+                <p className="info"> <img src={Case} alt="" />Modelo de trabalho Híbrido</p>
+                <p className="amount"> <img src={User} alt="" />20/25</p>
             </div>
         </>
     )
