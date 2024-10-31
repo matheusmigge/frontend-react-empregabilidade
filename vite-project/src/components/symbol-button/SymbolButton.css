@@ -1,0 +1,11 @@
+.symbol-button button {
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.symbol-button img {
+    width: 2em;
+}

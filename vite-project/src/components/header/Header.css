@@ -1,0 +1,65 @@
+.header-container{
+    width: 100%;
+    height: 8%;
+    background-color: #012369;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap
+}
+
+.header-container .left-Header{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 7rem;
+    display: flex;
+}
+
+.header-container .right-Header{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+}
+
+.header-container .input-Src {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    border: none;
+}
+
+.header-container .menu{
+    width: 2.5rem;
+    margin-left: 1rem;
+}
+
+.header-container .sino{
+    height: 2.5rem;
+}
+
+.header-container .perfil{
+    width: 2.5rem;
+    margin-left: 3rem;
+}
+
+
+@media (max-width: 1008px) { /* Ajustar o breakpoint conforme necessário*/
+    .header-container .left-Header {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .header-container .right-Header {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .header-container .filterBtn {
+      width: 100%;
+      margin-top: 0;
+    }
+  } 

@@ -1,0 +1,76 @@
+/* .card-container{
+    margin-top: 10rem;
+    min-height: 100vh;
+    max-width: 69%;
+    padding: 0.5rem;
+    gap: 1rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content:center;
+    flex-flow: wrap;
+    position: relative;
+} */
+
+.card{
+    border: 1px solid black;
+    border-radius: 1.5rem;
+    height: 10rem;
+    width: 21.5rem;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.2rem;
+    margin: 0.1rem;
+}
+
+
+.card .name{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    gap: 5px;
+}
+
+.card .title{
+    position: fixed;
+    margin-left: 6.5rem;
+}
+
+.card .status{
+    margin-right: 1rem;
+    margin-bottom: 2.7rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    img{
+        width: 1.5rem;
+    }
+    
+}
+
+.card .info{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 0.5rem;
+
+    img{
+        width: 1.5rem;
+    }
+}
+
+.card .amount{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-right: 0.5rem;
+
+
+    img{
+        width: 1.5rem;
+    }
+}
+
