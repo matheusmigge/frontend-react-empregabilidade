@@ -1,4 +1,4 @@
-import "./textualbutton.css";
+import "./TextualButton.css";
 
 interface TextButtonProps {
   text: string;
@@ -9,10 +9,12 @@ interface TextButtonProps {
 
 function TextualButton({ text, className, imageUrl, onClick }: TextButtonProps) {
   return (
-    <button className={className} onClick={onClick}>
+    <div className="textual-button-container">
+      <button className={className} onClick={onClick}>
       {imageUrl && <img src={imageUrl} />}
       {text}
-    </button>
+      </button>
+    </div>
   );
 }
 
