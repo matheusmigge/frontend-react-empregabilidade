@@ -1,63 +1,68 @@
-.toggle-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 15rem;
-    height: 3rem;
-    background-color: green;
-    border-radius: 2rem;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 16.26rem;
+  height: 3.5rem;
+}
+.switch .inputToggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: orange;
+  transition: 0.3s;
+  border-radius: 5rem;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 3rem;
+  width: 7rem;
+  top: 4px;
+  left: 5px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 3rem;
+}
+.inputToggle:checked + .slider {
+  background-color: orange;
 }
 
-.toggle-container .buttonFilter{
-    background-color: transparent;
-    color: white;
+.inputToggle:checked + .slider:before {
+  transform: translateX(12.5rem);
+  width: 7rem;
+  left: -55px;
+  top: 4px;
+  transition: 0.3s;
 }
 
-.toggle-container .slider{
-    appearance: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 2.2rem;
-    background-color: transparent;
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    transition: .3s;
+.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.text-left {
+  left: 5px;
+  color: black;
+  margin-left: -5rem;
 }
 
-.toggle-container .slider::before{
-    content: "Card";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    background-color: white;
-    border-radius: 1.5rem;
-    width: 5rem;
-    height: 2.5rem;
-    left: -5.5rem;
-    color: black;
-    transition: .2s;
-}
-
-.toggle-container .slider::after{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    color: black;
-    top: 0;
-    transition: .1s;
-}
-
-.toggle-container .slider:checked{
-    background-color: transparent;
-}
-
-.toggle-container .slider:checked::before{
-    content: "Mapa";
-    background-color: white;
-    left: 3.5rem;
+.text-right {
+  right: 5px;
+  color: black;
+  margin-right: -5rem;
 }

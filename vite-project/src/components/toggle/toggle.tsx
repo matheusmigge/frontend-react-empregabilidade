@@ -1,22 +1,21 @@
-import "../toggle/toggle.css"
+import "../toggle/toggle.css";
 
-interface ToggleProps{
-    text1?:string;
-    text2?: string;
+interface ToggleProps {
+  text1: string;
+  text2: string;
 }
 
-
-function Toggle ({text1, text2}: ToggleProps) {
-
-    return (
-        <>
-        <span className="toggle-container">
-              <button type="button" className="buttonFilter">Card</button>
-              <input type="checkbox" className="slider" />
-              <button type="button" className="buttonFilter">Mapa</button>
-        </span>
-        </>
-    )
+function Toggle({ text1, text2}: ToggleProps) {
+  return (
+    <>
+      <label className="switch">
+        <input type="checkbox" className="inputToggle" />
+        <span className="slider"></span>
+        <div className="text text-left">{text1}</div>
+        <div className="text text-right">{text2}</div>
+      </label>
+    </>
+  );
 }
 
 export default Toggle;
