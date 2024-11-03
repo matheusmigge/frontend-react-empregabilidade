@@ -20,6 +20,50 @@
     }
   }
 
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    
+    .a {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .b {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      width: 100%;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input {
+      width: 30%;
+      padding: 20px 40px;
+      background-color: #f2f2f2;
+      border-radius: 50px;
+      border: none;
+      margin-bottom: 8px;
+    }
+
+    input::placeholder {
+      color: #adabc3;
+    }
+
+    .submit {
+      margin-top: 40px;
+      padding: 30px 0;
+      width: 100%;
+      background-color: #259821;
+      font-size: 16px;
+    }
+  }
+
   .buttonContainer {
     padding: 3.8em;
 
@@ -31,16 +75,6 @@
       gap: 1em;
       justify-content: space-around;
     }
-  }
-
-  .emailButton {
-    background-color: white;
-    border: #d4d2e3, solid, 1px;
-    color: #505050;
-    padding: 0 6em;
-    margin: 2em;
-    gap: 1em;
-    justify-content: space-around;
   }
 }
 
