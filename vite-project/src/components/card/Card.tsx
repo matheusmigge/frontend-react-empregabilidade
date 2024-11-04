@@ -1,24 +1,31 @@
-import "../card/card.css"
+import "../card/card.css";
+import infoIcon from "./assets/case.svg";
+import candidatesIcon from "./assets/users.svg";
+import availableIcon from "./assets/availableIcon.svg";
+import unavailableIcon from "./assets/unavailableIcon.svg";
 
 interface CardProps{
-    title?: string,
-    name?: string,
-    status?: string,
-    info?: string,
-    amount?: string
-    className?: string
+    companyName: string;
+    logoName:string;
+    jobTitle: string;
+    available:boolean;
+    info:string;
+    amount:string;
 }
 
-function Card ({title, name, status, info,amount, className}: CardProps) {
+function Card ({companyName,logoName,jobTitle,available,info,amount}: CardProps) {
+
+    const statusText = available ? "Disponível" : "Indisponível";
+    const statusIcon = available ? availableIcon : unavailableIcon
 
     return(
         <>
-            <div className="card">
-                <p className={className}>{name}</p>
-                <p className={className}>{title}</p>
-                <p className={className}>{status}</p>
-                <p className={className}>{info}</p>
-                <p className={className}>{amount}</p>
+            <div className={`card ${available ? 'available' : 'unavailable'}`}>
+                <p className="name"><img src={logoName} alt="Logo empresa" className="logo"/>{companyName}</p>
+                <p className="title">{`・ ${jobTitle}`}</p>
+                <p className="status">{statusText}<img src={statusIcon} alt="" className="statuslogo" /></p>
+                <p className="info"> <img src={infoIcon} alt="" className="case" />{info}</p>
+                <p className="amount"> <img src={candidatesIcon} alt="" className="candidates" />{amount}</p>
             </div>
         </>
     )
