@@ -1,26 +1,31 @@
-import "../card/card.css"
+import "../card/card.css";
+import infoIcon from "./assets/case.svg";
+import candidatesIcon from "./assets/users.svg";
+import availableIcon from "./assets/availableIcon.svg";
+import unavailableIcon from "./assets/unavailableIcon.svg";
+
 interface CardProps{
-    name: string
-    logoName:string
-    title: string
-    status:string
-    logoStatus:string
-    info:string
-    logoInfo:string
-    amount:string
-    logoAmount:string
+    companyName: string;
+    logoName:string;
+    jobTitle: string;
+    available:boolean;
+    info:string;
+    amount:string;
 }
 
-function Card ({name,logoName,title,status,logoStatus,info,logoInfo,amount,logoAmount}: CardProps) {
+function Card ({companyName,logoName,jobTitle,available,info,amount}: CardProps) {
+
+    const statusText = available ? "Disponível" : "Indisponível";
+    const statusIcon = available ? availableIcon : unavailableIcon
 
     return(
         <>
-            <div className="card">
-                <p className="name"><img src={logoName} alt="Logo empresa" className="logo"/>{name}</p>
-                <p className="title">{title}</p>
-                <p className="status">{status}<img src={logoStatus} alt="" className="statuslogo" /></p>
-                <p className="info"> <img src={logoInfo} alt="" className="case" />{info}</p>
-                <p className="amount"> <img src={logoAmount} alt="" className="user " />{amount}</p>
+            <div className={`card ${available ? 'available' : 'unavailable'}`}>
+                <p className="name"><img src={logoName} alt="Logo empresa" className="logo"/>{companyName}</p>
+                <p className="title">{`・ ${jobTitle}`}</p>
+                <p className="status">{statusText}<img src={statusIcon} alt="" className="statuslogo" /></p>
+                <p className="info"> <img src={infoIcon} alt="" className="case" />{info}</p>
+                <p className="amount"> <img src={candidatesIcon} alt="" className="candidates" />{amount}</p>
             </div>
         </>
     )

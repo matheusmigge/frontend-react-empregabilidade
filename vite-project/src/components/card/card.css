@@ -12,7 +12,7 @@
 } */
 
 .card {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 1.25rem;
   height: 10rem;
   width: 25.81rem;
@@ -21,7 +21,15 @@
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  padding: 0.2rem;
+  padding: 0.9rem;
+}
+
+.card.available {
+  border-color: #259821;
+}
+
+.card.unavailable {
+  border-color: #FF0000;
 }
 
 .card .name {
@@ -37,7 +45,9 @@
 
 .card .title {
   position: absolute;
-  margin-left: 8rem;
+  margin-left: 2rem;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .card .status {
@@ -49,7 +59,7 @@
   
   .statuslogo {
     align-items: center;
-    width: 1.5rem;
+    width: 1rem;
   }
 }
 
