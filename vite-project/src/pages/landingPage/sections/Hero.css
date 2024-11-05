@@ -1,0 +1,52 @@
+.heroLandingPage {
+    background-image: url(../assets/bgHero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0 13%;
+    min-height: 90vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+    justify-content: center;
+
+}
+
+.heroLandingPage .text {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.heroLandingPage .text .title {
+    font-size: 3.75rem;
+    font-family: "Merriweather", serif;
+    max-width: 49rem;
+}
+
+.heroLandingPage .text .subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 32rem;
+}
+
+.heroLandingPage .buttonsCta {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.heroLandingPage .buttonsCta .signUp, .seeAdvantages {
+    padding: 0.75rem 1.5rem;
+    max-width: max-content;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.heroLandingPage .buttonsCta .signUp {
+    background-color: #EF6B01;
+}
+
+.heroLandingPage .buttonsCta .seeAdvantages {
+    background-color: #259821;
+}

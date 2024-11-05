@@ -1,0 +1,35 @@
+.userCta {
+    background-image: url(../assets/bgSectionUser.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0 13%;
+    height: 40rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.userCta .userText {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8rem;
+    gap: 5rem;
+}
+.userCta .userQuestion {
+    width: 60%;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.userCta .userAnswer {
+    font-size: 2rem;
+    font-weight: 300;
+    width: 40%;
+}
+
+.userCta .scrollPageIcon {
+    transform: translateX(-20rem);
+    margin-top: 20rem;
+    scale: 2;
+}

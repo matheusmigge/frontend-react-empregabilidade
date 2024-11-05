@@ -1,0 +1,55 @@
+.advantagesCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 3.75rem;
+}
+
+.advantagesCards .cardsTitle {
+    margin-top: 10rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+}
+
+.advantagesCards .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.advantagesCards .cardsContainer .card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.75rem 2.5rem;
+    gap: 3.75rem;
+    border-radius: 1.25rem;
+    justify-content: center;
+    box-shadow: 6px 7px 28px -3px rgba(0,0,0,0.35);
+
+    .textCard {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
+.advantagesCards .cardsContainer .card img {
+    height: 15rem;
+    width: 15rem;
+}
+
+.advantagesCards .ctaButton {
+    padding: 0.75rem 2rem;
+    margin-bottom: 3rem;
+    max-width: max-content;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #EF6B01;
+}
+
