@@ -75,19 +75,13 @@ function UserRegister() {
           </div>
         </div>
 
-        <TextualButton text={"PRÓXIMO"} className="submit"></TextualButton>
+        <TextualButton text={"CONTINUAR"} className="submit"></TextualButton>
       </form>
 
       <div className="buttonContainer">
-        <SymbolButton
-          className="symbol-button"
-          imageUrl={linkedinVetor}
-        />
+        <SymbolButton className="symbol-button" imageUrl={linkedinVetor} />
 
-        <SymbolButton
-          className="symbol-button"
-          imageUrl={googleVetor}
-        />
+        <SymbolButton className="symbol-button" imageUrl={googleVetor} />
       </div>
 
       <div className="loginContainer">
