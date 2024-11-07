@@ -87,7 +87,8 @@
     }
 
     .titleContainer {
-        font-size: 1em;
+        font-size: 1.5em;
+        padding: 1em;
 
         @media (max-width: 768px) {
             flex-direction: column;
@@ -97,26 +98,14 @@
     }
 
     .buttonContainer {
-        padding: 3.8em;
+        display: flex;
 
         .externalRegistrationButton {
             background-color: #012369;
             border: #012369, solid, 1px;
-            padding: 0 6em;
-            margin: 2em;
             gap: 1em;
             justify-content: space-around;
         }
-    }
-
-    .emailButton {
-        background-color: white;
-        border: #d4d2e3, solid, 1px;
-        color: #505050;
-        padding: 0 6em;
-        margin: 2em;
-        gap: 1em;
-        justify-content: space-around;
     }
 }
 
