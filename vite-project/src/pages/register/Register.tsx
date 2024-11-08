@@ -4,7 +4,7 @@ import maletaVetor from "../../assets/maletaVetor.svg";
 import usuarioVetor from "../../assets/usuarioVetor.svg";
 import TextualButton from "../../components/textual-button/TextualButton";
 import CompanyRegister from "../../components/company-register/CompanyRegister";
-import UserRegister from "../../components/user-register/UserRegister";
+import UserRegister from "../../components/user-register/UserRegister1";
 import { useState } from "react";
 
 function Register() {

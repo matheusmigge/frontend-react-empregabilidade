@@ -12,15 +12,49 @@
   margin-bottom: 40px;
   align-items: center;
 
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
   .inputContainer {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 2em;
+    gap: 1em;
+  }
 
-    .inputForm {
-      display: flex;
-      flex-direction: column;
+  .inputContainer2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  .inputForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #houseNumberInput {
+    input {
+      padding: 1.3em;
+      width: 5em;
+      text-align: center;
+    }
+
+    label {
+      margin-left: 1em;
+    }
+  }
+
+  #complementInput {
+    input {
+      width: 18em;
     }
   }
 
@@ -47,15 +81,34 @@
   .submit {
     margin-top: 40px;
     padding: 1.5em;
-    width: 25em;
+    width: 100%;
     background-color: #259821;
-    font-size: 16px;
+    font-size: 0.8em;
   }
 }
 
-.buttonContainer {
+.buttonContainer,
+.goBackButton,
+.registerCurriculumButton,
+.finishLaterButton {
   gap: 2em;
   padding-bottom: 2em;
+  width: 100%;
+  justify-content: center;
+
+  .goBackButton {
+    button {
+      background-color: white;
+      border: 1px solid #ef6b01;
+      color: #ef6b01;
+    }
+  }
+
+  .finishLaterButton {
+    button {
+      background-color: #012369;
+    }
+  }
 
   .symbol-button {
     button {
