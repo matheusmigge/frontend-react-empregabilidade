@@ -3,7 +3,7 @@ import logoCompletaVetor from "../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../assets/maletaVetor.svg";
 import usuarioVetor from "../../assets/usuarioVetor.svg";
 import TextualButton from "../../components/textual-button/TextualButton";
-import CompanyRegister from "../../components/company-register/CompanyRegister";
+import CompanyRegister1 from "../../components/company-register/CompanyRegister1";
 import UserRegister from "../../components/user-register/UserRegister1";
 import { useState } from "react";
 
@@ -12,25 +12,28 @@ function Register() {
 
   const handleClick = (type: string) => {
     setRegisterType(type);
-  }
+  };
 
   return (
     <>
       <body className="body-container">
-
         <section className="leftSide">
           <div className="logoContainer">
             <img src={logoCompletaVetor} alt="Logo da RE9AÇÃO" />
           </div>
           <div className="buttonContainer">
             <TextualButton
-              className={`enterpriseButton ${registerType == "company" ? "selected" : ""}`}
+              className={`enterpriseButton ${
+                registerType == "company" ? "selected" : ""
+              }`}
               text="Sou empresa"
               imageUrl={maletaVetor}
               onClick={() => handleClick("company")}
             />
             <TextualButton
-              className={`candidateButton ${registerType == "candidate" ? "selected" : ""}`}
+              className={`candidateButton ${
+                registerType == "candidate" ? "selected" : ""
+              }`}
               text="Sou candidato"
               imageUrl={usuarioVetor}
               onClick={() => handleClick("candidate")}
@@ -39,10 +42,9 @@ function Register() {
         </section>
 
         <section className="rightSide">
-          {registerType == "company" && <CompanyRegister></CompanyRegister>}
+          {registerType == "company" && <CompanyRegister1></CompanyRegister1>}
           {registerType == "candidate" && <UserRegister></UserRegister>}
         </section>
-
       </body>
     </>
   );
