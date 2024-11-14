@@ -29,7 +29,6 @@
 }
 
 .userCta .scrollPageIcon {
-    transform: translateX(-20rem);
-    margin-top: 20rem;
-    scale: 2;
+    transform: translateX(-40rem);
+    margin-top: 15rem;
 }
