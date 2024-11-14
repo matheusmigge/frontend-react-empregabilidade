@@ -24,7 +24,7 @@ function Toggle({ text1, text2, img1, img2 }: ToggleProps) {
           onClick={ToggleSwitch}
           className={`toggleButton ${isOn ? "on" : "off"}`}
         >
-          <img src={img1} alt="Logo do Toggle" className={`logoToggle`} />
+          {img1 && <img src={img1} alt="Logo do Toggle" className={`logoToggle`} />}
 
           {text1}
         </button>
@@ -32,7 +32,7 @@ function Toggle({ text1, text2, img1, img2 }: ToggleProps) {
           onClick={ToggleSwitch}
           className={`toggleButton ${On ? "on" : "off"}`}
         >
-          <img src={img2} alt="Logo do Toggle" className={`logoToggle`} />
+          {img2 && <img src={img2} alt="Logo do Toggle" className={`logoToggle`} />}
 
           {text2}
         </button>
