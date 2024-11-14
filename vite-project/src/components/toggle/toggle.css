@@ -1,0 +1,87 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 16.26rem;
+  height: 3.5rem;
+  top: 3rem;
+  right: 5.5rem;
+}
+.switch .inputToggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: orange;
+  transition: 0.3s;
+  border-radius: 5rem;
+}
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 3rem;
+  width: 7rem;
+  top: 4px;
+  left: 5px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 3rem;
+}
+.switch .inputToggle:checked + .slider {
+  background-color: orange;
+}
+
+.switch .inputToggle:checked + .slider:before {
+  transform: translateX(12.5rem);
+  width: 7rem;
+  left: -55px;
+  top: 4px;
+  transition: 0.3s;
+}
+
+.switch .text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.switch .text-left {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 27.43px;
+  margin:0 20px 40px;
+  gap: 10px;
+}
+
+.switch .text-right {
+  color: black;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 40%;
+  margin: 0 20px 4px 0;
+}
+
+.switch .iconMap{
+  width: 2rem;
+}
+
+.switch .iconList{
+    width: 2rem;
+}

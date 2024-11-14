@@ -30,6 +30,7 @@
     @media (max-width: 768px) {
       flex-direction: column;
       margin: 2em;
+      
     }
   }
 
@@ -56,6 +57,7 @@
 
     .candidateButton {
       background-color: #ef6b01;
+
     }
 
     .candidateButton:hover {

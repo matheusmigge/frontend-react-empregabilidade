@@ -1,22 +1,24 @@
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8em;
-    height: 48px;
-    width: 30em;
-    border-radius: 43rem;
-    padding: 0 2rem;
-    color: white;
-    border: none;
-    cursor: pointer;
-    
+.textual-button-container {
+  width: 100%;
+}
 
-    @media (max-width: 768px) {
-      font-size: 0.7em;
-  }
-  }
-  
-img {
+.textual-button-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  height: 48px;
+  border-radius: 43rem;
+  width: 100%;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  img {
     width: 2em;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.7em;
+  }
 }

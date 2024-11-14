@@ -107,6 +107,7 @@
   .finishLaterButton {
     button {
       background-color: #012369;
+
     }
   }
 
@@ -119,6 +120,7 @@
     img {
       width: 3em;
     }
+
   }
 }
 
