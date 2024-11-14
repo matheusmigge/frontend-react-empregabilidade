@@ -1,29 +1,42 @@
+import { useState } from "react";
 import "../toggle/toggle.css";
 
 interface ToggleProps {
   text1: string;
   text2: string;
-  img1: string;
-  img2: string;
+  img1?: string;
+  img2?: string;
 }
 
-function Toggle({ text1, text2,img1,img2 }: ToggleProps) {
+function Toggle({ text1, text2, img1, img2 }: ToggleProps) {
+  const [isOn, setIsOn] = useState(false);
+  const [On, setOn] = useState(true);
+
+  const ToggleSwitch = () => {
+    setIsOn((prevState) => !prevState);
+    setOn((prevState) => !prevState);
+
+  };
   return (
     <>
-      <label className="switch">
-        <input type="checkbox" className="inputToggle" />
-        <span className="slider"></span>
-        <div className="text">
-          <div className="text-left">
-            <img src={img1} alt="icone do mapa" className="iconMap" />
-            {text1}
-          </div>
-          <div className="text text-right">
-            {text2}
-            <img src={img2} alt="icone da lista" className="iconList" />
-          </div>
-        </div>
-      </label>
+      <div className="toggleContainer">
+        <button
+          onClick={ToggleSwitch}
+          className={`toggleButton ${isOn ? "on" : "off"}`}
+        >
+          <img src={img1} alt="Logo do Toggle" className={`logoToggle`} />
+
+          {text1}
+        </button>
+        <button
+          onClick={ToggleSwitch}
+          className={`toggleButton ${On ? "on" : "off"}`}
+        >
+          <img src={img2} alt="Logo do Toggle" className={`logoToggle`} />
+
+          {text2}
+        </button>
+      </div>
     </>
   );
 }
