@@ -1,5 +1,5 @@
 import "./Vacancy.css";
-import AccordionContainer from "./accordionContainer/AccordionBox";
+import AccordionContainer from "../../components/accordionContainer/AccordionBox";
 import FotoDeTeste from "./FOTODETESTE.png";
 
 function Vacancy() {
