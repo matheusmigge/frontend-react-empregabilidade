@@ -76,6 +76,7 @@ function UserRegister() {
         </div>
 
         <TextualButton text={"CONTINUAR"} className="submit"></TextualButton>
+
       </form>
 
       <div className="buttonContainer">
