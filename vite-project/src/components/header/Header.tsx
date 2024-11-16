@@ -1,37 +1,46 @@
-import "./Header.css"
+import "./Header.css";
 
 interface HeaderProps {
-  titulo: string;
-  className?: string
-  imgUrl?: string
+  title?: string;
+  inputText?: string;
+  imgUrl?: string;
   imgUrl1?: string;
   imgUrl2?: string;
 }
 
-
-
-function Header ({titulo, className, imgUrl, imgUrl1, imgUrl2}: HeaderProps) {
-
-  return(
+function Header({ title, inputText, imgUrl, imgUrl1, imgUrl2 }: HeaderProps) {
+  return (
     <>
       <header className="header-container">
         <section className="left-Header">
-               <img src={imgUrl} alt="Menu Hamburguer" className="menu" />
-              <h2>{titulo}</h2>
+          <button className="menu">
+            {imgUrl && (
+              <img src={imgUrl} alt="Menu Hamburguer" className="menu" />
+            )}
+          </button>
+          {title && <h2 className="title-Header">{title}</h2>}
         </section>
 
-        <section className={className}>
-            {/* O toggle fica aqui */}
-        </section>
+        <section className="mid-Header">{/* O toggle fica aqui */}</section>
 
         <section className="right-Header">
-              <input type="text" placeholder="Pesquisar..." className="input-Src"/>      
-              <img src={imgUrl1} alt="Sino de notificação" className="sino"/>
-              <img src={imgUrl2} alt="Icone de perfil" className="perfil"/>
+          {inputText && (
+            <input type="text" placeholder={inputText} className="input-Src" />
+          )}
+          <button className="sino">
+            {imgUrl1 && (
+              <img src={imgUrl1} alt="Sino de notificação" className="sino" />
+            )}
+          </button>
+          <button className="perfil">
+            {imgUrl2 && (
+              <img src={imgUrl2} alt="Icone de perfil" className="perfil" />
+            )}
+          </button>
         </section>
       </header>
     </>
-  )
+  );
 }
 
 export default Header;
