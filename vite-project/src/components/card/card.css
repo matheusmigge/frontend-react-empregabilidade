@@ -29,7 +29,7 @@
 }
 
 .card.unavailable {
-  border-color: #FF0000;
+  border-color: #ff0000;
 }
 
 .card .name {
@@ -38,25 +38,23 @@
   margin-bottom: 2.5rem;
   gap: 5px;
 
-  .logo{
+  .logo {
     width: 1.5rem;
   }
 }
 
 .card .title {
   position: absolute;
-  margin-left: 2rem;
   font-size: 20px;
   font-weight: bold;
 }
 
 .card .status {
   display: flex;
-  align-items:center ;
+  align-items: center;
   gap: 5px;
   margin-top: -2.7rem;
 
-  
   .statuslogo {
     align-items: center;
     width: 1rem;
@@ -64,10 +62,10 @@
 }
 
 .card .info {
+  position: static;
   display: flex;
   align-items: center;
   gap: 6px;
-  /* margin-left: 0.5rem; */
 
   .case {
     width: 1.5rem;
@@ -78,7 +76,6 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  margin-right: 0.5rem;
 
   .user {
     width: 1.5rem;
