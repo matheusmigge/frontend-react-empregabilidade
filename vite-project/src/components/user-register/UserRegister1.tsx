@@ -12,72 +12,71 @@ function UserRegister() {
       </div>
 
       <form className="formContainer">
-        <div className="formContent">
-          <div className="inputContainer">
-            <div className="inputForm">
-              <label htmlFor="user-name">Nome</label>
-              <input
-                type="text"
-                id="user-name"
-                name="user-name"
-                placeholder="Digite seu email"
-              />
-            </div>
-            <div className="inputForm">
-              <label htmlFor="user-surname">Sobrenome</label>
-              <input
-                type="text"
-                id="user-surname"
-                name="user-surname"
-                placeholder="Digite seu sobrenome"
-              />
-            </div>
+        <div className="inputContainer">
+          <div className="inputForm">
+            <label htmlFor="user-name">Nome</label>
+            <input
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="Digite seu email"
+            />
           </div>
-
-          <div className="inputContainer">
-            <div className="inputForm">
-              <label htmlFor="user-email">Email</label>
-              <input
-                type="email"
-                id="user-email"
-                name="user-email"
-                placeholder="Informe seu email"
-              />
-            </div>
-            <div className="inputForm">
-              <label htmlFor="user-phone">Telefone</label>
-              <input
-                type="tel"
-                id="user-phone"
-                name="user-phone"
-                placeholder="(00) 00000-0000"
-              />
-            </div>
+          <div className="inputForm">
+            <label htmlFor="user-surname">Sobrenome</label>
+            <input
+              type="text"
+              id="user-surname"
+              name="user-surname"
+              placeholder="Digite seu sobrenome"
+            />
           </div>
-
-          <div className="inputContainer">
-            <div className="inputForm">
-              <label htmlFor="user-password">Senha</label>
-              <input
-                type="password"
-                id="user-password"
-                name="user-password"
-                placeholder="Digite sua senha"
-              />
-            </div>
-            <div className="inputForm">
-              <label htmlFor="user-password">Confirme sua senha</label>
-              <input
-                type="password"
-                id="user-password"
-                name="user-password"
-                placeholder="Digite sua senha"
-              />
-            </div>
-          </div>
-
-          <TextualButton text={"CONTINUAR"} className="submit"></TextualButton>
         </div>
+
+        <div className="inputContainer">
+          <div className="inputForm">
+            <label htmlFor="user-email">Email</label>
+            <input
+              type="email"
+              id="user-email"
+              name="user-email"
+              placeholder="Informe seu email"
+            />
+          </div>
+          <div className="inputForm">
+            <label htmlFor="user-phone">Telefone</label>
+            <input
+              type="tel"
+              id="user-phone"
+              name="user-phone"
+              placeholder="(00) 00000-0000"
+            />
+          </div>
+        </div>
+
+        <div className="inputContainer">
+          <div className="inputForm">
+            <label htmlFor="user-password">Senha</label>
+            <input
+              type="password"
+              id="user-password"
+              name="user-password"
+              placeholder="Digite sua senha"
+            />
+          </div>
+          <div className="inputForm">
+            <label htmlFor="user-password">Confirme sua senha</label>
+            <input
+              type="password"
+              id="user-password"
+              name="user-password"
+              placeholder="Digite sua senha"
+            />
+          </div>
+        </div>
+
+        <TextualButton text={"CONTINUAR"} className="submit"></TextualButton>
+
       </form>
 
       <div className="buttonContainer">

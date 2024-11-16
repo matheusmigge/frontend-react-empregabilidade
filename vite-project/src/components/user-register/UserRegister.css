@@ -1,8 +1,16 @@
-<<<<<<< Updated upstream
-.rightSide {
+.titleContainer {
+  @media (max-width: 768px) {
+    flex-direction: column;
+    font-size: 0.8em;
+    padding: 1em;
+  }
+}
+
+.formContainer {
   display: flex;
   flex-direction: column;
-=======
+  margin-bottom: 40px;
+
 .titleContainer {
   @media (max-width: 768px) {
     flex-direction: column;
@@ -111,47 +119,117 @@
   display: flex;
   gap: 2em;
   width: 100%;
->>>>>>> Stashed changes
   justify-content: center;
-  align-items: center;
-  width: 50vw;
-  text-align: center;
 
-  @media (max-width: 768px) {
-    width: 100vw;
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
   }
 
-  .titleContainer {
-    font-size: 1em;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      font-size: 0.8em;
-      padding: 1em;
-    }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
   }
 
-  .buttonContainer {
-    padding: 3.8em;
-
-    .externalRegistrationButton {
-      background-color: #012369;
-      border: #012369, solid, 1px;
-      padding: 0 6em;
-      margin: 2em 0em;
-      gap: 1em;
-      justify-content: space-around;
-    }
-  }
-
-  .emailButton {
-    background-color: white;
-    border: #d4d2e3, solid, 1px;
-    color: #505050;
-    padding: 0 6em;
-    margin: 2em 0em;
+  .inputContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     gap: 1em;
-    justify-content: space-around;
+  }
+
+  .inputContainer2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  .inputForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #houseNumberInput {
+    input {
+      padding: 1.3em;
+      width: 5em;
+      text-align: center;
+    }
+
+    label {
+      margin-left: 1em;
+    }
+  }
+
+  #complementInput {
+    input {
+      width: 18em;
+    }
+  }
+
+  label {
+    width: 100%;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 2em;
+  }
+
+  input {
+    width: 25em;
+    padding: 1.25em 2.5em;
+    background-color: #f2f2f2;
+    border-radius: 2em;
+    border: none;
+    margin-bottom: 0.5em;
+  }
+
+  input::placeholder {
+    color: #adabc3;
+  }
+
+  .submit {
+    margin-top: 40px;
+    padding: 1.5em;
+    width: 100%;
+    background-color: #259821;
+    font-size: 0.8em;
+  }
+}
+
+.buttonContainer,
+.goBackButton,
+.registerCurriculumButton,
+.finishLaterButton {
+  gap: 2em;
+  padding-bottom: 2em;
+  width: 100%;
+  justify-content: center;
+
+  .goBackButton {
+    button {
+      background-color: white;
+      border: 1px solid #ef6b01;
+      color: #ef6b01;
+    }
+  }
+
+  .finishLaterButton {
+    button {
+      background-color: #012369;
+
+    }
+  }
+
+  .symbol-button {
+    button {
+      background-color: #012369;
+      width: 4em;
+      height: 4em;
+    }
+    img {
+      width: 3em;
+    }
+
   }
 }
 
@@ -166,18 +244,13 @@
 
 .informationContainer {
   color: #959595;
-<<<<<<< Updated upstream
-  margin: 1.2em;
   padding: 0em 8em;
-=======
->>>>>>> Stashed changes
 
   a {
     color: #959595;
     font-weight: bold;
     font-style: italic;
   }
-
   @media (max-width: 768px) {
     font-size: 0.7em;
   }

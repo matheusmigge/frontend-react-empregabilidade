@@ -8,11 +8,13 @@ function UserRegister2() {
   return (
     <>
       <div className="titleContainer">
+
         <h1>CADASTRE-SE</h1>
       </div>
 
       <form className="formContainer">
       <div className="formContent">
+
         <div className="inputContainer">
           <div className="inputForm">
             <label htmlFor="user-cep">CEP</label>
@@ -101,7 +103,6 @@ function UserRegister2() {
               className="submit"
             ></TextualButton>
           </div>
-        </div>
         </div>
       </form>
 
