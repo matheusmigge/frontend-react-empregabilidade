@@ -1,14 +1,19 @@
-.grid-container {
-    padding: 15px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 1.25em;
-
-    .grid-item {
-        background-color: #ccc;
-        padding: 20px;
-        border: 1px solid blue;
-        height: 13em;
-    }
-
-}
+.externalContainer {
+    max-height: 100vh;
+    max-width: 100%;
+  }
+  
+  .externalContainer .grid-container {
+    top: 15rem;
+    left: 7rem;
+    max-height: 30rem;
+    max-width: 82rem;
+    padding: 0.5rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    position: relative;
+    overflow-y: scroll;
+    border: 1px solid black;
+  }
