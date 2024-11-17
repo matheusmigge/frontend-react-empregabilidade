@@ -2,8 +2,8 @@ import { useState } from "react";
 import "../toggle/toggle.css";
 
 interface ToggleProps {
-  text1: string;
-  text2: string;
+  text1?: string;
+  text2?: string;
   img1?: string;
   img2?: string;
 }
