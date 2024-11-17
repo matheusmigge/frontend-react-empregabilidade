@@ -2,16 +2,16 @@
     display: flex;
     align-items: center;
     height: 100%;
-    position: relative;
+    position: absolute;
 }
 
 .filters-bar .buttons-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background-color: #5F5F5F;
-    backdrop-filter: blur(10px);
+    background-color: rgba(95, 95, 95, 0.9);
+    backdrop-filter: blur(2px);
     height: 100%;
     width: 150px;
     gap: 10px;

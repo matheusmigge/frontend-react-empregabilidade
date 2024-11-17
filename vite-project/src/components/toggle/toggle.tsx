@@ -4,11 +4,13 @@ import "../toggle/toggle.css";
 interface ToggleProps {
   text1?: string;
   text2?: string;
-  img1?: string;
-  img2?: string;
+  img1On?: string;
+  img2On?: string;
+  img1Off?: string;
+  img2Off?: string;
 }
 
-function Toggle({ text1, text2, img1, img2 }: ToggleProps) {
+function Toggle({ text1, text2, img1On, img2On, img1Off, img2Off }: ToggleProps) {
   const [isOn, setIsOn] = useState(false);
   const [On, setOn] = useState(true);
 
@@ -17,6 +19,10 @@ function Toggle({ text1, text2, img1, img2 }: ToggleProps) {
     setOn((prevState) => !prevState);
 
   };
+
+  const img1 = isOn ? img1On : img1Off;
+  const img2 = On ? img2On : img2Off;
+
   return (
     <>
       <div className="toggleContainer">

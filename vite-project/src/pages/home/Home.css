@@ -1,0 +1,13 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.home .filters-bar {
+    z-index: 1;
+    height: calc(100vh - 80px);
+}
+
+.home .content {
+    padding: 50px 100px;
+}

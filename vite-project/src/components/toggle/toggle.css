@@ -1,18 +1,22 @@
 .toggleContainer{
-  background-color: orange;
+  background-color: #EF6B01;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 16.6rem;
-  height: 3.6rem;
+  width: 11rem;
+  height: 45px;
   border-radius: 1.7rem;
+  gap: 10px;
 }
 
 .toggleButton{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 7.2rem;
+  border-radius: 1.7rem;
+  border: none;
+  padding: 7px 9px;
+  gap: 6px;
 }
 
 .toggleButton.on{
@@ -22,6 +26,7 @@
 }
 
 .toggleButton.off{
+  color: white;
   background-color: transparent;
 }
 
