@@ -8,6 +8,8 @@
     height: calc(100vh - 80px);
 }
 
-.home .content {
-    padding: 50px 100px;
+.home .leaflet-container {
+    z-index: 0;
+    height: calc(100vh - 80px);
+    width: 100vw;
 }
