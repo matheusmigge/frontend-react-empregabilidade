@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.home .main-section {
+    height: calc(100vh - 80px);
+}
+
 .home .filters-bar {
     z-index: 1;
     height: calc(100vh - 80px);
