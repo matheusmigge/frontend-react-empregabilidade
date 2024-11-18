@@ -20,8 +20,8 @@ function FiltersBar() {
 
             <div className="buttons-container">
 
-                {FILTERS_BAR_ITEMS.map((item) => (
-                    <FilterButton iconUrl={item.iconUrl} text={item.text} openedBar={openedBar} toggleBar={toggleBar} />
+                {FILTERS_BAR_ITEMS.map((item, index) => (
+                    <FilterButton key={index} iconUrl={item.iconUrl} text={item.text} openedBar={openedBar} toggleBar={toggleBar} />
                 ))}
             </div>
 

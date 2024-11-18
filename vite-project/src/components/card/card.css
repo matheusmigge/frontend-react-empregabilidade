@@ -13,6 +13,7 @@
 
 .card {
   border: 2px solid black;
+  background-color: white;
   border-radius: 1.25rem;
   height: 10rem;
   width: 25.81rem;

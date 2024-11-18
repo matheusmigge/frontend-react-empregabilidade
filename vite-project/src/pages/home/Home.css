@@ -4,7 +4,7 @@
 }
 
 .home .main-section {
-    height: calc(100vh - 80px);
+    
 }
 
 .home .filters-bar {
@@ -15,5 +15,16 @@
 .home .leaflet-container {
     z-index: 0;
     height: calc(100vh - 80px);
-    width: 100vw;
+    width: calc(100vw - 150px);
+    left: 150px;
+}
+
+.home .card-list {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    top: 100px;
+    right: 1vw;
+    gap: 20px;
 }
