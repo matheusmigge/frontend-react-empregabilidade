@@ -25,6 +25,18 @@ function Home() {
                     <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
 
                     <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
+
+                    <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
+
+                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
+
+                    <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
+
+                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
+
+                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
+
+                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
                 </div>
             </div>
         </div>

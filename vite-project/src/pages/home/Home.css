@@ -15,16 +15,19 @@
 .home .leaflet-container {
     z-index: 0;
     height: calc(100vh - 80px);
-    width: calc(100vw - 150px);
-    left: 150px;
+    width: 100vw;
+    /* left: 150px; */
 }
 
 .home .card-list {
+    height: calc(100vh - 80px);
+    overflow-y:scroll;
     display: flex;
     flex-direction: column;
     z-index: 1;
     position: absolute;
-    top: 100px;
+    top: 80px;
     right: 1vw;
     gap: 20px;
+    padding-top: 50px;
 }
