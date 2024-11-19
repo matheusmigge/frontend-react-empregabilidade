@@ -1,77 +1,76 @@
-.header-container{
+.header-container {
     width: 100%;
-    height: 7.5rem;
+    height: 80px;
     background-color: #012369;
     display: flex;
     align-items: center;
-    flex-flow: wrap
+    justify-content: space-between;
+    padding: 10px 50px;
 }
 
-.header-container .left-Header{
-    width: 30%;
+.header-container p {
+    font-size: 1.7em;
+    text-wrap: nowrap;
+}
+
+.header-container .left-Header {
+    width: 35%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     color: white;
-    gap: 7rem;
 }
 
-.header-container .mid-Header{
-    width: 40%;
-}
-
-.header-container .right-Header{
-    width: 30%;
+.header-container .right-Header {
+    width: 35%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     display: flex;
-    gap: 2rem;
+}
+
+.header-container .toggleContainer {
+    position: absolute;
+    z-index: 2;
+    top: 57px;
+    left: calc(50% - 80px);
+}
+
+.header-container .icons-container {
+    display: flex;
+    gap: 0.9em;
 }
 
 .header-container .input-Src {
     width: 15rem;
     height: 2rem;
-    border-radius: 1.5rem;
+    border-radius: 0.7rem;
     padding: 1rem;
     border: none;
 }
 
-.header-container .menu{
+.header-container .searchIcon {
+    position: absolute;
+    margin-left: 210px;
+}
+
+.header-container .menu {
     width: 2.5rem;
-    margin-left: 1rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-.header-container .sino{
+.header-container .sino {
     height: 2.5rem;
     background-color: transparent;
     cursor: pointer;
     border: none;
 }
 
-.header-container .perfil{
+.header-container .perfil {
     width: 2.5rem;
     background-color: transparent;
     cursor: pointer;
     border: none;
 }
-
-
-@media (max-width: 1008px) { /* Ajustar o breakpoint conforme necessário*/
-    .header-container .left-Header {
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-  
-    .header-container .right-Header {
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-  
-    .header-container .filterBtn {
-      width: 100%;
-      margin-top: 0;
-    }
-  } 
