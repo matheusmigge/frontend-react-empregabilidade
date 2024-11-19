@@ -1,5 +1,6 @@
-import Toggle from "../toggle/toggle";
 import "./Header.css";
+import Toggle from "../toggle/toggle";
+        
 import searchIcon from "./assets/search.svg";
 import mapIcon from "./assets/mapIcon.svg";
 import mapIconOff from "./assets/mapIconOff.svg";
@@ -16,6 +17,7 @@ interface HeaderProps {
 }
 
 function Header({ title, inputText, imgUrl, imgUrl1, imgUrl2, useToggle }: HeaderProps) {
+
   return (
     <>
       <header className="header-container">
@@ -25,6 +27,7 @@ function Header({ title, inputText, imgUrl, imgUrl1, imgUrl2, useToggle }: Heade
               <img src={imgUrl} alt="Menu Hamburguer" className="menu" />
             )}
           </button>
+
           {title && <p className="title-Header">{title}</p>}
         </section>
 
@@ -36,6 +39,7 @@ function Header({ title, inputText, imgUrl, imgUrl1, imgUrl2, useToggle }: Heade
           {inputText && (
             <input type="text" placeholder={inputText} className="input-Src" />
           )}
+
           <img src={searchIcon} className="searchIcon"/>
           <div className="icons-container">
 
