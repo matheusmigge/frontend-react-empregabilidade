@@ -1,5 +1,8 @@
 .textual-button-container {
-  width: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .textual-button-container button {

@@ -1,9 +1,9 @@
-import TextualButton from "../textual-button/TextualButton";
-import linkedinVetor from "../../assets/linkedinVetor.svg";
-import googleVetor from "../../assets/googleVetor.svg";
-import "./UserLogin.css";
+import TextualButton from "../../../components/textual-button/TextualButton";
+import linkedinVetor from "../../../assets/linkedinVetor.svg";
+import googleVetor from "../../../assets/googleVetor.svg";
+import "./UserSignIn.css";
 
-function UserLogin() {
+function UserSignIn() {
   return (
     <>
       <div className="user-login">
@@ -35,12 +35,12 @@ function UserLogin() {
         <div className="buttonContainer">
           <TextualButton
             className="externalRegistrationButton"
-            text="Cadastre-se com LinkedIn"
+            text="Entrar com LinkedIn"
             imageUrl={linkedinVetor}
           />
           <TextualButton
             className="externalRegistrationButton"
-            text="Cadastre-se com Google"
+            text="Entrar com Google"
             imageUrl={googleVetor}
           />
           <div className="signup-now">
@@ -54,4 +54,4 @@ function UserLogin() {
   );
 }
 
-export default UserLogin;
+export default UserSignIn;
