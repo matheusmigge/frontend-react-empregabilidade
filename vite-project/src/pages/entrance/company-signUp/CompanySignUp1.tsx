@@ -1,9 +1,9 @@
-import "./CompanyRegister.css";
-import TextualButton from "../textual-button/TextualButton";
+import "./CompanySignUp.css";
+import TextualButton from "../../../components/textual-button/TextualButton";
 import { useState } from "react";
 import axios from "axios";
 
-function CompanyRegister1() {
+function CompanySignUp1() {
   const endPoint = "http://localhost:3000/companies";
 
   const [newCompany, setNewCompany] = useState({
@@ -147,4 +147,4 @@ function CompanyRegister1() {
   );
 }
 
-export default CompanyRegister1;
+export default CompanySignUp1;

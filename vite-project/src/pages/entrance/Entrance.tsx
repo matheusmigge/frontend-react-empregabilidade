@@ -1,14 +1,13 @@
-import "./register.css";
+import "./Entrance.css";
 import logoCompletaVetor from "../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../assets/maletaVetor.svg";
 import usuarioVetor from "../../assets/usuarioVetor.svg";
 import TextualButton from "../../components/textual-button/TextualButton";
-import CompanyRegister1 from "../../components/company-register/CompanyRegister1";
-import UserRegister1 from "../../components/user-register/UserRegister1";
-
+import UserSignIn from "./user-signIn/UserSignIn";
+import CompanySignIn from "./company-signIn/CompanySignIn";
 import { useState } from "react";
 
-function Register() {
+function Entrance() {
   const [registerType, setRegisterType] = useState("candidate");
 
   const handleClick = (type: string) => {
@@ -43,16 +42,12 @@ function Register() {
         </section>
 
         <section className="rightSide">
-
-          {registerType == "company" && <CompanyRegister1></CompanyRegister1>}
-          {registerType == "candidate" && <UserRegister></UserRegister>}
-          {registerType == "company" && <CompanyRegister1></CompanyRegister1>}
-          {registerType == "candidate" && <UserRegister1></UserRegister1>}
-
+          {registerType == "company" && <CompanySignIn />}
+          {registerType == "candidate" && <UserSignIn />}
         </section>
       </body>
     </>
   );
 }
 
-export default Register;
+export default Entrance;
