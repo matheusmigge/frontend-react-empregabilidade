@@ -1,3 +1,46 @@
 {
-  "companies": []
+    "companies": [
+        {
+            "CompanyId": 1,
+            "CompanyName": "TechCorp",
+            "CNPJ": "12.345.678/0001-90",
+            "LogoURL": "https://example.com/logo/techcorp.png",
+            "PhoneNumber": "+55 11 1234-5678",
+            "AdminAccountEmail": "admin@techcorp.com",
+            "AdminAccountPassword": "AdminPass123",
+            "ManagerAccountEmail": "manager@techcorp.com",
+            "ManagerAccountPassword": "ManagerPass123",
+            "HRManagerAccountEmail": "hrmanager@techcorp.com",
+            "HRManagerAccountPassword": "HRPass123",
+            "AccountCreationDate": "2023-05-15"
+        },
+        {
+            "CompanyId": 2,
+            "CompanyName": "InnovaTech",
+            "CNPJ": "98.765.432/0001-12",
+            "LogoURL": "https://example.com/logo/innovatech.png",
+            "PhoneNumber": "+55 21 9876-5432",
+            "AdminAccountEmail": "admin@innovatech.com",
+            "AdminAccountPassword": "Admin2022",
+            "ManagerAccountEmail": "manager@innovatech.com",
+            "ManagerAccountPassword": "Manager2022",
+            "HRManagerAccountEmail": "hr@innovatech.com",
+            "HRManagerAccountPassword": "HR2022",
+            "AccountCreationDate": "2022-11-20"
+        },
+        {
+            "CompanyId": 3,
+            "CompanyName": "Future Solutions",
+            "CNPJ": "56.789.123/0001-45",
+            "LogoURL": "https://example.com/logo/futuresolutions.png",
+            "PhoneNumber": "+55 31 3344-5566",
+            "AdminAccountEmail": "admin@futuresolutions.com",
+            "AdminAccountPassword": "FutureAdmin123",
+            "ManagerAccountEmail": "manager@futuresolutions.com",
+            "ManagerAccountPassword": "ManagerFuture123",
+            "HRManagerAccountEmail": "hrmanager@futuresolutions.com",
+            "HRManagerAccountPassword": "HRFuture123",
+            "AccountCreationDate": "2024-01-10"
+        }
+    ]
 }

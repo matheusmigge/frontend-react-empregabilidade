@@ -1,0 +1,360 @@
+{
+    "candidates": [
+        {
+            "CandidateId": 1,
+            "FirstName": "João",
+            "LastName": "Silva",
+            "CPF": "123.456.789-00",
+            "Email": "joao.silva@example.com",
+            "PhoneNumber": "+55 81 98765-4321",
+            "DateOfBirth": "1990-03-15",
+            "Password": "SenhaSegura123",
+            "Address": {
+                "cep": "50720400",
+                "address_type": "1ª",
+                "address_name": "Travessa Virgílio Campelo",
+                "address": "1ª Travessa Virgílio Campelo",
+                "state": "PE",
+                "district": "Madalena",
+                "lat": "-8.05552",
+                "lng": "-34.91507",
+                "city": "Recife",
+                "city_ibge": "2611606",
+                "ddd": "81"
+            },
+            "LinkedInURL": "https://linkedin.com/in/joaosilva",
+            "PortfolioURL": "https://portfolio.joaosilva.com",
+            "Resume": {
+                "ProfessionalSummary": "Desenvolvedor de software experiente com especialização em desenvolvimento full-stack e gerenciamento de projetos.",
+                "Experiences": [
+                    {
+                        "Experience": {
+                            "Company": "TechCorp",
+                            "Role": "Desenvolvedor Full-Stack",
+                            "StartDate": "2018-06-01",
+                            "EndDate": "2022-12-31",
+                            "SummaryOfDuties": "Desenvolveu aplicações web escaláveis; Colaborou com equipes multifuncionais para entregar projetos no prazo."
+                        }
+                    },
+                    {
+                        "Experience": {
+                            "Company": "InnovaTech",
+                            "Role": "Desenvolvedor Frontend",
+                            "StartDate": "2015-01-01",
+                            "EndDate": "2018-05-31",
+                            "SummaryOfDuties": "Projetou interfaces de usuário; Otimizou desempenho e acessibilidade de plataformas web."
+                        }
+                    }
+                ],
+                "Education": [
+                    {
+                        "Institution": "Universidade Federal de Pernambuco",
+                        "Degree": "Bacharelado em Ciência da Computação",
+                        "StartDate": "2011-02-01",
+                        "EndDate": "2015-12-15"
+                    }
+                ],
+                "CoursesAndCertifications": [
+                    {
+                        "Course": {
+                            "Institution": "Coursera",
+                            "Title": "Desenvolvimento Full-Stack",
+                            "CompletionYear": 2021
+                        }
+                    },
+                    {
+                        "Course": {
+                            "Institution": "Udemy",
+                            "Title": "React Avançado e Redux",
+                            "CompletionYear": 2020
+                        }
+                    }
+                ],
+                "SkillsAndCompetencies": [
+                    "React",
+                    "Node.js",
+                    "TypeScript",
+                    "Metodologias Ágeis",
+                    "Resolução de Problemas"
+                ],
+                "Languages": [
+                    {
+                        "Language": "Português",
+                        "ProficiencyLevel": "Fluente"
+                    },
+                    {
+                        "Language": "Inglês",
+                        "ProficiencyLevel": "Avançado"
+                    }
+                ]
+            }
+        },
+        {
+            "CandidateId": 2,
+            "FirstName": "Mariana",
+            "LastName": "Almeida",
+            "CPF": "987.654.321-00",
+            "Email": "mariana.almeida@example.com",
+            "PhoneNumber": "+55 81 99876-5432",
+            "DateOfBirth": "1993-05-20",
+            "Password": "SecurePass456",
+            "Address": {
+                "cep": "50720300",
+                "address_type": "Rua",
+                "address_name": "Antônio Lucena",
+                "address": "Rua Antônio Lucena",
+                "state": "PE",
+                "district": "Madalena",
+                "lat": "-8.0552",
+                "lng": "-34.92259",
+                "city": "Recife",
+                "city_ibge": "2611606",
+                "ddd": "81"
+            },
+            "LinkedInURL": "https://linkedin.com/in/marianaalmeida",
+            "PortfolioURL": "https://portfolio.marianaalmeida.com",
+            "Resume": {
+                "ProfessionalSummary": "Desenvolvedora back-end com experiência em bancos de dados e sistemas escaláveis.",
+                "Experiences": [
+                    {
+                        "Experience": {
+                            "Company": "DataSystems",
+                            "Role": "Desenvolvedora Back-End",
+                            "StartDate": "2017-03-01",
+                            "EndDate": "2021-08-31",
+                            "SummaryOfDuties": "Implementação de APIs RESTful; Otimização de consultas em SQL para alto desempenho."
+                        }
+                    },
+                    {
+                        "Experience": {
+                            "Company": "DevSolutions",
+                            "Role": "Analista de Dados",
+                            "StartDate": "2015-01-15",
+                            "EndDate": "2017-02-28",
+                            "SummaryOfDuties": "Análise e modelagem de dados; Criação de dashboards para visualização de métricas empresariais."
+                        }
+                    }
+                ],
+                "Education": [
+                    {
+                        "Institution": "Universidade Federal de Pernambuco",
+                        "Degree": "Bacharelado em Sistemas de Informação",
+                        "StartDate": "2012-02-01",
+                        "EndDate": "2016-12-20"
+                    }
+                ],
+                "CoursesAndCertifications": [
+                    {
+                        "Course": {
+                            "Institution": "Alura",
+                            "Title": "Arquitetura de Software Avançada",
+                            "CompletionYear": 2020
+                        }
+                    },
+                    {
+                        "Course": {
+                            "Institution": "Udemy",
+                            "Title": "Desenvolvimento em Node.js",
+                            "CompletionYear": 2019
+                        }
+                    }
+                ],
+                "SkillsAndCompetencies": [
+                    "Node.js",
+                    "MongoDB",
+                    "PostgreSQL",
+                    "Express.js",
+                    "Resolução de Problemas"
+                ],
+                "Languages": [
+                    {
+                        "Language": "Português",
+                        "ProficiencyLevel": "Fluente"
+                    },
+                    {
+                        "Language": "Inglês",
+                        "ProficiencyLevel": "Avançado"
+                    }
+                ]
+            }
+        },
+        {
+            "CandidateId": 3,
+            "FirstName": "Carlos",
+            "LastName": "Silva",
+            "CPF": "456.789.123-11",
+            "Email": "carlos.silva@example.com",
+            "PhoneNumber": "+55 81 91234-5678",
+            "DateOfBirth": "1988-10-10",
+            "Password": "CarlosSecure123",
+            "Address": {
+                "cep": "50050400",
+                "address_type": "Rua",
+                "address_name": "do Riachuelo",
+                "address": "Rua do Riachuelo",
+                "state": "PE",
+                "district": "Boa Vista",
+                "lat": "-8.05902",
+                "lng": "-34.88379",
+                "city": "Recife",
+                "city_ibge": "2611606",
+                "ddd": "81"
+            },
+            "LinkedInURL": "https://linkedin.com/in/carlossilva",
+            "PortfolioURL": "https://portfolio.carlossilva.com",
+            "Resume": {
+                "ProfessionalSummary": "Engenheiro de software com experiência em desenvolvimento de sistemas distribuídos e arquitetura de microserviços.",
+                "Experiences": [
+                    {
+                        "Experience": {
+                            "Company": "TechSolutions",
+                            "Role": "Engenheiro de Software",
+                            "StartDate": "2015-04-01",
+                            "EndDate": "2022-09-30",
+                            "SummaryOfDuties": "Criação de arquiteturas escaláveis; Liderança de equipes ágeis."
+                        }
+                    },
+                    {
+                        "Experience": {
+                            "Company": "CodeWorks",
+                            "Role": "Desenvolvedor de Software",
+                            "StartDate": "2013-01-10",
+                            "EndDate": "2015-03-31",
+                            "SummaryOfDuties": "Desenvolvimento de sistemas de backend robustos; Integração com APIs externas."
+                        }
+                    }
+                ],
+                "Education": [
+                    {
+                        "Institution": "Universidade Federal de Pernambuco",
+                        "Degree": "Engenharia da Computação",
+                        "StartDate": "2008-02-01",
+                        "EndDate": "2012-12-15"
+                    }
+                ],
+                "CoursesAndCertifications": [
+                    {
+                        "Course": {
+                            "Institution": "Alura",
+                            "Title": "Microservices Architecture",
+                            "CompletionYear": 2021
+                        }
+                    },
+                    {
+                        "Course": {
+                            "Institution": "Udemy",
+                            "Title": "Kubernetes for Developers",
+                            "CompletionYear": 2020
+                        }
+                    }
+                ],
+                "SkillsAndCompetencies": [
+                    "Java",
+                    "Spring Boot",
+                    "Kubernetes",
+                    "Docker",
+                    "Arquitetura de Microserviços"
+                ],
+                "Languages": [
+                    {
+                        "Language": "Português",
+                        "ProficiencyLevel": "Fluente"
+                    },
+                    {
+                        "Language": "Inglês",
+                        "ProficiencyLevel": "Avançado"
+                    }
+                ]
+            }
+        },
+        {
+            "CandidateId": 4,
+            "FirstName": "Ana",
+            "LastName": "Pereira",
+            "CPF": "789.123.456-22",
+            "Email": "ana.pereira@example.com",
+            "PhoneNumber": "+55 81 98765-4321",
+            "DateOfBirth": "1995-07-22",
+            "Password": "AnaPassword456",
+            "Address": {
+                "cep": "50670300",
+                "address_type": "Rua",
+                "address_name": "Agripino Lacerda",
+                "address": "Rua Agripino Lacerda",
+                "state": "PE",
+                "district": "Iputinga",
+                "lat": "-8.04104",
+                "lng": "-34.93962",
+                "city": "Recife",
+                "city_ibge": "2611606",
+                "ddd": "81"
+            },
+            "LinkedInURL": "https://linkedin.com/in/anapereira",
+            "PortfolioURL": "https://portfolio.anapereira.com",
+            "Resume": {
+                "ProfessionalSummary": "Desenvolvedora full-stack com foco em soluções inovadoras e interfaces responsivas.",
+                "Experiences": [
+                    {
+                        "Experience": {
+                            "Company": "WebSoft",
+                            "Role": "Desenvolvedora Full-Stack",
+                            "StartDate": "2018-03-01",
+                            "EndDate": "2023-05-30",
+                            "SummaryOfDuties": "Desenvolvimento de aplicações web completas; Implementação de funcionalidades front-end e back-end."
+                        }
+                    },
+                    {
+                        "Experience": {
+                            "Company": "SoftDesign",
+                            "Role": "Desenvolvedora Front-End",
+                            "StartDate": "2016-01-15",
+                            "EndDate": "2018-02-28",
+                            "SummaryOfDuties": "Criação de interfaces responsivas; Melhoria contínua de experiência do usuário."
+                        }
+                    }
+                ],
+                "Education": [
+                    {
+                        "Institution": "Universidade Católica de Pernambuco",
+                        "Degree": "Bacharelado em Sistemas de Informação",
+                        "StartDate": "2013-02-01",
+                        "EndDate": "2017-12-10"
+                    }
+                ],
+                "CoursesAndCertifications": [
+                    {
+                        "Course": {
+                            "Institution": "Rocketseat",
+                            "Title": "Bootcamp GoStack",
+                            "CompletionYear": 2022
+                        }
+                    },
+                    {
+                        "Course": {
+                            "Institution": "Digital Innovation One",
+                            "Title": "React Native Essentials",
+                            "CompletionYear": 2021
+                        }
+                    }
+                ],
+                "SkillsAndCompetencies": [
+                    "JavaScript",
+                    "React",
+                    "Node.js",
+                    "TypeScript",
+                    "Responsive Design"
+                ],
+                "Languages": [
+                    {
+                        "Language": "Português",
+                        "ProficiencyLevel": "Fluente"
+                    },
+                    {
+                        "Language": "Inglês",
+                        "ProficiencyLevel": "Intermediário"
+                    }
+                ]
+            }
+        }
+    ]
+}

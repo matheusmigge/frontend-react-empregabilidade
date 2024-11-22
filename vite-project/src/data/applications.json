@@ -1,0 +1,25 @@
+{
+    "applications": [
+        {
+            "ApplicationId": 1,
+            "JobId": 1,
+            "CandidateId": 1,
+            "ApplicationDate": "2024-11-22",
+            "Status": "Pendente"
+        },
+        {
+           "ApplicationId": 2,
+            "JobId": 2,
+            "CandidateId": 2,
+            "ApplicationDate": "2024-11-22",
+            "Status": "Pendente"
+        },
+        {
+            "ApplicationId": 3,
+            "JobId": 3,
+            "CandidateId": 3,
+            "ApplicationDate": "2024-11-22",
+            "Status": "Pendente"
+        }
+    ]
+}
