@@ -13,15 +13,30 @@
 
 .card {
   border: 2px solid black;
+  background-color: white;
   border-radius: 1.25rem;
-  height: 10rem;
-  width: 25.81rem;
+  height: 160px;
+  width: 400px;
   display: flex;
-  flex-flow: wrap;
+  flex-flow: column;
+  gap: 30px;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 0.9rem;
+  padding: 10px 20px;
+}
+
+.card .div-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .div-middle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .div-bottom {
+  display: flex;
+  justify-content: space-between;
 }
 
 .card.available {
@@ -29,34 +44,29 @@
 }
 
 .card.unavailable {
-  border-color: #FF0000;
+  border-color: #ff0000;
 }
 
 .card .name {
   display: flex;
   align-items: center;
-  margin-bottom: 2.5rem;
   gap: 5px;
 
-  .logo{
+  .logo {
     width: 1.5rem;
   }
 }
 
 .card .title {
-  position: absolute;
-  margin-left: 2rem;
   font-size: 20px;
   font-weight: bold;
 }
 
 .card .status {
   display: flex;
-  align-items:center ;
+  align-items: center;
   gap: 5px;
-  margin-top: -2.7rem;
 
-  
   .statuslogo {
     align-items: center;
     width: 1rem;
@@ -65,9 +75,7 @@
 
 .card .info {
   display: flex;
-  align-items: center;
   gap: 6px;
-  /* margin-left: 0.5rem; */
 
   .case {
     width: 1.5rem;
@@ -76,9 +84,7 @@
 
 .card .amount {
   display: flex;
-  align-items: center;
   gap: 7px;
-  margin-right: 0.5rem;
 
   .user {
     width: 1.5rem;

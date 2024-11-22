@@ -1,0 +1,87 @@
+.body-container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+/* Lado esquerdo da tela */
+.leftSide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f9f9ff;
+  width: 50vw;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .logoContainer {
+    img {
+      width: 40vw;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      margin: 2em;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding: 5em;
+    gap: 1em;
+    width: 40vw;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 0 1em 0 1em;
+      width: 100vw;
+    }
+
+    .enterpriseButton {
+      background-color: #ef6b01;
+    }
+
+    .enterpriseButton:hover {
+      background: #ef6c018e;
+    }
+
+    .candidateButton {
+      background-color: #ef6b01;
+    }
+
+    .candidateButton:hover {
+      background: #ef6c018e;
+    }
+
+    .selected {
+      background-color: #afafaf;
+      cursor: default;
+    }
+
+    .selected:hover {
+      background-color: #afafaf;
+    }
+  }
+}
+
+/* Lado direito da tela */
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
+}

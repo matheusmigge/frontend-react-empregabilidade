@@ -2,7 +2,7 @@ import "./FilterButton.css"
 import { useEffect, useState } from "react";
 import chevron from "./assets/chevron-down.svg"
 
-interface FilterButtonProps {
+export interface FilterButtonProps {
     iconUrl: string;
     text: string;
     openedBar?: boolean;
