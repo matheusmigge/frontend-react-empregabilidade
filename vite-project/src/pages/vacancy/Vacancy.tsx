@@ -1,101 +1,117 @@
 import "./Vacancy.css";
-import AccordionContainer from "../../components/accordionContainer/AccordionBox";
-import FotoDeTeste from "./FOTODETESTE.png";
+import AccordionBox from "./accordionBox/AccordionBox";
+import Header from "../../components/header/Header";
+import goBackVector from "./assets/goBackVector.svg";
+import copyLinkVector from "./assets/copyLinkVector.svg";
+import applyVector from "./assets/applyVector.svg";
 
-function Vacancy() {
+interface VacancyProps {
+  vacancyBannerUrl: string;
+  vacancyRemuneration: number;
+  vacancyWorkSystem: string;
+  vacancyHiringType: string;
+  vacancyMaxDistance: number;
+  vacancyDescription: string;
+  vacancyResponsibilities: string;
+  vacancyRequirements: string;
+  vacancyChancesImprovement: string;
+  vacancySkills: string;
+  vacancyLocation: string[];
+  vacancySteps: string;
+}
+
+const Vacancy = ({
+  vacancyBannerUrl,
+  vacancyRemuneration,
+  vacancyWorkSystem,
+  vacancyHiringType,
+  vacancyMaxDistance,
+  vacancyDescription,
+  vacancyResponsibilities,
+  vacancyRequirements,
+  vacancyChancesImprovement,
+  vacancySkills,
+  vacancyLocation,
+  vacancySteps,
+}: VacancyProps) => {
+  
   return (
     <>
-      <div className="vacancyContainer">
-        <div className="headerTeste"></div>
+      <div className="vacancy">
+        <div className="vacancyHeader">
+          <Header
+            imgUrl={goBackVector}
+            title="Desenvolvedor Front-End (React/Node.js)"
+            imgUrl1={copyLinkVector}
+            imgUrl2={applyVector}
+          ></Header>
+        </div>
 
         <div className="vacancyContent">
-          <div className="vacancyBannerContainer">
-            <img src={FotoDeTeste} alt="" />
+          <div className="vacancyBannerContainer">{vacancyBannerUrl}</div>
+
+          <div className="vacancyInformationContainer">
+            <div className="vacancyInformation">
+              <p className="vacancyInformationTitle">Remuneração</p>
+              <p className="vacancyInformationContent">
+                R$ {vacancyRemuneration}
+              </p>
+            </div>
+
+            <div className="vacancyInformation">
+              <p className="vacancyInformationTitle">Modelo de trabalho</p>
+              <p className="vacancyInformationContent">{vacancyWorkSystem}</p>
+            </div>
+
+            <div className="vacancyInformation">
+              <p className="vacancyInformationTitle">Contratação</p>
+              <p className="vacancyInformationContent">{vacancyHiringType}</p>
+            </div>
+
+            <div className="vacancyInformation">
+              <p className="vacancyInformationTitle">Distância máxima</p>
+              <p className="vacancyInformationContent">
+                {vacancyMaxDistance} km
+              </p>
+            </div>
           </div>
 
-          <AccordionContainer title="Descrição da Vaga">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-              quaerat fuga nam quasi ea earum quia provident nihil,
-              reprehenderit quidem at nesciunt velit exercitationem sit? Iust o
-              esse aperiam earum aspernatur. Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Autem labore, recusandae hic
-              eligendi blanditiis quo nulla aut rem quasi! Officia ullam quos
-              totam esse rem velit eum possimus fugiat nesciunt! Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit. Incidunt nulla ipsa
-              debitis dolore in voluptatibus perferendis facilis eaque
-              architecto ducimus sequi inventore cum excepturi laudantium,
-              tempore, quo eos molestiae! Eligendi. Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Harum repudiandae exercitationem
-              vel? Illum officia deserunt dolor, corporis necessitatibus aut
-              quia repudiandae, sit suscipit dolorem eum impedit ullam nostrum
-              quod debitis!
-            </p>
-          </AccordionContainer>
+          <AccordionBox title="Descrição da Vaga">
+            {vacancyDescription}
+          </AccordionBox>
 
-          <AccordionContainer title="Responsabilidades e atribuições">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-              quaerat fuga nam quasi ea earum quia provident nihil,
-              reprehenderit quidem at nesciunt velit exercitationem sit? Iusto
-              esse aperiam earum aspernatur. Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Autem labore, recusandae hic
-              eligendi blanditiis quo nulla aut rem quasi! Officia ullam quos
-              totam esse rem velit eum possimus fugiat nesciunt! Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit. Incidunt nulla ipsa
-              debitis dolore in voluptatibus perferendis facilis eaque
-              architecto ducimus sequi inventore cum excepturi laudantium,
-              tempore, quo eos molestiae! Eligendi. Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Harum repudiandae exercitationem
-              vel? Illum officia deserunt dolor, corporis necessitatibus aut
-              quia repudiandae, sit suscipit dolorem eum impedit ullam nostrum
-              quod debitis!
-            </p>
-          </AccordionContainer>
+          <AccordionBox title="Responsabilidades e atribuições">
+            {vacancyResponsibilities}
+          </AccordionBox>
 
-          <AccordionContainer title="Requisitos e qualificações">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-              quaerat fuga nam quasi ea earum quia provident nihil,
-              reprehenderit quidem at nesciunt velit exercitationem sit? Iusto
-              esse aperiam earum aspernatur. Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Autem labore, recusandae hic
-              eligendi blanditiis quo nulla aut rem quasi! Officia ullam quos
-              totam esse rem velit eum possimus fugiat nesciunt! Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit. Incidunt nulla ipsa
-              debitis dolore in voluptatibus perferendis facilis eaque
-              architecto ducimus sequi inventore cum excepturi laudantium,
-              tempore, quo eos molestiae! Eligendi. Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Harum repudiandae exercitationem
-              vel? Illum officia deserunt dolor, corporis necessitatibus aut
-              quia repudiandae, sit suscipit dolorem eum impedit ullam nostrum
-              quod debitis!
-            </p>
-          </AccordionContainer>
+          <AccordionBox title="Requisitos e qualificações">
+            {vacancyRequirements}
+          </AccordionBox>
 
-          <AccordionContainer title="O que aumenta as suas chances?">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-              quaerat fuga nam quasi ea earum quia provident nihil,
-              reprehenderit quidem at nesciunt velit exercitationem sit? Iusto
-              esse aperiam earum aspernatur. Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Autem labore, recusandae hic
-              eligendi blanditiis quo nulla aut rem quasi! Officia ullam quos
-              totam esse rem velit eum possimus fugiat nesciunt! Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit. Incidunt nulla ipsa
-              debitis dolore in voluptatibus perferendis facilis eaque
-              architecto ducimus sequi inventore cum excepturi laudantium,
-              tempore, quo eos molestiae! Eligendi. Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Harum repudiandae exercitationem
-              vel? Illum officia deserunt dolor, corporis necessitatibus aut
-              quia repudiandae, sit suscipit dolorem eum impedit ullam nostrum
-              quod debitis!
-            </p>
-          </AccordionContainer>
+          <AccordionBox title="O que aumenta as suas chances?">
+            {vacancyChancesImprovement}
+          </AccordionBox>
+
+          <AccordionBox title="Habilidades e competências">
+            {vacancySkills}
+          </AccordionBox>
+
+          <div className="vacancyLocationContainer">
+            <div className="vacancyLocationHeader">
+              Endereço da vaga
+              <input type="text" placeholder="Localização" />
+            </div>
+            <div className="vacancyLocationContent">{vacancyLocation}</div>
+          </div>
+
+          <div className="stepsContainer">
+            <div className="stepsHeader">Etapas do processo</div>
+            <div className="stepsContent">{vacancySteps}</div>
+          </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Vacancy;

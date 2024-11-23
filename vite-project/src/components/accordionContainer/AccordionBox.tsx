@@ -3,7 +3,7 @@ import './AccordionBox.css';
 import arrowVector from '../../assets/arrowVector.svg';
 
 interface AccordionProps {
-  title: string;
+  title?: string;
   children: React.ReactNode;
 }
 
