@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 3.75rem;
     padding-bottom: 3.75rem;
+    background-color: #F2F2F2;
 }
 
 .advantagesCards .cardsTitle {
-    margin-top: 10rem;
+    margin-top: 5rem;
     font-size: 2.5rem;
     font-weight: 500;
     align-items: center;
@@ -31,7 +32,7 @@
     gap: 3.75rem;
     border-radius: 1.25rem;
     justify-content: center;
-    box-shadow: 6px 7px 28px -3px rgba(0,0,0,0.35);
+    box-shadow: 6px 7px 28px -3px rgba(0,0,0,0.25);
 
     .textCard {
         font-size: 1.5rem;
@@ -46,7 +47,7 @@
 
 .advantagesCards .ctaButton {
     padding: 0.75rem 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     text-transform: uppercase;
     font-weight: 600;
     background-color: #EF6B01;
