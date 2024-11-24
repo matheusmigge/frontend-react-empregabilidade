@@ -34,6 +34,7 @@
 .heroLandingPage .buttonsCta {
     display: flex;
     gap: 2.5rem;
+    justify-content: flex-start;
 }
 
 .heroLandingPage .buttonsCta .signUp, .seeAdvantages {

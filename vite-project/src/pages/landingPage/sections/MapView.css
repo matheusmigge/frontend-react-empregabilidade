@@ -1,0 +1,22 @@
+.mapView {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    background-image: url(../assets/bgMapView.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #F2F2F2;
+    color: white;
+    height: 100vh;
+}
+
+.mapView .title {
+    margin-top: 9rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+}
