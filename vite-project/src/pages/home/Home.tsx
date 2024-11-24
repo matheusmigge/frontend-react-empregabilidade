@@ -13,7 +13,7 @@ function Home() {
     return (
         <div className="home">
 
-            <Header imgUrl={menuIcon} title="Vagas Disponíveis" inputText="Pesquisar" imgUrl1={bellIcon} imgUrl2={userIcon} useToggle={true}></Header>
+            <Header imgUrl={menuIcon} title="Vagas Disponíveis" inputText={true} imgUrl1={bellIcon} imgUrl2={userIcon} useToggle={true}></Header>
 
             <div className="main-section">
 

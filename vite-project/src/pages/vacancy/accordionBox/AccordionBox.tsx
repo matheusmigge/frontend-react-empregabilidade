@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './AccordionBox.css';
-import arrowVector from '../../assets/arrowVector.svg';
+import arrowVector from '../../../assets/arrowVector.svg';
 
 interface AccordionProps {
-  title?: string;
+  title: string;
   children: React.ReactNode;
 }
 
@@ -17,10 +17,10 @@ const AccordionBox = ({ title, children }: AccordionProps) => {
   return (
     <div className="accordionContainer">
       <div className={`accordionHeader ${isOpen ? "open" : "close"}`} onClick={toggleAccordion}>
-        <img src={arrowVector} alt="Toggle" style={{ transform: isOpen ? 'rotate(-180deg)' : 'rotate(0deg)' }} />
+      <img src={arrowVector} alt="Toggle" style={{ transform: isOpen ? 'rotate(-180deg)' : 'rotate(0deg)' }} />
         {title}
       </div>
-      <div className="accordionContent">{children}</div>
+      {isOpen && <div className="accordionContent">{children}</div>}
     </div>
   );
 };
