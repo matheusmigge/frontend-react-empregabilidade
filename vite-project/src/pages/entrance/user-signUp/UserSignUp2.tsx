@@ -171,10 +171,12 @@ function UserSignUp2() {
               ></TextualButton>
             </div>
             <div className="finishLaterButton">
+              <Link to="/home" className="linkStyle">
               <TextualButton
                 text={"FINALIZAR DEPOIS"}
                 className="submit"
-              ></TextualButton>
+              />
+              </Link>
             </div>
           </div>
 
