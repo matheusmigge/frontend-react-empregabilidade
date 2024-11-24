@@ -1,5 +1,6 @@
 import TextualButton from "../../../components/textual-button/TextualButton";
 import "./CompanySignIn.css";
+import { Link } from "react-router-dom";
 
 function UserSignIn() {
   return (
@@ -24,15 +25,16 @@ function UserSignIn() {
             name="user-password"
             placeholder="Digite sua senha"
           />
-
-          <TextualButton text={"ENTRAR"} className="submit"></TextualButton>
+          <Link to="/home" className="linkStyle">
+          <TextualButton text={"ENTRAR"} className="submit"/>
+          </Link>
         </form>
 
         <hr />
 
         <div className="signup-now">
           <p>
-            Não possui uma conta? <a href="">Cadastre-se</a>
+            Não possui uma conta? <Link to="/companySignUp1">Cadastre-se</Link>
           </p>
         </div>
       </div>

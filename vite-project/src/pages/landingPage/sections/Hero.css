@@ -33,6 +33,7 @@
 
 .heroLandingPage .buttonsCta {
     display: flex;
+    justify-content: space-evenly;
     gap: 2.5rem;
     justify-content: flex-start;
 }
