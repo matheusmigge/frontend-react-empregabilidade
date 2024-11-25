@@ -4,20 +4,21 @@ import Header from "../../components/header/Header";
 import goBackVector from "./assets/goBackVector.svg";
 import copyLinkVector from "./assets/copyLinkVector.svg";
 import applyVector from "./assets/applyVector.svg";
+import { Link } from "react-router-dom";
 
 interface VacancyProps {
-  vacancyBannerUrl: string;
-  vacancyRemuneration: number;
-  vacancyWorkSystem: string;
-  vacancyHiringType: string;
-  vacancyMaxDistance: number;
-  vacancyDescription: string;
-  vacancyResponsibilities: string;
-  vacancyRequirements: string;
-  vacancyChancesImprovement: string;
-  vacancySkills: string;
-  vacancyLocation: string[];
-  vacancySteps: string;
+  vacancyBannerUrl?: string;
+  vacancyRemuneration?: number;
+  vacancyWorkSystem?: string;
+  vacancyHiringType?: string;
+  vacancyMaxDistance?: number;
+  vacancyDescription?: string;
+  vacancyResponsibilities?: string;
+  vacancyRequirements?: string;
+  vacancyChancesImprovement?: string;
+  vacancySkills?: string;
+  vacancyLocation?: string[];
+  vacancySteps?: string;
 }
 
 const Vacancy = ({
@@ -39,12 +40,14 @@ const Vacancy = ({
     <>
       <div className="vacancy">
         <div className="vacancyHeader">
+          <Link to="/home" className="linkStyle">
           <Header
             imgUrl={goBackVector}
             title="Desenvolvedor Front-End (React/Node.js)"
             imgUrl1={copyLinkVector}
             imgUrl2={applyVector}
           ></Header>
+          </Link>
         </div>
 
         <div className="vacancyContent">

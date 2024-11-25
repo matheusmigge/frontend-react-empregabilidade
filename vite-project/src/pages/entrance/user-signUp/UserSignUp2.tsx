@@ -157,7 +157,7 @@ function UserSignUp2() {
 
           <div className="optionsContainer">
             <div className="goBackButton">
-              <Link to="" className="linkStyle">
+              <Link to="/userSignUp1" className="linkStyle">
                 <TextualButton
                   text={"VOLTAR"}
                   className="submit"
