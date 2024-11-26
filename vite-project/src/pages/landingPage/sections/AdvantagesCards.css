@@ -23,7 +23,7 @@
     margin-bottom: 3.5rem;
 }
 
-.advantagesCards .cardsContainer .card {
+.advantagesCards .cardsContainer .lpCard {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@
     }
 }
 
-.advantagesCards .cardsContainer .card img {
+.advantagesCards .cardsContainer .lpCard img {
     height: 15rem;
     width: 15rem;
 }

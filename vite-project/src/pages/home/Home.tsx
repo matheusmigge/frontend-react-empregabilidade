@@ -7,6 +7,7 @@ import bellIcon from "../../components/header/assets/bell.svg";
 import userIcon from "../../components/header/assets/Ellipse 1.svg";
 import Map from "../../components/map/Map";
 import Card from "../../components/card/Card";
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -21,8 +22,9 @@ function Home() {
                 <Map />
 
                 <div className="card-list">
-
+                    <Link to="/vacancy" className="linkStyle">
                     <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
+                    </Link>
 
                     <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
 

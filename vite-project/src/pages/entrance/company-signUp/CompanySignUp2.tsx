@@ -6,6 +6,7 @@ import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
 import greenPlus from "./assets/GreenPlus.svg";
 import crossVetor from "./assets/crossVector.svg";
+import { Link } from "react-router-dom";
 
 function CompanySignUp2() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -121,7 +122,9 @@ function CompanySignUp2() {
                     />
                   </div>
                   <div className="concludeButton">
+                    <Link to="/home" className=" linkStyle">
                     <TextualButton text={"CONCLUIR"} className="submit" />
+                    </Link>
                   </div>
                 </div>
               </div>
