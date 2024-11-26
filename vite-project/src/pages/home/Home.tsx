@@ -7,42 +7,81 @@ import bellIcon from "../../components/header/assets/bell.svg";
 import userIcon from "../../components/header/assets/Ellipse 1.svg";
 import Map from "../../components/map/Map";
 import Card from "../../components/card/Card";
+
+import jobData from "../../data/jobs.json";
+import companyData from "../../data/companies.json";
+import candidateData from "../../data/candidates.json";
 import { Link } from "react-router-dom";
 
-
 function Home() {
-    return (
-        <div className="home">
+  const loggedUser = candidateData.candidates[0];
 
-            <Header imgUrl={menuIcon} title="Vagas Disponíveis" inputText={true} imgUrl1={bellIcon} imgUrl2={userIcon} useToggle={true}></Header>
+  <Header
+    imgUrl={menuIcon}
+    title="Vagas Disponíveis"
+    inputText={true}
+    imgUrl1={bellIcon}
+    imgUrl2={userIcon}
+    useToggle={true}
+  ></Header>;
 
-            <div className="main-section">
+  const jobsWithDetails = jobData.jobs.map((job) => {
+    const company = companyData.companies.find(
+      (company) => company.CompanyId === job.CompanyId
+    );
 
-                <FiltersBar></FiltersBar>
-                <Map />
+    return {
+      ...job,
+      CompanyName: company?.CompanyName || "Empresa desconhecida",
+      LogoURL: company?.LogoURL || userIcon,
+    };
+  });
 
-                <div className="card-list">
-                    <Link to="/vacancy" className="linkStyle">
-                    <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
-                    </Link>
+  const userLocation = {
+    latitude: parseFloat(loggedUser.Address.lat),
+    longitude: parseFloat(loggedUser.Address.lng),
+  };
 
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
+  const markerLocations = jobsWithDetails.map((job) => ({
+    latitude: parseFloat(job.Address.lat),
+    longitude: parseFloat(job.Address.lng),
+    id: job.jobId.toString(),
+    label: job.Title,
+  }));
 
-                    <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
+  return (
+    <div className="home">
+      <Header
+        imgUrl={menuIcon}
+        title="Vagas Disponíveis"
+        inputText={true}
+        imgUrl1={bellIcon}
+        imgUrl2={userIcon}
+        useToggle={true}
+      ></Header>
 
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
+      <div className="main-section">
+        <FiltersBar></FiltersBar>
+        <Map userLocation={userLocation} markerLocations={markerLocations} />
 
-                    <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
-                </div>
-            </div>
+        <div className="card-list">
+          {jobsWithDetails.map((job) => (
+            <Link to="/vacancy" className="linkStyle">
+              <Card
+                key={job.jobId}
+                companyName={job.CompanyName}
+                logoName={job.LogoURL}
+                jobTitle={job.Title}
+                available={job.JobAvailable}
+                info={job.WorkModel}
+                amount={`${job.CurrentApplications}/${job.MaximumApplications}`}
+              />
+            </Link>
+          ))}
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

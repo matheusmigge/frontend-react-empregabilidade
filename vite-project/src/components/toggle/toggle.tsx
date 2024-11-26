@@ -11,8 +11,8 @@ interface ToggleProps {
 }
 
 function Toggle({ text1, text2, img1On, img2On, img1Off, img2Off }: ToggleProps) {
-  const [isOn, setIsOn] = useState(false);
-  const [On, setOn] = useState(true);
+  const [isOn, setIsOn] = useState(true);
+  const [On, setOn] = useState(false);
 
   const ToggleSwitch = () => {
     setIsOn((prevState) => !prevState);
