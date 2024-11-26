@@ -1,0 +1,52 @@
+.enterpriseBenefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../assets/bgBenefits.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.enterpriseBenefits .title {
+    margin-top: 2.5rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+.enterpriseBenefits .menThinking {
+    position: relative;
+    left: -29rem
+}
+
+.enterpriseBenefits .question {
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    left: -15rem;
+    bottom: -10rem;
+}
+
+.enterpriseBenefits .benefitsArrow {
+    position: absolute;
+    transform: translateY(21rem);
+}
+
+.enterpriseBenefits .benefits {
+    position: absolute;
+    transform: translateY(28rem);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 20rem;
+    gap: 3rem;
+}
+
+.enterpriseBenefits .benefits p {
+    font-size: 1.5rem;
+    width: 30%;
+}

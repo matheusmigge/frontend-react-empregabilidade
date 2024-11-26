@@ -2,6 +2,7 @@ import TextualButton from "../../../components/textual-button/TextualButton";
 import linkedinVetor from "../../../assets/linkedinVetor.svg";
 import googleVetor from "../../../assets/googleVetor.svg";
 import "./UserSignIn.css";
+import { Link } from "react-router-dom";
 
 function UserSignIn() {
   return (
@@ -26,8 +27,9 @@ function UserSignIn() {
             name="user-password"
             placeholder="Digite sua senha"
           />
-
+          <Link to="/home" className="linkStyle">
           <TextualButton text={"ENTRAR"} className="submit"></TextualButton>
+          </Link>
         </form>
 
         <hr />
@@ -45,7 +47,7 @@ function UserSignIn() {
           />
           <div className="signup-now">
             <p>
-              Não possui uma conta? <a href="">Cadastre-se</a>
+              Não possui uma conta? <Link to="/userSignUp1">Cadastre-se</Link>
             </p>
           </div>
         </div>
