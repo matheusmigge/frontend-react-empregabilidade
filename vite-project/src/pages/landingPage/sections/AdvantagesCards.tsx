@@ -13,17 +13,17 @@ function AdvantagesCards() {
       </h2>
 
       <div className="cardsContainer">
-        <div className="card">
+        <div className="lpCard">
           <h3 className="textCard">Menos gasto com transporte</h3>
           <img src={busSvg} alt="busIcon" />
         </div>
 
-        <div className="card">
+        <div className="lpCard">
           <h3 className="textCard">Menos tempo de deslocamento</h3>
           <img src={clockSvg} alt="busIcon" />
         </div>
 
-        <div className="card">
+        <div className="lpCard">
           <h3 className="textCard">Maior prudutividade</h3>
           <img src={jobSvg} alt="busIcon" />
         </div>
