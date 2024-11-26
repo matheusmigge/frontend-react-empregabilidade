@@ -8,8 +8,39 @@ import userIcon from "../../components/header/assets/Ellipse 1.svg";
 import Map from "../../components/map/Map";
 import Card from "../../components/card/Card";
 
+import jobData from "../../data/jobs.json";
+import companyData from "../../data/companies.json";
+import candidateData from "../../data/candidates.json";
 
 function Home() {
+
+    const loggedUser = candidateData.candidates[0];
+
+    const jobsWithDetails = jobData.jobs.map((job) => {
+
+        const company = companyData.companies.find(
+            (company) => company.CompanyId === job.CompanyId
+        );
+
+        return {
+            ...job,
+            CompanyName: company?.CompanyName || "Empresa desconhecida",
+            LogoURL: company?.LogoURL || userIcon,
+        };
+    });
+
+    const userLocation = {
+        latitude: parseFloat(loggedUser.Address.lat),
+        longitude: parseFloat(loggedUser.Address.lng),
+    }
+
+    const markerLocations = jobsWithDetails.map((job) => ({
+        latitude: parseFloat(job.Address.lat),
+        longitude: parseFloat(job.Address.lng),
+        id: job.jobId.toString(),
+        label: job.Title
+    }));
+
     return (
         <div className="home">
 
@@ -18,25 +49,21 @@ function Home() {
             <div className="main-section">
 
                 <FiltersBar></FiltersBar>
-                <Map />
+                <Map userLocation={userLocation} markerLocations={markerLocations} />
 
                 <div className="card-list">
 
-                    <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Tec Norte"} logoName={userIcon} jobTitle={"Dev. Front-End Junior"} available={false} info={"Híbrido"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
-
-                    <Card companyName={"Studio Sul"} logoName={userIcon} jobTitle={"Pessoa Scrum Master"} available={true} info={"Presencial"} amount={"2/10"}></Card>
+                    {jobsWithDetails.map((job) => (
+                        <Card
+                            key={job.jobId}
+                            companyName={job.CompanyName}
+                            logoName={job.LogoURL}
+                            jobTitle={job.Title}
+                            available={job.JobAvailable}
+                            info={job.WorkModel}
+                            amount={`${job.CurrentApplications}/${job.MaximumApplications}`}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

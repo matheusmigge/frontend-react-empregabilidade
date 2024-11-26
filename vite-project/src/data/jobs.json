@@ -26,16 +26,14 @@
             "MaximumApplications": 100,
             "CurrentApplications": 25,
             "Address": {
-                "cep": "50030220",
-                "address_type": "Rua",
-                "address_name": "do Apolo",
-                "address": "Rua do Apolo",
-                "number": "123",
-                "complement": "Sala 101",
+                "cep": "50711000",
+                "address_type": "Avenida",
+                "address_name": "Caxangá",
+                "address": "Avenida Caxangá",
                 "state": "PE",
-                "district": "Recife",
-                "lat": "-8.0616",
-                "lng": "-34.87243",
+                "district": "Cordeiro",
+                "lat": "-8.04928",
+                "lng": "-34.92304",
                 "city": "Recife",
                 "city_ibge": "2611606",
                 "ddd": "81"
@@ -204,20 +202,18 @@
             "MaximumApplications": 25,
             "CurrentApplications": 25,
             "Address": {
-                "cep": "50030210",
-                "address_type": "Rua",
-                "address_name": "da Guia",
-                "address": "Rua da Guia",
-                "number": "789",
-                "complement": "Térreo",
+                "cep": "52060000",
+                "address_type": "Avenida",
+                "address_name": "Parnamirim",
+                "address": "Avenida Parnamirim",
                 "state": "PE",
-                "district": "Recife",
-                "lat": "-8.06174",
-                "lng": "-34.87193",
+                "district": "Parnamirim",
+                "lat": "-8.0344",
+                "lng": "-34.90869",
                 "city": "Recife",
                 "city_ibge": "2611606",
                 "ddd": "81"
-            }
+              }
         }
     ]
 }
