@@ -61,17 +61,29 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
-
+    /* flex-flow: wrap; */
     .submit {
-      width: 21.8em;
+      width: 100%;
       margin-top: 2.5em;
       font-size: 1em;
+      border: 1px solid #259821;
       background-color: #259821;
       margin: auto;
-      padding: 1em;
+    }
+
+    .returnButton {
+      width: 33.3%;
+      .backButton {
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid #ef6b01;
+        color: #ef6b01;
+        font-size: 1em;
+      }
     }
 
     .addFunctionButton {
+      width: 33.3%;
       button {
         width: 100%;
         background-color: white;
@@ -81,9 +93,9 @@
     }
 
     .concludeButton {
+      width: 33.3%;
       button {
         width: 100%;
-        padding: 0 6em;
       }
     }
   }

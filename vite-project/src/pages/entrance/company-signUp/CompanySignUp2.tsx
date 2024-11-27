@@ -111,6 +111,11 @@ function CompanySignUp2() {
                 </div>
 
                 <div className="buttonContainer">
+                  <div className="returnButton">
+                    <Link to="/companySignUp1" className="linkStyle">
+                      <TextualButton text={"VOLTAR"} className="backButton" />
+                    </Link>
+                  </div>
                   <div className="addFunctionButton">
                     <TextualButton
                       text={"ADICIONAR FUNÇÃO"}
@@ -123,7 +128,7 @@ function CompanySignUp2() {
                   </div>
                   <div className="concludeButton">
                     <Link to="/home" className=" linkStyle">
-                    <TextualButton text={"CONCLUIR"} className="submit" />
+                      <TextualButton text={"CONCLUIR"} className="submit" />
                     </Link>
                   </div>
                 </div>
