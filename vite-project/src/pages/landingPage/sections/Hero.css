@@ -1,54 +1,172 @@
 .heroLandingPage {
-    background-image: url(../assets/bgHero.png);
+  background-image: url(../assets/bgHero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 0 13%;
+  min-height: 90vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  justify-content: center;
+  width: 100vw;
+  /* border: 3px solid pink; */
+}
+
+.heroLandingPage .text {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.heroLandingPage .text .title {
+  font-size: 3.75rem;
+  font-family: "Merriweather", serif;
+  max-width: 49rem;
+}
+
+.heroLandingPage .text .subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 32rem;
+}
+
+.heroLandingPage .buttonsCta {
+  display: flex;
+  flex-flow: wrap;
+  gap: 2.5rem;
+  justify-content: left;
+  /* border: 1px solid white; */
+}
+
+.heroLandingPage .buttonsCta .signUp,
+.seeAdvantages,
+.login {
+  padding: 0.75rem 1.5rem;
+  max-width: max-content;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.heroLandingPage .buttonsCta .signUp {
+  background-color: #ef6b01;
+}
+
+.heroLandingPage .buttonsCta .seeAdvantages {
+  background-color: #259821;
+}
+
+.heroLandingPage .buttonsCta .login {
+  background-color: #012369;
+}
+
+@media (max-width: 768px) {
+  .heroLandingPage {
+    /* background-image: url(../assets/bgHero.png); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 0 13%;
+    padding: 10% 13%;
     min-height: 90vh;
     color: white;
     display: flex;
     flex-direction: column;
     gap: 3.75rem;
     justify-content: center;
+    width: 100%;
 
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .title {
+        font-size: 3rem;
+        font-family: "Merriweather", serif;
+        max-width: 49rem;
+        padding: 0 0.5rem;
+      }
+      .subtitle {
+        font-size: 2rem;
+        font-weight: 300;
+        max-width: 32rem;
+        padding: 0 0.5rem;
+      }
+    }
+
+    .buttonsCta {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 10px;
+      flex-direction: column;
+
+      .signUp,
+      .seeAdvantages,
+      .login {
+        padding: 0rem 1.5rem;
+        max-width: max-content;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+  }
 }
 
-.heroLandingPage .text {
+@media (max-width: 430px) {
+  .heroLandingPage {
+    padding: 10% 3%;
+    min-height: 90vh;
+    color: white;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-}
+    gap: 3.75rem;
+    justify-content: center;
+    max-width: 100%;
 
-.heroLandingPage .text .title {
-    font-size: 3.75rem;
-    font-family: "Merriweather", serif;
-    max-width: 49rem;
-}
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      /* border: 1px solid white; */
 
-.heroLandingPage .text .subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    max-width: 32rem;
-}
+      .title {
+        font-size: 1.5rem;
+        font-family: "Merriweather", serif;
+        max-width: 49rem;
+      }
+      .subtitle {
+        font-size: 1.5rem;
+        font-weight: 300;
+        max-width: 32rem;
+      }
+    }
 
-.heroLandingPage .buttonsCta {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 2.5rem;
-    justify-content: flex-start;
-}
+    .buttonsCta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.9rem;
+      width: 100%;
+      height: 50%;
+      /* border: 1px solid white; */
 
-.heroLandingPage .buttonsCta .signUp, .seeAdvantages {
-    padding: 0.75rem 1.5rem;
-    max-width: max-content;
-    text-transform: uppercase;
-    font-weight: 600;
-}
 
-.heroLandingPage .buttonsCta .signUp {
-    background-color: #EF6B01;
-}
-
-.heroLandingPage .buttonsCta .seeAdvantages {
-    background-color: #259821;
+      .login{
+        width: 114.9px;
+        height: 5vh;
+      }
+      .signUp,
+      .seeAdvantages {
+        text-transform: uppercase;
+        font-weight: 600;
+        height: 5vh;
+        width: 100vw;
+        font-size: 0.5rem;
+        border: 1px solid transparent;
+      }
+    }
+  }
 }
