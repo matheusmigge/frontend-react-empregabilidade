@@ -121,9 +121,7 @@ function CompanySignUp2() {
                       text={"ADICIONAR FUNÇÃO"}
                       className="submit"
                       imageUrl={greenPlus}
-                      onClick={(event: React.MouseEvent<Element, MouseEvent>) =>
-                        handleOpenModal(event)
-                      }
+                      onClick={() => handleOpenModal}
                     />
                   </div>
                   <div className="concludeButton">

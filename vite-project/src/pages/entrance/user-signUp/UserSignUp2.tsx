@@ -165,10 +165,12 @@ function UserSignUp2() {
               </Link>
             </div>
             <div className="registerCurriculumButton">
+              <Link to="/userCurriculum" className="linkStyle">
               <TextualButton
                 text={"CADASTRAR CURRICULO"}
                 className="submit"
               ></TextualButton>
+              </Link>
             </div>
             <div className="finishLaterButton">
               <Link to="/home" className="linkStyle">
