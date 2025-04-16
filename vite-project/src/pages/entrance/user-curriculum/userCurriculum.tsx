@@ -14,16 +14,26 @@ function UserCurriculum() {
     return (
       <>
       <div>
-
-      <Link to="/userSignUp2" className="linkStyle">
-       <Header
-        title="Editar Perfil"
-        imgUrl1={bellIcon}
-        imgUrl2={userIcon}
-        imgUrl={goBackVector}
-        ></Header>;
-    </Link>
+        <Link to="/userSignUp2" className="linkStyle">
+          <Header
+            imgUrl1={bellIcon}
+            imgUrl2={userIcon}
+            imgUrl={goBackVector}
+          ></Header>
+        </Link>
       </div>
+      
+      <body className="body-container">
+        <section className="titleContainer">
+          <h1 className="curriculumTitle">Preenchimento</h1>
+          <div className="blueBar">
+            
+          </div>
+        </section>
+      </body>
+
+
+
       </>
     );
   }

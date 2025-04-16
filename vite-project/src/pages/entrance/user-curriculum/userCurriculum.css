@@ -1,0 +1,20 @@
+.blueBar{
+    background-color: #012369;
+    padding: 10px;
+    border-radius: 50px;
+    width: 550px;
+    height: 25px;
+}
+
+.curriculumTitle{
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: 600; ;
+}
+
+.titleContainer{
+    width: 65%;
+    height: 13%;
+    justify-items: start;
+    align-content: end;
+}
