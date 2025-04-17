@@ -1,20 +1,95 @@
+/* Titulo e barra separadora */
+
+
 .blueBar{
     background-color: #012369;
     padding: 10px;
     border-radius: 50px;
-    width: 550px;
+    width: 800px;
     height: 25px;
+    margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .curriculumTitle{
     font-size: 40px;
     margin-left: 10px;
-    font-weight: 600; ;
+    font-weight: 600;
+    font-weight: bold;;
 }
 
 .titleContainer{
     width: 65%;
     height: 13%;
-    justify-items: start;
+    justify-items: center;
     align-content: end;
+    margin-top: 30px;
 }
+
+/* Preenchimento de Dados */
+
+.curriculumAccordionContainer{
+   height: 580px; 
+   width: 960px;
+}
+
+.curriculumAccordionContainer1{
+    height: 560px; 
+    width: 960px;
+    margin-top: 80px;
+ }
+
+.curriculumFormContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto; 
+}
+
+.curriculumAccordionText{
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: -40px;
+    margin-bottom: -20px;
+} 
+
+.curriculumFormField{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+} 
+
+.curriculumInputField{
+    width: 100%;
+    padding: 0em 2em;
+    background-color: #f2f2f2;
+    border-radius: 2em;
+    border: none;
+    margin-bottom: 0.5em;
+    font-size: 17px;
+    height: 50px;
+}
+
+.curriculumFormFieldProf{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.curriculumInputFieldProf{
+    width: 100%;
+    padding: 0em 2em;
+    background-color: #f2f2f2;
+    border-radius: 2em;
+    border: none;
+    margin-bottom: 0.5em;
+    font-size: 17px;
+    height: 200px;
+}
+
+
+
+
+
+    

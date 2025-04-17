@@ -3,6 +3,7 @@
   background-color: #f2f2f2;
 
   .accordionHeader {
+    font-size: 25px;
     display: flex;
     padding-left: 2em;
     font-weight: bold;
