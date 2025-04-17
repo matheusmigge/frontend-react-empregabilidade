@@ -55,11 +55,13 @@
 @media (max-width: 1374px) and (min-width: 769px) {
   .imgContainer{
     display: none;
+
+    .bgImg{
+      display: none;
+    }
   }
   
-  .bgImg{
-    display: none;
-  }
+  
 }
 
 @media (max-width: 768px) {

@@ -15,7 +15,7 @@
   align-items: center;
   text-align: center;
   width: 40%;
-  padding: .1rem ;
+  padding: 0.1rem;
 }
 
 .partinerCompanies .gridCards {
@@ -53,41 +53,41 @@
     justify-content: center;
     gap: 3rem;
     max-width: 100vw;
-  }
 
-  .partinerCompanies .title {
-    margin-top: 3rem;
-    font-size: 1.5rem;
-    font-weight: 500;
-    align-items: center;
-    text-align: center;
-    width: 100vw;
-    /* border: 1px solid black; */
-  }
+    .title {
+      margin-top: 3rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      align-items: center;
+      text-align: center;
+      width: 100vw;
+      /* border: 1px solid black; */
+    }
 
-  .partinerCompanies .gridCards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.5rem;
-  }
+    .gridCards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
 
-  .partinerCompanies .cardCompanie {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 3rem;
-    background-color: white;
-    box-shadow: 6px 7px 28px -3px rgba(0, 0, 0, 0.25);
-    border-radius: 1.25rem;
-    width: 80%;
-    height: 20vh;
+    .cardCompanie {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 3rem;
+      background-color: white;
+      box-shadow: 6px 7px 28px -3px rgba(0, 0, 0, 0.25);
+      border-radius: 1.25rem;
+      width: 80%;
+      height: 20vh;
 
-    .imgLogo {
-      width: 100%;
-      height: 100%;
+      .imgLogo {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
@@ -101,42 +101,42 @@
     justify-content: center;
     gap: 2rem;
     max-width: 100vw;
-  }
 
-  .partinerCompanies .title {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -1px;
-    width: 100vw;
-    padding: 0 1rem;
-  }
+    .title {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      align-items: center;
+      text-align: center;
+      letter-spacing: -1px;
+      width: 100vw;
+      padding: 0 1rem;
+    }
 
-  .partinerCompanies .gridCards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-  }
+    .gridCards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
 
-  .partinerCompanies .cardCompanie {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    background-color: white;
-    box-shadow: 6px 7px 28px -3px rgba(0, 0, 0, 0.25);
-    border-radius: 1.25rem;
-    width: 70%;
-    height: 15vh;
+    .cardCompanie {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      background-color: white;
+      box-shadow: 6px 7px 28px -3px rgba(0, 0, 0, 0.25);
+      border-radius: 1.25rem;
+      width: 70%;
+      height: 15vh;
 
-    .imgLogo {
-      width: 100%;
-      height: 100%;
+      .imgLogo {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
