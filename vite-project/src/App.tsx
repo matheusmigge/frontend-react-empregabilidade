@@ -8,20 +8,22 @@ import CompanySignUp1 from "./pages/entrance/company-signUp/CompanySignUp1";
 import CompanySignUp2 from "./pages/entrance/company-signUp/CompanySignUp2";
 import Home from "./pages/home/Home";
 import Vacancy from "./pages/vacancy/Vacancy";
+import CadastroDeVaga from "./pages/cadastroDeVaga/CadastroDeVaga";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<LandingPage/>}/>
-          <Route path="/entrance" element={<Entrance/>}/>
-          <Route path="/userSignUp1" element={<UserSignUp1/>}/>
-          <Route path="/userSignUp2" element={<UserSignUp2/>}/>
-          <Route path="/companySignUp1" element={<CompanySignUp1/>}/>
-          <Route path="/companySignUp2" element={<CompanySignUp2/>}/>
-          <Route path="/home" element={<Home/>} />
-          <Route path="/vacancy" element={<Vacancy/>}/>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/entrance" element={<Entrance />} />
+          <Route path="/userSignUp1" element={<UserSignUp1 />} />
+          <Route path="/userSignUp2" element={<UserSignUp2 />} />
+          <Route path="/companySignUp1" element={<CompanySignUp1 />} />
+          <Route path="/companySignUp2" element={<CompanySignUp2 />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/vacancy" element={<Vacancy />} />
+          <Route path="/cadastroDeVaga" element={<CadastroDeVaga />} />
         </Routes>
       </Router>
     </>
@@ -29,3 +31,4 @@ function App() {
 }
 
 export default App;
+
