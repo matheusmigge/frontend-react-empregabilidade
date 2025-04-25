@@ -7,10 +7,7 @@ import goBackVector from "../../vacancy/assets/goBackVector.svg";
 import { Link } from "react-router-dom";
 import AccordionBox from "../../vacancy/accordionBox/AccordionBox";
 
-
-
-
-function UserCurriculum() {
+export default function UserCurriculum () {
     return (
       <>
       <div>
@@ -131,10 +128,8 @@ function UserCurriculum() {
 
           </div>
 
-          <div className="curriculumAccordionContainer1">
-
+          <div className="curriculumAccordionContainer2">
             <AccordionBox title="Resumo profissional">
-
               <div className="curriculumFormContainer">
               
                 <div  className="curriculumFormFieldProf">
@@ -145,10 +140,91 @@ function UserCurriculum() {
             </AccordionBox>
           </div>
 
-        </section>
+          <div className="curriculumAccordionContainer3">
+            <AccordionBox title="Experiências profissionais">
+
+                <div className="curriculumFormContainer1">
+
+                <div className="curriculumExperienceField">
+
+                  <p className="curriculumAccordionText">Empresa</p>
+                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+
+                  <p className="curriculumAccordionText">Cargo</p>
+                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+
+                  <p className="curriculumAccordionText">Período</p>
+                  <div>
+                  <input type="date" className="curriculumInputFieldExp" />
+                  
+                  <input type="date" className="curriculumInputFieldExp" />
+                  </div>
+
+                  <p className="curriculumAccordionText">resumo</p>
+                  <textarea name="" className="curriculumInputFieldProfExp" placeholder="Faça um breve resumo sobre suas funções na empresa!"></textarea>
+
+                  <div className="botoes-container">
+                    <button className="btn excluir">
+                      <span className="icon">🗑️</span> Excluir
+                    </button>
+                    <button className="btn editar">
+                      <span className="icon">✏️</span> Editar
+                    </button>
+                    <button className="btn confirmar">
+                      <span className="icon">✓</span> Confirmar
+                    </button>
+                  </div>
+
+                </div>
+
+                <div className="curriculumExperienceField">
+
+                  <p className="curriculumAccordionText">Empresa</p>
+                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+
+                  <p className="curriculumAccordionText">Cargo</p>
+                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+
+                  <p className="curriculumAccordionText">Período</p>
+                  <div>
+                  <input type="date" className="curriculumInputFieldExp" />
+                  
+                  <input type="date" className="curriculumInputFieldExp" />
+                  </div>
+
+                  <p className="curriculumAccordionText">Resumo</p>
+                  <textarea name="" className="curriculumInputFieldProfExp" placeholder="Faça um breve resumo sobre suas funções na empresa!"></textarea>
+                  
+                  <div className="botoes-container">
+                    <button className="btn excluir">
+                      <span className="icon">🗑️</span> Excluir
+                    </button>
+                    <button className="btn editar">
+                      <span className="icon">✏️</span> Editar
+                    </button>
+                    <button className="btn confirmar">
+                      <span className="icon">✓</span> Confirmar
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+              <div className="add-button-container">
+                  <button className="add-button">＋</button>
+                </div>
+
+            </AccordionBox>
+          </div>
+
+            
+      </section>
+        
+      
       </body>
       </>
     );
   }
+  
 
-  export default UserCurriculum;
+
