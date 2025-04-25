@@ -49,6 +49,11 @@
     width: 960px;
  }
 
+ .curriculumAccordionContainer4{
+  height: 1370px;
+  width: 960px;
+}
+
 .curriculumFormContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -151,6 +156,7 @@
   .botoes-container {
     display: flex;
     gap: 12px;
+    margin-top: 20px;
   }
   
   .btn {
@@ -183,4 +189,22 @@
   .confirmar{
     background-color: #10a836; 
   }
-    
+  
+  /* accordion formacao academica */
+
+  .curriculumInputFieldFa{
+    width: 100%;
+    padding: 0em 2em;
+    background-color: #ffffff;
+    border-radius: 2em;
+    border: none;
+    margin-bottom: 0.5em;
+    font-size: 17px;
+    height: 50px;
+  }
+
+  .curriculumFormContainerIe{
+    background-color: #ffffff;
+    padding: 2em 2em;
+    border-radius: 2em;
+  }
