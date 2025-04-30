@@ -97,3 +97,243 @@
   right: 0.5rem;
   height: 1.5rem;
 }
+
+@media (max-width: 1026px) and (min-width: 770px) {
+  .header-container {
+    height: auto;
+    padding: 10px 20px;
+
+    .header-container .left-Header,
+    .header-container .right-Header {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .header-container .left-Header {
+      margin-bottom: 8px;
+      /* border: 1px solid white; */
+      width: 50%;
+      height: 42px;
+      padding: 0.5rem;
+    }
+
+    .header-container .right-Header {
+      /* border: 1px solid white; */
+      margin-bottom: 0.7rem;
+      width: 50%;
+      height: 42px;
+      /* height: auto; */
+      padding: 1rem;
+    }
+
+    .input-with-icon {
+      width: 100%;
+      height: 5vh;
+      /* border: 1px solid white; */
+    }
+
+    .header-container .input-Src {
+      width: 15vw;
+      margin-right: auto;
+      display: none;
+    }
+
+    .header-container .icons-container {
+      justify-content: center;
+      gap: 1em;
+      /* border: 1px solid white; */
+    }
+
+    .header-container .searchIcon {
+      width: 60%;
+      height: 100%;
+      /* display: none; */
+      /* border: 1px solid white; */
+    }
+
+    .header-container .title-Header {
+      width: 100%;
+      margin: 0;
+      font-size: 1.5em;
+      text-align: center;
+      /* border: 1px solid white; */
+    }
+
+    .header-container .menu {
+      display: block;
+      margin-right: 1rem;
+      /* border: 1px solid white; */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    height: auto;
+    padding: 10px 20px;
+
+    .header-container .left-Header,
+    .header-container .right-Header {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .header-container .left-Header {
+      margin-bottom: 8px;
+      /* border: 1px solid white; */
+      width: 50%;
+      height: 42px;
+      padding: 0.5rem;
+    }
+
+    .header-container .right-Header {
+      /* border: 1px solid white; */
+      margin-bottom: 0.7rem;
+      width: 50%;
+      height: 42px;
+      height: auto;
+      /* padding: .2rem; */
+    }
+
+    .input-with-icon {
+      width: 100%;
+      height: 5vh;
+      /* border: 1px solid white; */
+    }
+
+    .header-container .input-Src {
+      width: 15vw;
+      margin-right: auto;
+      display: none;
+    }
+
+    .header-container .icons-container {
+      justify-content: center;
+      /* border: 1px solid white; */
+    }
+
+    .header-container .sino {
+      height: 2rem;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    .header-container .perfil {
+      height: 2rem;
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+    }
+
+    .header-container .searchIcon {
+      margin-left: 160px;
+      width: 1.5rem;
+      height: 1.5rem;
+      /* border: 1px solid white; */
+    }
+
+    .header-container .title-Header {
+      width: 100%;
+      margin: 0;
+      font-size: 1.3em;
+      text-align: center;
+      /* border: 1px solid white; */
+    }
+
+    .header-container .menu {
+      display: block;
+      margin-right: 1rem;
+      width: 2rem;
+      /* border: 1px solid white; */
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .header-container {
+    /* flex-direction: column; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 3;
+    /* padding: 0; */
+    /* border: 1px solid white; */
+
+    .header-container .left-Header,
+    .header-container .right-Header {
+      /* flex-direction: column; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      gap: 0.5rem;
+      /* margin: auto; */
+    }
+
+    .right-Header {
+      margin-bottom: 0.7rem;
+      /* border: 1px solid white; */
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .header-container .icons-container {
+      width: 50%;
+      /* border: 1px solid white; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .header-container .sino {
+      height: 1.2rem;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .header-container .perfil {
+      height: 1.2rem;
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+    }
+    .input-with-icon {
+      width: 100%;
+      height: 5vh;
+      margin-left: 1rem;
+      padding: 0.5rem;
+      /* border: 1px solid white; */
+      /* display: none; */
+    }
+    .header-container .input-Src {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin: 0;
+      display: none;
+    }
+    .header-container .title-Header {
+      font-size: 1em;
+    }
+
+    .header-container .menu {
+      display: block;
+      margin-right: 0;
+      /* border: 1px solid white; */
+      width: 1rem;
+    }
+
+    .header-container .searchIcon {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0;
+      /* border: 1px solid white; */
+    }
+  }
+}
