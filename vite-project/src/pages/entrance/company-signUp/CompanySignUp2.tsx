@@ -51,7 +51,13 @@ function CompanySignUp2() {
               onClick={() => handleClick("candidate")}
             />
           </div>
+          <div className="back-to-lp">
+            <p>
+              Voltar ao <Link to="/">Início</Link>
+            </p>
+          </div>
         </section>
+        
         <section className="rightSide">
           <div className="company-register">
             <div className="titleContainer">
@@ -178,6 +184,20 @@ function CompanySignUp2() {
               </div>
             </div>
           )}
+
+          <div className="loginContainer">
+            <p>
+              Já tem uma conta? <Link to="/entrance">Entrar</Link>
+            </p>
+          </div>
+          <div className="informationContainer">
+            <p>
+              Ao criar uma conta, você concorda com nossos{" "}
+              <a href="">Termos de Serviço</a>,{" "}
+              <a href="">Política de Privacidade</a> e nossas{" "}
+              <a href="">Configurações de Notificação padrão</a>.
+            </p>
+          </div>
         </section>
       </body>
     </>

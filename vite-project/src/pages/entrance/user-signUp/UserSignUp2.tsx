@@ -40,14 +40,20 @@ function UserSignUp2() {
               onClick={() => handleClick("candidate")}
             />
           </div>
+          <div className="back-to-lp">
+            <p>
+              Voltar ao <Link to="/">Início</Link>
+            </p>
+          </div>
         </section>
+
         <section className="rightSide">
           <div className="titleContainer">
             <h1>CADASTRE-SE</h1>
           </div>
 
           <form className="formContainer">
-            {/* LADO ESQUERDO */}
+            {/* PRIMEIRA LINHA */}
             <div className="formContent">
               <div className="inputContainer">
                 <div className="inputForm">
@@ -62,49 +68,27 @@ function UserSignUp2() {
               </div>
               <div className="inputContainer">
                 <div className="inputForm">
-                  <label htmlFor="user-neighborhood">Bairro</label>
-                  <input
-                    type="text"
-                    id="user-neighborhood"
-                    name="user-neighborhood"
-                    placeholder="Informe seu bairro aqui"
-                  />
-                </div>
-              </div>
-              <div className="inputContainer">
-                <div className="inputForm" id="stateInput">
-                  <label htmlFor="user-state">Estado</label>
-                  <input
-                    type="text"
-                    id="user-state"
-                    name="user-state"
-                    placeholder="Informe seu estado aqui"
-                  />
-                </div>
-              </div>
-              <div className="inputContainer">
-                <div className="inputForm">
-                  <label htmlFor="user-linkedin">LinkedIn (Opcional)</label>
-                  <input
-                    type="text"
-                    id="user-linkedin"
-                    name="user-linkedin"
-                    placeholder="www.linkedin.com/in/seuperfil"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* LADO DIREITO */}
-            <div className="formContent">
-              <div className="inputContainer">
-                <div className="inputForm">
                   <label htmlFor="user-adress">Rua</label>
                   <input
                     type="text"
                     id="user-adress"
                     name="user-adress"
                     placeholder="Informe sua rua aqui"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* SEGUNDA LINHA */}
+            <div className="formContent">
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-neighborhood">Bairro</label>
+                  <input
+                    type="text"
+                    id="user-neighborhood"
+                    name="user-neighborhood"
+                    placeholder="Informe seu bairro aqui"
                   />
                 </div>
               </div>
@@ -116,6 +100,21 @@ function UserSignUp2() {
                     id="user-city"
                     name="user-city"
                     placeholder="Informe sua cidade aqui"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* TERCEIRA LINHA */}
+            <div className="formContent">
+              <div className="inputContainer">
+                <div className="inputForm" id="stateInput">
+                  <label htmlFor="user-state">Estado</label>
+                  <input
+                    type="text"
+                    id="user-state"
+                    name="user-state"
+                    placeholder="Informe seu estado aqui"
                   />
                 </div>
               </div>
@@ -139,10 +138,33 @@ function UserSignUp2() {
                   />
                 </div>
               </div>
+            </div>
+
+            {/* QUARTA LINHA */}
+            <div className="formContent">
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-linkedin">
+                    LinkedIn{" "}
+                    <span style={{ color: "#adabc3", fontSize: "60%" }}>
+                      (Opcional)
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    id="user-linkedin"
+                    name="user-linkedin"
+                    placeholder="www.linkedin.com/in/seuperfil"
+                  />
+                </div>
+              </div>
               <div className="inputContainer">
                 <div className="inputForm">
                   <label htmlFor="user-portfolio">
-                    Seu portifólio (Opcional)
+                    Seu portifólio{" "}
+                    <span style={{ color: "#adabc3", fontSize: "60%" }}>
+                      (Opcional)
+                    </span>
                   </label>
                   <input
                     type="text"
@@ -172,10 +194,7 @@ function UserSignUp2() {
             </div>
             <div className="finishLaterButton">
               <Link to="/home" className="linkStyle">
-              <TextualButton
-                text={"FINALIZAR DEPOIS"}
-                className="submit"
-              />
+                <TextualButton text={"FINALIZAR DEPOIS"} className="submit" />
               </Link>
             </div>
           </div>

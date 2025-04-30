@@ -3,9 +3,11 @@ import TextualButton from "../../../components/textual-button/TextualButton";
 import logoCompletaVetor from "../../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
-import { useState } from "react";
+import imageUploadVector from "./assets/imageUploadVector.svg";
+import { useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import SymbolButton from "../../../components/symbol-button/SymbolButton";
 
 function CompanySignUp1() {
   const endPoint = "http://localhost:3000/companies";
@@ -20,7 +22,7 @@ function CompanySignUp1() {
   const createCompany = async () => {
     try {
       const response = await axios.post(`${endPoint}`, newCompany);
-      console.log("Empesa criada: ", response.data);
+      console.log("Empresa criada: ", response.data);
       setNewCompany({
         name: "",
         email: "",
@@ -38,6 +40,24 @@ function CompanySignUp1() {
     setRegisterType(type);
   };
 
+  // Estado e referência para upload da logo
+  const [logo, setLogo] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Aciona o input de arquivo ao clicar no botão
+  const handleImageUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  // Captura a imagem selecionada
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const imageUrl = URL.createObjectURL(file);
+      setLogo(imageUrl);
+    }
+  };
+
   return (
     <>
       <body className="body-container">
@@ -48,7 +68,7 @@ function CompanySignUp1() {
           <div className="buttonContainer">
             <TextualButton
               className={`enterpriseButton ${
-                registerType == "company" ? "selected" : ""
+                registerType === "company" ? "selected" : ""
               }`}
               text="Sou empresa"
               imageUrl={maletaVetor}
@@ -56,12 +76,17 @@ function CompanySignUp1() {
             />
             <TextualButton
               className={`candidateButton ${
-                registerType == "candidate" ? "selected" : ""
+                registerType === "candidate" ? "selected" : ""
               }`}
               text="Sou candidato"
               imageUrl={usuarioVetor}
               onClick={() => handleClick("candidate")}
             />
+          </div>
+          <div className="back-to-lp">
+            <p>
+              Voltar ao <Link to="/">Início</Link>
+            </p>
           </div>
         </section>
 
@@ -136,23 +161,24 @@ function CompanySignUp1() {
                 </div>
 
                 <div className="inputContainer">
-                  <div className="inputForm">
-                    <label htmlFor="company-password">Senha</label>
-                    <input
-                      type="password"
-                      id="company-password"
-                      name="company-password"
-                      placeholder="Crie uma senha para sua empresa"
-                    />
-                  </div>
-                  <div className="inputForm">
-                    <label htmlFor="company-password">Confirme sua senha</label>
-                    <input
-                      type="password"
-                      id="company-password"
-                      name="company-password"
-                      placeholder="Confirme a senha da sua empresa"
-                    />
+                  <div className="inputForm" id="imageUploadContainer">
+                    <label className="uploadLabel">Logo</label>
+                    <div
+                      className="uploadWrapper"
+                      onClick={handleImageUploadClick}
+                    >
+                      <SymbolButton
+                        imageUrl={logo || imageUploadVector}
+                        className="imageUploadButton"
+                      />
+                      <input
+                        type="file"
+                        accept="image/*"
+                        ref={fileInputRef}
+                        className="hiddenFileInput"
+                        onChange={handleImageChange}
+                      />
+                    </div>
                   </div>
                 </div>
 

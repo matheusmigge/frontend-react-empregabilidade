@@ -1,27 +1,20 @@
 .titleContainer {
-  @media (max-width: 768px) {
-    flex-direction: column;
-    font-size: 0.8em;
-    padding: 1em;
-  }
+  margin-bottom: 1vh;
 }
 .formContainer {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2em;
-  padding: 1em;
 
   input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
   .formContent {
-    width: 50%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    gap: 0.5em;
   }
   input[type="number"] {
     -moz-appearance: textfield;
@@ -31,7 +24,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 1em;
+    gap: 1vw;
   }
 
   .inputForm {
@@ -62,7 +55,8 @@
   }
   input {
     width: 100%;
-    padding: 1.25em 2.5em;
+    height: 6vh;
+    padding: 0 8%;
     background-color: #f2f2f2;
     border-radius: 2em;
     border: none;
@@ -70,6 +64,7 @@
   }
   input[type="date"] {
     color: #adabc3;
+    padding: 1.25em 2.5em;
   }
   input::placeholder {
     color: #adabc3;
@@ -77,55 +72,59 @@
 }
 
 .a {
-  width: 100%;
-  padding: 0 1em;
+  width: 80%;
+  margin-top: 2vh;
 
   .submit {
-    width: 50%;
+    height: 6vh;
+    padding: 0;
     background-color: #259821;
-    font-size: 1em;
+    font-size: medium;
   }
 }
 
 .optionsContainer {
   display: flex;
-  gap: 2em;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2vh;
   font-size: 0.8em;
-
-  .submit {
-    width: 15em;
-  }
+  margin-top: 2vh;
+  width: 100%;
 
   .goBackButton {
     button {
       color: #ef6b01;
       border: 2px solid #ef6b01;
       background-color: white;
+      width: 12vw;
+      height: 6vh;
     }
   }
 
   .registerCurriculumButton {
     button {
       background-color: #259821;
+      width: 12vw;
+      height: 6vh;
     }
   }
 
   .finishLaterButton {
     button {
       background-color: #012369;
+      width: 12vw;
+      height: 6vh;
     }
   }
 }
 
 .buttonContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   gap: 2em;
-  justify-content: center;
   margin: 1em;
 
   .symbol-button {
@@ -153,10 +152,35 @@
 .informationContainer {
   color: #959595;
   text-align: center;
-  margin: 1em;
-  padding: 0 8em;
 
   a {
     color: #959595;
+  }
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    gap: 0;
+
+    .formContent {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .a {
+    .submit {
+      font-size: 80%;
+    }
+  }
+
+  .optionsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+
+    .submit{
+      padding: 1vh 20vw;
+    }
   }
 }

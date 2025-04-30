@@ -28,7 +28,7 @@ function UserSignIn() {
             placeholder="Digite sua senha"
           />
           <Link to="/home" className="linkStyle">
-          <TextualButton text={"ENTRAR"} className="submit"></TextualButton>
+            <TextualButton text={"ENTRAR"} className="submit"></TextualButton>
           </Link>
         </form>
 

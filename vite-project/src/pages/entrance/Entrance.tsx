@@ -6,6 +6,7 @@ import TextualButton from "../../components/textual-button/TextualButton";
 import UserSignIn from "./user-signIn/UserSignIn";
 import CompanySignIn from "./company-signIn/CompanySignIn";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Entrance() {
   const [registerType, setRegisterType] = useState("candidate");
@@ -38,6 +39,11 @@ function Entrance() {
               imageUrl={usuarioVetor}
               onClick={() => handleClick("candidate")}
             />
+          </div>
+          <div className="back-to-lp">
+            <p>
+              Voltar ao <Link to="/">Início</Link>
+            </p>
           </div>
         </section>
 

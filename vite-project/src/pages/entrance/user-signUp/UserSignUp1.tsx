@@ -39,6 +39,11 @@ function UserSignUp1() {
               onClick={() => handleClick("candidate")}
             />
           </div>
+          <div className="back-to-lp">
+            <p>
+              Voltar ao <Link to="/">Início</Link>
+            </p>
+          </div>
         </section>
 
         <section className="rightSide">
@@ -47,7 +52,8 @@ function UserSignUp1() {
           </div>
 
           <form className="formContainer">
-            {/* LADO ESQUERDO */}
+            
+            {/* PRIMEIRA LINHA */}
             <div className="formContent">
               <div className="inputContainer">
                 <div className="inputForm">
@@ -62,15 +68,43 @@ function UserSignUp1() {
               </div>
               <div className="inputContainer">
                 <div className="inputForm">
-                  <label htmlFor="user-cpf">CPF</label>
+                  <label htmlFor="user-surname">Sobrenome</label>
                   <input
-                    type="number"
-                    id="user-cpf"
-                    name="user-cpf"
-                    placeholder="000.000.000-00"
+                    type="text"
+                    id="user-surname"
+                    name="user-surname"
+                    placeholder="Digite seu sobrenome"
                   />
                 </div>
               </div>
+            </div>
+
+            {/* SEGUNDA LINHA */}
+            <div className="formContent">
+              <div className="inputForm">
+                <label htmlFor="user-cpf">CPF</label>
+                <input
+                  type="number"
+                  id="user-cpf"
+                  name="user-cpf"
+                  placeholder="000.000.000-00"
+                />
+              </div>
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-email">Email</label>
+                  <input
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    placeholder="Informe seu email"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* TERCEIRA LINHA */}
+            <div className="formContent">
               <div className="inputContainer">
                 <div className="inputForm">
                   <label htmlFor="user-phone">Telefone</label>
@@ -84,48 +118,26 @@ function UserSignUp1() {
               </div>
               <div className="inputContainer">
                 <div className="inputForm">
+                  <label htmlFor="user-birth-date">Data de nascimento</label>
+                  <input
+                    type="date"
+                    id="user-birth-date"
+                    name="user-birth-date"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* QUARTA LINHA */}
+            <div className="formContent">
+              <div className="inputContainer">
+                <div className="inputForm">
                   <label htmlFor="user-password">Senha</label>
                   <input
                     type="password"
                     id="user-password"
                     name="user-password"
                     placeholder="Digite sua senha"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* LADO DIREITO */}
-            <div className="formContent">
-              <div className="inputContainer">
-                <div className="inputForm">
-                  <label htmlFor="user-surname">Sobrenome</label>
-                  <input
-                    type="text"
-                    id="user-surname"
-                    name="user-surname"
-                    placeholder="Digite seu sobrenome"
-                  />
-                </div>
-              </div>
-              <div className="inputContainer">
-                <div className="inputForm">
-                  <label htmlFor="user-email">Email</label>
-                  <input
-                    type="email"
-                    id="user-email"
-                    name="user-email"
-                    placeholder="Informe seu email"
-                  />
-                </div>
-              </div>
-              <div className="inputContainer">
-                <div className="inputForm">
-                  <label htmlFor="user-birth-date">Data de nascimento</label>
-                  <input
-                    type="date"
-                    id="user-birth-date"
-                    name="user-birth-date"
                   />
                 </div>
               </div>
