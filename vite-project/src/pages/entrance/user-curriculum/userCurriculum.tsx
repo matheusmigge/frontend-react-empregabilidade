@@ -217,7 +217,7 @@ export default function UserCurriculum () {
             </AccordionBox>
           </div>
 
-          <div className="curriculumAccordionContainer3">
+          <div className="curriculumAccordionContainer5">
             <AccordionBox title="Formação acadêmica">
 
               <div className="curriculumFormContainerIe">
@@ -246,6 +246,32 @@ export default function UserCurriculum () {
 
             </AccordionBox>
           </div>
+
+          <div className="curriculumAccordionContainer6">
+
+            <AccordionBox title="Cursos e certificações">
+              <div className="curriculumFormContainerIe">
+              <p className="curriculumAccordionText">Nome do Curso/certificação</p>
+              <input type="text" className="curriculumInputFieldFa" placeholder="Informe a instituição de ensino" />
+              <p className="curriculumAccordionText">Ano de conclusão</p>
+              <input type="date" className="curriculumInputFieldExp" />
+
+              <div className="botoes-container">
+                    <button className="btn excluir">
+                      <span className="icon">🗑️</span> Excluir
+                    </button>
+                    <button className="btn editar">
+                      <span className="icon">✏️</span> Editar
+                    </button>
+
+                  </div>
+              
+                  </div>
+            </AccordionBox>
+
+            </div>
+
+          
 
             
       </section>

@@ -52,7 +52,19 @@
  .curriculumAccordionContainer4{
   height: 1370px;
   width: 960px;
+  
 }
+
+.curriculumAccordionContainer5{
+  height: 580px;
+  width: 960px;
+}
+
+.curriculumAccordionContainer6{
+  height: 580px;
+  width: 960px;
+}
+
 
 .curriculumFormContainer{
     display: grid;
