@@ -275,7 +275,7 @@ export default function UserCurriculum () {
             
             
             <div className="curriculumAccordionContainer">
-            <AccordionBox title="Idiomas">
+            <AccordionBox title="Línguas">
               <div className="curriculumFormContainerIe">
               <p className="curriculumAccordionText">Idioma</p>
                 <select className="curriculumInputFieldFa">
@@ -308,12 +308,60 @@ export default function UserCurriculum () {
             </AccordionBox>
           </div>
 
+          <div className="curriculumAccordionContainer">
+            <AccordionBox title="Habilidades e Competências">
+              <div className="curriculumFormContainerIe">
+                <p className="curriculumAccordionText">Habilidade</p>
+                <select className="curriculumInputFieldFa">
+                  <option value="comunicacao">Comunicação</option>
+                  <option value="trabalho-em-equipe">Trabalho em equipe</option>
+                  <option value="lideranca">Liderança</option>
+                  <option value="resolucao-de-problemas">Resolução de problemas</option>
+                  <option value="criatividade">Criatividade</option>
+                  <option value="adaptabilidade">Adaptabilidade</option>
+                  <option value="pensamento-critico">Pensamento crítico</option>
+                  <option value="gestao-de-tempo">Gestão de tempo</option>
+                </select>
+
+                <p className="curriculumAccordionText">Nível</p>
+                <select className="curriculumInputFieldFa">
+                  <option value="iniciante">Iniciante</option>
+                  <option value="intermediario">Intermediário</option>
+                  <option value="avancado">Avançado</option>
+                  <option value="especialista">Especialista</option>
+                </select>
+
+                <div className="botoes-container">
+                  <button className="btn excluir">
+                    <span className="icon">🗑️</span> Excluir
+                  </button>
+                </div>
+              </div>
+
+              <div className="add-button-container">
+                <button className="add-button">＋</button>
+              </div>
+            </AccordionBox>
+          </div>
 
             </div>  
       </section>
         
       
       </body>
+      <footer>
+      <div className="finalization-bar">
+        <Link to="/userSignUp2" className="linkStyle">
+        <button className="btn-cancel">Cancelar</button>
+        </Link>
+
+        <Link to="/home" className="linkStyle">
+        <button className="btn-save">Salvar</button>
+        </Link>
+
+        </div>
+      </footer>
+
       </>
     );
   }

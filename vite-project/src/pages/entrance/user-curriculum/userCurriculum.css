@@ -188,3 +188,46 @@
     padding: 2em 2em;
     border-radius: 2em;
   }
+
+  .finalization-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .btn-cancel {
+    background-color: transparent;
+    color: #ff6600;
+    border: 2px solid #ff6600;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #ff6600;
+    color: #fff;
+  }
+  
+  .btn-save {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 23px;
+    cursor: pointer;
+
+  }
+  
+  .btn-save:hover {
+    background-color: #218838;
+  }
