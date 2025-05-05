@@ -1,3 +1,7 @@
+:root {
+  --verde: #28a745;
+}
+
 .cadastro-container {
   max-width: 900px;
   margin: 0 auto;
@@ -7,7 +11,7 @@
 }
 
 .header-placeholder {
-  height: 80px; /* espaço para o header */
+  height: 80px;
 }
 
 /* Labels */
@@ -38,11 +42,11 @@ input[type="text"],
 select,
 textarea {
   padding: 10px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  border: 1px solid var(--verde);
   border-radius: 6px;
   font-size: 14px;
   width: 100%;
+  background-color: #f2f2f2;
 }
 
 .input-full {
@@ -54,8 +58,9 @@ textarea {
   resize: vertical;
 }
 
+/* Banner upload */
 .banner-upload {
-  border: 2px dashed var(--verde);
+  border: 1px dashed var(--verde);
   background-color: #f2f2f2;
   padding: 30px;
   text-align: center;
@@ -63,20 +68,18 @@ textarea {
   border-radius: 10px;
   margin-bottom: 20px;
   cursor: pointer;
-
-  /* Novo: centralização total */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 150px; /* adiciona altura consistente */
+  height: 150px;
+  transition: background-color 0.3s ease;
 }
 
 .upload-icon {
-  font-size: 40px; /* pode ajustar o tamanho conforme necessário */
+  font-size: 40px;
   line-height: 1;
 }
-
 
 .upload-info {
   display: block;
@@ -87,7 +90,7 @@ textarea {
 
 /* Habilidades */
 .skills-box {
-  border: 1px solid #ddd;
+  border: 1px solid var(--verde);
   background-color: #f2f2f2;
   border-radius: 8px;
   padding: 15px;
@@ -102,14 +105,15 @@ textarea {
 }
 
 .skills-tags span {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 13px;
 }
 
+/* Botão "+" */
 .btn-add {
-  background-color: #3d91f4;
+  background-color: var(--verde);
   color: white;
   border: none;
   padding: 6px 12px;
@@ -118,9 +122,35 @@ textarea {
   cursor: pointer;
 }
 
+/* Novo botão "Adicionar" */
+.btn-confirm {
+  background-color: var(--verde);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-confirm:hover {
+  background-color: #1e7e34;
+}
+
+/* Novo input para habilidades */
+.input-skill {
+  padding: 6px 12px;
+  background-color: #ffffff;
+  border: 1px solid var(--verde);
+  border-radius: 20px;
+  font-size: 13px;
+  outline: none;
+}
+
 /* Endereço */
 .map-box {
-  border: 1px solid #ddd;
+  border: 1px solid var(--verde);
   border-radius: 8px;
   padding: 0px;
   margin-bottom: 20px;
@@ -139,15 +169,25 @@ textarea {
 }
 
 /* Etapas do processo */
-.process-box {
+.process-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
+}
+
+.process-box {
   background-color: #f2f2f2;
+  border: 1px solid var(--verde);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 .process-flow {
   display: flex;
   align-items: center;
-  justify-content: center; /* centraliza horizontalmente */
+  justify-content: center;
   gap: 10px;
   margin-top: 10px;
   text-align: center;
@@ -170,17 +210,17 @@ textarea {
 }
 
 .circle.green {
-  background-color: #28a745;
+  background-color: var(--verde);
 }
 
 .arrow {
   font-size: 20px;
 }
 
-/* Botões */
+/* Botões principais */
 .buttons {
   display: flex;
-  justify-content: center; /* centraliza os botões */
+  justify-content: center;
   gap: 16px;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -204,60 +244,6 @@ textarea {
   border-radius: 40px;
   font-size: 14px;
   cursor: pointer;
-}
-:root {
-  --verde: #28a745;
-}
-
-input[type="text"],
-select,
-textarea {
-  padding: 10px;
-  border: 1px solid var(--verde);
-  border-radius: 6px;
-  font-size: 14px;
-  width: 100%;
-}
-
-.banner-upload {
-  border: 1px dashed var(--verde);
-  padding: 30px;
-  text-align: center;
-  color: var(--verde);
-  border-radius: 10px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-
-.skills-box,
-.map-box {
-  border: 1px solid var(--verde);
-}
-
-
-.btn-add {
-  background-color: var(--verde);
-}
-
-.circle.green {
-  background-color: var(--verde);
-}
-
-
-.process-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.process-box {
-  border: 1px solid var(--verde);
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
 }
 
 
