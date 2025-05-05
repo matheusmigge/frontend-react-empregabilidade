@@ -29,40 +29,8 @@
 /* Preenchimento de Dados */
 
 .curriculumAccordionContainer{
-   height: 580px; 
+   
    width: 960px;
-}
-
-.curriculumAccordionContainer1{
-    height: 580px;
-    width: 960px;
-    grid-template-columns: 1fr 1fr;
- }
-
- .curriculumAccordionContainer2{
-    height: 380px;
-    width: 960px;
- }
-
- .curriculumAccordionContainer3{
-    height: 580px;
-    width: 960px;
- }
-
- .curriculumAccordionContainer4{
-  height: 1370px;
-  width: 960px;
-  
-}
-
-.curriculumAccordionContainer5{
-  height: 580px;
-  width: 960px;
-}
-
-.curriculumAccordionContainer6{
-  height: 580px;
-  width: 960px;
 }
 
 

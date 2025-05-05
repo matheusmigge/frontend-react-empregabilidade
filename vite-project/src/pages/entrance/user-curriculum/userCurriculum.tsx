@@ -76,7 +76,7 @@ export default function UserCurriculum () {
             </AccordionBox>
           </div>
 
-          <div className="curriculumAccordionContainer1">
+          <div className="curriculumAccordionContainer">
 
             <AccordionBox title="Informações adicionais">
 
@@ -128,7 +128,7 @@ export default function UserCurriculum () {
 
           </div>
 
-          <div className="curriculumAccordionContainer2">
+          <div className="curriculumAccordionContainer">
             <AccordionBox title="Resumo profissional">
               <div className="curriculumFormContainer">
               
@@ -140,7 +140,7 @@ export default function UserCurriculum () {
             </AccordionBox>
           </div>
 
-          <div className="curriculumAccordionContainer4">
+          <div className="curriculumAccordionContainer">
             <AccordionBox title="Experiências profissionais">
 
                 <div className="curriculumFormContainer1">
@@ -177,7 +177,7 @@ export default function UserCurriculum () {
 
                 </div>
 
-                <div className="curriculumExperienceField">
+                <div className="curriculumAccordionContainer">
 
                   <p className="curriculumAccordionText">Empresa</p>
                   <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
@@ -210,14 +210,14 @@ export default function UserCurriculum () {
 
               </div>
 
-              <div className="add-button-container">
+              <div className="curriculumAccordionContainer">
                   <button className="add-button">＋</button>
                 </div>
 
             </AccordionBox>
           </div>
 
-          <div className="curriculumAccordionContainer5">
+          <div className="curriculumAccordionContainer">
             <AccordionBox title="Formação acadêmica">
 
               <div className="curriculumFormContainerIe">
@@ -247,7 +247,7 @@ export default function UserCurriculum () {
             </AccordionBox>
           </div>
 
-          <div className="curriculumAccordionContainer6">
+          <div className="curriculumAccordionContainer">
 
             <AccordionBox title="Cursos e certificações">
               <div className="curriculumFormContainerIe">
@@ -267,13 +267,49 @@ export default function UserCurriculum () {
                   </div>
               
                   </div>
+                  
+                  <div className="add-button-container">
+                  <button className="add-button">＋</button>
+                </div>
             </AccordionBox>
-
-            </div>
-
-          
-
             
+            
+            <div className="curriculumAccordionContainer">
+            <AccordionBox title="Idiomas">
+              <div className="curriculumFormContainerIe">
+              <p className="curriculumAccordionText">Idioma</p>
+                <select className="curriculumInputFieldFa">
+                <option value="ingles">Inglês</option>
+                <option value="espanhol">Espanhol</option>
+                <option value="frances">Francês</option>
+                <option value="alemao">Alemão</option>
+                <option value="outro">Outro</option>
+              </select>
+
+              <p className="curriculumAccordionText">Nível</p>
+                <select className="curriculumInputFieldFa">
+                <option value="basico">Básico</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+                <option value="fluente">Fluente</option>
+              </select>
+
+              <div className="botoes-container">
+                <button className="btn excluir">
+                <span className="icon">🗑️</span> Excluir
+                </button>
+                 
+              </div>
+              </div>
+                  
+                <div className="add-button-container">
+                  <button className="add-button">＋</button>
+                </div>
+            </AccordionBox>
+          </div>
+
+
+            </div>  
       </section>
         
       
@@ -281,6 +317,6 @@ export default function UserCurriculum () {
       </>
     );
   }
-  
+
 
 
