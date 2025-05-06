@@ -25,6 +25,7 @@
     display: flex;
     justify-content: space-between;
     gap: 1vw;
+    margin-bottom: 0.5em;
   }
 
   .inputForm {
@@ -60,7 +61,6 @@
     background-color: #f2f2f2;
     border-radius: 2em;
     border: none;
-    margin-bottom: 0.5em;
   }
   input[type="date"] {
     color: #adabc3;
@@ -68,6 +68,46 @@
   }
   input::placeholder {
     color: #adabc3;
+  }
+  .passwordInputContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .passwordInputContainer input {
+    flex: 1;
+    height: 6vh;
+  }
+
+  .togglePasswordButton {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .togglePasswordButton img {
+    width: 100%;
+    height: 3vh;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .togglePasswordButton:active img {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+
+  .togglePasswordButton:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
   }
 }
 
@@ -179,7 +219,11 @@
     flex-direction: column;
     margin-top: 1vh;
 
-    .submit{
+    .goBackButton {
+      display: none;
+    }
+
+    .submit {
       padding: 1vh 20vw;
     }
   }

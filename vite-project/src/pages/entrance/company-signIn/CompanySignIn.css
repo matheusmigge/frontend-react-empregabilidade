@@ -33,13 +33,17 @@
     color: #adabc3;
   }
 
-  .submit {
-    height: 6vh;
-    padding: 0;
-    margin-top: 4vh;
+  .submitContainer {
+    margin: auto;
     width: 80%;
-    background-color: #259821;
-    height: 6vh;
+    
+    .submit {
+      height: 6vh;
+      padding: 0;
+      margin-top: 40px;
+      background-color: #259821;
+      font-size: 1em;
+    }
   }
 
   .hr-text {

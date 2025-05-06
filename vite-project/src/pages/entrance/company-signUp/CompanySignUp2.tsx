@@ -6,9 +6,17 @@ import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
 import greenPlus from "./assets/GreenPlus.svg";
 import crossVetor from "./assets/crossVector.svg";
+import showPasswordVector from "../../../assets/showPasswordVector.svg";
+import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import { Link } from "react-router-dom";
 
 function CompanySignUp2() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = (event: React.MouseEvent) => {
@@ -82,12 +90,26 @@ function CompanySignUp2() {
                   </div>
                   <div className="inputForm">
                     <label htmlFor="manager-password">Senha</label>
+                    <div className="passwordInputContainer">
                     <input
-                      type="password"
-                      id="manager-password"
-                      name="manager-password"
-                      placeholder="Senha para o gestor geral"
+                      type={showPassword ? "text" : "password"}
+                      id="user-password"
+                      name="user-password"
+                      placeholder="Senha do gestor geral"
                     />
+                    <button
+                      type="button"
+                      className="togglePasswordButton"
+                      onClick={togglePasswordVisibility}
+                    >
+                      <img
+                        src={
+                          showPassword ? hidePasswordVector : showPasswordVector
+                        }
+                        alt={showPassword ? "Esconder senha" : "Mostrar senha"}
+                      />
+                    </button>
+                  </div>
                   </div>
                 </div>
 
@@ -107,12 +129,26 @@ function CompanySignUp2() {
                   </div>
                   <div className="inputForm">
                     <label htmlFor="rh-password">Senha</label>
+                    <div className="passwordInputContainer">
                     <input
-                      type="password"
-                      id="rh-password"
-                      name="rh-password"
-                      placeholder="Senha para o gestor de RH"
+                      type={showPassword ? "text" : "password"}
+                      id="user-password"
+                      name="user-password"
+                      placeholder="Senha do gestor de RH"
                     />
+                    <button
+                      type="button"
+                      className="togglePasswordButton"
+                      onClick={togglePasswordVisibility}
+                    >
+                      <img
+                        src={
+                          showPassword ? hidePasswordVector : showPasswordVector
+                        }
+                        alt={showPassword ? "Esconder senha" : "Mostrar senha"}
+                      />
+                    </button>
+                  </div>
                   </div>
                 </div>
 

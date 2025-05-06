@@ -4,12 +4,20 @@ import logoCompletaVetor from "../../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
 import imageUploadVector from "./assets/imageUploadVector.svg";
+import SymbolButton from "../../../components/symbol-button/SymbolButton";
+import showPasswordVector from "../../../assets/showPasswordVector.svg";
+import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import { useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import SymbolButton from "../../../components/symbol-button/SymbolButton";
 
 function CompanySignUp1() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
+
   const endPoint = "http://localhost:3000/companies";
 
   const [newCompany, setNewCompany] = useState({
@@ -158,6 +166,50 @@ function CompanySignUp1() {
                       required
                     />
                   </div>
+                </div>
+
+                <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-password">Senha</label>
+                  <div className="passwordInputContainer">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      id="user-password"
+                      name="user-password"
+                      placeholder="Digite sua senha"
+                    />
+                    <button
+                      type="button"
+                      className="togglePasswordButton"
+                      onClick={togglePasswordVisibility}
+                    >
+
+                    </button>
+                  </div>
+                </div>
+                <div className="inputForm">
+                  <label htmlFor="user-password">Confirme sua senha</label>
+                  <div className="passwordInputContainer">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      id="user-password"
+                      name="user-password"
+                      placeholder="Digite sua senha"
+                    />
+                    <button
+                      type="button"
+                      className="togglePasswordButton"
+                      onClick={togglePasswordVisibility}
+                    >
+                      <img
+                        src={
+                          showPassword ? hidePasswordVector : showPasswordVector
+                        }
+                        alt={showPassword ? "Esconder senha" : "Mostrar senha"}
+                      />
+                    </button>
+                  </div>
+                </div>
                 </div>
 
                 <div className="inputContainer">
