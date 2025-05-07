@@ -7,6 +7,7 @@ import imageUploadVector from "./assets/imageUploadVector.svg";
 import SymbolButton from "../../../components/symbol-button/SymbolButton";
 import showPasswordVector from "../../../assets/showPasswordVector.svg";
 import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
+import InputMask from "react-input-mask";
 import { useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -123,11 +124,11 @@ function CompanySignUp1() {
                   </div>
                   <div className="inputForm">
                     <label htmlFor="cnpj">CNPJ</label>
-                    <input
-                      type="text"
+                    <InputMask
+                      mask="99.999.999/9999-99"
                       id="cnpj"
                       name="cnpj"
-                      placeholder="XX. XXX. XXX/0001-XX"
+                      placeholder="Digite seu CNPJ"
                       value={newCompany.CNPJ}
                       onChange={(e) =>
                         setNewCompany({ ...newCompany, CNPJ: e.target.value })
@@ -140,8 +141,8 @@ function CompanySignUp1() {
                 <div className="inputContainer">
                   <div className="inputForm">
                     <label htmlFor="phone">Telefone</label>
-                    <input
-                      type="tel"
+                    <InputMask
+                      mask="(99) 99999-9999"
                       id="phone"
                       name="phone"
                       placeholder="(00) 00000-0000"
@@ -158,7 +159,7 @@ function CompanySignUp1() {
                       type="email"
                       id="email"
                       name="email"
-                      placeholder="example@email.com"
+                      placeholder="exemplo@email.com"
                       value={newCompany.email}
                       onChange={(e) =>
                         setNewCompany({ ...newCompany, email: e.target.value })

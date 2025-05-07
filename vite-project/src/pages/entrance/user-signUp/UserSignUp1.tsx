@@ -8,10 +8,23 @@ import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
 import showPasswordVector from "../../../assets/showPasswordVector.svg";
 import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
+import InputMask from "react-input-mask";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function UserSignUp1() {
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    setState: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+    const value = event.target.value;
+    const filteredValue = value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
+    setState(filteredValue);
+  };
+
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -71,7 +84,9 @@ function UserSignUp1() {
                     type="text"
                     id="user-name"
                     name="user-name"
-                    placeholder="Digite seu email"
+                    placeholder="Digite seu nome"
+                    value={name}
+                    onChange={(e) => handleInputChange(e, setName)}
                   />
                 </div>
               </div>
@@ -83,6 +98,8 @@ function UserSignUp1() {
                     id="user-surname"
                     name="user-surname"
                     placeholder="Digite seu sobrenome"
+                    value={surname}
+                    onChange={(e) => handleInputChange(e, setSurname)}
                   />
                 </div>
               </div>
@@ -92,8 +109,8 @@ function UserSignUp1() {
             <div className="formContent">
               <div className="inputForm">
                 <label htmlFor="user-cpf">CPF</label>
-                <input
-                  type="number"
+                <InputMask
+                  mask="999.999.999-99"
                   id="user-cpf"
                   name="user-cpf"
                   placeholder="000.000.000-00"
@@ -117,8 +134,8 @@ function UserSignUp1() {
               <div className="inputContainer">
                 <div className="inputForm">
                   <label htmlFor="user-phone">Telefone</label>
-                  <input
-                    type="tel"
+                  <InputMask
+                    mask="(99) 99999-9999"
                     id="user-phone"
                     name="user-phone"
                     placeholder="(00) 00000-0000"
@@ -154,7 +171,12 @@ function UserSignUp1() {
                       className="togglePasswordButton"
                       onClick={togglePasswordVisibility}
                     >
-
+                      <img
+                        src={
+                          showPassword ? hidePasswordVector : showPasswordVector
+                        }
+                        alt={showPassword ? "Esconder senha" : "Mostrar senha"}
+                      />
                     </button>
                   </div>
                 </div>

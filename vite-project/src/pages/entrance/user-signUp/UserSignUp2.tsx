@@ -6,6 +6,7 @@ import SymbolButton from "../../../components/symbol-button/SymbolButton";
 import logoCompletaVetor from "../../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
+import InputMask from "react-input-mask";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -58,8 +59,8 @@ function UserSignUp2() {
               <div className="inputContainer">
                 <div className="inputForm">
                   <label htmlFor="user-cep">CEP</label>
-                  <input
-                    type="number"
+                  <InputMask
+                    mask="99999-999"
                     id="user-cep"
                     name="user-cep"
                     placeholder="00000-000"
@@ -115,7 +116,37 @@ function UserSignUp2() {
                     id="user-state"
                     name="user-state"
                     placeholder="Informe seu estado aqui"
+                    list="states"
                   />
+                  <datalist id="states">
+                    <option value="Acre (AC)" />
+                    <option value="Alagoas (AL)" />
+                    <option value="Amapá (AP)" />
+                    <option value="Amazonas (AM)" />
+                    <option value="Bahia (BA)" />
+                    <option value="Ceará (CE)" />
+                    <option value="Distrito Federal (DF)" /> 
+                    <option value="Espírito Santo (ES)" />
+                    <option value="Goiás (GO)" />
+                    <option value="Maranhão (MA)" />
+                    <option value="Mato Grosso (MT)" />
+                    <option value="Mato Grosso do Sul (MS)" />
+                    <option value="Minas Gerais (MG)" />
+                    <option value="Pará (PA)" />
+                    <option value="Paraíba (PB)" />
+                    <option value="Paraná (PR)" />
+                    <option value="Pernambuco (PE)" />
+                    <option value="Piauí (PI)" />
+                    <option value="Rio de Janeiro (RJ)" />
+                    <option value="Rio Grande do Norte (RN)" />
+                    <option value="Rio Grande do Sul (RS)" />
+                    <option value="Rondônia (RO)" />
+                    <option value="Roraima (RR)" />
+                    <option value="Santa Catarina (SC)" />
+                    <option value="São Paulo (SP)" />
+                    <option value="Sergipe (SE)" />
+                    <option value="Tocantins (TO)" />
+                  </datalist>
                 </div>
               </div>
               <div className="inputContainer">

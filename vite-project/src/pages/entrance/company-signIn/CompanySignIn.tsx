@@ -2,6 +2,7 @@ import { useState } from "react";
 import TextualButton from "../../../components/textual-button/TextualButton";
 import showPasswordVector from "../../../assets/showPasswordVector.svg";
 import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
+import InputMask from "react-input-mask";
 import "./CompanySignIn.css";
 import { Link } from "react-router-dom";
 
@@ -20,11 +21,11 @@ function UserSignIn() {
         </div>
         <form>
           <label htmlFor="cnpj">CNPJ</label>
-          <input
-            type="text"
+          <InputMask
+            mask="99.999.999/9999-99"
             id="cnpj"
             name="cnpj"
-            placeholder="XX.XXX.XXX/0001-XX"
+            placeholder="Digite seu CNPJ"
           />
 
           <label htmlFor="user-password">Senha</label>
