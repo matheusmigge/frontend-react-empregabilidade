@@ -12,9 +12,14 @@ import { Link } from "react-router-dom";
 
 function CompanySignUp2() {
   const [showPassword, setShowPassword] = useState(false);
+  const [showModalPassword, setShowModalPassword] = useState(false); // Estado para o modal
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
+  };
+
+  const toggleModalPasswordVisibility = () => {
+    setShowModalPassword((prevState) => !prevState);
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -206,12 +211,30 @@ function CompanySignUp2() {
                   />
 
                   <label htmlFor="function-password">Senha</label>
-                  <input
-                    type="password"
-                    id="function-password"
-                    name="function-password"
-                    placeholder="Senha para o gestor o funcinário"
-                  />
+                  <div className="passwordInputContainer">
+                    <input
+                      type={showModalPassword ? "text" : "password"}
+                      id="function-password"
+                      name="function-password"
+                      placeholder="Senha para o funcionário"
+                    />
+                    <button
+                      type="button"
+                      className="togglePasswordButton"
+                      onClick={toggleModalPasswordVisibility}
+                    >
+                      <img
+                        src={
+                          showModalPassword
+                            ? hidePasswordVector
+                            : showPasswordVector
+                        }
+                        alt={
+                          showModalPassword ? "Esconder senha" : "Mostrar senha"
+                        }
+                      />
+                    </button>
+                  </div>
                 </div>
 
                 <div className="addFunctionButton">
@@ -220,6 +243,7 @@ function CompanySignUp2() {
               </div>
             </div>
           )}
+        {/* Fim do Modal */}
 
           <div className="loginContainer">
             <p>

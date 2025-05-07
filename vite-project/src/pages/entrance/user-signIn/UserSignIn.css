@@ -82,7 +82,7 @@
     .submit {
       height: 6vh;
       padding: 0;
-      margin-top: 40px;
+
       background-color: #259821;
       font-size: 1em;
     }
@@ -108,7 +108,7 @@
     margin: 2em 0;
   }
 
-  .buttonContainer {
+  .buttonsContainer {
     display: flex;
     flex-direction: column;
     width: 100%;

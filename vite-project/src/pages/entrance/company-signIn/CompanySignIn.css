@@ -65,16 +65,21 @@
     margin: 0;
   }
 
-  
-
-  .signup-now {
-    margin-top: 5vh;
-    text-align: center;
-
-    a {
-      font-style: italic;
-      color: black;
-      font-weight: bold;
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1em;
+    margin: 2em 0;
+    .signup-now {
+      text-align: center;
+      
+      a {
+        font-style: italic;
+        color: black;
+        font-weight: bold;
+      }
     }
   }
+
 }

@@ -58,7 +58,7 @@ function UserSignIn() {
 
         <hr />
 
-        <div className="buttonContainer">
+        <div className="buttonsContainer">
           <TextualButton
             className="externalRegistrationButton"
             text="Entrar com LinkedIn"

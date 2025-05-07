@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 
 function UserSignIn() {
   const [showPassword, setShowPassword] = useState(false);
-  
-    const togglePasswordVisibility = () => {
-      setShowPassword((prevState) => !prevState);
-    };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
 
   return (
     <>
@@ -56,10 +56,13 @@ function UserSignIn() {
 
         <hr />
 
-        <div className="signup-now">
-          <p>
-            Não possui uma conta? <Link to="/companySignUp1">Cadastre-se</Link>
-          </p>
+        <div className="buttonsContainer">
+          <div className="signup-now">
+            <p>
+              Não possui uma conta?{" "}
+              <Link to="/companySignUp1">Cadastre-se</Link>
+            </p>
+          </div>
         </div>
       </div>
     </>

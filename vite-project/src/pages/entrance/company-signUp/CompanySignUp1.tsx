@@ -169,47 +169,49 @@ function CompanySignUp1() {
                 </div>
 
                 <div className="inputContainer">
-                <div className="inputForm">
-                  <label htmlFor="user-password">Senha</label>
-                  <div className="passwordInputContainer">
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      id="user-password"
-                      name="user-password"
-                      placeholder="Digite sua senha"
-                    />
-                    <button
-                      type="button"
-                      className="togglePasswordButton"
-                      onClick={togglePasswordVisibility}
-                    >
-
-                    </button>
-                  </div>
-                </div>
-                <div className="inputForm">
-                  <label htmlFor="user-password">Confirme sua senha</label>
-                  <div className="passwordInputContainer">
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      id="user-password"
-                      name="user-password"
-                      placeholder="Digite sua senha"
-                    />
-                    <button
-                      type="button"
-                      className="togglePasswordButton"
-                      onClick={togglePasswordVisibility}
-                    >
-                      <img
-                        src={
-                          showPassword ? hidePasswordVector : showPasswordVector
-                        }
-                        alt={showPassword ? "Esconder senha" : "Mostrar senha"}
+                  <div className="inputForm">
+                    <label htmlFor="user-password">Senha</label>
+                    <div className="passwordInputContainer">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        id="user-password"
+                        name="user-password"
+                        placeholder="Digite sua senha"
                       />
-                    </button>
+                      <button
+                        type="button"
+                        className="togglePasswordButton"
+                        onClick={togglePasswordVisibility}
+                      ></button>
+                    </div>
                   </div>
-                </div>
+                  <div className="inputForm">
+                    <label htmlFor="user-password">Confirme sua senha</label>
+                    <div className="passwordInputContainer">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        id="user-password"
+                        name="user-password"
+                        placeholder="Digite sua senha"
+                      />
+                      <button
+                        type="button"
+                        className="togglePasswordButton"
+                        onClick={togglePasswordVisibility}
+                      >
+                        <img
+                          src={
+                            showPassword
+                              ? hidePasswordVector
+                              : showPasswordVector
+                          }
+                          alt={
+                            showPassword ? "Esconder senha" : "Mostrar senha"
+                          }
+                        />
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="inputContainer">
