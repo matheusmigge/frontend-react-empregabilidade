@@ -6,14 +6,36 @@ import SymbolButton from "../../../components/symbol-button/SymbolButton";
 import logoCompletaVetor from "../../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../user-curriculum/UserContext";
 
 function UserSignUp1() {
+  const { setUserData } = useContext(UserContext)!;
   const [registerType, setRegisterType] = useState("candidate");
+  const [formData, setFormData] = useState({
+    nome: "",
+    sobrenome: "",
+    cpf: "",
+    dataNascimento: "",
+    email: "",
+    telefone: "",
+  });
+
   const handleClick = (type: string) => {
     setRegisterType(type);
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setUserData(formData); // Salva os dados no contexto
+  };
+
   return (
     <>
       <body className="body-container">
@@ -46,7 +68,7 @@ function UserSignUp1() {
             <h1>CADASTRE-SE</h1>
           </div>
 
-          <form className="formContainer">
+          <form className="formContainer" onSubmit={handleSubmit}>
             {/* LADO ESQUERDO */}
             <div className="formContent">
               <div className="inputContainer">
@@ -55,8 +77,10 @@ function UserSignUp1() {
                   <input
                     type="text"
                     id="user-name"
-                    name="user-name"
-                    placeholder="Digite seu email"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    value={formData.nome}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -64,10 +88,12 @@ function UserSignUp1() {
                 <div className="inputForm">
                   <label htmlFor="user-cpf">CPF</label>
                   <input
-                    type="number"
+                    type="text"
                     id="user-cpf"
-                    name="user-cpf"
+                    name="cpf"
                     placeholder="000.000.000-00"
+                    value={formData.cpf}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -77,8 +103,10 @@ function UserSignUp1() {
                   <input
                     type="tel"
                     id="user-phone"
-                    name="user-phone"
+                    name="telefone"
                     placeholder="(00) 00000-0000"
+                    value={formData.telefone}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -103,8 +131,10 @@ function UserSignUp1() {
                   <input
                     type="text"
                     id="user-surname"
-                    name="user-surname"
+                    name="sobrenome"
                     placeholder="Digite seu sobrenome"
+                    value={formData.sobrenome}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -114,8 +144,10 @@ function UserSignUp1() {
                   <input
                     type="email"
                     id="user-email"
-                    name="user-email"
+                    name="email"
                     placeholder="Informe seu email"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -125,7 +157,9 @@ function UserSignUp1() {
                   <input
                     type="date"
                     id="user-birth-date"
-                    name="user-birth-date"
+                    name="dataNascimento"
+                    value={formData.dataNascimento}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -141,6 +175,7 @@ function UserSignUp1() {
                 </div>
               </div>
             </div>
+            <button type="submit">Salvar</button>
           </form>
 
           <div className="a">

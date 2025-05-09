@@ -1,4 +1,6 @@
 import "./userCurriculum.css";
+import { useContext } from "react";
+import { UserContext } from "../user-curriculum/UserContext";
 
 import Header from "../../../components/header/Header";
 import bellIcon from "../../../components/header/assets/bell.svg";
@@ -8,6 +10,8 @@ import { Link } from "react-router-dom";
 import AccordionBox from "../../vacancy/accordionBox/AccordionBox";
 
 export default function UserCurriculum () {
+  const { userData } = useContext(UserContext)!;
+
     return (
       <>
       <div>
@@ -33,42 +37,32 @@ export default function UserCurriculum () {
               
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Nome</p>
-                  <input type="text" className="curriculumInputField" placeholder="Digite seu Primeiro nome" />
+                  <input type="text" className="curriculumInputField" placeholder="Digite seu Primeiro nome" value={userData.nome || ""} readOnly />
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Sobrenome</p>
-                <input type="text" className="curriculumInputField" placeholder="Digite seu Sobrenome" />
+                <input type="text" className="curriculumInputField" placeholder="Digite seu Sobrenome" value={userData.sobrenome || ""} readOnly />
                 </div>
                 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">CPF</p>
-                  <input type="text" className="curriculumInputField" placeholder="Digite seu CPF"/>
+                  <input type="text" className="curriculumInputField" placeholder="Digite seu CPF" value={userData.cpf || ""} readOnly />
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Data de nascimento</p>
-                <input type="date" className="curriculumInputField"/>
+                <input type="date" className="curriculumInputField" value={userData.dataNascimento || ""} readOnly />
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Email</p>
-                  <input type="email" className="curriculumInputField" placeholder="Digite seu Gmail" />
+                  <input type="email" className="curriculumInputField" placeholder="Digite seu Gmail" value={userData.email || ""} readOnly />
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Telefone</p>
-                  <input type="tel" className="curriculumInputField" placeholder=" (00) 00000-0000"/>
-                </div>
-
-                <div  className="curriculumFormField">
-                  <p className="curriculumAccordionText">Senha</p>
-                  <input type="password" className="curriculumInputField" name="user-password" placeholder="Digite sua senha"/>
-                </div>
-
-                <div  className="curriculumFormField">
-                  <p className="curriculumAccordionText">Confirme sua senha</p>
-                  <input type="password" className="curriculumInputField" name="user-password" placeholder="Confirme sua senha"/>
+                  <input type="tel" className="curriculumInputField" placeholder=" (00) 00000-0000" value={userData.telefone || ""} readOnly />
                 </div>
                   
               </div>
@@ -84,42 +78,42 @@ export default function UserCurriculum () {
               
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">CEP</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe  seu Código postal" />
+                  <input type="text" className="curriculumInputField" placeholder="Informe seu Código postal" value={userData.cep || ""} readOnly />
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Rua</p>
-                <input type="text" className="curriculumInputField" placeholder="Informe seu endereço" />
+                <input type="text" className="curriculumInputField" placeholder="Informe seu endereço" value={userData.rua || ""} readOnly />
                 </div>
                 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Bairro</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe seu bairro"/>
+                  <input type="text" className="curriculumInputField" placeholder="Informe seu bairro" value={userData.bairro || ""} readOnly/>
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Cidade</p>
-                <input type="text" className="curriculumInputField" placeholder="Informe sua cidade"/>
+                <input type="text" className="curriculumInputField" placeholder="Informe sua cidade" value={userData.cidade || ""} readOnly/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">estado</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe  seu Estado"/>
+                  <input type="text" className="curriculumInputField" placeholder="Informe seu Estado" value={userData.estado || ""} readOnly/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Nº</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe o Número residêncial"/>
+                  <input type="text" className="curriculumInputField" placeholder="Informe o Número residêncial" value={userData.numero || ""} readOnly/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Linkedin</p>
-                  <input type="url" className="curriculumInputField" name="user-linkedin" placeholder="Link do seu Linkedin"/>
+                  <input type="url" className="curriculumInputField" name="user-linkedin" placeholder="Link do seu Linkedin" value={userData.linkedin || ""} readOnly/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Portfólio</p>
-                  <input type="url" className="curriculumInputField" name="user-portfolio" placeholder="Link do seu Portfólio"/>
+                  <input type="url" className="curriculumInputField" name="user-portfolio" placeholder="Link do seu Portfólio" value={userData.portfolio || ""} readOnly/>
                 </div>
                   
               </div>
@@ -210,7 +204,7 @@ export default function UserCurriculum () {
 
               </div>
 
-              <div className="curriculumAccordionContainer">
+              <div className="add-button-container">
                   <button className="add-button">＋</button>
                 </div>
 
