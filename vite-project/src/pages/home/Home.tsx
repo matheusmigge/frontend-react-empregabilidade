@@ -12,11 +12,39 @@ import { Job, Candidate } from "../../types";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 
 function Home() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [loading, setLoading] = useState(true);
+  const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number } | null>(null);
+  const [locationRequested, setLocationRequested] = useState(false);
+
+  const handleRequestLocation = () => {
+    if (!locationRequested) {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            setUserLocation({
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+            });
+            setLocationRequested(true); // Atualiza o estado para indicar que a localização foi obtida
+          },
+          (error) => {
+            console.error("Erro ao obter localização:", error);
+            setUserLocation(null); // Define como null caso o usuário negue a permissão
+            setLocationRequested(true); // Atualiza o estado mesmo em caso de erro
+          }
+        );
+      } else {
+        console.error("Geolocalização não é suportada pelo navegador.");
+        setUserLocation(null);
+        setLocationRequested(true);
+      }
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,13 +70,6 @@ function Home() {
     return <div>Carregando...</div>;
   }
 
-  const loggedUser = candidates[0];
-
-  const userLocation = {
-    latitude: parseFloat(loggedUser.address.lat),
-    longitude: parseFloat(loggedUser.address.lng),
-  };
-
   const markerLocations = jobs
     .filter((job) => job.address?.lat && job.address?.lng)
     .map((job) => ({
@@ -59,7 +80,7 @@ function Home() {
     }));
 
   return (
-    <div className="home">
+    <div className="home" onClick={handleRequestLocation}>
       <Header
         imgUrl={menuIcon}
         title="Vagas Disponíveis"
