@@ -60,7 +60,7 @@ function Home() {
         useToggle={true}
       ></Header>
 
-      {/* <div className="main-section">
+      <div className="main-section">
         <FiltersBar></FiltersBar>
         <Map userLocation={userLocation} markerLocations={markerLocations} />
 
@@ -79,7 +79,7 @@ function Home() {
             </Link>
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
