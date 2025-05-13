@@ -56,7 +56,7 @@ function CadastroVaga() {
       />
 
       <div className="cadastro-container">
-        {/* Banner Upload */}
+        
         <label className="label">Banner da Vaga</label>
         <label className="banner-upload" htmlFor="fileUpload">
           <div className="upload-icon">📤</div>
@@ -69,7 +69,7 @@ function CadastroVaga() {
           onChange={(e) => console.log(e.target.files)}
         />
 
-        {/* Campos principais */}
+        
         <div className="form-row">
           <div className="input-group">
             <label className="label">Remuneração (opcional)</label>
@@ -122,7 +122,7 @@ function CadastroVaga() {
           <textarea></textarea>
         </div>
 
-        {/* Habilidades */}
+
         <label className="label">Habilidades e competências</label>
         <div className="skills-box" ref={containerRef}>
           <div className="skills-tags">
@@ -156,14 +156,14 @@ function CadastroVaga() {
           </div>
         </div>
 
-        {/* Endereço */}
+
         <label className="label">Endereço da vaga</label>
         <div className="map-box">
           <Header title="Endereço da vaga" inputText={true} />
-          <div className="map-placeholder">[Mapa aqui]</div>
+          <div className="map-placeholder">[Mapa]</div>
         </div>
 
-        {/* Etapas do processo */}
+
         <label className="label">Etapas do processo</label>
         <div className="process-box">
           <div className="process-flow">
@@ -174,7 +174,7 @@ function CadastroVaga() {
           </div>
         </div>
 
-        {/* Botões */}
+        
         <div className="buttons">
           <button className="cancel">CANCELAR</button>
           <button className="publish">PUBLICAR VAGA!</button>

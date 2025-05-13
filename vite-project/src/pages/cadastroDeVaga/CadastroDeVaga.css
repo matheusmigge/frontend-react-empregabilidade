@@ -14,7 +14,7 @@
   height: 80px;
 }
 
-/* Labels */
+
 .label {
   display: block;
   font-weight: bold;
@@ -23,7 +23,7 @@
   color: #444;
 }
 
-/* Campos agrupados */
+
 .form-row {
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +37,6 @@
   flex-direction: column;
 }
 
-/* Campos */
 input[type="text"],
 select,
 textarea {
@@ -58,7 +57,7 @@ textarea {
   resize: vertical;
 }
 
-/* Banner upload */
+
 .banner-upload {
   border: 1px dashed var(--verde);
   background-color: #f2f2f2;
@@ -88,7 +87,7 @@ textarea {
   font-size: 12px;
 }
 
-/* Habilidades */
+
 .skills-box {
   border: 1px solid var(--verde);
   background-color: #f2f2f2;
@@ -111,7 +110,7 @@ textarea {
   font-size: 13px;
 }
 
-/* Botão "+" */
+
 .btn-add {
   background-color: var(--verde);
   color: white;
@@ -122,7 +121,7 @@ textarea {
   cursor: pointer;
 }
 
-/* Novo botão "Adicionar" */
+
 .btn-confirm {
   background-color: var(--verde);
   color: white;
@@ -138,7 +137,7 @@ textarea {
   background-color: #1e7e34;
 }
 
-/* Novo input para habilidades */
+
 .input-skill {
   padding: 6px 12px;
   background-color: #ffffff;
@@ -148,7 +147,7 @@ textarea {
   outline: none;
 }
 
-/* Endereço */
+
 .map-box {
   border: 1px solid var(--verde);
   border-radius: 8px;
@@ -168,7 +167,7 @@ textarea {
   color: #888;
 }
 
-/* Etapas do processo */
+
 .process-container {
   display: flex;
   justify-content: center;
@@ -217,7 +216,7 @@ textarea {
   font-size: 20px;
 }
 
-/* Botões principais */
+
 .buttons {
   display: flex;
   justify-content: center;
