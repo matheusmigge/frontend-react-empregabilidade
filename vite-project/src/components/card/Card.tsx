@@ -1,8 +1,9 @@
 import "../card/card.css";
 import infoIcon from "./assets/case.svg";
-import candidatesIcon from "./assets/users.svg";
 import availableIcon from "./assets/availableIcon.svg";
 import unavailableIcon from "./assets/unavailableIcon.svg";
+import MapPinIcon from "../card/assets/map-pin-white.svg";
+import TextualButton from "../textual-button/TextualButton";
 
 interface CardProps {
   companyName: string;
@@ -10,7 +11,7 @@ interface CardProps {
   jobTitle: string;
   available: boolean;
   info: string;
-  amount: string;
+  radiusDistance: string;
 }
 
 function Card({
@@ -19,7 +20,7 @@ function Card({
   jobTitle,
   available,
   info,
-  amount,
+  radiusDistance,
 }: CardProps) {
   const statusText = available ? "Disponível" : "Indisponível";
   const statusIcon = available ? availableIcon : unavailableIcon;
@@ -43,7 +44,7 @@ function Card({
         </div>
 
         <div className="div-middle">
-          <p className="title">{`・ ${jobTitle}`}</p>
+          <p className="title">{jobTitle}</p>
         </div>
 
         <div className="div-bottom">
@@ -53,10 +54,8 @@ function Card({
             {info && <img src={infoIcon} alt="" className="case" />}
             {info}
           </p>
-          <p className="amount">
-            <img src={candidatesIcon} alt="" className="candidates" />
-            {amount}
-          </p>
+
+          <TextualButton imageUrl={MapPinIcon} text={radiusDistance} />
         </div>
       </div>
     </>
