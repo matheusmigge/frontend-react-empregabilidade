@@ -3,7 +3,7 @@
 
   .titleContainer {
     font-size: 1em;
-    margin-bottom: 1.5em;
+    margin: 1vh;
     text-align: center;
   }
 
@@ -11,7 +11,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 2.5em;
     align-items: center;
     justify-content: center;
   }
@@ -19,6 +18,7 @@
   .formContent {
     width: 100%;
     gap: 0.5em;
+    flex-direction: column;
   }
 
   .inputTitle {
@@ -29,74 +29,146 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 2em;
+    gap: 3vh;
+    justify-content: center;
+    align-items: center;
   }
 
   .inputForm {
     width: 100%;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  label {
+    font-weight: bold;
+    text-align: left;
+    margin-left: 2em;
+  }
+
+  input {
+    width: 100%;
+    padding: 4% 8%;
+    background-color: #f2f2f2;
+    border-radius: 3.125em;
+    border: none;
+  }
+
+  input::placeholder {
+    color: #adabc3;
+  }
+
+  #imageUploadContainer {
+    width: 6vw;
+    height: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     label {
-      font-weight: bold;
-      text-align: left;
-      margin-left: 2em;
-    }
-
-    input {
-      width: 100%;
-      padding: 1.25em 2.5em;
-      background-color: #f2f2f2;
-      border-radius: 3.125em;
-      border: none;
-      margin-bottom: 2em;
-    }
-
-    input::placeholder {
-      color: #adabc3;
+      margin: 0;
     }
   }
 
-  .buttonContainer {
-    display: flex;
+  .imageUploadButton {
     width: 100%;
-    justify-content: space-around;
-    /* flex-flow: wrap; */
-    .submit {
+    height: 100%;
+    background-color: #e6e6e6;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1 / 1;
+    padding: 20%;
+  }
+
+  .imageUploadButton img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .imageUploadButton button {
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+input#imageUpload {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* margin: 1vh 0; */
+  margin: 2vh 0;
+
+  .linkStyle {
+    width: 100%;
+  }
+
+  .submit {
+    width: 80%;
+    height: 6vh;
+    padding: 0;
+    font-size: medium;
+    border: 1px solid #259821;
+    background-color: #259821;
+    margin: auto;
+  }
+
+  .returnButton {
+    width: 100%;
+    .backButton {
       width: 100%;
-      margin-top: 2.5em;
+      height: 6vh;
+      background-color: transparent;
+      border: 1px solid #ef6b01;
+      color: #ef6b01;
       font-size: 1em;
+    }
+  }
+
+  .addFunctionButton {
+    width: 100%;
+    button {
+      width: 100%;
+      height: 6vh;
+      background-color: white;
       border: 1px solid #259821;
-      background-color: #259821;
-      margin: auto;
+      color: #259821;
+      font-size: 70%;
+      font-weight: bold;
     }
+  }
 
-    .returnButton {
-      width: 33.3%;
-      .backButton {
-        width: 100%;
-        background-color: transparent;
-        border: 1px solid #ef6b01;
-        color: #ef6b01;
-        font-size: 1em;
-      }
-    }
-
-    .addFunctionButton {
-      width: 33.3%;
-      button {
-        width: 100%;
-        background-color: white;
-        border: 1px solid #259821;
-        color: #259821;
-      }
-    }
-
-    .concludeButton {
-      width: 33.3%;
-      button {
-        width: 100%;
-      }
+  .concludeButton {
+    width: 100%;
+    button {
+      width: 100%;
+      height: 6vh;
     }
   }
 }
@@ -114,8 +186,7 @@
 .informationContainer {
   color: #959595;
   text-align: center;
-  margin: 1em;
-  padding: 0 8em;
+  margin: 4vh 0;
 
   a {
     color: #959595;
@@ -141,25 +212,25 @@
   display: flex;
   flex-direction: column;
   background: white;
-  padding: 1em 2em 2em 2em;
+  padding: 3vh 3vw;
   border-radius: 1em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 50%;
+  gap: 2vh;
 
   label {
     font-weight: bold;
     text-align: left;
-    padding-left: 2em;
   }
 
   input {
-    padding: 1.25em 2.5em;
+    height: 6vh;
+    padding: 2% 4%;
     background-color: #f2f2f2;
     border-radius: 3.125em;
     border: none;
-    margin-bottom: 2em;
-    width: 80%;
+    width: 100%;
   }
 
   .closeModal {
@@ -181,7 +252,8 @@
     text-align: left;
 
     label {
-      width: 80%;
+      width: 90%;
+      margin-top: 1vh;
     }
   }
 
@@ -189,7 +261,84 @@
     button {
       background-color: #259821;
       font-size: 1em;
-      width: 50%;
+      width: 100%;
+      height: 6vh;
     }
+  }
+}
+
+.passwordInputContainer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+}
+
+.passwordInputContainer input {
+  flex: 1;
+  height: 6vh;
+}
+
+.togglePasswordButton {
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.togglePasswordButton img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.togglePasswordButton:active img {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .company-register {
+    .formContent {
+      gap: 0;
+      .inputContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+
+        .inputForm {
+          margin-bottom: 1vh;
+        }
+
+        #imageUploadContainer {
+          width: 20vw;
+          height: 20vw;
+          margin-top: 1vh;
+        }
+      }
+    }
+
+    .buttonContainer {
+      flex-direction: row;
+      align-items: center;
+      gap: 1vh;
+    }
+
+    .returnButton {
+      display: none;
+    }
+  }
+
+  .modal {
+    width: 90vw;
   }
 }

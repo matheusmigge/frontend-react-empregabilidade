@@ -1,8 +1,18 @@
+import { useState } from "react";
 import TextualButton from "../../../components/textual-button/TextualButton";
+import showPasswordVector from "../../../assets/showPasswordVector.svg";
+import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
+import InputMask from "react-input-mask";
 import "./CompanySignIn.css";
 import { Link } from "react-router-dom";
 
 function UserSignIn() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
+
   return (
     <>
       <div className="user-login">
@@ -11,31 +21,49 @@ function UserSignIn() {
         </div>
         <form>
           <label htmlFor="cnpj">CNPJ</label>
-          <input
-            type="text"
+          <InputMask
+            mask="99.999.999/9999-99"
             id="cnpj"
             name="cnpj"
-            placeholder="XX.XXX.XXX/0001-XX"
+            placeholder="Digite seu CNPJ"
           />
 
           <label htmlFor="user-password">Senha</label>
-          <input
-            type="password"
-            id="user-password"
-            name="user-password"
-            placeholder="Digite sua senha"
-          />
-          <Link to="/home" className="linkStyle">
-          <TextualButton text={"ENTRAR"} className="submit"/>
-          </Link>
+          <div className="passwordInputContainer">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="user-password"
+              name="user-password"
+              placeholder="Digite sua senha"
+            />
+            <button
+              type="button"
+              className="togglePasswordButton"
+              onClick={togglePasswordVisibility}
+            >
+              <img
+                src={showPassword ? hidePasswordVector : showPasswordVector}
+                alt={showPassword ? "Esconder senha" : "Mostrar senha"}
+              />
+            </button>
+          </div>
+
+          <div className="submitContainer">
+            <Link to="/home" className="linkStyle">
+              <TextualButton text={"ENTRAR"} className="submit"></TextualButton>
+            </Link>
+          </div>
         </form>
 
         <hr />
 
-        <div className="signup-now">
-          <p>
-            Não possui uma conta? <Link to="/companySignUp1">Cadastre-se</Link>
-          </p>
+        <div className="buttonsContainer">
+          <div className="signup-now">
+            <p>
+              Não possui uma conta?{" "}
+              <Link to="/companySignUp1">Cadastre-se</Link>
+            </p>
+          </div>
         </div>
       </div>
     </>

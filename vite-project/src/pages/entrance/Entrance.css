@@ -3,85 +3,157 @@
   display: flex;
   justify-content: space-around;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-}
-
-/* Lado esquerdo da tela */
-.leftSide {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #f9f9ff;
-  width: 50vw;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-
-  .logoContainer {
-    img {
-      width: 40vw;
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      margin: 2em;
-    }
-  }
-
-  .buttonContainer {
+  /* Lado esquerdo da tela */
+  .leftSide {
     display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    padding: 5em;
-    gap: 1em;
-    width: 40vw;
+    background-color: #f9f9ff;
+    width: 50vw;
+    text-align: center;
 
-    @media (max-width: 768px) {
+    .logoContainer {
+      img {
+        width: 60%;
+      }
+    }
+
+    .buttonContainer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5vh;
+      padding: 0 10vw;
+      gap: 1em;
+      width: 100%;
+
+      .enterpriseButton {
+        background-color: #ef6b01;
+      }
+
+      .enterpriseButton:hover {
+        background: #ef6c018e;
+      }
+
+      .candidateButton {
+        background-color: #ef6b01;
+      }
+
+      .candidateButton:hover {
+        background: #ef6c018e;
+      }
+
+      .selected {
+        background-color: #afafaf;
+        cursor: default;
+      }
+
+      .selected:hover {
+        background-color: #afafaf;
+      }
+    }
+
+    .back-to-lp {
+      margin: 1vh;
+      color: #393939;
+
+      a {
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+
+  /* Lado direito da tela */
+  .rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50vw;
+    padding: 0 5vw;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .body-container {
+    flex-direction: column;
+
+    .leftSide {
       flex-direction: column;
-      padding: 0 1em 0 1em;
       width: 100vw;
+      padding: 0 10vw;
+
+      .logoContainer {
+        flex-direction: column;
+        margin: 2em;
+      }
+
+      .buttonContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        justify-content: space-around;
+
+        .enterpriseButton {
+          height: 6vh;
+        }
+
+        .candidateButton {
+          height: 6vh;
+        }
+      }
+
+      .back-to-lp{
+        display: none;
+      }
     }
 
-    .enterpriseButton {
-      background-color: #ef6b01;
-    }
-
-    .enterpriseButton:hover {
-      background: #ef6c018e;
-    }
-
-    .candidateButton {
-      background-color: #ef6b01;
-    }
-
-    .candidateButton:hover {
-      background: #ef6c018e;
-    }
-
-    .selected {
-      background-color: #afafaf;
-      cursor: default;
-    }
-
-    .selected:hover {
-      background-color: #afafaf;
+    .rightSide {
+      width: 100vw;
+      padding: 0 10vw;
+      margin: 0;
     }
   }
 }
 
-/* Lado direito da tela */
-.rightSide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50vw;
+@media (max-width: 430px) {
+  .body-container {
+    flex-direction: column;
 
-  @media (max-width: 768px) {
-    width: 100vw;
+    .leftSide {
+      flex-direction: column;
+      width: 100vw;
+      padding: 0 5vw;
+
+      .logoContainer {
+        flex-direction: column;
+        margin: 2em;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .buttonContainer {
+        flex-direction: column;
+        padding: 5vw;
+        width: 100vw;
+
+        .enterpriseButton {
+          button {
+            height: 10%;
+          }
+        }
+      }
+    }
+
+    .rightSide {
+      width: 100vw;
+      padding: 0 5vw;
+    }
   }
 }

@@ -1,5 +1,5 @@
 .user-login {
-  max-width: 500px;
+  width: 100%;
   padding: 0 20px;
 
   h1 {
@@ -22,7 +22,8 @@
 
   input {
     width: 100%;
-    padding: 20px 40px;
+    height: 6vh;
+    padding: 0 8%;
     background-color: #f2f2f2;
     border-radius: 50px;
     border: none;
@@ -33,12 +34,60 @@
     color: #adabc3;
   }
 
-  .submit {
-    margin-top: 40px;
-    width: 60%;
-    background-color: #259821;
-    font-size: 1em;
+  .passwordInputContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
   }
+  
+  .passwordInputContainer input {
+    flex: 1;
+    height: 6vh;
+  }
+  
+  .togglePasswordButton {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .togglePasswordButton img {
+    width: 100%;
+    height: 3vh;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .togglePasswordButton:active img {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  
+  .togglePasswordButton:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+  }
+
+  .submitContainer {
+    margin: auto;
+    width: 80%;
+    
+    .submit {
+      height: 6vh;
+      padding: 0;
+
+      background-color: #259821;
+      font-size: 1em;
+    }
+  }
+
 
   .hr-text {
     border: 0;
@@ -59,17 +108,19 @@
     margin: 2em 0;
   }
 
-  .buttonContainer {
+  .buttonsContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     gap: 1em;
     margin: 2em 0;
 
-    button {
+    .externalRegistrationButton {
       background-color: #012369;
-      font-size: 1em;
+      font-size: 100%;
+      height: 6vh;
+      padding: 0;
+      width: 80%;
     }
   }
 

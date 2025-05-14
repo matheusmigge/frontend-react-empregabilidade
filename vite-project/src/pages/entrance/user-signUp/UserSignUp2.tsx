@@ -6,6 +6,7 @@ import SymbolButton from "../../../components/symbol-button/SymbolButton";
 import logoCompletaVetor from "../../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
+import InputMask from "react-input-mask";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -40,26 +41,47 @@ function UserSignUp2() {
               onClick={() => handleClick("candidate")}
             />
           </div>
+          <div className="back-to-lp">
+            <p>
+              Voltar ao <Link to="/">Início</Link>
+            </p>
+          </div>
         </section>
+
         <section className="rightSide">
           <div className="titleContainer">
             <h1>CADASTRE-SE</h1>
           </div>
 
           <form className="formContainer">
-            {/* LADO ESQUERDO */}
+            {/* PRIMEIRA LINHA */}
             <div className="formContent">
               <div className="inputContainer">
                 <div className="inputForm">
                   <label htmlFor="user-cep">CEP</label>
-                  <input
-                    type="number"
+                  <InputMask
+                    mask="99999-999"
                     id="user-cep"
                     name="user-cep"
                     placeholder="00000-000"
                   />
                 </div>
               </div>
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-adress">Rua</label>
+                  <input
+                    type="text"
+                    id="user-adress"
+                    name="user-adress"
+                    placeholder="Informe sua rua aqui"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* SEGUNDA LINHA */}
+            <div className="formContent">
               <div className="inputContainer">
                 <div className="inputForm">
                   <label htmlFor="user-neighborhood">Bairro</label>
@@ -72,43 +94,6 @@ function UserSignUp2() {
                 </div>
               </div>
               <div className="inputContainer">
-                <div className="inputForm" id="stateInput">
-                  <label htmlFor="user-state">Estado</label>
-                  <input
-                    type="text"
-                    id="user-state"
-                    name="user-state"
-                    placeholder="Informe seu estado aqui"
-                  />
-                </div>
-              </div>
-              <div className="inputContainer">
-                <div className="inputForm">
-                  <label htmlFor="user-linkedin">LinkedIn (Opcional)</label>
-                  <input
-                    type="text"
-                    id="user-linkedin"
-                    name="user-linkedin"
-                    placeholder="www.linkedin.com/in/seuperfil"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* LADO DIREITO */}
-            <div className="formContent">
-              <div className="inputContainer">
-                <div className="inputForm">
-                  <label htmlFor="user-adress">Rua</label>
-                  <input
-                    type="text"
-                    id="user-adress"
-                    name="user-adress"
-                    placeholder="Informe sua rua aqui"
-                  />
-                </div>
-              </div>
-              <div className="inputContainer">
                 <div className="inputForm">
                   <label htmlFor="user-city">Cidade</label>
                   <input
@@ -117,6 +102,51 @@ function UserSignUp2() {
                     name="user-city"
                     placeholder="Informe sua cidade aqui"
                   />
+                </div>
+              </div>
+            </div>
+
+            {/* TERCEIRA LINHA */}
+            <div className="formContent">
+              <div className="inputContainer">
+                <div className="inputForm" id="stateInput">
+                  <label htmlFor="user-state">Estado</label>
+                  <input
+                    type="text"
+                    id="user-state"
+                    name="user-state"
+                    placeholder="Informe seu estado aqui"
+                    list="states"
+                  />
+                  <datalist id="states">
+                    <option value="Acre (AC)" />
+                    <option value="Alagoas (AL)" />
+                    <option value="Amapá (AP)" />
+                    <option value="Amazonas (AM)" />
+                    <option value="Bahia (BA)" />
+                    <option value="Ceará (CE)" />
+                    <option value="Distrito Federal (DF)" /> 
+                    <option value="Espírito Santo (ES)" />
+                    <option value="Goiás (GO)" />
+                    <option value="Maranhão (MA)" />
+                    <option value="Mato Grosso (MT)" />
+                    <option value="Mato Grosso do Sul (MS)" />
+                    <option value="Minas Gerais (MG)" />
+                    <option value="Pará (PA)" />
+                    <option value="Paraíba (PB)" />
+                    <option value="Paraná (PR)" />
+                    <option value="Pernambuco (PE)" />
+                    <option value="Piauí (PI)" />
+                    <option value="Rio de Janeiro (RJ)" />
+                    <option value="Rio Grande do Norte (RN)" />
+                    <option value="Rio Grande do Sul (RS)" />
+                    <option value="Rondônia (RO)" />
+                    <option value="Roraima (RR)" />
+                    <option value="Santa Catarina (SC)" />
+                    <option value="São Paulo (SP)" />
+                    <option value="Sergipe (SE)" />
+                    <option value="Tocantins (TO)" />
+                  </datalist>
                 </div>
               </div>
               <div className="inputContainer">
@@ -139,10 +169,33 @@ function UserSignUp2() {
                   />
                 </div>
               </div>
+            </div>
+
+            {/* QUARTA LINHA */}
+            <div className="formContent">
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-linkedin">
+                    LinkedIn{" "}
+                    <span style={{ color: "#adabc3", fontSize: "60%" }}>
+                      (Opcional)
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    id="user-linkedin"
+                    name="user-linkedin"
+                    placeholder="www.linkedin.com/in/seuperfil"
+                  />
+                </div>
+              </div>
               <div className="inputContainer">
                 <div className="inputForm">
                   <label htmlFor="user-portfolio">
-                    Seu portifólio (Opcional)
+                    Seu portifólio{" "}
+                    <span style={{ color: "#adabc3", fontSize: "60%" }}>
+                      (Opcional)
+                    </span>
                   </label>
                   <input
                     type="text"
@@ -172,10 +225,7 @@ function UserSignUp2() {
             </div>
             <div className="finishLaterButton">
               <Link to="/home" className="linkStyle">
-              <TextualButton
-                text={"FINALIZAR DEPOIS"}
-                className="submit"
-              />
+                <TextualButton text={"FINALIZAR DEPOIS"} className="submit" />
               </Link>
             </div>
           </div>
