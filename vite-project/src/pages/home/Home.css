@@ -1,29 +1,165 @@
 .home {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
 }
 
 .home .filters-bar {
-    z-index: 1;
-    height: calc(100vh - 80px);
+  z-index: 2;
+  height: calc(100vh - 80px);
 }
 
 .home .leaflet-container {
+  z-index: 1;
+  height: calc(100vh - 80px);
+  width: 100vw;
+  /* left: 150px; */
+}
+
+.home .card-list {
+  /* border: 1px solid black; */
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  gap: 20px;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 1024px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home .filters-bar {
+    z-index: 1;
+    height: calc(100vh - 80px);
+  }
+
+  .home .leaflet-container {
     z-index: 0;
     height: calc(100vh - 80px);
     width: 100vw;
     /* left: 150px; */
-}
+  }
 
-.home .card-list {
+  .home .card-list {
+    /* border: 1px solid black; */
     height: calc(100vh - 80px);
-    overflow-y:scroll;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     z-index: 1;
     position: absolute;
     top: 80px;
-    right: 1vw;
+    right: 0;
     gap: 20px;
-    padding: 50px 15px;
+    padding: 1rem 2rem;
+  }
+}
+@media (max-width: 768px) and (min-width: 632px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home .filters-bar {
+    z-index: 2;
+    height: calc(100vh - 80px);
+  }
+
+  .home .leaflet-container {
+    z-index: 0;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    /* left: 150px; */
+  }
+
+  .home .card-list {
+    /* border: 1px solid black; */
+    height: 53%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    top: 20rem;
+    right: 0;
+    gap: 20px;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 631px) and (min-width: 431px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home .filters-bar {
+    z-index: 2;
+    height: calc(100vh - 80px);
+  }
+
+  .home .leaflet-container {
+    z-index: 0;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    /* left: 150px; */
+  }
+
+  .home .card-list {
+    /* border: 1px solid black; */
+    width: 73%;
+    height: 30%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    top: 29rem;
+    right: 0;
+    gap: 20px;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+  }
+
+  .home .filters-bar {
+    z-index: 1;
+    height: calc(100vh - 80px);
+  }
+
+  .home .leaflet-container {
+    z-index: 0;
+    height: calc(100vh - 79px);
+    width: 100vw;
+    /* left: 150px; */
+  }
+
+  .home .card-list {
+    border: 1px solid black;
+    width: 80%;
+    height: 30%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    top: 29rem;
+    right: 0;
+    gap: 20px;
+    padding: 1rem 2rem;
+  }
 }
