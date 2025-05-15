@@ -149,7 +149,7 @@
   }
 
   .home .card-list {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 80%;
     height: 30%;
     overflow-y: scroll;
