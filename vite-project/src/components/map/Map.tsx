@@ -10,10 +10,10 @@ import Leaflet from "leaflet"; // Importando L para acessar o tipo L.Map
 
 
 interface MapProps {
-    userLocation: {
+    userLocation?: {
         latitude: number,
         longitude: number,
-    },
+    } | null,
     markerLocations: {
         latitude: number,
         longitude: number,
@@ -24,7 +24,7 @@ interface MapProps {
 
 function Map({ userLocation, markerLocations }: MapProps) {
 
-    const [center, setCenter] = useState<[number, number]>([userLocation.latitude, userLocation.longitude]);
+    const [center, setCenter] = useState<[number, number]>(userLocation ? [userLocation.latitude, userLocation.longitude] : [-8.0509481,-34.9029533]); // Define o centro inicial do mapa
 
     const mapRef = useRef<Leaflet.Map | null>(null);
 
@@ -73,16 +73,16 @@ function Map({ userLocation, markerLocations }: MapProps) {
                     </Marker>
                 ))}
 
-                <Circle
-                    center={[userLocation.latitude, userLocation.longitude]}
-                    pathOptions={{ color: 'blue' }}
-                    radius={150}
-                    eventHandlers={{
-                        click: () => handleMarkerClick(userLocation.latitude, userLocation.longitude), // Atualiza a posição do mapa
-                    }}>
-                    <Tooltip>Sua localização</Tooltip>
-                </Circle>
-
+                {userLocation && (
+                    <Circle
+                        center={[userLocation.latitude, userLocation.longitude]}
+                        pathOptions={{ color: 'blue' }}
+                        radius={150}
+                        eventHandlers={{
+                            click: () => handleMarkerClick(userLocation.latitude, userLocation.longitude), // Atualiza a posição do mapa
+                        }}>
+                        <Tooltip>Sua localização</Tooltip>
+                    </Circle>)}
             </MapContainer>
         </div>
     )

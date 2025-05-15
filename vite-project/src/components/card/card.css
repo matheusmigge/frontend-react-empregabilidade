@@ -1,92 +1,85 @@
-/* .card-container{
-    margin-top: 10rem;
-    min-height: 100vh;
-    max-width: 69%;
-    padding: 0.5rem;
-    gap: 1rem;
-    border: 1px solid black;
-    display: flex;
-    justify-content:center;
-    flex-flow: wrap;
-    position: relative;
-} */
-
 .card {
-  border: 2px solid black;
-  background-color: white;
-  border-radius: 1.25rem;
-  height: 160px;
-  width: 400px;
-  display: flex;
-  flex-flow: column;
-  gap: 30px;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
+    border: 1px solid grey;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(1, 1, 1, 0.5);
+    border-radius: 1.25rem;
+    height: 160px;
+    width: 400px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 10px 20px;
 
-.card .div-top {
-  display: flex;
-  justify-content: space-between;
-}
+    .div-top {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.card .div-middle {
-  display: flex;
-  justify-content: space-between;
-}
+    .div-middle {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.card .div-bottom {
-  display: flex;
-  justify-content: space-between;
+    .div-bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .name {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .logo {
+            width: 50px;
+        }
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .status {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .statuslogo {
+            align-items: center;
+            width: 1rem;
+        }
+    }
+    .info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 14px;
+
+        .case {
+            width: 1.5rem;
+        }
+    }
+    .textual-button-container {
+      width: 90px;
+    }
+    .textual-button-container button {
+        display: flex;
+        height: 35px;
+        gap: 2px;
+        padding: 0 5px 0 0;
+        background-color: #ef6b01;
+        font-size: 15px;
+        img {
+            height: 20px;
+        }
+    }
 }
 
 .card.available {
-  border-color: #259821;
+    /* border-color: #259821; */
 }
 
 .card.unavailable {
-  border-color: #ff0000;
-}
-
-.card .name {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-  .logo {
-    width: 1.5rem;
-  }
-}
-
-.card .title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.card .status {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-  .statuslogo {
-    align-items: center;
-    width: 1rem;
-  }
-}
-
-.card .info {
-  display: flex;
-  gap: 6px;
-
-  .case {
-    width: 1.5rem;
-  }
-}
-
-.card .amount {
-  display: flex;
-  gap: 7px;
-
-  .user {
-    width: 1.5rem;
-  }
+    /* border-color: #ff0000; */
 }
