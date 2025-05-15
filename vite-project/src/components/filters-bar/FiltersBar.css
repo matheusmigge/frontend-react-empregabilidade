@@ -20,6 +20,10 @@
     transition: width 0.5s ease;
 }
 
+.filters-bar.open{
+    z-index: 2;
+}
+
 .filters-bar.open .buttons-container {
     width: 250px;
 }
@@ -44,4 +48,104 @@
 
 .filters-bar.open .symbol-button img {
     rotate: 180deg;
+}
+
+@media (max-width:768px) {
+    .filters-bar {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: absolute;
+    }
+    
+    .filters-bar .buttons-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(95, 95, 95, 0.9);
+        backdrop-filter: blur(2px);
+        height: 100%;
+        width: 100px;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+        transition: width 0.5s ease;
+    }
+    
+    .filters-bar.open .buttons-container {
+        width: 250px;
+    }
+    
+    .filters-bar .symbol-button {
+        background-color: #012369;
+        position: absolute;
+        right: -12px;
+        transform: translateY(-50%);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+    
+    .filters-bar .symbol-button:hover {
+        background-color: #2b3b5a;
+    }
+    
+    .filters-bar .symbol-button img {
+        transition: rotate .5s ease;
+    }
+    
+    .filters-bar.open .symbol-button img {
+        rotate: 180deg;
+    }
+}
+
+@media (min-width: 430px) {
+    .filters-bar {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: absolute;
+    }
+    
+    .filters-bar .buttons-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(95, 95, 95, 0.9);
+        backdrop-filter: blur(2px);
+        height: 100%;
+        width: 150px;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+        transition: width 0.5s ease;
+    }
+    
+    .filters-bar.open .buttons-container {
+        width: 250px;
+    }
+    
+    .filters-bar .symbol-button {
+        background-color: #012369;
+        position: absolute;
+        right: -12px;
+        transform: translateY(-50%);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+    
+    .filters-bar .symbol-button:hover {
+        background-color: #2b3b5a;
+    }
+    
+    .filters-bar .symbol-button img {
+        transition: rotate .5s ease;
+    }
+    
+    .filters-bar.open .symbol-button img {
+        rotate: 180deg;
+    }
 }
