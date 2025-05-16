@@ -71,23 +71,23 @@ function CadastroVaga() {
 
         
         <div className="form-row">
-          <div className="input-group">
+          <div className="input-group-responsive">
             <label className="label">Remuneração (opcional)</label>
             <input type="text" />
           </div>
-          <div className="input-group">
+          <div className="input-group-responsive">
             <label className="label">Modelo de trabalho</label>
             <select>
               <option>Selecione</option>
             </select>
           </div>
-          <div className="input-group">
+          <div className="input-group-responsive">
             <label className="label">Área da vaga</label>
             <select>
               <option>Selecione</option>
             </select>
           </div>
-          <div className="input-group">
+          <div className="input-group-responsive">
             <label className="label">Distância máxima</label>
             <select>
               <option>Selecione</option>
@@ -144,7 +144,7 @@ function CadastroVaga() {
                     }
                   }}
                 />
-                <button onClick={handleAddSkill} className="btn-confirm">
+                <button onClick={handleAddSkill} className="input-confirm">
                   Adicionar
                 </button>
               </>
@@ -158,17 +158,27 @@ function CadastroVaga() {
 
 
         <label className="label">Endereço da vaga</label>
-        <div className="map-box">
-          <Header title="Endereço da vaga" inputText={true} />
-          <div className="map-placeholder">[Mapa]</div>
-        </div>
+<div className="map-box">
+  <div className="map-header">
+    <h2>Endereço da vaga</h2>
+    <div className="search-container">
+  <input type="text" placeholder="Localização..." className="search-input" />
+</div>
+
+  </div>
+  <div className="map-content">[Mapa]</div>
+</div>
+
+
 
 
         <label className="label">Etapas do processo</label>
         <div className="process-box">
           <div className="process-flow">
-            <div className="circle blue">🖋</div>
-            <span className="step-name">Cadastro</span>
+          <div className="circle-container">
+          <div className="circle blue">🖋</div>
+         <div className="name">Cadastro</div>
+        </div>
             <span className="arrow">→</span>
             <div className="circle green">+</div>
           </div>
