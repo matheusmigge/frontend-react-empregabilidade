@@ -13,9 +13,10 @@ interface HeaderProps {
   imgUrl2?: string;
   useToggle?: boolean;
   inputText?: boolean;
+  onToggleChange?: (mode: "view1" | "view2") => void;
 }
 
-function Header({ title, imgUrl, imgUrl1, imgUrl2, useToggle, inputText }: HeaderProps) {
+function Header({ title, imgUrl, imgUrl1, imgUrl2, useToggle, inputText, onToggleChange }: HeaderProps) {
   const InputWithIcon = () => (
     <div className="input-with-icon">
       <input type="text" placeholder="Pesquisar..." className="input-Src" />
@@ -44,6 +45,7 @@ function Header({ title, imgUrl, imgUrl1, imgUrl2, useToggle, inputText }: Heade
             img2On={listIcon}
             img2Off={listIconOff}
             text2="Lista"
+            onToggle={(isSwitchOn) => onToggleChange?.(!isSwitchOn ? "view1" : "view2")}
           ></Toggle>
         )}
 
