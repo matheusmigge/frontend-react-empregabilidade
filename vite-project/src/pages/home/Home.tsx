@@ -1,76 +1,28 @@
 import "./Home.css";
-import FiltersBar from "../../components/filters-bar/FiltersBar";
-import Header from "../../components/header/Header";
+import HomeCandidateContent from "./candidate-content/HomeCandidateContent.tsx";
 
+import Header from "../../components/header/Header";
 import menuIcon from "../../components/header/assets/Menu.svg";
 import bellIcon from "../../components/header/assets/bell.svg";
 import userIcon from "../../components/header/assets/Ellipse 1.svg";
-import Map from "../../components/map/Map";
-import Card from "../../components/card/Card";
 
-import { Job, Candidate } from "../../types";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { useAuth } from "../../context/AuthContext";
-import { getDistanceFromLatLonInKm } from "../../utils/distance";
+import { useAuth } from "../../context/UseAuth.ts";
+
 
 function Home() {
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [candidates, setCandidates] = useState<Candidate[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { userType, userData, setUserType, setUserData } = useAuth();
   const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [locationRequested, setLocationRequested] = useState(false);
-  const { userType, userData, setUserType, setUserData } = useAuth();
-
-  const handleRequestLocation = () => {
-    if (!locationRequested) {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            setUserLocation({
-              latitude: position.coords.latitude,
-              longitude: position.coords.longitude,
-            });
-            setLocationRequested(true); // Atualiza o estado para indicar que a localização foi obtida
-          },
-          (error) => {
-            console.error("Erro ao obter localização:", error);
-            setUserLocation(null); // Define como null caso o usuário negue a permissão
-            setLocationRequested(true); // Atualiza o estado mesmo em caso de erro
-          }
-        );
-      } else {
-        console.error("Geolocalização não é suportada pelo navegador.");
-        setUserLocation(null);
-        setLocationRequested(true);
-      }
-    }
-
-    console.log("Usuário logado:", userData);
-    console.log("Tipo de usuário:", userType);
-  };
+  const [viewMode, setViewMode] = useState<"view1" | "view2">("view1");
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [jobsRes, candidatesRes] = await Promise.all([
-          axios.get("http://localhost:3000/jobs"),
-          axios.get("http://localhost:3000/candidates"),
-        ]);
+    // if(!userData && !userType) {
+    //   alert("Você não está logado. Por favor, faça login para acessar esta página.");
+    //   window.location.href = "/entrance";
+    // }
 
-        setJobs(jobsRes.data);
-        setCandidates(candidatesRes.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Erro ao buscar dados:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-    // remover isso depois ###############################################################################################
-    if (!userType) {
+    if (!userData && !userType) {
       setUserType("candidate");
       setUserData({
         "id": "1",
@@ -162,72 +114,51 @@ function Home() {
         }
       });
     }
-    // remover isso depois ###############################################################################################
-  }, [setUserData, setUserType, userType]);
+  }, [setUserData, setUserType, userData, userType]);
 
-  if (loading) {
-    return <div>Carregando...</div>;
-  }
-
-  const markerLocations = jobs
-    .filter((job) => job.address?.lat && job.address?.lng)
-    .map((job) => ({
-      latitude: parseFloat(job.address.lat),
-      longitude: parseFloat(job.address.lng),
-      id: job.id.toString(),
-      label: job.title,
-    }));
+  const handleRequestLocation = () => {
+    if (!locationRequested) {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            setUserLocation({
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+            });
+            setLocationRequested(true); // Atualiza o estado para indicar que a localização foi obtida
+          },
+          (error) => {
+            console.error("Erro ao obter localização:", error);
+            setUserLocation(null); // Define como null caso o usuário negue a permissão
+            setLocationRequested(true); // Atualiza o estado mesmo em caso de erro
+          }
+        );
+      } else {
+        console.error("Geolocalização não é suportada pelo navegador.");
+        setUserLocation(null);
+        setLocationRequested(true);
+      }
+    }
+  };
 
   return (
     <div className="home" onClick={handleRequestLocation}>
       <Header
         imgUrl={menuIcon}
-        title="Vagas Disponíveis"
+        title={userType === "candidate" ? "Vagas" : "Candidatos"}
         inputText={true}
         imgUrl1={bellIcon}
         imgUrl2={userIcon}
         useToggle={true}
-      ></Header>
+        onToggleChange={(mode) => {
+          setViewMode(mode);
+        }}
+      />
 
-      <div className="main-section">
-        <FiltersBar></FiltersBar>
-        <Map userLocation={userLocation} markerLocations={markerLocations} />
-
-        <div className="card-list">
-          {jobs.map((job) => {
-            let distance = "";
-            if (
-              userData &&
-              userData.address &&
-              job.address &&
-              job.address.lat &&
-              job.address.lng
-            ) {
-              distance = getDistanceFromLatLonInKm(
-                parseFloat(userData.address.lat),
-                parseFloat(userData.address.lng),
-                parseFloat(job.address.lat),
-                parseFloat(job.address.lng)
-              ).toFixed(1).replace('.',','); // 1 casa decimal e troca ponto por vírgula
-            }
-
-            return (
-              <Link key={job.id} to="/vacancy" className="linkStyle">
-                <Card
-                  companyName={job.company.name}
-                  logoName={job.company.logoUrl}
-                  jobTitle={job.title}
-                  available={job.jobAvailable}
-                  info={job.workModel}
-                  radiusDistance={distance ? `${distance} km` : "N/A"}
-                />
-              </Link>);
-          })}
-        </div>
-      </div>
+      {userType === "candidate" && <HomeCandidateContent userLocation={userLocation} viewMode= {viewMode} />}
+      {userType === "company" && <p>Empresa!!</p>}
     </div>
   );
 }
 
 export default Home;
-
