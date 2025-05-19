@@ -82,9 +82,9 @@
     .submit {
       height: 6vh;
       padding: 0;
-
       background-color: #259821;
       font-size: 1em;
+      margin-top: 2em;
     }
   }
 
