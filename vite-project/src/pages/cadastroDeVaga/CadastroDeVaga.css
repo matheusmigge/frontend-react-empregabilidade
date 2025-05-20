@@ -1,5 +1,7 @@
 :root {
   --verde: #28a745;
+  --azul-escuro: #00296b;
+  --laranja: #EF6B01;
 }
 
 .cadastro-container {
@@ -40,7 +42,7 @@ input[type="text"],
 select,
 textarea {
   padding: 10px;
-  border: 1px solid var(--verde);
+  border: 1px solid var(--azul-escuro);
   border-radius: 6px;
   font-size: 14px;
   width: 100%;
@@ -53,8 +55,7 @@ input[type="text"]:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #1e7e34;
-  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+  border-color: var(--azul-escuro);
 }
 
 .input-full {
@@ -66,8 +67,9 @@ textarea {
   resize: vertical;
 }
 
+
 .banner-upload {
-  border: 1px dashed var(--verde);
+  border: 1px dashed var(--azul-escuro);
   background-color: #f2f2f2;
   padding: 30px;
   text-align: center;
@@ -95,8 +97,9 @@ textarea {
   font-size: 12px;
 }
 
+
 .skills-box {
-  border: 1px solid var(--verde);
+  border: 1px solid var(--azul-escuro);
   background-color: #f2f2f2;
   border-radius: 8px;
   padding: 15px;
@@ -112,7 +115,7 @@ textarea {
 
 .skills-tags span {
   background-color: #ffffff;
-  padding: 12px 12px;
+  padding: 12px;
   border-radius: 20px;
   font-size: 13px;
 }
@@ -120,7 +123,7 @@ textarea {
 .input-skill {
   padding: 6px 12px;
   background-color: #fff;
-  border: 1px solid var(--verde);
+  border: 1px solid var(--azul-escuro);
   border-radius: 20px;
   font-size: 13px;
   outline: none;
@@ -129,32 +132,36 @@ textarea {
 }
 
 .input-skill:focus {
-  border-color: #1e7e34;
-  box-shadow: 0 0 6px rgba(40, 167, 69, 0.5);
+  border-color: var(--azul-escuro);
 }
 
-
 .btn-add {
-  background-color: var(--verde);
+  background-color: var(--azul-escuro);
+  width: 40px;
+  height: 40px;
   color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 20px;
+  border-radius: 200px;
   font-size: 16px;
   cursor: pointer;
   margin-top: 6px;
+  transition: background-color 0.3s ease;
 }
 
+.btn-add:hover {
+  background-color: #001f4a;
+}
+
+
 .map-box {
-  border: 1px solid var(--verde);
+  border: 1px solid var(--azul-escuro);
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 20px;
-  font-family: "DM Sans", sans-serif;
 }
 
 .map-header {
-  background-color: #00296b;
+  background-color: var(--azul-escuro);
   color: white;
   display: flex;
   justify-content: space-around;
@@ -166,42 +173,13 @@ textarea {
   margin: 0;
   font-size: 20px;
   font-weight: 600;
-  font-family: "DM Sans", sans-serif;
 }
 
 .search-container {
   position: relative;
   width: 250px;
+  max-width: 100%;
 }
-
-.search-input {
-  width: 100%;
-  padding: 8px 36px 8px 12px;
-  border-radius: 20px;
-  border: none;
-  font-size: 14px;
-  outline: none;
-  background-color: #f0f0f0;
-  font-family: "DM Sans", sans-serif;
-}
-.input-confirm {
-  padding: 10px;
-  border: 1px solid var(--verde);
-  border-radius: 6px;
-  font-size: 14px;
-  width: 100%;
-   color: white;
-  background-color: var(--verde);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  font-family: "DM Sans", sans-serif;
-}
-
-
-.search-container {
-  position: relative;
-  width: 250px;
-}
-
 
 .search-input {
   width: 100%;
@@ -214,7 +192,6 @@ textarea {
   font-family: "DM Sans", sans-serif;
 }
 
-
 .map-content {
   height: 200px;
   background-color: #f2f2f2;
@@ -223,8 +200,8 @@ textarea {
   justify-content: center;
   align-items: center;
   color: #888;
-  font-family: "DM Sans", sans-serif;
 }
+
 
 .process-container {
   display: flex;
@@ -235,7 +212,7 @@ textarea {
 
 .process-box {
   background-color: #f2f2f2;
-  border: 1px solid var(--verde);
+  border: 1px solid var(--azul-escuro);
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 20px;
@@ -252,10 +229,10 @@ textarea {
 
 .circle-container {
   display: flex;
-  flex-direction: column; 
-  align-items: center;    
-  gap: 6px;    
-  margin-top: 20px;           
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
 }
 
 .circle {
@@ -271,7 +248,13 @@ textarea {
 }
 
 .circle.blue {
-  background-color: #00296b;
+  background-color: var(--azul-escuro);
+}
+
+.circle.green {
+  background-color: var(--laranja);
+  color: white;
+  border: 2px solid var(--laranja);
 }
 
 .name {
@@ -279,13 +262,10 @@ textarea {
   color: #000000;
 }
 
-.circle.green {
-  background-color: var(--verde);
-}
-
 .arrow {
   font-size: 20px;
 }
+
 
 .buttons {
   display: flex;
@@ -296,23 +276,161 @@ textarea {
 }
 
 .cancel {
-  background-color: white;
-  border: 2px solid orange;
-  color: orange;
+  background-color: var(--laranja);
+  border: 2px solid var(--laranja);
+  color: white;
   padding: 10px 20px;
   border-radius: 40px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cancel:hover {
+  background-color: #d85e00;
+  border-color: #d85e00;
 }
 
 .publish {
-  background-color: #259821;
+  background-color: var(--azul-escuro);
   color: white;
   border: none;
   padding: 10px 24px;
   border-radius: 40px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.publish:hover {
+  background-color: #001f4a;
+}
+
+.input-confirm {
+  padding: 10px;
+  border: 1px solid var(--azul-escuro);
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  color: white;
+  background-color: var(--azul-escuro);
+  font-family: "DM Sans", sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.skill-item {
+  position: relative;
+  margin-right: 8px;
+  padding: 6px 12px;
+  background-color: #eef6ff;
+  border-radius: 16px;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.remove-skill-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--azul-escuro);
+  border: 1px solid white;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  line-height: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.banner-upload-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.banner-preview-container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border: 1px dashed var(--verde);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.banner-preview-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.remove-banner-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--azul-escuro);
+  border: 1px solid var(--azul-escuro);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.cadastro-container:hover,
+.skills-box:hover,
+.map-box:hover,
+.process-box:hover {
+  box-shadow: 0 4px 12px rgba(0, 41, 107, 0.2);
+  transform: translateY(-2px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+input[type="text"]:hover,
+select:hover,
+textarea:hover {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 41, 107, 0.1);
+}
+
+
+.banner-upload:hover {
+  background-color: #e6e6e6;
+}
+
+
+.skill-item:hover {
+  background-color: #d8ebff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.circle:hover {
+  box-shadow: 0 0 0 4px rgba(0, 41, 107, 0.2);
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.banner-preview-container:hover {
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+  transition: box-shadow 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -344,3 +462,4 @@ textarea {
     font-size: 14px;
   }
 }
+

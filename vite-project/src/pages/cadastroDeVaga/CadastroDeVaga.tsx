@@ -6,14 +6,10 @@ import goBackVector from "../vacancy/assets/goBackVector.svg";
 import userIcon from "../../components/header/assets/Ellipse 1.svg";
 
 function CadastroVaga() {
-  const [skills, setSkills] = useState<string[]>([
-    "Comunicação",
-    "Proatividade",
-    "Excel",
-    "Power BI",
-  ]);
+  const [skills, setSkills] = useState<string[]>([]);
   const [newSkill, setNewSkill] = useState("");
   const [showInput, setShowInput] = useState(false);
+  const [bannerPreview, setBannerPreview] = useState<string | null>(null);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -46,6 +42,30 @@ function CadastroVaga() {
     }
   };
 
+  const handleRemoveSkill = (index: number) => {
+    setSkills(skills.filter((_, i) => i !== index));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setBannerPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSubmit = () => {
+    if (skills.length === 0) {
+      alert("Adicione pelo menos uma habilidade antes de publicar a vaga.");
+      return;
+    }
+
+    alert("Vaga publicada com sucesso!");
+  };
+
   return (
     <>
       <Header
@@ -56,20 +76,37 @@ function CadastroVaga() {
       />
 
       <div className="cadastro-container">
-        
         <label className="label">Banner da Vaga</label>
-        <label className="banner-upload" htmlFor="fileUpload">
-          <div className="upload-icon">📤</div>
-          <span className="upload-info">1280x250 4MB</span>
-        </label>
-        <input
-          id="fileUpload"
-          type="file"
-          hidden
-          onChange={(e) => console.log(e.target.files)}
-        />
+        <div className="banner-upload-wrapper">
+          {!bannerPreview ? (
+            <label className="banner-upload" htmlFor="fileUpload">
+              <div className="upload-icon">📤</div>
+              <span className="upload-info">1280x250 4MB</span>
+            </label>
+          ) : (
+            <div className="banner-preview-container">
+              <img
+                src={bannerPreview}
+                alt="Preview"
+                className="banner-preview-filled"
+              />
+              <button
+                className="remove-banner-btn"
+                onClick={() => setBannerPreview(null)}
+                aria-label="Remover banner"
+              >
+                ×
+              </button>
+            </div>
+          )}
+          <input
+            id="fileUpload"
+            type="file"
+            hidden
+            onChange={handleFileChange}
+          />
+        </div>
 
-        
         <div className="form-row">
           <div className="input-group-responsive">
             <label className="label">Remuneração (opcional)</label>
@@ -122,12 +159,19 @@ function CadastroVaga() {
           <textarea></textarea>
         </div>
 
-
         <label className="label">Habilidades e competências</label>
         <div className="skills-box" ref={containerRef}>
           <div className="skills-tags">
             {skills.map((skill, index) => (
-              <span key={index}>{skill}</span>
+              <span key={index} className="skill-item">
+                {skill}
+                <button
+                  className="remove-skill-btn"
+                  onClick={() => handleRemoveSkill(index)}
+                >
+                  ×
+                </button>
+              </span>
             ))}
             {showInput ? (
               <>
@@ -156,38 +200,38 @@ function CadastroVaga() {
           </div>
         </div>
 
-
         <label className="label">Endereço da vaga</label>
-<div className="map-box">
-  <div className="map-header">
-    <h2>Endereço da vaga</h2>
-    <div className="search-container">
-  <input type="text" placeholder="Localização..." className="search-input" />
-</div>
-
-  </div>
-  <div className="map-content">[Mapa]</div>
-</div>
-
-
-
+        <div className="map-box">
+          <div className="map-header">
+            <h2>Endereço da vaga</h2>
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Localização..."
+                className="search-input"
+              />
+            </div>
+          </div>
+          <div className="map-content">[Mapa]</div>
+        </div>
 
         <label className="label">Etapas do processo</label>
         <div className="process-box">
           <div className="process-flow">
-          <div className="circle-container">
-          <div className="circle blue">🖋</div>
-         <div className="name">Cadastro</div>
-        </div>
+            <div className="circle-container">
+              <div className="circle blue">🖋</div>
+              <div className="name">Cadastro</div>
+            </div>
             <span className="arrow">→</span>
             <div className="circle green">+</div>
           </div>
         </div>
 
-        
         <div className="buttons">
           <button className="cancel">CANCELAR</button>
-          <button className="publish">PUBLICAR VAGA!</button>
+          <button className="publish" onClick={handleSubmit}>
+            PUBLICAR VAGA
+          </button>
         </div>
       </div>
     </>
