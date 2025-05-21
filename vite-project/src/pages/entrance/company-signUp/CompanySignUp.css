@@ -18,7 +18,9 @@
   .formContent {
     width: 100%;
     gap: 0.5em;
+    display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .inputTitle {
@@ -28,7 +30,7 @@
   .inputContainer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 3vh;
     justify-content: center;
     align-items: center;
@@ -176,10 +178,14 @@ input#imageUpload {
 .loginContainer {
   text-align: center;
 
-  a {
+  button {
     color: black;
     font-weight: bold;
     font-style: italic;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 105%;
   }
 }
 

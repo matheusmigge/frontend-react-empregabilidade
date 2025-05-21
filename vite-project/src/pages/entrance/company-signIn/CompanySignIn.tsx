@@ -4,9 +4,9 @@ import showPasswordVector from "../../../assets/showPasswordVector.svg";
 import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import InputMask from "react-input-mask";
 import "./CompanySignIn.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function CompanySignIn() {
+function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
   const [showPassword, setShowPassword] = useState(false);
   const [cnpj, setCnpj] = useState("");
   const [password, setPassword] = useState("");
@@ -102,7 +102,13 @@ function CompanySignIn() {
           <div className="signup-now">
             <p>
               Não possui uma conta?{" "}
-              <Link to="/companySignUp1">Cadastre-se</Link>
+              <button
+                type="button"
+                className="linkStyle"
+                onClick={onSignUpClick}
+              >
+                Cadastre-se
+              </button>
             </p>
           </div>
         </div>

@@ -5,9 +5,10 @@ import googleVetor from "../../../assets/googleVetor.svg";
 import showPasswordVector from "../../../assets/showPasswordVector.svg";
 import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import "./UserSignIn.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function UserSignIn() {
+// Adicione a prop onSignUpClick
+function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -108,7 +109,14 @@ function UserSignIn() {
           />
           <div className="signup-now">
             <p>
-              Não possui uma conta? <Link to="/userSignUp1">Cadastre-se</Link>
+              Não possui uma conta?{" "}
+              <button
+                type="button"
+                className="linkStyle"
+                onClick={onSignUpClick}
+              >
+                Cadastre-se
+              </button>
             </p>
           </div>
         </div>

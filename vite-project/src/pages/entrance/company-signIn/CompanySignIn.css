@@ -36,7 +36,7 @@
   .submitContainer {
     margin: auto;
     width: 80%;
-    
+
     .submit {
       height: 6vh;
       padding: 0;
@@ -73,13 +73,16 @@
     margin: 2em 0;
     .signup-now {
       text-align: center;
-      
-      a {
-        font-style: italic;
+
+      button {
         color: black;
         font-weight: bold;
+        font-style: italic;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 105%;
       }
     }
   }
-
 }

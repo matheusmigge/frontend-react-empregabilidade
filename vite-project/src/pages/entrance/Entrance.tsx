@@ -5,15 +5,39 @@ import usuarioVetor from "../../assets/usuarioVetor.svg";
 import TextualButton from "../../components/textual-button/TextualButton";
 import UserSignIn from "./user-signIn/UserSignIn";
 import CompanySignIn from "./company-signIn/CompanySignIn";
+import CompanySignUp from "./company-signUp/CompanySignUp";
+import UserSignUp from "./user-signUp/UserSignUp";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Entrance() {
   const [registerType, setRegisterType] = useState("candidate");
+  const [showCompanySignUp, setShowCompanySignUp] = useState(false);
+  const [showUserSignUp, setShowUserSignUp] = useState(false);
 
   const handleClick = (type: string) => {
     setRegisterType(type);
+
+    if (type === "company") {
+      setShowCompanySignUp(showUserSignUp);
+      setShowUserSignUp(false);
+    } else if (type === "candidate") {
+      setShowUserSignUp(showCompanySignUp);
+      setShowCompanySignUp(false);
+    }
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get("userSignUp") === "true") {
+      setRegisterType("candidate");
+      setShowUserSignUp(true);
+    }
+  }, [location.search]);
 
   return (
     <>
@@ -25,7 +49,7 @@ function Entrance() {
           <div className="buttonContainer">
             <TextualButton
               className={`enterpriseButton ${
-                registerType == "company" ? "selected" : ""
+                registerType === "company" ? "selected" : ""
               }`}
               text="Sou empresa"
               imageUrl={maletaVetor}
@@ -33,7 +57,7 @@ function Entrance() {
             />
             <TextualButton
               className={`candidateButton ${
-                registerType == "candidate" ? "selected" : ""
+                registerType === "candidate" ? "selected" : ""
               }`}
               text="Sou candidato"
               imageUrl={usuarioVetor}
@@ -48,8 +72,18 @@ function Entrance() {
         </section>
 
         <section className="rightSide">
-          {registerType == "company" && <CompanySignIn />}
-          {registerType == "candidate" && <UserSignIn />}
+          {registerType === "company" &&
+            (showCompanySignUp ? (
+              <CompanySignUp onLoginClick={() => setShowCompanySignUp(false)} />
+            ) : (
+              <CompanySignIn onSignUpClick={() => setShowCompanySignUp(true)} />
+            ))}
+          {registerType === "candidate" &&
+            (showUserSignUp ? (
+              <UserSignUp onLoginClick={() => setShowUserSignUp(false)} />
+            ) : (
+              <UserSignIn onSignUpClick={() => setShowUserSignUp(true)} />
+            ))}
         </section>
       </body>
     </>
