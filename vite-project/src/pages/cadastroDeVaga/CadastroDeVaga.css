@@ -42,7 +42,7 @@ input[type="text"],
 select,
 textarea {
   padding: 10px;
-  border: 1px solid var(--azul-escuro);
+  border: 1px solid var(--verde);
   border-radius: 6px;
   font-size: 14px;
   width: 100%;
@@ -55,7 +55,7 @@ input[type="text"]:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--azul-escuro);
+  border-color: var(--verde);
 }
 
 .input-full {
@@ -69,7 +69,7 @@ textarea {
 
 
 .banner-upload {
-  border: 1px dashed var(--azul-escuro);
+  border: 1px dashed var(--verde);
   background-color: #f2f2f2;
   padding: 30px;
   text-align: center;
@@ -99,12 +99,13 @@ textarea {
 
 
 .skills-box {
-  border: 1px solid var(--azul-escuro);
+  border: 1px solid var(--verde);
   background-color: #f2f2f2;
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 20px;
 }
+
 
 .skills-tags {
   display: flex;
@@ -123,7 +124,7 @@ textarea {
 .input-skill {
   padding: 6px 12px;
   background-color: #fff;
-  border: 1px solid var(--azul-escuro);
+  border: 1px solid var(--verde);
   border-radius: 20px;
   font-size: 13px;
   outline: none;
@@ -132,11 +133,11 @@ textarea {
 }
 
 .input-skill:focus {
-  border-color: var(--azul-escuro);
+  border-color: var(--verde);
 }
 
 .btn-add {
-  background-color: var(--azul-escuro);
+  background-color: var(--verde);
   width: 40px;
   height: 40px;
   color: white;
@@ -149,12 +150,12 @@ textarea {
 }
 
 .btn-add:hover {
-  background-color: #001f4a;
+  background-color: green;
 }
 
 
 .map-box {
-  border: 1px solid var(--azul-escuro);
+  border: 1px solid var(--verde);
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -212,7 +213,7 @@ textarea {
 
 .process-box {
   background-color: #f2f2f2;
-  border: 1px solid var(--azul-escuro);
+  border: 1px solid var(--verde);
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 20px;
@@ -252,9 +253,9 @@ textarea {
 }
 
 .circle.green {
-  background-color: var(--laranja);
+  background-color: var(--verde);
   color: white;
-  border: 2px solid var(--laranja);
+  border: 2px solid var(--verde);
 }
 
 .name {
@@ -276,9 +277,9 @@ textarea {
 }
 
 .cancel {
-  background-color: var(--laranja);
+  background-color: white;
   border: 2px solid var(--laranja);
-  color: white;
+  color: var(--laranja);
   padding: 10px 20px;
   border-radius: 40px;
   font-size: 14px;
@@ -287,12 +288,13 @@ textarea {
 }
 
 .cancel:hover {
-  background-color: #d85e00;
-  border-color: #d85e00;
+  background-color: orange;
+  color: white;
+  border-color: orange;
 }
 
 .publish {
-  background-color: var(--azul-escuro);
+  background-color: var(--verde);
   color: white;
   border: none;
   padding: 10px 24px;
@@ -303,19 +305,23 @@ textarea {
 }
 
 .publish:hover {
-  background-color: #001f4a;
+  background-color: green;
 }
 
 .input-confirm {
   padding: 10px;
-  border: 1px solid var(--azul-escuro);
+  border: 1px solid var(--verde);
   border-radius: 6px;
   font-size: 14px;
   width: 100%;
   color: white;
-  background-color: var(--azul-escuro);
+  background-color: var(--verde);
   font-family: "DM Sans", sans-serif;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-confirm:hover{
+  background-color: green;
 }
 
 
@@ -334,7 +340,7 @@ textarea {
   position: absolute;
   top: -6px;
   right: -6px;
-  background: var(--azul-escuro);
+  background: var(--verde);
   border: 1px solid white;
   border-radius: 50%;
   color: white;
@@ -375,8 +381,8 @@ textarea {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: var(--azul-escuro);
-  border: 1px solid var(--azul-escuro);
+  background: var(--verde);
+  border: 1px solid var(--verde);
   color: white;
   border-radius: 50%;
   width: 24px;
@@ -391,41 +397,41 @@ textarea {
 }
 
 
-.cadastro-container:hover,
-.skills-box:hover,
-.map-box:hover,
-.process-box:hover {
-  box-shadow: 0 4px 12px rgba(0, 41, 107, 0.2);
+.cadastro-container:hover{
+  box-shadow: 0 4px 12px rgba(0, 107, 4, 0.2);
   transform: translateY(-2px);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+.skills-box:hover {
+  border-color: green;
+  box-shadow: 0 0 0 3px rgba(17, 139, 5, 0.26);
 }
 
 
 input[type="text"]:hover,
 select:hover,
 textarea:hover {
-  border-color: #0056b3;
-  box-shadow: 0 0 0 3px rgba(0, 41, 107, 0.1);
+  border-color: green;
+  box-shadow: 0 0 0 3px rgba(17, 139, 5, 0.26);
 }
 
 
 .banner-upload:hover {
-  background-color: #e6e6e6;
+  border-color: green;
+  box-shadow: 0 0 0 3px rgba(17, 139, 5, 0.26);
 }
 
 
 .skill-item:hover {
-  background-color: #d8ebff;
+  background-color: rgba(4, 187, 4, 0.292);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 
-.circle:hover {
-  box-shadow: 0 0 0 4px rgba(0, 41, 107, 0.2);
-  transform: scale(1.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+
 
 
 .banner-preview-container:hover {
