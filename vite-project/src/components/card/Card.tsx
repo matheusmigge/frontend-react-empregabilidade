@@ -22,7 +22,7 @@ function Card({
   info,
   radiusDistance,
 }: CardProps) {
-  const statusText = available ? "Disponível" : "Indisponível";
+  const statusText = available ? "Em andamento" : "Encerrada";
   const statusIcon = available ? availableIcon : unavailableIcon;
 
   return (
