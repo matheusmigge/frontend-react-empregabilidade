@@ -3,6 +3,7 @@ import { useAuth } from "../../../context/UseAuth";
 import { useEffect, useState } from "react";
 import { Candidate, Job } from "../../../types";
 import axios from "axios";
+import CandidateTableView from "./components/CandidateTableView";
 
 interface HomeCandidateContentProps {
     userLocation?: {
@@ -61,7 +62,7 @@ function HomeCandidateContent({ userLocation, viewMode }: HomeCandidateContentPr
             ) : (
                 <div>
                     {/* Substitua por seu componente de lista */}
-                    <p>Visualização em lista aqui</p>
+                    <CandidateTableView jobs={jobs} candidate={candidate} />
                 </div>
             )}
         </div>
