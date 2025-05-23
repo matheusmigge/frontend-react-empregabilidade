@@ -7,6 +7,7 @@ import Card from "../../../../components/card/Card";
 import { Link } from "react-router-dom";
 import { Candidate, Job } from "../../../../types";
 import { getJobDistance } from "../../../../utils/distance";
+import JOB_COLUMNS from "../../../../constants/jobColumns";
 
 interface CandidateMapViewProps {
     userLocation?: {
@@ -27,7 +28,7 @@ function CandidateMapView({ userLocation, jobLocations, jobs, candidate }: Candi
     
     return (
         <div className="candidate-map-view">
-            <FiltersBar></FiltersBar>
+            <FiltersBar columns={JOB_COLUMNS}></FiltersBar>
             <Map userLocation={ userLocation } markerLocations={jobLocations} />
 
             <div className="card-list">

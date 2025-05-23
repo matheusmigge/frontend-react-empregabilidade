@@ -1,11 +1,14 @@
 import "./FiltersBar.css";
 import { useState } from "react";
-import FilterButton from "../filter-button/FilterButton";
+import FilterButton, { FilterButtonProps } from "../filter-button/FilterButton";
 import SymbolButton from "../symbol-button/SymbolButton";
 import chevron from "./assets/chevron-right.svg"
-import FILTERS_BAR_ITEMS from "./constants";
 
-function FiltersBar() {
+interface FiltersBarProps {
+    columns: Pick<FilterButtonProps, 'iconUrl' | 'text'>[];
+}
+
+function FiltersBar({ columns }: FiltersBarProps) {
 
     const [openedBar, setOpenedBar] = useState(false);
 
@@ -20,7 +23,7 @@ function FiltersBar() {
 
             <div className="buttons-container">
 
-                {FILTERS_BAR_ITEMS.map((item, index) => (
+                {columns.map((item, index) => (
                     <FilterButton key={index} iconUrl={item.iconUrl} text={item.text} openedBar={openedBar} toggleBar={toggleBar} />
                 ))}
             </div>
