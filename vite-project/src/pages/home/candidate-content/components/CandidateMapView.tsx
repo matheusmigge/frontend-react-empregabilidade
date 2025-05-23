@@ -6,7 +6,7 @@ import Card from "../../../../components/card/Card";
 
 import { Link } from "react-router-dom";
 import { Candidate, Job } from "../../../../types";
-import { getDistanceFromLatLonInKm } from "../../../../utils/distance";
+import { getJobDistance } from "../../../../utils/distance";
 
 interface CandidateMapViewProps {
     userLocation?: {
@@ -32,21 +32,6 @@ function CandidateMapView({ userLocation, jobLocations, jobs, candidate }: Candi
 
             <div className="card-list">
                 {jobs.map((job) => {
-                    let distance = "";
-                    if (
-                        candidate &&
-                        candidate.address &&
-                        job.address &&
-                        job.address.lat &&
-                        job.address.lng
-                    ) {
-                        distance = getDistanceFromLatLonInKm(
-                            parseFloat(candidate.address.lat),
-                            parseFloat(candidate.address.lng),
-                            parseFloat(job.address.lat),
-                            parseFloat(job.address.lng)
-                        ).toFixed(1).replace('.', ',');
-                    }
 
                     return (
                         <Link key={job.id} to="/vacancy" className="linkStyle">
@@ -56,7 +41,7 @@ function CandidateMapView({ userLocation, jobLocations, jobs, candidate }: Candi
                                 jobTitle={job.title}
                                 available={job.jobAvailable}
                                 info={job.workModel}
-                                radiusDistance={distance ? `${distance} km` : "N/A"}
+                                radiusDistance={`${getJobDistance(candidate, job)}`}
                             />
                         </Link>);
                 })}
