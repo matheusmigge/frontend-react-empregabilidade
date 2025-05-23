@@ -11,6 +11,10 @@
     "json-server": "json-server --watch src/data/db.json --port 3000"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.0",
+    "@mui/x-data-grid": "^8.4.0",
     "axios": "^1.7.7",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
