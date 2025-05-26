@@ -6,40 +6,15 @@ import SymbolButton from "../../../components/symbol-button/SymbolButton";
 import logoCompletaVetor from "../../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
-import React, { useState, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../user-curriculum/UserContext";
 
 function UserSignUp2() {
-  const { userData, setUserData } = useContext(UserContext)!;
   const [registerType, setRegisterType] = useState("candidate");
-
-  // Inicializa o formData com os dados existentes no userData
-  const [formData, setFormData] = useState({
-    cep: userData.cep || "",
-    rua: userData.rua || "",
-    bairro: userData.bairro || "",
-    cidade: userData.cidade || "",
-    estado: userData.estado || "",
-    numero: userData.numero || "",
-    linkedin: userData.linkedin || "",
-    portfolio: userData.portfolio || "",
-  });
 
   const handleClick = (type: string) => {
     setRegisterType(type);
   };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setUserData({ ...userData, ...formData }); // Mescla os dados existentes com os novos
-  };
-
   return (
     <>
       <body className="body-container">
@@ -71,58 +46,50 @@ function UserSignUp2() {
             <h1>CADASTRE-SE</h1>
           </div>
 
-          <form className="formContainer" onSubmit={handleSubmit}>
+          <form className="formContainer">
             {/* LADO ESQUERDO */}
             <div className="formContent">
               <div className="inputContainer">
                 <div className="inputForm">
-                  <label htmlFor="cep">CEP</label>
+                  <label htmlFor="user-cep">CEP</label>
                   <input
-                    type="text"
-                    id="cep"
-                    name="cep"
+                    type="number"
+                    id="user-cep"
+                    name="user-cep"
                     placeholder="00000-000"
-                    value={formData.cep}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
               <div className="inputContainer">
                 <div className="inputForm">
-                  <label htmlFor="bairro">Bairro</label>
+                  <label htmlFor="user-neighborhood">Bairro</label>
                   <input
                     type="text"
-                    id="bairro"
-                    name="bairro"
+                    id="user-neighborhood"
+                    name="user-neighborhood"
                     placeholder="Informe seu bairro aqui"
-                    value={formData.bairro}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
               <div className="inputContainer">
                 <div className="inputForm" id="stateInput">
-                  <label htmlFor="estado">Estado</label>
+                  <label htmlFor="user-state">Estado</label>
                   <input
                     type="text"
-                    id="estado"
-                    name="estado"
+                    id="user-state"
+                    name="user-state"
                     placeholder="Informe seu estado aqui"
-                    value={formData.estado}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
               <div className="inputContainer">
                 <div className="inputForm">
-                  <label htmlFor="linkedin">LinkedIn (Opcional)</label>
+                  <label htmlFor="user-linkedin">LinkedIn (Opcional)</label>
                   <input
                     type="text"
-                    id="linkedin"
-                    name="linkedin"
+                    id="user-linkedin"
+                    name="user-linkedin"
                     placeholder="www.linkedin.com/in/seuperfil"
-                    value={formData.linkedin}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -132,69 +99,60 @@ function UserSignUp2() {
             <div className="formContent">
               <div className="inputContainer">
                 <div className="inputForm">
-                  <label htmlFor="rua">Rua</label>
+                  <label htmlFor="user-adress">Rua</label>
                   <input
                     type="text"
-                    id="rua"
-                    name="rua"
+                    id="user-adress"
+                    name="user-adress"
                     placeholder="Informe sua rua aqui"
-                    value={formData.rua}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
               <div className="inputContainer">
                 <div className="inputForm">
-                  <label htmlFor="cidade">Cidade</label>
+                  <label htmlFor="user-city">Cidade</label>
                   <input
                     type="text"
-                    id="cidade"
-                    name="cidade"
+                    id="user-city"
+                    name="user-city"
                     placeholder="Informe sua cidade aqui"
-                    value={formData.cidade}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
               <div className="inputContainer">
                 <div className="inputForm" id="houseNumberInput">
-                  <label htmlFor="numero">Nº</label>
+                  <label htmlFor="user-house-number">Nº</label>
                   <input
-                    type="text"
-                    id="numero"
-                    name="numero"
+                    type="number"
+                    id="user-house-number"
+                    name="user-house-number"
                     placeholder="000"
-                    value={formData.numero}
-                    onChange={handleChange}
                   />
                 </div>
                 <div className="inputForm" id="complementInput">
-                  <label htmlFor="complement">Complemento</label>
+                  <label htmlFor="user-complement">Complemento</label>
                   <input
                     type="text"
-                    id="complement"
-                    name="complement"
+                    id="user-complement"
+                    name="user-complement"
                     placeholder="Complemente aqui"
                   />
                 </div>
               </div>
               <div className="inputContainer">
                 <div className="inputForm">
-                  <label htmlFor="portfolio">
+                  <label htmlFor="user-portfolio">
                     Seu portifólio (Opcional)
                   </label>
                   <input
                     type="text"
-                    id="portfolio"
-                    name="portfolio"
+                    id="user-portfolio"
+                    name="user-portfolio"
                     placeholder="www.seuportfolio.com.br"
-                    value={formData.portfolio}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
             </div>
-            <button>Salvar</button>
           </form>
 
           <div className="optionsContainer">
