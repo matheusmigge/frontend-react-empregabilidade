@@ -8,46 +8,55 @@ import userIcon from "../../components/header/assets/Ellipse 1.svg";
 import Map from "../../components/map/Map";
 import Card from "../../components/card/Card";
 
-import jobData from "../../data/jobs.json";
-import companyData from "../../data/companies.json";
-import candidateData from "../../data/candidates.json";
+import { Job, Candidate } from "../../types";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Home() {
-  const loggedUser = candidateData.candidates[0];
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  <Header
-    imgUrl={menuIcon}
-    title="Vagas Disponíveis"
-    inputText={true}
-    imgUrl1={bellIcon}
-    imgUrl2={userIcon}
-    useToggle={true}
-  ></Header>;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [jobsRes, candidatesRes] = await Promise.all([
+          axios.get("http://localhost:3000/jobs"),
+          axios.get("http://localhost:3000/candidates"),
+        ]);
 
-  const jobsWithDetails = jobData.jobs.map((job) => {
-    const company = companyData.companies.find(
-      (company) => company.CompanyId === job.CompanyId
-    );
-
-    return {
-      ...job,
-      CompanyName: company?.CompanyName || "Empresa desconhecida",
-      LogoURL: company?.LogoURL || userIcon,
+        setJobs(jobsRes.data);
+        setCandidates(candidatesRes.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Erro ao buscar dados:", error);
+        setLoading(false);
+      }
     };
-  });
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+
+  const loggedUser = candidates[0];
 
   const userLocation = {
-    latitude: parseFloat(loggedUser.Address.lat),
-    longitude: parseFloat(loggedUser.Address.lng),
+    latitude: parseFloat(loggedUser.address.lat),
+    longitude: parseFloat(loggedUser.address.lng),
   };
 
-  const markerLocations = jobsWithDetails.map((job) => ({
-    latitude: parseFloat(job.Address.lat),
-    longitude: parseFloat(job.Address.lng),
-    id: job.jobId.toString(),
-    label: job.Title,
-  }));
+  const markerLocations = jobs
+    .filter((job) => job.address?.lat && job.address?.lng)
+    .map((job) => ({
+      latitude: parseFloat(job.address.lat),
+      longitude: parseFloat(job.address.lng),
+      id: job.id.toString(),
+      label: job.title,
+    }));
 
   return (
     <div className="home">
@@ -65,19 +74,19 @@ function Home() {
         <Map userLocation={userLocation} markerLocations={markerLocations} />
 
         <div className="card-list">
-          {jobsWithDetails.map((job) => (
-            <Link to="/vacancy" className="linkStyle">
-              <Card
-                key={job.jobId}
-                companyName={job.CompanyName}
-                logoName={job.LogoURL}
-                jobTitle={job.Title}
-                available={job.JobAvailable}
-                info={job.WorkModel}
-                amount={`${job.CurrentApplications}/${job.MaximumApplications}`}
-              />
-            </Link>
-          ))}
+          {jobs.map((job) => {
+            return (
+              <Link key={job.id} to="/vacancy" className="linkStyle">
+                <Card
+                  companyName={job.company.name}
+                  logoName={job.company.logoUrl}
+                  jobTitle={job.title}
+                  available={job.jobAvailable}
+                  info={job.workModel}
+                  amount={`${job.currentApplications}/${job.maximumApplications}`}
+                />
+              </Link>);
+          })}
         </div>
       </div>
     </div>
