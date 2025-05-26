@@ -1,6 +1,4 @@
 import "./userCurriculum.css";
-import { useContext, useState } from "react";
-import { UserContext } from "../user-curriculum/UserContext";
 
 import Header from "../../../components/header/Header";
 import bellIcon from "../../../components/header/assets/bell.svg";
@@ -10,36 +8,8 @@ import { Link } from "react-router-dom";
 import AccordionBox from "../../vacancy/accordionBox/AccordionBox";
 
 export default function UserCurriculum () {
-  const { userData } = useContext(UserContext)!;
-
-  // Estado local para experiências profissionais
-  const [experiencias, setExperiencias] = useState([
-    { empresa: "", cargo: "", periodoInicio: "", periodoFim: "", resumo: "" }
-  ]);
-
-  // Função para adicionar nova experiência
-  const adicionarExperiencia = () => {
-    setExperiencias([
-      ...experiencias,
-      { empresa: "", cargo: "", periodoInicio: "", periodoFim: "", resumo: "" }
-    ]);
-  };
-
-  // Função para atualizar campos de experiência
-  const handleExperienciaChange = (index: number, field: string, value: string) => {
-    const novasExperiencias = experiencias.map((exp, i) =>
-      i === index ? { ...exp, [field]: value } : exp
-    );
-    setExperiencias(novasExperiencias);
-  };
-
-  // Função para excluir uma experiência pelo índice
-  const excluirExperiencia = (index: number) => {
-    setExperiencias(experiencias.filter((_, i) => i !== index));
-  };
-
-  return (
-    <>
+    return (
+      <>
       <div>
         <Link to="/userSignUp2" className="linkStyle">
           <Header
@@ -63,32 +33,42 @@ export default function UserCurriculum () {
               
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Nome</p>
-                  <input type="text" className="curriculumInputField" placeholder="Digite seu Primeiro nome" value={userData.nome || ""} readOnly />
+                  <input type="text" className="curriculumInputField" placeholder="Digite seu Primeiro nome" />
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Sobrenome</p>
-                <input type="text" className="curriculumInputField" placeholder="Digite seu Sobrenome" value={userData.sobrenome || ""} readOnly />
+                <input type="text" className="curriculumInputField" placeholder="Digite seu Sobrenome" />
                 </div>
                 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">CPF</p>
-                  <input type="text" className="curriculumInputField" placeholder="Digite seu CPF" value={userData.cpf || ""} readOnly />
+                  <input type="text" className="curriculumInputField" placeholder="Digite seu CPF"/>
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Data de nascimento</p>
-                <input type="date" className="curriculumInputField" value={userData.dataNascimento || ""} readOnly />
+                <input type="date" className="curriculumInputField"/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Email</p>
-                  <input type="email" className="curriculumInputField" placeholder="Digite seu Gmail" value={userData.email || ""} readOnly />
+                  <input type="email" className="curriculumInputField" placeholder="Digite seu Gmail" />
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Telefone</p>
-                  <input type="tel" className="curriculumInputField" placeholder=" (00) 00000-0000" value={userData.telefone || ""} readOnly />
+                  <input type="tel" className="curriculumInputField" placeholder=" (00) 00000-0000"/>
+                </div>
+
+                <div  className="curriculumFormField">
+                  <p className="curriculumAccordionText">Senha</p>
+                  <input type="password" className="curriculumInputField" name="user-password" placeholder="Digite sua senha"/>
+                </div>
+
+                <div  className="curriculumFormField">
+                  <p className="curriculumAccordionText">Confirme sua senha</p>
+                  <input type="password" className="curriculumInputField" name="user-password" placeholder="Confirme sua senha"/>
                 </div>
                   
               </div>
@@ -104,42 +84,42 @@ export default function UserCurriculum () {
               
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">CEP</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe seu Código postal" value={userData.cep || ""} readOnly />
+                  <input type="text" className="curriculumInputField" placeholder="Informe  seu Código postal" />
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Rua</p>
-                <input type="text" className="curriculumInputField" placeholder="Informe seu endereço" value={userData.rua || ""} readOnly />
+                <input type="text" className="curriculumInputField" placeholder="Informe seu endereço" />
                 </div>
                 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Bairro</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe seu bairro" value={userData.bairro || ""} readOnly/>
+                  <input type="text" className="curriculumInputField" placeholder="Informe seu bairro"/>
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Cidade</p>
-                <input type="text" className="curriculumInputField" placeholder="Informe sua cidade" value={userData.cidade || ""} readOnly/>
+                <input type="text" className="curriculumInputField" placeholder="Informe sua cidade"/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">estado</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe seu Estado" value={userData.estado || ""} readOnly/>
+                  <input type="text" className="curriculumInputField" placeholder="Informe  seu Estado"/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Nº</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe o Número residêncial" value={userData.numero || ""} readOnly/>
+                  <input type="text" className="curriculumInputField" placeholder="Informe o Número residêncial"/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Linkedin</p>
-                  <input type="url" className="curriculumInputField" name="user-linkedin" placeholder="Link do seu Linkedin" value={userData.linkedin || ""} readOnly/>
+                  <input type="url" className="curriculumInputField" name="user-linkedin" placeholder="Link do seu Linkedin"/>
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Portfólio</p>
-                  <input type="url" className="curriculumInputField" name="user-portfolio" placeholder="Link do seu Portfólio" value={userData.portfolio || ""} readOnly/>
+                  <input type="url" className="curriculumInputField" name="user-portfolio" placeholder="Link do seu Portfólio"/>
                 </div>
                   
               </div>
@@ -149,84 +129,84 @@ export default function UserCurriculum () {
           </div>
 
           <div className="curriculumAccordionContainer">
-            <AccordionBox title="Resumo profissional">
-              <div className="curriculumFormContainer">
-              
-                <div  className="curriculumFormFieldProf">
-                    <textarea name="" className="curriculumInputFieldProf" placeholder="Faça um breve resumo sobre sua carreira profissional!"></textarea>
-                </div>
-
-              </div>
-            </AccordionBox>
+            
           </div>
 
           <div className="curriculumAccordionContainer">
             <AccordionBox title="Experiências profissionais">
-              <div className="curriculumFormContainer1">
-                {experiencias.map((exp, idx) => (
-                  <div className="curriculumExperienceField" key={idx}>
-                    <p className="curriculumAccordionText">Empresa</p>
-                    <input
-                      type="text"
-                      className="curriculumInputField"
-                      placeholder="Informe sua experiência profissional"
-                      value={exp.empresa}
-                      onChange={e => handleExperienciaChange(idx, "empresa", e.target.value)}
-                    />
 
-                    <p className="curriculumAccordionText">Cargo</p>
-                    <input
-                      type="text"
-                      className="curriculumInputField"
-                      placeholder="Informe sua experiência profissional"
-                      value={exp.cargo}
-                      onChange={e => handleExperienciaChange(idx, "cargo", e.target.value)}
-                    />
+                <div className="curriculumFormContainer1">
 
-                    <p className="curriculumAccordionText">Período</p>
-                    <div>
-                      <input
-                        type="date"
-                        className="curriculumInputFieldExp"
-                        value={exp.periodoInicio}
-                        onChange={e => handleExperienciaChange(idx, "periodoInicio", e.target.value)}
-                      />
-                      <input
-                        type="date"
-                        className="curriculumInputFieldExp"
-                        value={exp.periodoFim}
-                        onChange={e => handleExperienciaChange(idx, "periodoFim", e.target.value)}
-                      />
-                    </div>
+                <div className="curriculumExperienceField">
 
-                    <p className="curriculumAccordionText">Resumo</p>
-                    <textarea
-                      className="curriculumInputFieldProfExp"
-                      placeholder="Faça um breve resumo sobre suas funções na empresa!"
-                      value={exp.resumo}
-                      onChange={e => handleExperienciaChange(idx, "resumo", e.target.value)}
-                    />
+                  <p className="curriculumAccordionText">Empresa</p>
+                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
 
-                    {/* Botão de excluir */}
-                    <button
-                      type="button"
-                      className="btn excluir"
-                      onClick={() => excluirExperiencia(idx)}
-                    >
+                  <p className="curriculumAccordionText">Cargo</p>
+                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+
+                  <p className="curriculumAccordionText">Período</p>
+                  <div>
+                  <input type="date" className="curriculumInputFieldExp" />
+                  
+                  <input type="date" className="curriculumInputFieldExp" />
+                  </div>
+
+                  <p className="curriculumAccordionText">resumo</p>
+                  <textarea name="" className="curriculumInputFieldProfExp" placeholder="Faça um breve resumo sobre suas funções na empresa!"></textarea>
+
+                  <div className="botoes-container">
+                    <button className="btn excluir">
                       <span className="icon">🗑️</span> Excluir
                     </button>
+                    <button className="btn editar">
+                      <span className="icon">✏️</span> Editar
+                    </button>
+                    <button className="btn confirmar">
+                      <span className="icon">✓</span> Confirmar
+                    </button>
                   </div>
-                ))}
+
+                </div>
+
+                <div className="curriculumAccordionContainer">
+
+                  <p className="curriculumAccordionText">Empresa</p>
+                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+
+                  <p className="curriculumAccordionText">Cargo</p>
+                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+
+                  <p className="curriculumAccordionText">Período</p>
+                  <div>
+                  <input type="date" className="curriculumInputFieldExp" />
+                  
+                  <input type="date" className="curriculumInputFieldExp" />
+                  </div>
+
+                  <p className="curriculumAccordionText">Resumo</p>
+                  <textarea name="" className="curriculumInputFieldProfExp" placeholder="Faça um breve resumo sobre suas funções na empresa!"></textarea>
+                  
+                  <div className="botoes-container">
+                    <button className="btn excluir">
+                      <span className="icon">🗑️</span> Excluir
+                    </button>
+                    <button className="btn editar">
+                      <span className="icon">✏️</span> Editar
+                    </button>
+                    <button className="btn confirmar">
+                      <span className="icon">✓</span> Confirmar
+                    </button>
+                  </div>
+                </div>
+
               </div>
+
+
               <div className="add-button-container">
-                <button
-                  className="add-button"
-                  type="button"
-                  onClick={adicionarExperiencia}
-                >
-                  ＋
-                </button>
-              </div>
+                  <button className="add-button">＋</button>
+                </div>
+
             </AccordionBox>
           </div>
 
@@ -378,6 +358,5 @@ export default function UserCurriculum () {
       </>
     );
   }
-
 
 

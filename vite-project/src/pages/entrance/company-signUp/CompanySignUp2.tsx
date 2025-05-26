@@ -1,31 +1,20 @@
-import React, { useState } from "react";
-import "./CompanySignUp.css";
+import "./UserSignUp.css";
 import TextualButton from "../../../components/textual-button/TextualButton";
+import linkedinVetor from "../../../assets/linkedinVetor.svg";
+import googleVetor from "../../../assets/googleVetor.svg";
+import SymbolButton from "../../../components/symbol-button/SymbolButton";
 import logoCompletaVetor from "../../../assets/logoCompletaVetor.svg";
 import maletaVetor from "../../../assets/maletaVetor.svg";
 import usuarioVetor from "../../../assets/usuarioVetor.svg";
-import greenPlus from "./assets/GreenPlus.svg";
-import crossVetor from "./assets/crossVector.svg";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function CompanySignUp2() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = (event: React.MouseEvent) => {
-    event.preventDefault();
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
+function UserSignUp2() {
   const [registerType, setRegisterType] = useState("candidate");
 
   const handleClick = (type: string) => {
     setRegisterType(type);
   };
-
   return (
     <>
       <body className="body-container">
@@ -53,133 +42,168 @@ function CompanySignUp2() {
           </div>
         </section>
         <section className="rightSide">
-          <div className="company-register">
-            <div className="titleContainer">
-              <h1>CADASTRO DE GESTORES</h1>
-            </div>
-
-            <form className="formContainer">
-              <div className="formContent">
-                <div className="inputTitle">
-                  <h2>Gestor da empresa</h2>
-                </div>
-
-                <div className="inputContainer">
-                  <div className="inputForm">
-                    <label htmlFor="manager-email">Email</label>
-                    <input
-                      type="mail"
-                      id="manager-email"
-                      name="manager-email"
-                      placeholder="Email do gestor geral"
-                    />
-                  </div>
-                  <div className="inputForm">
-                    <label htmlFor="manager-password">Senha</label>
-                    <input
-                      type="password"
-                      id="manager-password"
-                      name="manager-password"
-                      placeholder="Senha para o gestor geral"
-                    />
-                  </div>
-                </div>
-
-                <div className="inputTitle">
-                  <h2>Gestor de RH</h2>
-                </div>
-
-                <div className="inputContainer">
-                  <div className="inputForm">
-                    <label htmlFor="rh-email">Email</label>
-                    <input
-                      type="mail"
-                      id="rh-email"
-                      name="rh-email"
-                      placeholder="Email do gestor de RH"
-                    />
-                  </div>
-                  <div className="inputForm">
-                    <label htmlFor="rh-password">Senha</label>
-                    <input
-                      type="password"
-                      id="rh-password"
-                      name="rh-password"
-                      placeholder="Senha para o gestor de RH"
-                    />
-                  </div>
-                </div>
-
-                <div className="buttonContainer">
-                  <div className="returnButton">
-                    <Link to="/companySignUp1" className="linkStyle">
-                      <TextualButton text={"VOLTAR"} className="backButton" />
-                    </Link>
-                  </div>
-                  <div className="addFunctionButton">
-                    <TextualButton
-                      text={"ADICIONAR FUNÇÃO"}
-                      className="submit"
-                      imageUrl={greenPlus}
-                      onClick={() => handleOpenModal}
-                    />
-                  </div>
-                  <div className="concludeButton">
-                    <Link to="/home" className=" linkStyle">
-                      <TextualButton text={"CONCLUIR"} className="submit" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </form>
+          <div className="titleContainer">
+            <h1>CADASTRE-SE</h1>
           </div>
 
-          {/* Modal */}
-          {isModalOpen && (
-            <div className="modal-overlay">
-              <div className="modal">
-                <div className="closeModal">
-                  <button>
-                    <img onClick={handleCloseModal} src={crossVetor} />
-                  </button>
-                </div>
-
-                <div className="modalInputContent">
-                  <label htmlFor="function-name">Função</label>
+          <form className="formContainer">
+            {/* LADO ESQUERDO */}
+            <div className="formContent">
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-cep">CEP</label>
                   <input
-                    type="text"
-                    id="function-name"
-                    name="function-name"
-                    placeholder="Função que deseja adicionar"
-                  />
-
-                  <label htmlFor="function-email">Email</label>
-                  <input
-                    type="text"
-                    id="function-email"
-                    name="function-email"
-                    placeholder="Email do funcionário"
-                  />
-
-                  <label htmlFor="function-password">Senha</label>
-                  <input
-                    type="password"
-                    id="function-password"
-                    name="function-password"
-                    placeholder="Senha para o gestor o funcinário"
+                    type="number"
+                    id="user-cep"
+                    name="user-cep"
+                    placeholder="00000-000"
                   />
                 </div>
-
-                <div className="addFunctionButton">
-                  <TextualButton text={"ADICIONAR"} className="submit" />
+              </div>
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-neighborhood">Bairro</label>
+                  <input
+                    type="text"
+                    id="user-neighborhood"
+                    name="user-neighborhood"
+                    placeholder="Informe seu bairro aqui"
+                  />
+                </div>
+              </div>
+              <div className="inputContainer">
+                <div className="inputForm" id="stateInput">
+                  <label htmlFor="user-state">Estado</label>
+                  <input
+                    type="text"
+                    id="user-state"
+                    name="user-state"
+                    placeholder="Informe seu estado aqui"
+                  />
+                </div>
+              </div>
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-linkedin">LinkedIn (Opcional)</label>
+                  <input
+                    type="text"
+                    id="user-linkedin"
+                    name="user-linkedin"
+                    placeholder="www.linkedin.com/in/seuperfil"
+                  />
                 </div>
               </div>
             </div>
-          )}
+
+            {/* LADO DIREITO */}
+            <div className="formContent">
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-adress">Rua</label>
+                  <input
+                    type="text"
+                    id="user-adress"
+                    name="user-adress"
+                    placeholder="Informe sua rua aqui"
+                  />
+                </div>
+              </div>
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-city">Cidade</label>
+                  <input
+                    type="text"
+                    id="user-city"
+                    name="user-city"
+                    placeholder="Informe sua cidade aqui"
+                  />
+                </div>
+              </div>
+              <div className="inputContainer">
+                <div className="inputForm" id="houseNumberInput">
+                  <label htmlFor="user-house-number">Nº</label>
+                  <input
+                    type="number"
+                    id="user-house-number"
+                    name="user-house-number"
+                    placeholder="000"
+                  />
+                </div>
+                <div className="inputForm" id="complementInput">
+                  <label htmlFor="user-complement">Complemento</label>
+                  <input
+                    type="text"
+                    id="user-complement"
+                    name="user-complement"
+                    placeholder="Complemente aqui"
+                  />
+                </div>
+              </div>
+              <div className="inputContainer">
+                <div className="inputForm">
+                  <label htmlFor="user-portfolio">
+                    Seu portifólio (Opcional)
+                  </label>
+                  <input
+                    type="text"
+                    id="user-portfolio"
+                    name="user-portfolio"
+                    placeholder="www.seuportfolio.com.br"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div className="optionsContainer">
+            <div className="goBackButton">
+              <Link to="/userSignUp1" className="linkStyle">
+                <TextualButton
+                  text={"VOLTAR"}
+                  className="submit"
+                ></TextualButton>
+              </Link>
+            </div>
+            <div className="registerCurriculumButton">
+              <TextualButton
+                text={"CADASTRAR CURRICULO"}
+                className="submit"
+              ></TextualButton>
+            </div>
+            <div className="finishLaterButton">
+              <Link to="/home" className="linkStyle">
+              <TextualButton
+                text={"FINALIZAR DEPOIS"}
+                className="submit"
+              />
+              </Link>
+            </div>
+          </div>
+
+          <div className="buttonContainer">
+            <SymbolButton className="symbol-button" imageUrl={linkedinVetor} />
+
+            <SymbolButton className="symbol-button" imageUrl={googleVetor} />
+          </div>
+
+          <div className="loginContainer">
+            <p>
+              Já tem uma conta? <Link to="/entrance">Entrar</Link>
+            </p>
+          </div>
+
+          <div className="informationContainer">
+            <p>
+              Ao criar uma conta, você concorda com nossos{" "}
+              <a href="">Termos de Serviço</a>,{" "}
+              <a href="">Política de Privacidade</a> e nossas{" "}
+              <a href="">Configurações de Notificação padrão</a>.
+            </p>
+          </div>
         </section>
       </body>
     </>
   );
 }
 
-export default CompanySignUp2;
+export default UserSignUp2;
