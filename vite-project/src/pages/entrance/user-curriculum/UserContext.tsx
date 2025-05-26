@@ -26,13 +26,13 @@ export const UserContext = createContext<UserContextProps | undefined>(undefined
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [userData, setUserData] = useState<UserData>(() => {
-    // Carrega os dados do localStorage ao inicializar
+    
     const storedData = localStorage.getItem("userData");
     return storedData ? JSON.parse(storedData) : {};
   });
 
   useEffect(() => {
-    // Salva os dados no localStorage sempre que forem atualizados
+   
     localStorage.setItem("userData", JSON.stringify(userData));
   }, [userData]);
 

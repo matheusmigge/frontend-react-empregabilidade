@@ -1,5 +1,5 @@
 import "./userCurriculum.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../user-curriculum/UserContext";
 
 import Header from "../../../components/header/Header";
@@ -12,8 +12,34 @@ import AccordionBox from "../../vacancy/accordionBox/AccordionBox";
 export default function UserCurriculum () {
   const { userData } = useContext(UserContext)!;
 
-    return (
-      <>
+  // Estado local para experiências profissionais
+  const [experiencias, setExperiencias] = useState([
+    { empresa: "", cargo: "", periodoInicio: "", periodoFim: "", resumo: "" }
+  ]);
+
+  // Função para adicionar nova experiência
+  const adicionarExperiencia = () => {
+    setExperiencias([
+      ...experiencias,
+      { empresa: "", cargo: "", periodoInicio: "", periodoFim: "", resumo: "" }
+    ]);
+  };
+
+  // Função para atualizar campos de experiência
+  const handleExperienciaChange = (index: number, field: string, value: string) => {
+    const novasExperiencias = experiencias.map((exp, i) =>
+      i === index ? { ...exp, [field]: value } : exp
+    );
+    setExperiencias(novasExperiencias);
+  };
+
+  // Função para excluir uma experiência pelo índice
+  const excluirExperiencia = (index: number) => {
+    setExperiencias(experiencias.filter((_, i) => i !== index));
+  };
+
+  return (
+    <>
       <div>
         <Link to="/userSignUp2" className="linkStyle">
           <Header
@@ -136,78 +162,71 @@ export default function UserCurriculum () {
 
           <div className="curriculumAccordionContainer">
             <AccordionBox title="Experiências profissionais">
+              <div className="curriculumFormContainer1">
+                {experiencias.map((exp, idx) => (
+                  <div className="curriculumExperienceField" key={idx}>
+                    <p className="curriculumAccordionText">Empresa</p>
+                    <input
+                      type="text"
+                      className="curriculumInputField"
+                      placeholder="Informe sua experiência profissional"
+                      value={exp.empresa}
+                      onChange={e => handleExperienciaChange(idx, "empresa", e.target.value)}
+                    />
 
-                <div className="curriculumFormContainer1">
+                    <p className="curriculumAccordionText">Cargo</p>
+                    <input
+                      type="text"
+                      className="curriculumInputField"
+                      placeholder="Informe sua experiência profissional"
+                      value={exp.cargo}
+                      onChange={e => handleExperienciaChange(idx, "cargo", e.target.value)}
+                    />
 
-                <div className="curriculumExperienceField">
+                    <p className="curriculumAccordionText">Período</p>
+                    <div>
+                      <input
+                        type="date"
+                        className="curriculumInputFieldExp"
+                        value={exp.periodoInicio}
+                        onChange={e => handleExperienciaChange(idx, "periodoInicio", e.target.value)}
+                      />
+                      <input
+                        type="date"
+                        className="curriculumInputFieldExp"
+                        value={exp.periodoFim}
+                        onChange={e => handleExperienciaChange(idx, "periodoFim", e.target.value)}
+                      />
+                    </div>
 
-                  <p className="curriculumAccordionText">Empresa</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+                    <p className="curriculumAccordionText">Resumo</p>
+                    <textarea
+                      className="curriculumInputFieldProfExp"
+                      placeholder="Faça um breve resumo sobre suas funções na empresa!"
+                      value={exp.resumo}
+                      onChange={e => handleExperienciaChange(idx, "resumo", e.target.value)}
+                    />
 
-                  <p className="curriculumAccordionText">Cargo</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
-
-                  <p className="curriculumAccordionText">Período</p>
-                  <div>
-                  <input type="date" className="curriculumInputFieldExp" />
-                  
-                  <input type="date" className="curriculumInputFieldExp" />
-                  </div>
-
-                  <p className="curriculumAccordionText">resumo</p>
-                  <textarea name="" className="curriculumInputFieldProfExp" placeholder="Faça um breve resumo sobre suas funções na empresa!"></textarea>
-
-                  <div className="botoes-container">
-                    <button className="btn excluir">
+                    {/* Botão de excluir */}
+                    <button
+                      type="button"
+                      className="btn excluir"
+                      onClick={() => excluirExperiencia(idx)}
+                    >
                       <span className="icon">🗑️</span> Excluir
                     </button>
-                    <button className="btn editar">
-                      <span className="icon">✏️</span> Editar
-                    </button>
-                    <button className="btn confirmar">
-                      <span className="icon">✓</span> Confirmar
-                    </button>
                   </div>
-
-                </div>
-
-                <div className="curriculumAccordionContainer">
-
-                  <p className="curriculumAccordionText">Empresa</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
-
-                  <p className="curriculumAccordionText">Cargo</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
-
-                  <p className="curriculumAccordionText">Período</p>
-                  <div>
-                  <input type="date" className="curriculumInputFieldExp" />
-                  
-                  <input type="date" className="curriculumInputFieldExp" />
-                  </div>
-
-                  <p className="curriculumAccordionText">Resumo</p>
-                  <textarea name="" className="curriculumInputFieldProfExp" placeholder="Faça um breve resumo sobre suas funções na empresa!"></textarea>
-                  
-                  <div className="botoes-container">
-                    <button className="btn excluir">
-                      <span className="icon">🗑️</span> Excluir
-                    </button>
-                    <button className="btn editar">
-                      <span className="icon">✏️</span> Editar
-                    </button>
-                    <button className="btn confirmar">
-                      <span className="icon">✓</span> Confirmar
-                    </button>
-                  </div>
-                </div>
-
+                ))}
               </div>
-
               <div className="add-button-container">
-                  <button className="add-button">＋</button>
-                </div>
-
+                <button
+                  className="add-button"
+                  type="button"
+                  onClick={adicionarExperiencia}
+                >
+                  ＋
+                </button>
+              </div>
             </AccordionBox>
           </div>
 

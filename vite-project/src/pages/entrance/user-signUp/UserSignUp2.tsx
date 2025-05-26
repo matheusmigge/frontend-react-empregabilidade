@@ -194,7 +194,7 @@ function UserSignUp2() {
                 </div>
               </div>
             </div>
-            <button type="submit">Salvar</button>
+            <button>Salvar</button>
           </form>
 
           <div className="optionsContainer">
