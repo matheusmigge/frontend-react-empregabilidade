@@ -1,31 +1,44 @@
 {
     "jobs": [
         {
-            "jobId": 1,
-            "CompanyId": 1,
-            "Title": "Desenvolvedor Front-End",
-            "OpeningDate": "2024-11-20",
-            "ClosingDate": null,
-            "JobAvailable": true,
-            "BannerURL": "https://example.com/banner/frontend.jpg",
-            "HiringType": "CLT",
-            "Salary": 6500,
-            "WorkModel": "Remoto",
-            "JobArea": "Tecnologia da Informação",
-            "MaximumAcceptedDistanceInKm": 50,
-            "JobDescription": "Desenvolvimento de interfaces responsivas e acessíveis para aplicações web.",
-            "ResponsibilitiesAndDuties": "Criar componentes reutilizáveis; Garantir performance e responsividade.",
-            "RequirementsAndQualifications": "Conhecimento em React, TypeScript, e Redux.",
-            "WhatIncreasesYourChances": "Experiência com Next.js e Tailwind CSS.",
-            "RequiredSkillsTags": ["React", "TypeScript", "Redux", "CSS"],
-            "SelectionProcessStages": [
+            "id": 1,
+            "company": {
+                "id": 1,
+                "name": "TechCorp",
+                "cnpj": "12.345.678/0001-90",
+                "logoUrl": "https://i.ibb.co/6X65zND/company1.png",
+                "phoneNumber": "+55 11 1234-5678",
+                "adminAccountEmail": "admin@techcorp.com",
+                "adminAccountPassword": "AdminPass123",
+                "managerAccountEmail": "manager@techcorp.com",
+                "managerAccountPassword": "ManagerPass123",
+                "hrmanagerAccountEmail": "hrmanager@techcorp.com",
+                "hrmanagerAccountPassword": "HRPass123",
+                "accountCreationDate": "2023-05-15"
+            },
+            "title": "Desenvolvedor Front-End",
+            "openingDate": "2024-11-20",
+            "closingDate": null,
+            "jobAvailable": true,
+            "bannerURL": "https://i.ibb.co/6X65zND/company1.png",
+            "hiringType": "CLT",
+            "salary": 6500,
+            "workModel": "Remoto",
+            "jobArea": "Tecnologia da Informação",
+            "maximumAcceptedDistanceInKm": 50,
+            "jobDescription": "Desenvolvimento de interfaces responsivas e acessíveis para aplicações web.",
+            "responsibilitiesAndDuties": "Criar componentes reutilizáveis; Garantir performance e responsividade.",
+            "requirementsAndQualifications": "Conhecimento em React, TypeScript, e Redux.",
+            "whatIncreasesYourChances": "Experiência com Next.js e Tailwind CSS.",
+            "requiredSkillsTags": ["React", "TypeScript", "Redux", "CSS"],
+            "selectionProcessStages": [
                 "Triagem de currículo",
                 "Teste técnico",
                 "Entrevista com o time"
             ],
-            "MaximumApplications": 100,
-            "CurrentApplications": 25,
-            "Address": {
+            "maximumApplications": 100,
+            "currentApplications": 25,
+            "address": {
                 "cep": "50711000",
                 "address_type": "Avenida",
                 "address_name": "Caxangá",
@@ -40,36 +53,49 @@
             }
         },
         {
-            "jobId": 2,
-            "CompanyId": 2,
-            "Title": "Analista de Marketing Digital",
-            "OpeningDate": "2024-11-01",
-            "ClosingDate": "2024-12-01",
-            "JobAvailable": true,
-            "BannerURL": "https://example.com/banner/marketing.jpg",
-            "HiringType": "PJ",
-            "Salary": 4000,
-            "WorkModel": "Híbrido",
-            "JobArea": "Marketing",
-            "MaximumAcceptedDistanceInKm": 30,
-            "JobDescription": "Planejamento e execução de estratégias de marketing digital.",
-            "ResponsibilitiesAndDuties": "Gerenciar campanhas no Google Ads; Acompanhar métricas e KPIs.",
-            "RequirementsAndQualifications": "Conhecimento em SEO e Analytics.",
-            "WhatIncreasesYourChances": "Certificação em Google Ads.",
-            "RequiredSkillsTags": [
+            "id": 2,
+            "company": {
+                "id": 2,
+                "name": "InnovaTech",
+                "cnpj": "98.765.432/0001-12",
+                "logoUrl": "https://i.ibb.co/RP1PjDW/company2.png",
+                "phoneNumber": "+55 21 9876-5432",
+                "adminAccountEmail": "admin@innovatech.com",
+                "adminAccountPassword": "Admin2022",
+                "managerAccountEmail": "manager@innovatech.com",
+                "managerAccountPassword": "Manager2022",
+                "hrmanagerAccountEmail": "hr@innovatech.com",
+                "hrmanagerAccountPassword": "HR2022",
+                "accountCreationDate": "2022-11-20"
+            },
+            "title": "Analista de Marketing Digital",
+            "openingDate": "2024-11-01",
+            "closingDate": "2024-12-01",
+            "jobAvailable": true,
+            "bannerURL": "https://example.com/banner/marketing.jpg",
+            "hiringType": "PJ",
+            "salary": 4000,
+            "workModel": "Híbrido",
+            "jobArea": "Marketing",
+            "maximumAcceptedDistanceInKm": 30,
+            "jobDescription": "Planejamento e execução de estratégias de marketing digital.",
+            "responsibilitiesAndDuties": "Gerenciar campanhas no Google Ads; Acompanhar métricas e KPIs.",
+            "requirementsAndQualifications": "Conhecimento em SEO e Analytics.",
+            "whatIncreasesYourChances": "Certificação em Google Ads.",
+            "requiredSkillsTags": [
                 "SEO",
                 "Google Ads",
                 "Analytics",
                 "Social Media"
             ],
-            "SelectionProcessStages": [
+            "selectionProcessStages": [
                 "Triagem de currículo",
                 "Apresentação de case",
                 "Entrevista final"
             ],
-            "MaximumApplications": 50,
-            "CurrentApplications": 14,
-            "Address": {
+            "maximumApplications": 50,
+            "currentApplications": 14,
+            "address": {
                 "cep": "50720300",
                 "address_type": "Rua",
                 "address_name": "Antônio Lucena",
@@ -86,30 +112,43 @@
             }
         },
         {
-            "jobId": 3,
-            "CompanyId": 3,
-            "OpeningDate": "2024-10-26",
-            "ClosingDate": "2024-12-01",
-            "JobAvailable": true,
-            "Title": "Designer UX/UI",
-            "BannerURL": "https://example.com/banner/uxui.jpg",
-            "HiringType": "Freelancer",
-            "Salary": 5000,
-            "WorkModel": "Remoto",
-            "JobArea": "Design",
-            "MaximumAcceptedDistanceInKm": null,
-            "JobDescription": "Criação de experiências de usuário inovadoras e interfaces intuitivas.",
-            "ResponsibilitiesAndDuties": "Desenvolver wireframes e protótipos; Realizar testes de usabilidade.",
-            "RequirementsAndQualifications": "Experiência com Figma e Adobe XD.",
-            "WhatIncreasesYourChances": "Portfólio com projetos relevantes.",
-            "RequiredSkillsTags": ["UX", "UI", "Figma", "Adobe XD"],
-            "SelectionProcessStages": [
+            "id": 3,
+            "company": {
+                "id": 3,
+                "name": "Future Solutions",
+                "cnpj": "56.789.123/0001-45",
+                "logoUrl": "https://i.ibb.co/PNb0XD0/company3.png",
+                "phoneNumber": "+55 31 3344-5566",
+                "adminAccountEmail": "admin@futuresolutions.com",
+                "adminAccountPassword": "FutureAdmin123",
+                "managerAccountEmail": "manager@futuresolutions.com",
+                "managerAccountPassword": "ManagerFuture123",
+                "hrmanagerAccountEmail": "hrmanager@futuresolutions.com",
+                "hrmanagerAccountPassword": "HRFuture123",
+                "accountCreationDate": "2024-01-10"
+            },
+            "openingDate": "2024-10-26",
+            "closingDate": "2024-12-01",
+            "jobAvailable": true,
+            "title": "Designer UX/UI",
+            "bannerURL": "https://example.com/banner/uxui.jpg",
+            "hiringType": "Freelancer",
+            "salary": 5000,
+            "workModel": "Remoto",
+            "jobArea": "Design",
+            "maximumAcceptedDistanceInKm": null,
+            "jobDescription": "Criação de experiências de usuário inovadoras e interfaces intuitivas.",
+            "responsibilitiesAndDuties": "Desenvolver wireframes e protótipos; Realizar testes de usabilidade.",
+            "requirementsAndQualifications": "Experiência com Figma e Adobe XD.",
+            "whatIncreasesYourChances": "Portfólio com projetos relevantes.",
+            "requiredSkillsTags": ["UX", "UI", "Figma", "Adobe XD"],
+            "selectionProcessStages": [
                 "Envio de portfólio",
                 "Entrevista com time de design"
             ],
-            "MaximumApplications": 20,
-            "CurrentApplications": 17,
-            "Address": {
+            "maximumApplications": 20,
+            "currentApplications": 17,
+            "address": {
                 "cep": "50030210",
                 "address_type": "Rua",
                 "address_name": "da Guia",
@@ -126,36 +165,49 @@
             }
         },
         {
-            "jobId": 4,
-            "CompanyId": 1,
-            "Title": "Engenheiro de Software",
-            "OpeningDate": "2024-11-01",
-            "ClosingDate": "2024-12-01",
-            "JobAvailable": true,
-            "BannerURL": "https://example.com/banner/software.jpg",
-            "HiringType": "CLT",
-            "Salary": 9000,
-            "WorkModel": "Presencial",
-            "JobArea": "Engenharia",
-            "MaximumAcceptedDistanceInKm": 10,
-            "JobDescription": "Desenvolvimento de soluções escaláveis e de alta performance.",
-            "ResponsibilitiesAndDuties": "Escrever código limpo; Participar de code reviews.",
-            "RequirementsAndQualifications": "Proeficiência em Java e Spring Boot.",
-            "WhatIncreasesYourChances": "Experiência com microsserviços.",
-            "RequiredSkillsTags": [
+            "id": 4,
+            "company": {
+                "id": 1,
+                "name": "TechCorp",
+                "cnpj": "12.345.678/0001-90",
+                "logoUrl": "https://i.ibb.co/6X65zND/company1.png",
+                "phoneNumber": "+55 11 1234-5678",
+                "adminAccountEmail": "admin@techcorp.com",
+                "adminAccountPassword": "AdminPass123",
+                "managerAccountEmail": "manager@techcorp.com",
+                "managerAccountPassword": "ManagerPass123",
+                "hrmanagerAccountEmail": "hrmanager@techcorp.com",
+                "hrmanagerAccountPassword": "HRPass123",
+                "accountCreationDate": "2023-05-15"
+            },
+            "title": "Engenheiro de Software",
+            "openingDate": "2024-11-01",
+            "closingDate": "2024-12-01",
+            "jobAvailable": true,
+            "bannerURL": "https://example.com/banner/software.jpg",
+            "hiringType": "CLT",
+            "salary": 9000,
+            "workModel": "Presencial",
+            "jobArea": "Engenharia",
+            "maximumAcceptedDistanceInKm": 10,
+            "jobDescription": "Desenvolvimento de soluções escaláveis e de alta performance.",
+            "responsibilitiesAndDuties": "Escrever código limpo; Participar de code reviews.",
+            "requirementsAndQualifications": "Proeficiência em Java e Spring Boot.",
+            "whatIncreasesYourChances": "Experiência com microsserviços.",
+            "requiredSkillsTags": [
                 "Java",
                 "Spring Boot",
                 "Docker",
                 "Kubernetes"
             ],
-            "SelectionProcessStages": [
+            "selectionProcessStages": [
                 "Teste técnico",
                 "Entrevista com liderança",
                 "Proposta"
             ],
-            "MaximumApplications": 30,
-            "CurrentApplications": 29,
-            "Address": {
+            "maximumApplications": 30,
+            "currentApplications": 29,
+            "address": {
                 "cep": "50030220",
                 "address_type": "Rua",
                 "address_name": "do Apolo",
@@ -172,36 +224,49 @@
             }
         },
         {
-            "jobId": 5,
-            "CompanyId": 3,
-            "Title": "Gerente de Projetos",
-            "OpeningDate": "2024-11-01",
-            "ClosingDate": "2024-11-21",
-            "JobAvailable": false,
-            "BannerURL": "https://example.com/banner/gerente.jpg",
-            "HiringType": "CLT",
-            "Salary": 12000,
-            "WorkModel": "Híbrido",
-            "JobArea": "Gestão",
-            "MaximumAcceptedDistanceInKm": 20,
-            "JobDescription": "Gestão de projetos ágeis em múltiplas equipes.",
-            "ResponsibilitiesAndDuties": "Definir cronogramas; Alocar recursos.",
-            "RequirementsAndQualifications": "Certificação PMP ou SCRUM.",
-            "WhatIncreasesYourChances": "Experiência internacional em gestão.",
-            "RequiredSkillsTags": [
+            "id": 5,
+            "company":         {
+                "id": 3,
+                "name": "Future Solutions",
+                "cnpj": "56.789.123/0001-45",
+                "logoUrl": "https://i.ibb.co/PNb0XD0/company3.png",
+                "phoneNumber": "+55 31 3344-5566",
+                "adminAccountEmail": "admin@futuresolutions.com",
+                "adminAccountPassword": "FutureAdmin123",
+                "managerAccountEmail": "manager@futuresolutions.com",
+                "managerAccountPassword": "ManagerFuture123",
+                "hrmanagerAccountEmail": "hrmanager@futuresolutions.com",
+                "hrmanagerAccountPassword": "HRFuture123",
+                "accountCreationDate": "2024-01-10"
+            },
+            "title": "Gerente de Projetos",
+            "openingDate": "2024-11-01",
+            "closingDate": "2024-11-21",
+            "jobAvailable": false,
+            "bannerURL": "https://example.com/banner/gerente.jpg",
+            "hiringType": "CLT",
+            "salary": 12000,
+            "workModel": "Híbrido",
+            "jobArea": "Gestão",
+            "maximumAcceptedDistanceInKm": 20,
+            "jobDescription": "Gestão de projetos ágeis em múltiplas equipes.",
+            "responsibilitiesAndDuties": "Definir cronogramas; Alocar recursos.",
+            "requirementsAndQualifications": "Certificação PMP ou SCRUM.",
+            "whatIncreasesYourChances": "Experiência internacional em gestão.",
+            "requiredSkillsTags": [
                 "PMP",
                 "SCRUM",
                 "Gestão de Equipes",
                 "Kanban"
             ],
-            "SelectionProcessStages": [
+            "selectionProcessStages": [
                 "Análise de currículo",
                 "Case prático",
                 "Entrevista"
             ],
-            "MaximumApplications": 25,
-            "CurrentApplications": 25,
-            "Address": {
+            "maximumApplications": 25,
+            "currentApplications": 25,
+            "address": {
                 "cep": "52060000",
                 "address_type": "Avenida",
                 "address_name": "Parnamirim",
@@ -218,59 +283,59 @@
     ],
     "companies": [
         {
-            "CompanyId": 1,
-            "CompanyName": "TechCorp",
-            "CNPJ": "12.345.678/0001-90",
-            "LogoURL": "https://i.ibb.co/6X65zND/company1.png",
-            "PhoneNumber": "+55 11 1234-5678",
-            "AdminAccountEmail": "admin@techcorp.com",
-            "AdminAccountPassword": "AdminPass123",
-            "ManagerAccountEmail": "manager@techcorp.com",
-            "ManagerAccountPassword": "ManagerPass123",
-            "HRManagerAccountEmail": "hrmanager@techcorp.com",
-            "HRManagerAccountPassword": "HRPass123",
-            "AccountCreationDate": "2023-05-15"
+            "id": 1,
+            "name": "TechCorp",
+            "cnpj": "12.345.678/0001-90",
+            "logoUrl": "https://i.ibb.co/6X65zND/company1.png",
+            "phoneNumber": "+55 11 1234-5678",
+            "adminAccountEmail": "admin@techcorp.com",
+            "adminAccountPassword": "AdminPass123",
+            "managerAccountEmail": "manager@techcorp.com",
+            "managerAccountPassword": "ManagerPass123",
+            "hrmanagerAccountEmail": "hrmanager@techcorp.com",
+            "hrmanagerAccountPassword": "HRPass123",
+            "accountCreationDate": "2023-05-15"
         },
         {
-            "CompanyId": 2,
-            "CompanyName": "InnovaTech",
-            "CNPJ": "98.765.432/0001-12",
-            "LogoURL": "https://i.ibb.co/RP1PjDW/company2.png",
-            "PhoneNumber": "+55 21 9876-5432",
-            "AdminAccountEmail": "admin@innovatech.com",
-            "AdminAccountPassword": "Admin2022",
-            "ManagerAccountEmail": "manager@innovatech.com",
-            "ManagerAccountPassword": "Manager2022",
-            "HRManagerAccountEmail": "hr@innovatech.com",
-            "HRManagerAccountPassword": "HR2022",
-            "AccountCreationDate": "2022-11-20"
+            "id": 2,
+            "name": "InnovaTech",
+            "cnpj": "98.765.432/0001-12",
+            "logoUrl": "https://i.ibb.co/RP1PjDW/company2.png",
+            "phoneNumber": "+55 21 9876-5432",
+            "adminAccountEmail": "admin@innovatech.com",
+            "adminAccountPassword": "Admin2022",
+            "managerAccountEmail": "manager@innovatech.com",
+            "managerAccountPassword": "Manager2022",
+            "hrmanagerAccountEmail": "hr@innovatech.com",
+            "hrmanagerAccountPassword": "HR2022",
+            "accountCreationDate": "2022-11-20"
         },
         {
-            "CompanyId": 3,
-            "CompanyName": "Future Solutions",
-            "CNPJ": "56.789.123/0001-45",
-            "LogoURL": "https://i.ibb.co/PNb0XD0/company3.png",
-            "PhoneNumber": "+55 31 3344-5566",
-            "AdminAccountEmail": "admin@futuresolutions.com",
-            "AdminAccountPassword": "FutureAdmin123",
-            "ManagerAccountEmail": "manager@futuresolutions.com",
-            "ManagerAccountPassword": "ManagerFuture123",
-            "HRManagerAccountEmail": "hrmanager@futuresolutions.com",
-            "HRManagerAccountPassword": "HRFuture123",
-            "AccountCreationDate": "2024-01-10"
+            "id": 3,
+            "name": "Future Solutions",
+            "cnpj": "56.789.123/0001-45",
+            "logoUrl": "https://i.ibb.co/PNb0XD0/company3.png",
+            "phoneNumber": "+55 31 3344-5566",
+            "adminAccountEmail": "admin@futuresolutions.com",
+            "adminAccountPassword": "FutureAdmin123",
+            "managerAccountEmail": "manager@futuresolutions.com",
+            "managerAccountPassword": "ManagerFuture123",
+            "hrmanagerAccountEmail": "hrmanager@futuresolutions.com",
+            "hrmanagerAccountPassword": "HRFuture123",
+            "accountCreationDate": "2024-01-10"
         }
     ],
     "candidates": [
         {
-            "CandidateId": 1,
-            "FirstName": "João",
-            "LastName": "Silva",
-            "CPF": "123.456.789-00",
-            "Email": "joao.silva@example.com",
-            "PhoneNumber": "+55 81 98765-4321",
-            "DateOfBirth": "1990-03-15",
-            "Password": "SenhaSegura123",
-            "Address": {
+            "id": 1,
+            "firstName": "João",
+            "lastName": "Silva",
+            "cPF": "123.456.789-00",
+            "email": "joao.silva@example.com",
+            "phoneNumber": "+55 81 98765-4321",
+            "dateOfBirth": "1990-03-15",
+            "password": "SenhaSegura123",
+            "address": {
                 "cep": "50720400",
                 "address_type": "1ª",
                 "address_name": "Travessa Virgílio Campelo",
@@ -283,83 +348,83 @@
                 "city_ibge": "2611606",
                 "ddd": "81"
             },
-            "LinkedInURL": "https://linkedin.com/in/joaosilva",
-            "PortfolioURL": "https://portfolio.joaosilva.com",
-            "Resume": {
-                "ProfessionalSummary": "Desenvolvedor de software experiente com especialização em desenvolvimento full-stack e gerenciamento de projetos.",
-                "Experiences": [
+            "linkedInURL": "https://linkedin.com/in/joaosilva",
+            "portfolioURL": "https://portfolio.joaosilva.com",
+            "resume": {
+                "professionalSummary": "Desenvolvedor de software experiente com especialização em desenvolvimento full-stack e gerenciamento de projetos.",
+                "experiences": [
                     {
-                        "Experience": {
-                            "Company": "TechCorp",
-                            "Role": "Desenvolvedor Full-Stack",
-                            "StartDate": "2018-06-01",
-                            "EndDate": "2022-12-31",
-                            "SummaryOfDuties": "Desenvolveu aplicações web escaláveis; Colaborou com equipes multifuncionais para entregar projetos no prazo."
+                        "experience": {
+                            "company": "TechCorp",
+                            "role": "Desenvolvedor Full-Stack",
+                            "startDate": "2018-06-01",
+                            "endDate": "2022-12-31",
+                            "summaryOfDuties": "Desenvolveu aplicações web escaláveis; Colaborou com equipes multifuncionais para entregar projetos no prazo."
                         }
                     },
                     {
-                        "Experience": {
-                            "Company": "InnovaTech",
-                            "Role": "Desenvolvedor Frontend",
-                            "StartDate": "2015-01-01",
-                            "EndDate": "2018-05-31",
-                            "SummaryOfDuties": "Projetou interfaces de usuário; Otimizou desempenho e acessibilidade de plataformas web."
+                        "experience": {
+                            "company": "InnovaTech",
+                            "role": "Desenvolvedor Frontend",
+                            "startDate": "2015-01-01",
+                            "endDate": "2018-05-31",
+                            "summaryOfDuties": "Projetou interfaces de usuário; Otimizou desempenho e acessibilidade de plataformas web."
                         }
                     }
                 ],
-                "Education": [
+                "education": [
                     {
-                        "Institution": "Universidade Federal de Pernambuco",
-                        "Degree": "Bacharelado em Ciência da Computação",
-                        "StartDate": "2011-02-01",
-                        "EndDate": "2015-12-15"
+                        "institution": "Universidade Federal de Pernambuco",
+                        "degree": "Bacharelado em Ciência da Computação",
+                        "startDate": "2011-02-01",
+                        "endDate": "2015-12-15"
                     }
                 ],
-                "CoursesAndCertifications": [
+                "coursesAndCertifications": [
                     {
-                        "Course": {
-                            "Institution": "Coursera",
-                            "Title": "Desenvolvimento Full-Stack",
-                            "CompletionYear": 2021
+                        "course": {
+                            "institution": "Coursera",
+                            "title": "Desenvolvimento Full-Stack",
+                            "completionYear": 2021
                         }
                     },
                     {
-                        "Course": {
-                            "Institution": "Udemy",
-                            "Title": "React Avançado e Redux",
-                            "CompletionYear": 2020
+                        "course": {
+                            "institution": "Udemy",
+                            "title": "React Avançado e Redux",
+                            "completionYear": 2020
                         }
                     }
                 ],
-                "SkillsAndCompetencies": [
+                "skillsAndCompetencies": [
                     "React",
                     "Node.js",
                     "TypeScript",
                     "Metodologias Ágeis",
                     "Resolução de Problemas"
                 ],
-                "Languages": [
+                "languages": [
                     {
-                        "Language": "Português",
-                        "ProficiencyLevel": "Fluente"
+                        "language": "Português",
+                        "proficiencyLevel": "Fluente"
                     },
                     {
-                        "Language": "Inglês",
-                        "ProficiencyLevel": "Avançado"
+                        "language": "Inglês",
+                        "proficiencyLevel": "Avançado"
                     }
                 ]
             }
         },
         {
-            "CandidateId": 2,
-            "FirstName": "Mariana",
-            "LastName": "Almeida",
-            "CPF": "987.654.321-00",
-            "Email": "mariana.almeida@example.com",
-            "PhoneNumber": "+55 81 99876-5432",
-            "DateOfBirth": "1993-05-20",
-            "Password": "SecurePass456",
-            "Address": {
+            "id": 2,
+            "firstName": "Mariana",
+            "lastName": "Almeida",
+            "cPF": "987.654.321-00",
+            "email": "mariana.almeida@example.com",
+            "phoneNumber": "+55 81 99876-5432",
+            "dateOfBirth": "1993-05-20",
+            "password": "SecurePass456",
+            "address": {
                 "cep": "50720300",
                 "address_type": "Rua",
                 "address_name": "Antônio Lucena",
@@ -372,83 +437,83 @@
                 "city_ibge": "2611606",
                 "ddd": "81"
             },
-            "LinkedInURL": "https://linkedin.com/in/marianaalmeida",
-            "PortfolioURL": "https://portfolio.marianaalmeida.com",
-            "Resume": {
-                "ProfessionalSummary": "Desenvolvedora back-end com experiência em bancos de dados e sistemas escaláveis.",
-                "Experiences": [
+            "linkedInURL": "https://linkedin.com/in/marianaalmeida",
+            "portfolioURL": "https://portfolio.marianaalmeida.com",
+            "resume": {
+                "professionalSummary": "Desenvolvedora back-end com experiência em bancos de dados e sistemas escaláveis.",
+                "experiences": [
                     {
-                        "Experience": {
-                            "Company": "DataSystems",
-                            "Role": "Desenvolvedora Back-End",
-                            "StartDate": "2017-03-01",
-                            "EndDate": "2021-08-31",
-                            "SummaryOfDuties": "Implementação de APIs RESTful; Otimização de consultas em SQL para alto desempenho."
+                        "experience": {
+                            "company": "DataSystems",
+                            "role": "Desenvolvedora Back-End",
+                            "startDate": "2017-03-01",
+                            "endDate": "2021-08-31",
+                            "summaryOfDuties": "Implementação de APIs RESTful; Otimização de consultas em SQL para alto desempenho."
                         }
                     },
                     {
-                        "Experience": {
-                            "Company": "DevSolutions",
-                            "Role": "Analista de Dados",
-                            "StartDate": "2015-01-15",
-                            "EndDate": "2017-02-28",
-                            "SummaryOfDuties": "Análise e modelagem de dados; Criação de dashboards para visualização de métricas empresariais."
+                        "experience": {
+                            "company": "DevSolutions",
+                            "role": "Analista de Dados",
+                            "startDate": "2015-01-15",
+                            "endDate": "2017-02-28",
+                            "summaryOfDuties": "Análise e modelagem de dados; Criação de dashboards para visualização de métricas empresariais."
                         }
                     }
                 ],
-                "Education": [
+                "education": [
                     {
-                        "Institution": "Universidade Federal de Pernambuco",
-                        "Degree": "Bacharelado em Sistemas de Informação",
-                        "StartDate": "2012-02-01",
-                        "EndDate": "2016-12-20"
+                        "institution": "Universidade Federal de Pernambuco",
+                        "degree": "Bacharelado em Sistemas de Informação",
+                        "startDate": "2012-02-01",
+                        "endDate": "2016-12-20"
                     }
                 ],
-                "CoursesAndCertifications": [
+                "coursesAndCertifications": [
                     {
-                        "Course": {
-                            "Institution": "Alura",
-                            "Title": "Arquitetura de Software Avançada",
-                            "CompletionYear": 2020
+                        "course": {
+                            "institution": "Alura",
+                            "title": "Arquitetura de Software Avançada",
+                            "completionYear": 2020
                         }
                     },
                     {
-                        "Course": {
-                            "Institution": "Udemy",
-                            "Title": "Desenvolvimento em Node.js",
-                            "CompletionYear": 2019
+                        "course": {
+                            "institution": "Udemy",
+                            "title": "Desenvolvimento em Node.js",
+                            "completionYear": 2019
                         }
                     }
                 ],
-                "SkillsAndCompetencies": [
-                    "Node.js",
+                "skillsAndCompetencies": [
                     "MongoDB",
                     "PostgreSQL",
                     "Express.js",
-                    "Resolução de Problemas"
+                    "Resolução de Problemas",
+                    "Node.js"
                 ],
-                "Languages": [
+                "languages": [
                     {
-                        "Language": "Português",
-                        "ProficiencyLevel": "Fluente"
+                        "language": "Português",
+                        "proficiencyLevel": "Fluente"
                     },
                     {
-                        "Language": "Inglês",
-                        "ProficiencyLevel": "Avançado"
+                        "language": "Inglês",
+                        "proficiencyLevel": "Avançado"
                     }
                 ]
             }
         },
         {
-            "CandidateId": 3,
-            "FirstName": "Carlos",
-            "LastName": "Silva",
-            "CPF": "456.789.123-11",
-            "Email": "carlos.silva@example.com",
-            "PhoneNumber": "+55 81 91234-5678",
-            "DateOfBirth": "1988-10-10",
-            "Password": "CarlosSecure123",
-            "Address": {
+            "id": 3,
+            "firstName": "Carlos",
+            "lastName": "Silva",
+            "cPF": "456.789.123-11",
+            "email": "carlos.silva@example.com",
+            "phoneNumber": "+55 81 91234-5678",
+            "dateOfBirth": "1988-10-10",
+            "password": "CarlosSecure123",
+            "address": {
                 "cep": "50050400",
                 "address_type": "Rua",
                 "address_name": "do Riachuelo",
@@ -461,83 +526,83 @@
                 "city_ibge": "2611606",
                 "ddd": "81"
             },
-            "LinkedInURL": "https://linkedin.com/in/carlossilva",
-            "PortfolioURL": "https://portfolio.carlossilva.com",
-            "Resume": {
-                "ProfessionalSummary": "Engenheiro de software com experiência em desenvolvimento de sistemas distribuídos e arquitetura de microserviços.",
-                "Experiences": [
+            "linkedInURL": "https://linkedin.com/in/carlossilva",
+            "portfolioURL": "https://portfolio.carlossilva.com",
+            "resume": {
+                "professionalSummary": "Engenheiro de software com experiência em desenvolvimento de sistemas distribuídos e arquitetura de microserviços.",
+                "experiences": [
                     {
-                        "Experience": {
-                            "Company": "TechSolutions",
-                            "Role": "Engenheiro de Software",
-                            "StartDate": "2015-04-01",
-                            "EndDate": "2022-09-30",
-                            "SummaryOfDuties": "Criação de arquiteturas escaláveis; Liderança de equipes ágeis."
+                        "experience": {
+                            "company": "TechSolutions",
+                            "role": "Engenheiro de Software",
+                            "startDate": "2015-04-01",
+                            "endDate": "2022-09-30",
+                            "summaryOfDuties": "Criação de arquiteturas escaláveis; Liderança de equipes ágeis."
                         }
                     },
                     {
-                        "Experience": {
-                            "Company": "CodeWorks",
-                            "Role": "Desenvolvedor de Software",
-                            "StartDate": "2013-01-10",
-                            "EndDate": "2015-03-31",
-                            "SummaryOfDuties": "Desenvolvimento de sistemas de backend robustos; Integração com APIs externas."
+                        "experience": {
+                            "company": "CodeWorks",
+                            "role": "Desenvolvedor de Software",
+                            "startDate": "2013-01-10",
+                            "endDate": "2015-03-31",
+                            "summaryOfDuties": "Desenvolvimento de sistemas de backend robustos; Integração com APIs externas."
                         }
                     }
                 ],
-                "Education": [
+                "education": [
                     {
-                        "Institution": "Universidade Federal de Pernambuco",
-                        "Degree": "Engenharia da Computação",
-                        "StartDate": "2008-02-01",
-                        "EndDate": "2012-12-15"
+                        "institution": "Universidade Federal de Pernambuco",
+                        "degree": "Engenharia da Computação",
+                        "startDate": "2008-02-01",
+                        "endDate": "2012-12-15"
                     }
                 ],
-                "CoursesAndCertifications": [
+                "coursesAndCertifications": [
                     {
-                        "Course": {
-                            "Institution": "Alura",
-                            "Title": "Microservices Architecture",
-                            "CompletionYear": 2021
+                        "course": {
+                            "institution": "Alura",
+                            "title": "Microservices Architecture",
+                            "completionYear": 2021
                         }
                     },
                     {
-                        "Course": {
-                            "Institution": "Udemy",
-                            "Title": "Kubernetes for Developers",
-                            "CompletionYear": 2020
+                        "course": {
+                            "institution": "Udemy",
+                            "title": "Kubernetes for Developers",
+                            "completionYear": 2020
                         }
                     }
                 ],
-                "SkillsAndCompetencies": [
+                "skillsAndCompetencies": [
                     "Java",
                     "Spring Boot",
                     "Kubernetes",
                     "Docker",
                     "Arquitetura de Microserviços"
                 ],
-                "Languages": [
+                "languages": [
                     {
-                        "Language": "Português",
-                        "ProficiencyLevel": "Fluente"
+                        "language": "Português",
+                        "proficiencyLevel": "Fluente"
                     },
                     {
-                        "Language": "Inglês",
-                        "ProficiencyLevel": "Avançado"
+                        "language": "Inglês",
+                        "proficiencyLevel": "Avançado"
                     }
                 ]
             }
         },
         {
-            "CandidateId": 4,
-            "FirstName": "Ana",
-            "LastName": "Pereira",
-            "CPF": "789.123.456-22",
-            "Email": "ana.pereira@example.com",
-            "PhoneNumber": "+55 81 98765-4321",
-            "DateOfBirth": "1995-07-22",
-            "Password": "AnaPassword456",
-            "Address": {
+            "id": 4,
+            "firstName": "Ana",
+            "lastName": "Pereira",
+            "cPF": "789.123.456-22",
+            "email": "ana.pereira@example.com",
+            "phoneNumber": "+55 81 98765-4321",
+            "dateOfBirth": "1995-07-22",
+            "password": "AnaPassword456",
+            "address": {
                 "cep": "50670300",
                 "address_type": "Rua",
                 "address_name": "Agripino Lacerda",
@@ -550,22 +615,22 @@
                 "city_ibge": "2611606",
                 "ddd": "81"
             },
-            "LinkedInURL": "https://linkedin.com/in/anapereira",
-            "PortfolioURL": "https://portfolio.anapereira.com",
-            "Resume": {
-                "ProfessionalSummary": "Desenvolvedora full-stack com foco em soluções inovadoras e interfaces responsivas.",
-                "Experiences": [
+            "linkedInURL": "https://linkedin.com/in/anapereira",
+            "portfolioURL": "https://portfolio.anapereira.com",
+            "resume": {
+                "professionalSummary": "Desenvolvedora full-stack com foco em soluções inovadoras e interfaces responsivas.",
+                "experiences": [
                     {
-                        "Experience": {
-                            "Company": "WebSoft",
-                            "Role": "Desenvolvedora Full-Stack",
-                            "StartDate": "2018-03-01",
-                            "EndDate": "2023-05-30",
-                            "SummaryOfDuties": "Desenvolvimento de aplicações web completas; Implementação de funcionalidades front-end e back-end."
+                        "experience": {
+                            "company": "WebSoft",
+                            "role": "Desenvolvedora Full-Stack",
+                            "startDate": "2018-03-01",
+                            "endDate": "2023-05-30",
+                            "summaryOfDuties": "Desenvolvimento de aplicações web completas; Implementação de funcionalidades front-end e back-end."
                         }
                     },
                     {
-                        "Experience": {
+                        "experience": {
                             "Company": "SoftDesign",
                             "Role": "Desenvolvedora Front-End",
                             "StartDate": "2016-01-15",
@@ -574,45 +639,45 @@
                         }
                     }
                 ],
-                "Education": [
+                "education": [
                     {
-                        "Institution": "Universidade Católica de Pernambuco",
-                        "Degree": "Bacharelado em Sistemas de Informação",
-                        "StartDate": "2013-02-01",
-                        "EndDate": "2017-12-10"
+                        "institution": "Universidade Católica de Pernambuco",
+                        "degree": "Bacharelado em Sistemas de Informação",
+                        "startDate": "2013-02-01",
+                        "endDate": "2017-12-10"
                     }
                 ],
-                "CoursesAndCertifications": [
+                "coursesAndCertifications": [
                     {
-                        "Course": {
-                            "Institution": "Rocketseat",
-                            "Title": "Bootcamp GoStack",
-                            "CompletionYear": 2022
+                        "course": {
+                            "institution": "Rocketseat",
+                            "title": "Bootcamp GoStack",
+                            "completionYear": 2022
                         }
                     },
                     {
-                        "Course": {
-                            "Institution": "Digital Innovation One",
-                            "Title": "React Native Essentials",
-                            "CompletionYear": 2021
+                        "course": {
+                            "institution": "Digital Innovation One",
+                            "title": "React Native Essentials",
+                            "completionYear": 2021
                         }
                     }
                 ],
-                "SkillsAndCompetencies": [
+                "skillsAndCompetencies": [
                     "JavaScript",
                     "React",
                     "Node.js",
                     "TypeScript",
                     "Responsive Design"
                 ],
-                "Languages": [
+                "languages": [
                     {
-                        "Language": "Português",
-                        "ProficiencyLevel": "Fluente"
+                        "language": "Português",
+                        "proficiencyLevel": "Fluente"
                     },
                     {
-                        "Language": "Inglês",
-                        "ProficiencyLevel": "Intermediário"
+                        "language": "Inglês",
+                        "proficiencyLevel": "Intermediário"
                     }
                 ]
             }
@@ -620,25 +685,25 @@
     ],
     "applications": [
         {
-            "ApplicationId": 1,
-            "JobId": 1,
+            "id": 1,
+            "jobId": 1,
             "CandidateId": 1,
             "ApplicationDate": "2024-11-22",
-            "Status": "Pendente"
+            "status": "Pendente"
         },
         {
-            "ApplicationId": 2,
-            "JobId": 2,
-            "CandidateId": 2,
-            "ApplicationDate": "2024-11-22",
-            "Status": "Pendente"
+            "id": 2,
+            "jobId": 2,
+            "candidateId": 2,
+            "applicationDate": "2024-11-22",
+            "status": "Pendente"
         },
         {
-            "ApplicationId": 3,
-            "JobId": 3,
-            "CandidateId": 3,
-            "ApplicationDate": "2024-11-22",
-            "Status": "Pendente"
+            "id": 3,
+            "jobId": 3,
+            "candidateId": 3,
+            "applicationDate": "2024-11-22",
+            "status": "Pendente"
         }
     ]
 }
