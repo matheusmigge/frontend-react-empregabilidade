@@ -130,6 +130,23 @@
     cursor: pointer;
     
   }
+
+  .add-button-competencia {
+  transition: background 0.3s, transform 0.1s;
+  font-size: 1.2rem;
+  min-width: 120px;
+  box-shadow: 0 2px 8px #01236922;
+}
+
+.add-button-competencia:active {
+  transform: scale(0.97);
+}
+
+.add-button-competencia:disabled {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
   
   /* botao de editar e excluir */
 

@@ -1,4 +1,5 @@
 import "./userCurriculum.css";
+import { FaPlus, FaCheck } from "react-icons/fa";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
@@ -65,6 +66,17 @@ export default function UserCurriculum () {
       nivel: ""
     }
   ]);
+
+  // Adicione esses estados para os campos de dados pessoais
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [linkedInURL, setLinkedInURL] = useState("");
+  const [portfolioURL, setPortfolioURL] = useState("");
+
 
   function formatarTelefone(valor: string) {
     valor = valor.replace(/\D/g, "");
@@ -212,27 +224,98 @@ export default function UserCurriculum () {
   }
 
  
-  function adicionarHabilidade() {
-    setHabilidades([
-      ...habilidades,
-      {
-        habilidade: "",
-        nivel: ""
-      }
-    ]);
-  }
 
 
-  function atualizarHabilidade(index: number, campo: string, valor: string) {
-    const novasHabilidades = habilidades.map((hab, i) =>
-      i === index ? { ...hab, [campo]: valor } : hab
-    );
-    setHabilidades(novasHabilidades);
-  }
 
   function excluirHabilidade(index: number) {
     setHabilidades(habilidades.filter((_, i) => i !== index));
   }
+
+    // Função para montar e enviar o candidato
+    async function salvarCandidato() {
+      const novoCandidato = {
+        firstName,
+        lastName,
+        cpf,
+        email,
+        phoneNumber: telefone,
+        dateOfBirth,
+        password,
+        address: {
+          cep,
+          addressType: "", // Adapte se tiver campo
+          addressName: rua,
+          address: rua,
+          state: estado,
+          district: bairro,
+          lat: "",
+          lng: "",
+          city: cidade,
+          cityIbge: "",
+          ddd: ""
+        },
+        linkedInURL,
+        portfolioURL,
+        resume: {
+          professionalSummary: "",
+          experiences: experiencias.map(exp => ({
+            experience: {
+              company: exp.empresa,
+              role: exp.cargo,
+              startDate: exp.periodoInicio,
+              endDate: exp.periodoFim,
+              summaryOfDuties: exp.resumo
+            }
+          })),
+          education: formacoes.map(form => ({
+            institution: form.instituicao,
+            degree: form.nomeCurso,
+            startDate: form.periodoInicio,
+            endDate: form.periodoFim
+          })),
+          coursesAndCertifications: cursos.map(curso => ({
+            course: {
+              institution: curso.instituicao,
+              title: curso.nome,
+              completionYear: curso.anoConclusao ? new Date(curso.anoConclusao).getFullYear() : null
+            }
+          })),
+          skillsAndCompetencies: habilidades.map(hab => hab.habilidade),
+          languages: linguas.map(lingua => ({
+            language: lingua.idioma,
+            proficiencyLevel: lingua.nivel
+          }))
+        }
+      };
+  
+      await fetch("http://localhost:3000/candidates", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(novoCandidato)
+      });
+    }
+
+    // Novo estado para entrada múltipla de habilidades
+    const [habilidadesInput, setHabilidadesInput] = useState("");
+    const [nivelHabilidadeInput, setNivelHabilidadeInput] = useState("");
+    const [adicionandoHabilidade, setAdicionandoHabilidade] = useState(false);
+
+    // Função para adicionar várias habilidades de uma vez
+    function adicionarVariasHabilidades() {
+      if (!habilidadesInput.trim() || !nivelHabilidadeInput) return;
+      setAdicionandoHabilidade(true);
+      setTimeout(() => {
+        const novas = habilidadesInput
+          .split(",")
+          .map(h => h.trim())
+          .filter(h => h.length > 0)
+          .map(h => ({ habilidade: h, nivel: nivelHabilidadeInput }));
+        setHabilidades([...habilidades, ...novas]);
+        setHabilidadesInput("");
+        setNivelHabilidadeInput("");
+        setAdicionandoHabilidade(false);
+      }, 400); // pequena animação de feedback
+    }
 
     return (
       <>
@@ -259,27 +342,27 @@ export default function UserCurriculum () {
               
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Nome</p>
-                  <input type="text" className="curriculumInputField" placeholder="Digite seu Primeiro nome" />
+                  <input type="text" className="curriculumInputField" placeholder="Digite seu Primeiro nome" value={firstName} onChange={e => setFirstName(e.target.value)} />
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Sobrenome</p>
-                <input type="text" className="curriculumInputField" placeholder="Digite seu Sobrenome" />
+                <input type="text" className="curriculumInputField" placeholder="Digite seu Sobrenome" value={lastName} onChange={e => setLastName(e.target.value)} />
                 </div>
                 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">CPF</p>
-                  <input type="text" className="curriculumInputField" placeholder="Digite seu CPF"/>
+                  <input type="text" className="curriculumInputField" placeholder="Digite seu CPF" value={cpf} onChange={e => setCpf(e.target.value)} />
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Data de nascimento</p>
-                <input type="date" className="curriculumInputField"/>
+                <input type="date" className="curriculumInputField" value={dateOfBirth} onChange={e => setDateOfBirth(e.target.value)} />
                 </div>
 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Email</p>
-                  <input type="email" className="curriculumInputField" placeholder="Digite seu Gmail" />
+                  <input type="email" className="curriculumInputField" placeholder="Digite seu Gmail" value={email} onChange={e => setEmail(e.target.value)} />
                 </div>
 
                 <div className="curriculumFormField">
@@ -303,6 +386,8 @@ export default function UserCurriculum () {
           name="user-password"
           placeholder="Digite sua senha"
           style={{ paddingRight: "35px" }}
+          value={password}
+          onChange={e => setPassword(e.target.value)}
         />
         <span
           onClick={() => setMostrarSenha((v) => !v)}
@@ -354,6 +439,8 @@ export default function UserCurriculum () {
         className="curriculumInputField"
         name="user-linkedin"
         placeholder="Link do seu Linkedin"
+        value={linkedInURL}
+        onChange={e => setLinkedInURL(e.target.value)}
       />
     </div>
 
@@ -364,6 +451,8 @@ export default function UserCurriculum () {
         className="curriculumInputField"
         name="user-portfolio"
         placeholder="Link do seu Portfólio"
+        value={portfolioURL}
+        onChange={e => setPortfolioURL(e.target.value)}
       />
     </div>
               </div>
@@ -689,38 +778,62 @@ export default function UserCurriculum () {
           <div className="curriculumAccordionContainer">
             <AccordionBox title="Habilidades e Competências">
               <div className="curriculumFormContainerIe">
+                {/* Campo para adicionar várias habilidades */}
+                <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
+                  <input
+                    type="text"
+                    className="curriculumInputFieldFa"
+                    placeholder="Digite habilidades separadas por vírgula"
+                    value={habilidadesInput}
+                    onChange={e => setHabilidadesInput(e.target.value)}
+                    style={{ flex: 2 }}
+                  />
+                  <select
+                    className="curriculumInputFieldFa"
+                    value={nivelHabilidadeInput}
+                    onChange={e => setNivelHabilidadeInput(e.target.value)}
+                    style={{ flex: 1 }}
+                  >
+                    <option value="">Nível</option>
+                    <option value="iniciante">Iniciante</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="avancado">Avançado</option>
+                    <option value="especialista">Especialista</option>
+                  </select>
+                  <button
+                    className="add-button add-button-competencia"
+                    type="button"
+                    onClick={adicionarVariasHabilidades}
+                    style={{ flex: 0.5, display: "flex", alignItems: "center", justifyContent: "center" }}
+                    disabled={adicionandoHabilidade || !habilidadesInput.trim() || !nivelHabilidadeInput}
+                    title="Adicionar competências"
+                  >
+                    {adicionandoHabilidade ? (
+                      <FaCheck color="#28a745" size={22} />
+                    ) : (
+                      <FaPlus size={22} />
+                    )}
+                    <span style={{ marginLeft: 8, fontWeight: 500 }}>Adicionar</span>
+                  </button>
+                </div>
+
+                {/* Lista de habilidades já adicionadas */}
                 {habilidades.map((hab, idx) => (
                   <div key={idx}>
                     <p className="curriculumAccordionText">Habilidade</p>
-                    <select
+                    <input
+                      type="text"
                       className="curriculumInputFieldFa"
                       value={hab.habilidade}
-                      onChange={e => atualizarHabilidade(idx, "habilidade", e.target.value)}
-                    >
-                      <option value="">Selecione</option>
-                      <option value="comunicacao">Comunicação</option>
-                      <option value="trabalho-em-equipe">Trabalho em equipe</option>
-                      <option value="lideranca">Liderança</option>
-                      <option value="resolucao-de-problemas">Resolução de problemas</option>
-                      <option value="criatividade">Criatividade</option>
-                      <option value="adaptabilidade">Adaptabilidade</option>
-                      <option value="pensamento-critico">Pensamento crítico</option>
-                      <option value="gestao-de-tempo">Gestão de tempo</option>
-                    </select>
-
+                      readOnly
+                    />
                     <p className="curriculumAccordionText">Nível</p>
-                    <select
+                    <input
+                      type="text"
                       className="curriculumInputFieldFa"
                       value={hab.nivel}
-                      onChange={e => atualizarHabilidade(idx, "nivel", e.target.value)}
-                    >
-                      <option value="">Selecione</option>
-                      <option value="iniciante">Iniciante</option>
-                      <option value="intermediario">Intermediário</option>
-                      <option value="avancado">Avançado</option>
-                      <option value="especialista">Especialista</option>
-                    </select>
-
+                      readOnly
+                    />
                     <div className="botoes-container">
                       <button
                         className="btn excluir"
@@ -732,9 +845,6 @@ export default function UserCurriculum () {
                     </div>
                   </div>
                 ))}
-              </div>
-              <div className="add-button-container">
-                <button className="add-button" type="button" onClick={adicionarHabilidade}>＋</button>
               </div>
             </AccordionBox>
           </div>
@@ -751,7 +861,7 @@ export default function UserCurriculum () {
         </Link>
 
         <Link to="/home" className="linkStyle">
-        <button className="btn-save">Salvar</button>
+        <button className="btn-save" onClick={salvarCandidato}>Salvar</button>
         </Link>
 
         </div>
