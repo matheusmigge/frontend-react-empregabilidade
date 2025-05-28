@@ -1,4 +1,6 @@
 import "./userCurriculum.css";
+import { useState } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 import Header from "../../../components/header/Header";
 import bellIcon from "../../../components/header/assets/bell.svg";
@@ -8,6 +10,63 @@ import { Link } from "react-router-dom";
 import AccordionBox from "../../vacancy/accordionBox/AccordionBox";
 
 export default function UserCurriculum () {
+  const [telefone, setTelefone] = useState("");
+  const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [mostrarConfirmaSenha, setMostrarConfirmaSenha] = useState(false);
+
+  // Estados para endereço
+  const [cep, setCep] = useState("");
+  const [rua, setRua] = useState("");
+  const [bairro, setBairro] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [estado, setEstado] = useState("");
+  const [erroCep, setErroCep] = useState("");
+
+  function formatarTelefone(valor: string) {
+    valor = valor.replace(/\D/g, "");
+    if (valor.length <= 2) return `(${valor}`;
+    if (valor.length <= 7) return `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+    if (valor.length <= 11)
+      return `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+    return `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7, 11)}`;
+  }
+
+  // Função para buscar o endereço pelo CEP
+  async function buscarCep(valor: string) {
+    const cepLimpo = valor.replace(/\D/g, "");
+    if (cepLimpo.length !== 8) {
+      setErroCep("CEP deve ter 8 dígitos.");
+      setRua("");
+      setBairro("");
+      setCidade("");
+      setEstado("");
+      return;
+    }
+    setErroCep("");
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
+      const data = await response.json();
+      if (data.erro) {
+        setErroCep("CEP não encontrado.");
+        setRua("");
+        setBairro("");
+        setCidade("");
+        setEstado("");
+      } else {
+        setRua(data.logradouro || "");
+        setBairro(data.bairro || "");
+        setCidade(data.localidade || "");
+        setEstado(data.uf || "");
+      }
+    } catch {
+      setErroCep("Erro ao buscar CEP.");
+      setRua("");
+      setBairro("");
+      setCidade("");
+      setEstado("");
+    }
+  }
+
     return (
       <>
       <div>
@@ -56,21 +115,90 @@ export default function UserCurriculum () {
                   <input type="email" className="curriculumInputField" placeholder="Digite seu Gmail" />
                 </div>
 
-                <div  className="curriculumFormField">
-                  <p className="curriculumAccordionText">Telefone</p>
-                  <input type="tel" className="curriculumInputField" placeholder=" (00) 00000-0000"/>
-                </div>
+                <div className="curriculumFormField">
+      <p className="curriculumAccordionText">Telefone</p>
+      <input
+        type="tel"
+        className="curriculumInputField"
+        placeholder=" (00) 00000-0000"
+        value={telefone}
+        onChange={e => setTelefone(formatarTelefone(e.target.value))}
+        maxLength={15}
+      />
+    </div>
 
-                <div  className="curriculumFormField">
-                  <p className="curriculumAccordionText">Senha</p>
-                  <input type="password" className="curriculumInputField" name="user-password" placeholder="Digite sua senha"/>
-                </div>
+    <div className="curriculumFormField">
+      <p className="curriculumAccordionText">Senha</p>
+      <div style={{ position: "relative" }}>
+        <input
+          type={mostrarSenha ? "text" : "password"}
+          className="curriculumInputField"
+          name="user-password"
+          placeholder="Digite sua senha"
+          style={{ paddingRight: "35px" }}
+        />
+        <span
+          onClick={() => setMostrarSenha((v) => !v)}
+          style={{
+            position: "absolute",
+            right: "10px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            cursor: "pointer"
+          }}
+          title={mostrarSenha ? "Esconder senha" : "Mostrar senha"}
+        >
+          {mostrarSenha ? <FiEyeOff size={24} /> : <FiEye size={24} />}
+        </span>
+      </div>
+    </div>
 
-                <div  className="curriculumFormField">
-                  <p className="curriculumAccordionText">Confirme sua senha</p>
-                  <input type="password" className="curriculumInputField" name="user-password" placeholder="Confirme sua senha"/>
-                </div>
-                  
+    <div className="curriculumFormField">
+      <p className="curriculumAccordionText">Confirme sua senha</p>
+      <div style={{ position: "relative" }}>
+        <input
+          type={mostrarConfirmaSenha ? "text" : "password"}
+          className="curriculumInputField"
+          name="user-password"
+          placeholder="Confirme sua senha"
+          style={{ paddingRight: "35px" }}
+        />
+        <span
+          onClick={() => setMostrarConfirmaSenha((v) => !v)}
+          style={{
+            position: "absolute",
+            right: "10px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            cursor: "pointer"
+          }}
+          title={mostrarConfirmaSenha ? "Esconder senha" : "Mostrar senha"}
+        >
+          {mostrarConfirmaSenha ? <FiEyeOff size={24} /> : <FiEye size={24} />}
+        </span>
+      </div>
+    </div>
+
+    {/* LinkedIn e Portfólio movidos para Dados pessoais */}
+    <div className="curriculumFormField">
+      <p className="curriculumAccordionText">Linkedin</p>
+      <input
+        type="url"
+        className="curriculumInputField"
+        name="user-linkedin"
+        placeholder="Link do seu Linkedin"
+      />
+    </div>
+
+    <div className="curriculumFormField">
+      <p className="curriculumAccordionText">Portfólio</p>
+      <input
+        type="url"
+        className="curriculumInputField"
+        name="user-portfolio"
+        placeholder="Link do seu Portfólio"
+      />
+    </div>
               </div>
              
             </AccordionBox>
@@ -84,27 +212,63 @@ export default function UserCurriculum () {
               
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">CEP</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe  seu Código postal" />
+                  <input
+                    type="text"
+                    className="curriculumInputField"
+                    placeholder="Informe seu Código postal"
+                    value={cep}
+                    onChange={e => {
+                      const valor = e.target.value.replace(/\D/g, "").slice(0, 8);
+                      setCep(valor);
+                    }}
+                    onBlur={e => buscarCep(e.target.value)}
+                    maxLength={8}
+                  />
+                  {erroCep && <span style={{ color: "red", fontSize: "14px" }}>{erroCep}</span>}
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Rua</p>
-                <input type="text" className="curriculumInputField" placeholder="Informe seu endereço" />
+                <input
+                  type="text"
+                  className="curriculumInputField"
+                  placeholder="Informe seu endereço"
+                  value={rua}
+                  onChange={e => setRua(e.target.value)}
+                />
                 </div>
                 
                 <div  className="curriculumFormField">
                   <p className="curriculumAccordionText">Bairro</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe seu bairro"/>
+                  <input
+                    type="text"
+                    className="curriculumInputField"
+                    placeholder="Informe seu bairro"
+                    value={bairro}
+                    onChange={e => setBairro(e.target.value)}
+                  />
                 </div>
 
                 <div  className="curriculumFormField">
                 <p className="curriculumAccordionText">Cidade</p>
-                <input type="text" className="curriculumInputField" placeholder="Informe sua cidade"/>
+                <input
+                  type="text"
+                  className="curriculumInputField"
+                  placeholder="Informe sua cidade"
+                  value={cidade}
+                  onChange={e => setCidade(e.target.value)}
+                />
                 </div>
 
                 <div  className="curriculumFormField">
-                  <p className="curriculumAccordionText">estado</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe  seu Estado"/>
+                  <p className="curriculumAccordionText">Estado</p>
+                  <input
+                    type="text"
+                    className="curriculumInputField"
+                    placeholder="Informe seu Estado"
+                    value={estado}
+                    onChange={e => setEstado(e.target.value)}
+                  />
                 </div>
 
                 <div  className="curriculumFormField">
@@ -112,24 +276,20 @@ export default function UserCurriculum () {
                   <input type="text" className="curriculumInputField" placeholder="Informe o Número residêncial"/>
                 </div>
 
-                <div  className="curriculumFormField">
-                  <p className="curriculumAccordionText">Linkedin</p>
-                  <input type="url" className="curriculumInputField" name="user-linkedin" placeholder="Link do seu Linkedin"/>
-                </div>
-
-                <div  className="curriculumFormField">
-                  <p className="curriculumAccordionText">Portfólio</p>
-                  <input type="url" className="curriculumInputField" name="user-portfolio" placeholder="Link do seu Portfólio"/>
+                {/* Complemento (opcional) dentro de Endereço */}
+                <div className="curriculumFormField">
+                  <p className="curriculumAccordionText">Complemento (opcional)</p>
+                  <input
+                    type="text"
+                    className="curriculumInputField"
+                    placeholder="Apartamento, bloco, referência, etc."
+                  />
                 </div>
                   
               </div>
              
             </AccordionBox>
 
-          </div>
-
-          <div className="curriculumAccordionContainer">
-            
           </div>
 
           <div className="curriculumAccordionContainer">
