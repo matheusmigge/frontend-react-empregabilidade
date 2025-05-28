@@ -14,7 +14,6 @@ export default function UserCurriculum () {
   const [mostrarSenha, setMostrarSenha] = useState(false);
   const [mostrarConfirmaSenha, setMostrarConfirmaSenha] = useState(false);
 
-  // Estados para endereço
   const [cep, setCep] = useState("");
   const [rua, setRua] = useState("");
   const [bairro, setBairro] = useState("");
@@ -22,7 +21,7 @@ export default function UserCurriculum () {
   const [estado, setEstado] = useState("");
   const [erroCep, setErroCep] = useState("");
 
-  // Estado para experiências profissionais
+ 
   const [experiencias, setExperiencias] = useState([
     {
       empresa: "",
@@ -33,24 +32,25 @@ export default function UserCurriculum () {
     }
   ]);
 
-  // Estado para formação acadêmica
+
   const [formacoes, setFormacoes] = useState([
     {
+      nomeCurso: "",
       instituicao: "",
       periodoInicio: "",
       periodoFim: ""
     }
   ]);
 
-  // Novo estado para cursos e certificações
+  
   const [cursos, setCursos] = useState([
     {
       nome: "",
+      instituicao: "", 
       anoConclusao: ""
     }
   ]);
 
-  // Estado para línguas
   const [linguas, setLinguas] = useState([
     {
       idioma: "",
@@ -58,7 +58,7 @@ export default function UserCurriculum () {
     }
   ]);
 
-  // Estado para habilidades e competências
+ 
   const [habilidades, setHabilidades] = useState([
     {
       habilidade: "",
@@ -75,7 +75,7 @@ export default function UserCurriculum () {
     return `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7, 11)}`;
   }
 
-  // Função para buscar o endereço pelo CEP
+
   async function buscarCep(valor: string) {
     const cepLimpo = valor.replace(/\D/g, "");
     if (cepLimpo.length !== 8) {
@@ -111,7 +111,7 @@ export default function UserCurriculum () {
     }
   }
 
-  // Função para adicionar nova experiência
+ 
   function adicionarExperiencia() {
     setExperiencias([
       ...experiencias,
@@ -125,7 +125,7 @@ export default function UserCurriculum () {
     ]);
   }
 
-  // Função para atualizar campos das experiências
+
   function atualizarExperiencia(index: number, campo: string, valor: string) {
     const novasExperiencias = experiencias.map((exp, i) =>
       i === index ? { ...exp, [campo]: valor } : exp
@@ -133,16 +133,17 @@ export default function UserCurriculum () {
     setExperiencias(novasExperiencias);
   }
 
-  // Função para excluir uma experiência profissional
+ 
   function excluirExperiencia(index: number) {
     setExperiencias(experiencias.filter((_, i) => i !== index));
   }
 
-  // Função para adicionar nova formação acadêmica
+
   function adicionarFormacao() {
     setFormacoes([
       ...formacoes,
       {
+        nomeCurso: "",
         instituicao: "",
         periodoInicio: "",
         periodoFim: ""
@@ -150,7 +151,7 @@ export default function UserCurriculum () {
     ]);
   }
 
-  // Função para atualizar campos das formações
+
   function atualizarFormacao(index: number, campo: string, valor: string) {
     const novasFormacoes = formacoes.map((form, i) =>
       i === index ? { ...form, [campo]: valor } : form
@@ -158,23 +159,23 @@ export default function UserCurriculum () {
     setFormacoes(novasFormacoes);
   }
 
-  // Função para excluir uma formação acadêmica
   function excluirFormacao(index: number) {
     setFormacoes(formacoes.filter((_, i) => i !== index));
   }
 
-  // Função para adicionar novo curso/certificação
+
   function adicionarCurso() {
     setCursos([
       ...cursos,
       {
         nome: "",
+        instituicao: "",
         anoConclusao: ""
       }
     ]);
   }
 
-  // Função para atualizar campos dos cursos/certificações
+ 
   function atualizarCurso(index: number, campo: string, valor: string) {
     const novosCursos = cursos.map((curso, i) =>
       i === index ? { ...curso, [campo]: valor } : curso
@@ -182,12 +183,12 @@ export default function UserCurriculum () {
     setCursos(novosCursos);
   }
 
-  // Função para excluir um curso/certificação
+ 
   function excluirCurso(index: number) {
     setCursos(cursos.filter((_, i) => i !== index));
   }
 
-  // Função para adicionar nova língua
+
   function adicionarLingua() {
     setLinguas([
       ...linguas,
@@ -198,7 +199,7 @@ export default function UserCurriculum () {
     ]);
   }
 
-  // Função para atualizar campos das línguas
+
   function atualizarLingua(index: number, campo: string, valor: string) {
     const novasLinguas = linguas.map((lingua, i) =>
       i === index ? { ...lingua, [campo]: valor } : lingua
@@ -206,12 +207,11 @@ export default function UserCurriculum () {
     setLinguas(novasLinguas);
   }
 
-  // Função para excluir uma língua
   function excluirLingua(index: number) {
     setLinguas(linguas.filter((_, i) => i !== index));
   }
 
-  // Função para adicionar nova habilidade
+ 
   function adicionarHabilidade() {
     setHabilidades([
       ...habilidades,
@@ -222,7 +222,7 @@ export default function UserCurriculum () {
     ]);
   }
 
-  // Função para atualizar campos das habilidades
+
   function atualizarHabilidade(index: number, campo: string, valor: string) {
     const novasHabilidades = habilidades.map((hab, i) =>
       i === index ? { ...hab, [campo]: valor } : hab
@@ -230,7 +230,6 @@ export default function UserCurriculum () {
     setHabilidades(novasHabilidades);
   }
 
-  // Função para excluir uma habilidade
   function excluirHabilidade(index: number) {
     setHabilidades(habilidades.filter((_, i) => i !== index));
   }
@@ -444,7 +443,7 @@ export default function UserCurriculum () {
                   <input type="text" className="curriculumInputField" placeholder="Informe o Número residêncial"/>
                 </div>
 
-                {/* Complemento (opcional) dentro de Endereço */}
+              
                 <div className="curriculumFormField">
                   <p className="curriculumAccordionText">Complemento (opcional)</p>
                   <input
@@ -546,6 +545,16 @@ export default function UserCurriculum () {
                       onChange={e => atualizarFormacao(idx, "instituicao", e.target.value)}
                     />
 
+                    {/* Novo campo para o nome do curso */}
+                    <p className="curriculumAccordionText">Nome do Curso</p>
+                    <input
+                      type="text"
+                      className="curriculumInputFieldFa"
+                      placeholder="Informe o nome do curso"
+                      value={form.nomeCurso || ""}
+                      onChange={e => atualizarFormacao(idx, "nomeCurso", e.target.value)}
+                    />
+
                     <p className="curriculumAccordionText">Período</p>
                     <input
                       type="date"
@@ -593,6 +602,14 @@ export default function UserCurriculum () {
                       placeholder="Informe o nome do curso/certificação"
                       value={curso.nome}
                       onChange={e => atualizarCurso(idx, "nome", e.target.value)}
+                    />
+                    <p className="curriculumAccordionText">Instituição</p>
+                    <input
+                      type="text"
+                      className="curriculumInputFieldFa"
+                      placeholder="Informe a instituição"
+                      value={curso.instituicao}
+                      onChange={e => atualizarCurso(idx, "instituicao", e.target.value)}
                     />
                     <p className="curriculumAccordionText">Ano de conclusão</p>
                     <input
