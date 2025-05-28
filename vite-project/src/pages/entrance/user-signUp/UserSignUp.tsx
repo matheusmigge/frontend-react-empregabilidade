@@ -9,6 +9,7 @@ import InputMask from "react-input-mask";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
 
 function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
   // Estados principais do formulário
@@ -61,39 +62,39 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
     const cpfMask = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
     const phoneMask = /^\(\d{2}\) \d{5}-\d{4}$/;
     if (!form.name.trim()) {
-      alert("Preencha o nome.");
+      showErrorAlert("Preencha o nome.");
       return false;
     }
     if (!form.surname.trim()) {
-      alert("Preencha o sobrenome.");
+      showErrorAlert("Preencha o sobrenome.");
       return false;
     }
     if (!cpfMask.test(form.cpf)) {
-      alert("Preencha o CPF completamente.");
+      showErrorAlert("Preencha o CPF completamente.");
       return false;
     }
     if (!form.email.trim()) {
-      alert("Preencha o email.");
+      showErrorAlert("Preencha o email.");
       return false;
     }
     if (!phoneMask.test(form.phone)) {
-      alert("Preencha o telefone completamente.");
+      showErrorAlert("Preencha o telefone completamente.");
       return false;
     }
     if (!form.birthDate) {
-      alert("Preencha a data de nascimento.");
+      showErrorAlert("Preencha a data de nascimento.");
       return false;
     }
     if (!isBirthDateValid(form.birthDate)) {
-      alert("Informe uma data de nascimento válida.");
+      showErrorAlert("Informe uma data de nascimento válida.");
       return false;
     }
     if (!form.password) {
-      alert("Preencha a senha.");
+      showErrorAlert("Preencha a senha.");
       return false;
     }
     if (form.password !== form.confirmPassword) {
-      alert("As senhas não coincidem.");
+      showErrorAlert("As senhas não coincidem.");
       return false;
     }
     return true;
@@ -103,27 +104,27 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
   const validateStep2 = () => {
     const cepMask = /^\d{5}-\d{3}$/;
     if (!cepMask.test(form.cep)) {
-      alert("Preencha o CEP completamente.");
+      showErrorAlert("Preencha o CEP completamente.");
       return false;
     }
     if (!form.adress.trim()) {
-      alert("Preencha a rua.");
+      showErrorAlert("Preencha a rua.");
       return false;
     }
     if (!form.neighborhood.trim()) {
-      alert("Preencha o bairro.");
+      showErrorAlert("Preencha o bairro.");
       return false;
     }
     if (!form.city.trim()) {
-      alert("Preencha a cidade.");
+      showErrorAlert("Preencha a cidade.");
       return false;
     }
     if (!form.state.trim()) {
-      alert("Preencha o estado.");
+      showErrorAlert("Preencha o estado.");
       return false;
     }
     if (!form.houseNumber.trim()) {
-      alert("Preencha o número da casa.");
+      showErrorAlert("Preencha o número da casa.");
       return false;
     }
     return true;
@@ -177,7 +178,7 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
       });
       navigate("/home");
     } catch (error) {
-      alert("Erro ao cadastrar candidato!");
+      showErrorAlert("Erro ao cadastrar candidato!");
     }
   };
 

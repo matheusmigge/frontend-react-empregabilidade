@@ -6,6 +6,8 @@ import UserSignUp from "./pages/entrance/user-signUp/UserSignUp";
 import CompanySignUp from "./pages/entrance/company-signUp/CompanySignUp";
 import Home from "./pages/home/Home";
 import Vacancy from "./pages/vacancy/Vacancy";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <Route path="/vacancy" element={<Vacancy/>}/>
         </Routes>
       </Router>
+      <ToastContainer />
     </>
   );
 }

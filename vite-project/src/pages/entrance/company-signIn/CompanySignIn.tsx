@@ -5,6 +5,7 @@ import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import InputMask from "react-input-mask";
 import "./CompanySignIn.css";
 import { useNavigate } from "react-router-dom";
+import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
 
 function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
   // Estados para controle de senha, CNPJ, erro e navegação
@@ -40,7 +41,7 @@ function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
           companies[0].hrmanagerAccountPassword,
         ].includes(password)
       ) {
-        setError("CNPJ ou senha incorretos.");
+        showErrorAlert("CNPJ ou senha incorretos.");
         return;
       }
 
@@ -92,7 +93,7 @@ function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
             </button>
           </div>
 
-          {/* Exibe mensagem de erro, se houver */}
+          {/* Exibe mensagem de erro de conexão, se houver */}
           {error && (
             <div
               className="error-message"
