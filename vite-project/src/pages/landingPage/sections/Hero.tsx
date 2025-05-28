@@ -18,7 +18,7 @@ function Hero() {
       </div>
 
       <div className="buttonsCta">
-        <Link to="/userSignUp1" className="linkStyle">
+        <Link to="/entrance?userSignUp=true" className="linkStyle">
           <TextualButton className="signUp" text="quero me cadastrar!" />
         </Link>
         <Link to="/entrance" className="linkStyle">
