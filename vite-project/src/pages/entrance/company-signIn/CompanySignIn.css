@@ -44,6 +44,9 @@
       font-size: 1em;
       margin-top: 2em;
     }
+    .submit:hover {
+      background: #259821c7;
+    }
   }
 
   .hr-text {
@@ -83,6 +86,47 @@
         cursor: pointer;
         font-size: 105%;
       }
+      button:hover {
+        text-decoration: underline;
+      }
     }
   }
+  
+  .passwordInputContainer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .passwordInputContainer input {
+    flex: 1;
+    height: 6vh;
+  }
+  
+  .togglePasswordButton {
+    position: absolute;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .togglePasswordButton img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .togglePasswordButton:active img {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
 }
+

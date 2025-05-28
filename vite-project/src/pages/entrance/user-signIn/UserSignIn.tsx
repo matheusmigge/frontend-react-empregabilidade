@@ -7,37 +7,38 @@ import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import "./UserSignIn.css";
 import { useNavigate } from "react-router-dom";
 
-// Adicione a prop onSignUpClick
 function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
+  // Estados para controle de senha, email, erro e navegação
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // Alterna visualização da senha
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
 
+  // Handler de envio do formulário de login
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
     try {
+      // Busca candidato pelo email
       const response = await fetch(
         `http://localhost:3000/candidates?email=${encodeURIComponent(email)}`
       );
       const candidates = await response.json();
 
-      if (
-        candidates.length === 0 ||
-        candidates[0].password !== password
-      ) {
+      // Valida senha
+      if (candidates.length === 0 || candidates[0].password !== password) {
         setError("E-mail ou senha incorretos.");
         return;
       }
 
-      // Login válido, redireciona
+      // Login válido, redireciona para home
       navigate("/home");
     } catch (err) {
       setError("Erro ao conectar ao servidor.");
@@ -51,6 +52,7 @@ function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
           <h1>Conheça diversas oportunidades de emprego</h1>
         </div>
         <form onSubmit={handleSubmit}>
+          {/* Campo de email */}
           <label htmlFor="user-email">Email</label>
           <input
             type="email"
@@ -61,6 +63,7 @@ function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
             onChange={(e) => setEmail(e.target.value)}
           />
 
+          {/* Campo de senha com botão de exibir/ocultar */}
           <label htmlFor="user-password">Senha</label>
           <div className="passwordInputContainer">
             <input
@@ -83,12 +86,17 @@ function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
             </button>
           </div>
 
+          {/* Exibe mensagem de erro, se houver */}
           {error && (
-            <div className="error-message" style={{ color: "#d32f2f", marginTop: 32 }}>
+            <div
+              className="error-message"
+              style={{ color: "#d32f2f", marginTop: 32 }}
+            >
               {error}
             </div>
           )}
 
+          {/* Botão de submit */}
           <div className="submitContainer">
             <TextualButton text={"ENTRAR"} className="submit" />
           </div>
@@ -96,6 +104,7 @@ function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
 
         <hr />
 
+        {/* Botões de login externo e link para cadastro */}
         <div className="buttonsContainer">
           <TextualButton
             className="externalRegistrationButton"

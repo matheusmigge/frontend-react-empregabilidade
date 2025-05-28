@@ -27,7 +27,6 @@
     background-color: #f2f2f2;
     border-radius: 50px;
     border: none;
-    margin-bottom: 8px;
   }
 
   input::placeholder {
@@ -86,6 +85,9 @@
       font-size: 1em;
       margin-top: 2em;
     }
+    .submit:hover {
+      background: #259821c7;
+    }
   }
 
   .hr-text {
@@ -121,19 +123,25 @@
       padding: 0;
       width: 80%;
     }
-  }
+    .externalRegistrationButton:hover {
+      background: #012369c7;
+    }
 
-  .signup-now {
-    text-align: center;
+    .signup-now {
+      text-align: center;
 
-    button {
-      color: black;
-      font-weight: bold;
-      font-style: italic;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 105%;
+      button {
+        color: black;
+        font-weight: bold;
+        font-style: italic;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 105%;
+      }
+      button:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

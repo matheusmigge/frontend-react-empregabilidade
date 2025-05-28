@@ -13,24 +13,28 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Entrance() {
+  // Controla tipo de registro selecionado
   const [registerType, setRegisterType] = useState("candidate");
+  // Controla exibição do cadastro de empresa
   const [showCompanySignUp, setShowCompanySignUp] = useState(false);
+  // Controla exibição do cadastro de usuário
   const [showUserSignUp, setShowUserSignUp] = useState(false);
 
+  // Alterna entre login/cadastro de empresa ou candidato
   const handleClick = (type: string) => {
     setRegisterType(type);
-
     if (type === "company") {
-      setShowCompanySignUp(showUserSignUp);
+      setShowCompanySignUp(showUserSignUp || showCompanySignUp);
       setShowUserSignUp(false);
-    } else if (type === "candidate") {
-      setShowUserSignUp(showCompanySignUp);
+    } else {
+      setShowUserSignUp(showUserSignUp || showCompanySignUp);
       setShowCompanySignUp(false);
     }
   };
 
   const location = useLocation();
 
+  // Exibe cadastro de usuário se vier da landing page com parâmetro
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get("userSignUp") === "true") {
@@ -43,9 +47,11 @@ function Entrance() {
     <>
       <body className="body-container">
         <section className="leftSide">
+          {/* Logo */}
           <div className="logoContainer">
             <img src={logoCompletaVetor} alt="Logo da RE9AÇÃO" />
           </div>
+          {/* Botões para escolher tipo de acesso */}
           <div className="buttonContainer">
             <TextualButton
               className={`enterpriseButton ${
@@ -64,6 +70,7 @@ function Entrance() {
               onClick={() => handleClick("candidate")}
             />
           </div>
+          {/* Link para voltar à landing page */}
           <div className="back-to-lp">
             <p>
               Voltar ao <Link to="/">Início</Link>
@@ -72,12 +79,14 @@ function Entrance() {
         </section>
 
         <section className="rightSide">
+          {/* Renderiza login/cadastro de empresa */}
           {registerType === "company" &&
             (showCompanySignUp ? (
               <CompanySignUp onLoginClick={() => setShowCompanySignUp(false)} />
             ) : (
               <CompanySignIn onSignUpClick={() => setShowCompanySignUp(true)} />
             ))}
+          {/* Renderiza login/cadastro de candidato */}
           {registerType === "candidate" &&
             (showUserSignUp ? (
               <UserSignUp onLoginClick={() => setShowUserSignUp(false)} />

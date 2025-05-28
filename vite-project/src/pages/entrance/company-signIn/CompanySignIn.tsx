@@ -7,26 +7,31 @@ import "./CompanySignIn.css";
 import { useNavigate } from "react-router-dom";
 
 function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
+  // Estados para controle de senha, CNPJ, erro e navegação
   const [showPassword, setShowPassword] = useState(false);
   const [cnpj, setCnpj] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // Alterna a visualização da senha
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
 
+  // Handler de envio do formulário de login
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
     try {
+      // Busca empresa pelo CNPJ
       const response = await fetch(
         `http://localhost:3000/companies?cnpj=${encodeURIComponent(cnpj)}`
       );
       const companies = await response.json();
 
+      // Valida senha para qualquer tipo de usuário da empresa
       if (
         companies.length === 0 ||
         ![
@@ -39,7 +44,7 @@ function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
         return;
       }
 
-      // Login válido, redireciona
+      // Login bem-sucedido, redireciona para home
       navigate("/home");
     } catch (err) {
       setError("Erro ao conectar ao servidor.");
@@ -53,6 +58,7 @@ function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
           <h1>Receba aplicações dos melhores candidados</h1>
         </div>
         <form onSubmit={handleSubmit}>
+          {/* Campo de CNPJ com máscara */}
           <label htmlFor="cnpj">CNPJ</label>
           <InputMask
             mask="99.999.999/9999-99"
@@ -63,6 +69,7 @@ function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
             onChange={(e) => setCnpj(e.target.value)}
           />
 
+          {/* Campo de senha com botão de exibir/ocultar */}
           <label htmlFor="user-password">Senha</label>
           <div className="passwordInputContainer">
             <input
@@ -85,19 +92,25 @@ function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
             </button>
           </div>
 
+          {/* Exibe mensagem de erro, se houver */}
           {error && (
-            <div className="error-message" style={{ color: "#d32f2f", marginTop: 32 }}>
+            <div
+              className="error-message"
+              style={{ color: "#d32f2f", marginTop: 32 }}
+            >
               {error}
             </div>
           )}
 
+          {/* Botão de submit */}
           <div className="submitContainer">
-              <TextualButton text={"ENTRAR"} className="submit" />
+            <TextualButton text={"ENTRAR"} className="submit" />
           </div>
         </form>
 
         <hr />
 
+        {/* Link para cadastro */}
         <div className="buttonsContainer">
           <div className="signup-now">
             <p>

@@ -8,13 +8,15 @@ import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import InputMask from "react-input-mask";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
+  // Estados principais do formulário
   const [step, setStep] = useState(1);
   const [showPassword, setShowPassword] = useState(false);
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
   const [form, setForm] = useState({
+    name: "",
+    surname: "",
     cpf: "",
     email: "",
     phone: "",
@@ -33,21 +35,150 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
   });
   const navigate = useNavigate();
 
-  const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    setState: React.Dispatch<React.SetStateAction<string>>
-  ) => {
-    const value = event.target.value;
-    const filteredValue = value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
-    setState(filteredValue);
-  };
-
+  // Atualiza campos do formulário
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // Alterna visualização da senha
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
+  };
+
+  // Valida data de nascimento anterior à data atual (fuso Brasília)
+  const isBirthDateValid = (birthDate: string) => {
+    if (!birthDate) return false;
+    const now = new Date();
+    const brasiliaOffset = -3 * 60;
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+    const brasiliaNow = new Date(utc + brasiliaOffset * 60000);
+    const inputDate = new Date(birthDate + "T00:00:00-03:00");
+    return inputDate < brasiliaNow;
+  };
+
+  // Validação dos campos obrigatórios da etapa 1
+  const validateStep1 = () => {
+    const cpfMask = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+    const phoneMask = /^\(\d{2}\) \d{5}-\d{4}$/;
+    if (!form.name.trim()) {
+      alert("Preencha o nome.");
+      return false;
+    }
+    if (!form.surname.trim()) {
+      alert("Preencha o sobrenome.");
+      return false;
+    }
+    if (!cpfMask.test(form.cpf)) {
+      alert("Preencha o CPF completamente.");
+      return false;
+    }
+    if (!form.email.trim()) {
+      alert("Preencha o email.");
+      return false;
+    }
+    if (!phoneMask.test(form.phone)) {
+      alert("Preencha o telefone completamente.");
+      return false;
+    }
+    if (!form.birthDate) {
+      alert("Preencha a data de nascimento.");
+      return false;
+    }
+    if (!isBirthDateValid(form.birthDate)) {
+      alert("Informe uma data de nascimento válida.");
+      return false;
+    }
+    if (!form.password) {
+      alert("Preencha a senha.");
+      return false;
+    }
+    if (form.password !== form.confirmPassword) {
+      alert("As senhas não coincidem.");
+      return false;
+    }
+    return true;
+  };
+
+  // Validação dos campos obrigatórios da etapa 2
+  const validateStep2 = () => {
+    const cepMask = /^\d{5}-\d{3}$/;
+    if (!cepMask.test(form.cep)) {
+      alert("Preencha o CEP completamente.");
+      return false;
+    }
+    if (!form.adress.trim()) {
+      alert("Preencha a rua.");
+      return false;
+    }
+    if (!form.neighborhood.trim()) {
+      alert("Preencha o bairro.");
+      return false;
+    }
+    if (!form.city.trim()) {
+      alert("Preencha a cidade.");
+      return false;
+    }
+    if (!form.state.trim()) {
+      alert("Preencha o estado.");
+      return false;
+    }
+    if (!form.houseNumber.trim()) {
+      alert("Preencha o número da casa.");
+      return false;
+    }
+    return true;
+  };
+
+  // Avança para etapa 2 após validação
+  const handleContinue = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validateStep1()) setStep(2);
+  };
+
+  // Envia cadastro do candidato
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validateStep2()) return;
+    const { confirmPassword, ...dataToSend } = form;
+    try {
+      await axios.post("http://localhost:3000/candidates", {
+        firstName: dataToSend.name.trim(),
+        lastName: dataToSend.surname.trim(),
+        cpf: dataToSend.cpf,
+        email: dataToSend.email,
+        phoneNumber: dataToSend.phone,
+        dateOfBirth: dataToSend.birthDate,
+        password: dataToSend.password,
+        address: {
+          cep: dataToSend.cep,
+          addressType: "",
+          addressName: "",
+          address: dataToSend.adress,
+          number: dataToSend.houseNumber,
+          complement: dataToSend.complement || "",
+          state: dataToSend.state,
+          district: dataToSend.neighborhood,
+          lat: "",
+          lng: "",
+          city: dataToSend.city,
+          cityIbge: "",
+          ddd: "",
+        },
+        linkedInURL: dataToSend.linkedin || "",
+        portfolioURL: dataToSend.portfolio || "",
+        resume: {
+          professionalSummary: "",
+          experiences: [],
+          education: [],
+          coursesAndCertifications: [],
+          skillsAndCompetencies: [],
+          languages: [],
+        },
+      });
+      navigate("/home");
+    } catch (error) {
+      alert("Erro ao cadastrar candidato!");
+    }
   };
 
   return (
@@ -57,8 +188,8 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
       </div>
 
       {step === 1 && (
-        <form className="formContainer">
-          {/* PRIMEIRA LINHA */}
+        <form className="formContainer" onSubmit={handleContinue}>
+          {/* Linha 1: nome e sobrenome */}
           <div className="formContent">
             <div className="inputContainer">
               <div className="inputForm">
@@ -66,10 +197,10 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
                 <input
                   type="text"
                   id="user-name"
-                  name="user-name"
+                  name="name"
                   placeholder="Digite seu nome"
-                  value={name}
-                  onChange={(e) => handleInputChange(e, setName)}
+                  value={form.name}
+                  onChange={handleFormChange}
                 />
               </div>
             </div>
@@ -79,16 +210,16 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
                 <input
                   type="text"
                   id="user-surname"
-                  name="user-surname"
+                  name="surname"
                   placeholder="Digite seu sobrenome"
-                  value={surname}
-                  onChange={(e) => handleInputChange(e, setSurname)}
+                  value={form.surname}
+                  onChange={handleFormChange}
                 />
               </div>
             </div>
           </div>
 
-          {/* SEGUNDA LINHA */}
+          {/* Linha 2: CPF e email */}
           <div className="formContent">
             <div className="inputForm">
               <label htmlFor="user-cpf">CPF</label>
@@ -116,7 +247,7 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
             </div>
           </div>
 
-          {/* TERCEIRA LINHA */}
+          {/* Linha 3: telefone e data de nascimento */}
           <div className="formContent">
             <div className="inputContainer">
               <div className="inputForm">
@@ -140,12 +271,13 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
                   name="birthDate"
                   value={form.birthDate}
                   onChange={handleFormChange}
+                  max={new Date().toISOString().split("T")[0]}
                 />
               </div>
             </div>
           </div>
 
-          {/* QUARTA LINHA */}
+          {/* Linha 4: senha e confirmação */}
           <div className="formContent">
             <div className="inputContainer">
               <div className="inputForm">
@@ -176,7 +308,9 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
             </div>
             <div className="inputContainer">
               <div className="inputForm">
-                <label htmlFor="user-password-confirm">Confirme sua senha</label>
+                <label htmlFor="user-password-confirm">
+                  Confirme sua senha
+                </label>
                 <div className="passwordInputContainer">
                   <input
                     type={showPassword ? "text" : "password"}
@@ -203,19 +337,20 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
             </div>
           </div>
 
+          {/* Botão continuar */}
           <div className="a">
             <TextualButton
               text={"CONTINUAR"}
               className="submit"
-              onClick={() => setStep(2)}
+              type="submit"
             />
           </div>
         </form>
       )}
 
       {step === 2 && (
-        <form className="formContainer">
-          {/* PRIMEIRA LINHA */}
+        <form className="formContainer" onSubmit={handleRegister}>
+          {/* Linha 1: CEP e rua */}
           <div className="formContent">
             <div className="inputContainer">
               <div className="inputForm">
@@ -245,7 +380,7 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
             </div>
           </div>
 
-          {/* SEGUNDA LINHA */}
+          {/* Linha 2: bairro e cidade */}
           <div className="formContent">
             <div className="inputContainer">
               <div className="inputForm">
@@ -275,7 +410,7 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
             </div>
           </div>
 
-          {/* TERCEIRA LINHA */}
+          {/* Linha 3: estado, número e complemento */}
           <div className="formContent">
             <div className="inputContainer">
               <div className="inputForm" id="stateInput">
@@ -333,7 +468,12 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
                 />
               </div>
               <div className="inputForm" id="complementInput">
-                <label htmlFor="user-complement">Complemento</label>
+                <label htmlFor="user-complement" style={{ marginLeft: "1em" }}>
+                  Complemento{" "}
+                  <span style={{ color: "#adabc3", fontSize: "60%" }}>
+                    (Opcional)
+                  </span>
+                </label>
                 <input
                   type="text"
                   id="user-complement"
@@ -346,7 +486,7 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
             </div>
           </div>
 
-          {/* QUARTA LINHA */}
+          {/* Linha 4: LinkedIn e portfólio */}
           <div className="formContent">
             <div className="inputContainer">
               <div className="inputForm">
@@ -386,11 +526,13 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
             </div>
           </div>
 
+          {/* Botões de navegação e ações */}
           <div className="optionsContainer">
             <div className="goBackButton">
               <TextualButton
                 text={"VOLTAR"}
-                className="submit"
+                className="backButton"
+                type="button"
                 onClick={() => setStep(1)}
               />
             </div>
@@ -398,36 +540,41 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
               <TextualButton
                 text={"CADASTRAR CURRICULO"}
                 className="submit"
+                type="button"
               />
             </div>
             <div className="finishLaterButton">
               <TextualButton
                 text={"FINALIZAR DEPOIS"}
                 className="submit"
-                onClick={() => navigate("/home")}
+                type="button"
+                onClick={() =>
+                  handleRegister(
+                    new Event("submit") as unknown as React.FormEvent
+                  )
+                }
               />
             </div>
           </div>
         </form>
       )}
 
+      {/* Botões de login externo */}
       <div className="buttonContainer">
         <SymbolButton className="symbol-button" imageUrl={linkedinVetor} />
         <SymbolButton className="symbol-button" imageUrl={googleVetor} />
       </div>
 
+      {/* Link para login */}
       <div className="loginContainer">
         <p>
           Já tem uma conta?{" "}
-          <button
-            type="button"
-            className="linkStyle"
-            onClick={onLoginClick}
-          >
+          <button type="button" className="linkStyle" onClick={onLoginClick}>
             Entrar
           </button>
         </p>
       </div>
+      {/* Informações legais */}
       <div className="informationContainer">
         <p>
           Ao criar uma conta, você concorda com nossos{" "}
