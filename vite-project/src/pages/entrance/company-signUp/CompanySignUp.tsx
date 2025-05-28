@@ -10,6 +10,8 @@ import InputMask from "react-input-mask";
 import { useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
+import { showSuccessAlert } from "../../../components/alerts/SuccessAlert";
 
 function CompanySignUp({ onLoginClick }: { onLoginClick?: () => void }) {
   // Estados principais do formulário
@@ -92,22 +94,22 @@ function CompanySignUp({ onLoginClick }: { onLoginClick?: () => void }) {
     const cnpjMask = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/;
     const phoneMask = /^\(\d{2}\) \d{5}-\d{4}$/;
     if (!cnpjMask.test(companyData.cnpj)) {
-      alert("Preencha o CNPJ completamente.");
+      showErrorAlert("Preencha o CNPJ completamente.");
       return;
     }
     if (!phoneMask.test(companyData.phoneNumber)) {
-      alert("Preencha o telefone completamente.");
+      showErrorAlert("Preencha o telefone completamente.");
       return;
     }
     if (
       companyData.adminAccountPassword !==
       companyData.adminAccountPasswordConfirm
     ) {
-      alert("As senhas não coincidem.");
+      showErrorAlert("As senhas não coincidem.");
       return;
     }
     if (!companyData.logoUrl) {
-      alert("Envie o logo da empresa.");
+      showErrorAlert("Envie o logo da empresa.");
       return;
     }
     setStep(2);
@@ -116,17 +118,15 @@ function CompanySignUp({ onLoginClick }: { onLoginClick?: () => void }) {
   // Valida e envia dados da etapa 2
   const handleSubmitStep2 = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Checa se campos de gestor estão completos
     const incompleteManager = companyData.managers.some(
       (m) =>
         (m.managerAccountEmail.trim() && !m.managerAccountPassword.trim()) ||
         (!m.managerAccountEmail.trim() && m.managerAccountPassword.trim())
     );
     if (incompleteManager) {
-      alert("Preencha corrretamente os campos de e-mail e senha dos gestores.");
+      showErrorAlert("Preencha corrretamente os campos de e-mail e senha dos gestores.");
       return;
     }
-    // Remove gestores vazios
     const managersFiltered = companyData.managers.filter(
       (m) => m.managerAccountEmail.trim() && m.managerAccountPassword.trim()
     );
@@ -138,7 +138,7 @@ function CompanySignUp({ onLoginClick }: { onLoginClick?: () => void }) {
       });
       navigate("/home");
     } catch (error) {
-      alert("Erro ao cadastrar empresa!");
+      showErrorAlert("Erro ao cadastrar empresa!");
     }
   };
 
@@ -159,11 +159,11 @@ function CompanySignUp({ onLoginClick }: { onLoginClick?: () => void }) {
   const handleAddFunction = () => {
     const emailRegex = /^[\w\-.]+@[\w\-]+(\.[\w\-]+)*$/;
     if (!modalRole || !modalEmail || !modalPassword) {
-      alert("Preencha todos os campos da função.");
+      showErrorAlert("Preencha todos os campos da função.");
       return;
     }
     if (!emailRegex.test(modalEmail)) {
-      alert("Digite um email válido para o funcionário.");
+      showErrorAlert("Digite um email válido para o funcionário.");
       return;
     }
     setCompanyData((prev) => ({
@@ -181,6 +181,7 @@ function CompanySignUp({ onLoginClick }: { onLoginClick?: () => void }) {
     setModalEmail("");
     setModalPassword("");
     setIsModalOpen(false);
+    showSuccessAlert("Função adicionada com sucesso!");
   };
 
   return (

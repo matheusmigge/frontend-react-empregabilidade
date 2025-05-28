@@ -6,6 +6,7 @@ import showPasswordVector from "../../../assets/showPasswordVector.svg";
 import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import "./UserSignIn.css";
 import { useNavigate } from "react-router-dom";
+import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
 
 function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
   // Estados para controle de senha, email, erro e navegação
@@ -34,7 +35,7 @@ function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
 
       // Valida senha
       if (candidates.length === 0 || candidates[0].password !== password) {
-        setError("E-mail ou senha incorretos.");
+        showErrorAlert("E-mail ou senha incorretos.");
         return;
       }
 
@@ -86,7 +87,7 @@ function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
             </button>
           </div>
 
-          {/* Exibe mensagem de erro, se houver */}
+          {/* Exibe mensagem de erro de conexão, se houver */}
           {error && (
             <div
               className="error-message"
