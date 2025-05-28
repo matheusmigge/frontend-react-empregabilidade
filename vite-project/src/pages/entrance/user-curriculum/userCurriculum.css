@@ -187,7 +187,13 @@
     background-color: #ffffff;
     padding: 2em 2em;
     border-radius: 2em;
+    
   }
+
+  /* Espaçamento entre blocos de formação acadêmica */
+.curriculumFormContainerIe > div {
+  margin-bottom: 52px;
+}
 
   .finalization-bar {
     display: flex;

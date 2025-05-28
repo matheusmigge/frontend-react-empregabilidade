@@ -22,6 +22,50 @@ export default function UserCurriculum () {
   const [estado, setEstado] = useState("");
   const [erroCep, setErroCep] = useState("");
 
+  // Estado para experiências profissionais
+  const [experiencias, setExperiencias] = useState([
+    {
+      empresa: "",
+      cargo: "",
+      periodoInicio: "",
+      periodoFim: "",
+      resumo: ""
+    }
+  ]);
+
+  // Estado para formação acadêmica
+  const [formacoes, setFormacoes] = useState([
+    {
+      instituicao: "",
+      periodoInicio: "",
+      periodoFim: ""
+    }
+  ]);
+
+  // Novo estado para cursos e certificações
+  const [cursos, setCursos] = useState([
+    {
+      nome: "",
+      anoConclusao: ""
+    }
+  ]);
+
+  // Estado para línguas
+  const [linguas, setLinguas] = useState([
+    {
+      idioma: "",
+      nivel: ""
+    }
+  ]);
+
+  // Estado para habilidades e competências
+  const [habilidades, setHabilidades] = useState([
+    {
+      habilidade: "",
+      nivel: ""
+    }
+  ]);
+
   function formatarTelefone(valor: string) {
     valor = valor.replace(/\D/g, "");
     if (valor.length <= 2) return `(${valor}`;
@@ -65,6 +109,130 @@ export default function UserCurriculum () {
       setCidade("");
       setEstado("");
     }
+  }
+
+  // Função para adicionar nova experiência
+  function adicionarExperiencia() {
+    setExperiencias([
+      ...experiencias,
+      {
+        empresa: "",
+        cargo: "",
+        periodoInicio: "",
+        periodoFim: "",
+        resumo: ""
+      }
+    ]);
+  }
+
+  // Função para atualizar campos das experiências
+  function atualizarExperiencia(index: number, campo: string, valor: string) {
+    const novasExperiencias = experiencias.map((exp, i) =>
+      i === index ? { ...exp, [campo]: valor } : exp
+    );
+    setExperiencias(novasExperiencias);
+  }
+
+  // Função para excluir uma experiência profissional
+  function excluirExperiencia(index: number) {
+    setExperiencias(experiencias.filter((_, i) => i !== index));
+  }
+
+  // Função para adicionar nova formação acadêmica
+  function adicionarFormacao() {
+    setFormacoes([
+      ...formacoes,
+      {
+        instituicao: "",
+        periodoInicio: "",
+        periodoFim: ""
+      }
+    ]);
+  }
+
+  // Função para atualizar campos das formações
+  function atualizarFormacao(index: number, campo: string, valor: string) {
+    const novasFormacoes = formacoes.map((form, i) =>
+      i === index ? { ...form, [campo]: valor } : form
+    );
+    setFormacoes(novasFormacoes);
+  }
+
+  // Função para excluir uma formação acadêmica
+  function excluirFormacao(index: number) {
+    setFormacoes(formacoes.filter((_, i) => i !== index));
+  }
+
+  // Função para adicionar novo curso/certificação
+  function adicionarCurso() {
+    setCursos([
+      ...cursos,
+      {
+        nome: "",
+        anoConclusao: ""
+      }
+    ]);
+  }
+
+  // Função para atualizar campos dos cursos/certificações
+  function atualizarCurso(index: number, campo: string, valor: string) {
+    const novosCursos = cursos.map((curso, i) =>
+      i === index ? { ...curso, [campo]: valor } : curso
+    );
+    setCursos(novosCursos);
+  }
+
+  // Função para excluir um curso/certificação
+  function excluirCurso(index: number) {
+    setCursos(cursos.filter((_, i) => i !== index));
+  }
+
+  // Função para adicionar nova língua
+  function adicionarLingua() {
+    setLinguas([
+      ...linguas,
+      {
+        idioma: "",
+        nivel: ""
+      }
+    ]);
+  }
+
+  // Função para atualizar campos das línguas
+  function atualizarLingua(index: number, campo: string, valor: string) {
+    const novasLinguas = linguas.map((lingua, i) =>
+      i === index ? { ...lingua, [campo]: valor } : lingua
+    );
+    setLinguas(novasLinguas);
+  }
+
+  // Função para excluir uma língua
+  function excluirLingua(index: number) {
+    setLinguas(linguas.filter((_, i) => i !== index));
+  }
+
+  // Função para adicionar nova habilidade
+  function adicionarHabilidade() {
+    setHabilidades([
+      ...habilidades,
+      {
+        habilidade: "",
+        nivel: ""
+      }
+    ]);
+  }
+
+  // Função para atualizar campos das habilidades
+  function atualizarHabilidade(index: number, campo: string, valor: string) {
+    const novasHabilidades = habilidades.map((hab, i) =>
+      i === index ? { ...hab, [campo]: valor } : hab
+    );
+    setHabilidades(novasHabilidades);
+  }
+
+  // Função para excluir uma habilidade
+  function excluirHabilidade(index: number) {
+    setHabilidades(habilidades.filter((_, i) => i !== index));
   }
 
     return (
@@ -179,7 +347,7 @@ export default function UserCurriculum () {
       </div>
     </div>
 
-    {/* LinkedIn e Portfólio movidos para Dados pessoais */}
+   
     <div className="curriculumFormField">
       <p className="curriculumAccordionText">Linkedin</p>
       <input
@@ -294,79 +462,72 @@ export default function UserCurriculum () {
 
           <div className="curriculumAccordionContainer">
             <AccordionBox title="Experiências profissionais">
+              <div className="curriculumFormContainer1">
+                {experiencias.map((exp, idx) => (
+                  <div className="curriculumExperienceField" key={idx}>
+                    <p className="curriculumAccordionText">Empresa</p>
+                    <input
+                      type="text"
+                      className="curriculumInputField"
+                      placeholder="Informe sua experiência profissional"
+                      value={exp.empresa}
+                      onChange={e => atualizarExperiencia(idx, "empresa", e.target.value)}
+                    />
 
-                <div className="curriculumFormContainer1">
+                    <p className="curriculumAccordionText">Cargo</p>
+                    <input
+                      type="text"
+                      className="curriculumInputField"
+                      placeholder="Informe sua experiência profissional"
+                      value={exp.cargo}
+                      onChange={e => atualizarExperiencia(idx, "cargo", e.target.value)}
+                    />
 
-                <div className="curriculumExperienceField">
+                    <p className="curriculumAccordionText">Período</p>
+                    <div>
+                      <input
+                        type="date"
+                        className="curriculumInputFieldExp"
+                        value={exp.periodoInicio}
+                        onChange={e => atualizarExperiencia(idx, "periodoInicio", e.target.value)}
+                      />
+                      <input
+                        type="date"
+                        className="curriculumInputFieldExp"
+                        value={exp.periodoFim}
+                        onChange={e => atualizarExperiencia(idx, "periodoFim", e.target.value)}
+                      />
+                    </div>
 
-                  <p className="curriculumAccordionText">Empresa</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
+                    <p className="curriculumAccordionText">Resumo</p>
+                    <textarea
+                      className="curriculumInputFieldProfExp"
+                      placeholder="Faça um breve resumo sobre suas funções na empresa!"
+                      value={exp.resumo}
+                      onChange={e => atualizarExperiencia(idx, "resumo", e.target.value)}
+                    ></textarea>
 
-                  <p className="curriculumAccordionText">Cargo</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
-
-                  <p className="curriculumAccordionText">Período</p>
-                  <div>
-                  <input type="date" className="curriculumInputFieldExp" />
-                  
-                  <input type="date" className="curriculumInputFieldExp" />
+                    <div className="botoes-container">
+                      <button
+                        className="btn excluir"
+                        type="button"
+                        onClick={() => excluirExperiencia(idx)}
+                      >
+                        <span className="icon">🗑️</span> Excluir
+                      </button>
+                      <button className="btn editar" type="button">
+                        <span className="icon">✏️</span> Editar
+                      </button>
+                      <button className="btn confirmar" type="button">
+                        <span className="icon">✓</span> Confirmar
+                      </button>
+                    </div>
                   </div>
-
-                  <p className="curriculumAccordionText">resumo</p>
-                  <textarea name="" className="curriculumInputFieldProfExp" placeholder="Faça um breve resumo sobre suas funções na empresa!"></textarea>
-
-                  <div className="botoes-container">
-                    <button className="btn excluir">
-                      <span className="icon">🗑️</span> Excluir
-                    </button>
-                    <button className="btn editar">
-                      <span className="icon">✏️</span> Editar
-                    </button>
-                    <button className="btn confirmar">
-                      <span className="icon">✓</span> Confirmar
-                    </button>
-                  </div>
-
-                </div>
-
-                <div className="curriculumAccordionContainer">
-
-                  <p className="curriculumAccordionText">Empresa</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
-
-                  <p className="curriculumAccordionText">Cargo</p>
-                  <input type="text" className="curriculumInputField" placeholder="Informe sua experiência profissional" />
-
-                  <p className="curriculumAccordionText">Período</p>
-                  <div>
-                  <input type="date" className="curriculumInputFieldExp" />
-                  
-                  <input type="date" className="curriculumInputFieldExp" />
-                  </div>
-
-                  <p className="curriculumAccordionText">Resumo</p>
-                  <textarea name="" className="curriculumInputFieldProfExp" placeholder="Faça um breve resumo sobre suas funções na empresa!"></textarea>
-                  
-                  <div className="botoes-container">
-                    <button className="btn excluir">
-                      <span className="icon">🗑️</span> Excluir
-                    </button>
-                    <button className="btn editar">
-                      <span className="icon">✏️</span> Editar
-                    </button>
-                    <button className="btn confirmar">
-                      <span className="icon">✓</span> Confirmar
-                    </button>
-                  </div>
-                </div>
-
+                ))}
               </div>
-
-
               <div className="add-button-container">
-                  <button className="add-button">＋</button>
-                </div>
-
+                <button className="add-button" type="button" onClick={adicionarExperiencia}>＋</button>
+              </div>
             </AccordionBox>
           </div>
 
@@ -374,125 +535,189 @@ export default function UserCurriculum () {
             <AccordionBox title="Formação acadêmica">
 
               <div className="curriculumFormContainerIe">
-                <p className="curriculumAccordionText">instituição de ensino</p>
-                  <input type="text" className="curriculumInputFieldFa" placeholder="Informe sua instituição de ensino" />
-              
-                  <p className="curriculumAccordionText">Período</p>
-                  <input type="date" className="curriculumInputFieldExp" />
-                  <input type="date" className="curriculumInputFieldExp" />
+                {formacoes.map((form, idx) => (
+                  <div key={idx}>
+                    <p className="curriculumAccordionText">Instituição de ensino</p>
+                    <input
+                      type="text"
+                      className="curriculumInputFieldFa"
+                      placeholder="Informe sua instituição de ensino"
+                      value={form.instituicao}
+                      onChange={e => atualizarFormacao(idx, "instituicao", e.target.value)}
+                    />
 
-                  <div className="botoes-container">
-                    <button className="btn excluir">
-                      <span className="icon">🗑️</span> Excluir
-                    </button>
-                    <button className="btn editar">
-                      <span className="icon">✏️</span> Editar
-                    </button>
+                    <p className="curriculumAccordionText">Período</p>
+                    <input
+                      type="date"
+                      className="curriculumInputFieldExp"
+                      value={form.periodoInicio}
+                      onChange={e => atualizarFormacao(idx, "periodoInicio", e.target.value)}
+                    />
+                    <input
+                      type="date"
+                      className="curriculumInputFieldExp"
+                      value={form.periodoFim}
+                      onChange={e => atualizarFormacao(idx, "periodoFim", e.target.value)}
+                    />
 
+                    <div className="botoes-container">
+                      <button
+                        className="btn excluir"
+                        type="button"
+                        onClick={() => excluirFormacao(idx)}
+                      >
+                        <span className="icon">🗑️</span> Excluir
+                      </button>
+                      <button className="btn editar" type="button">
+                        <span className="icon">✏️</span> Editar
+                      </button>
+                    </div>
                   </div>
-
+                ))}
               </div>
-              
               <div className="add-button-container">
-                  <button className="add-button">＋</button>
-                </div>
-
+                <button className="add-button" type="button" onClick={adicionarFormacao}>＋</button>
+              </div>
             </AccordionBox>
           </div>
 
           <div className="curriculumAccordionContainer">
-
             <AccordionBox title="Cursos e certificações">
               <div className="curriculumFormContainerIe">
-              <p className="curriculumAccordionText">Nome do Curso/certificação</p>
-              <input type="text" className="curriculumInputFieldFa" placeholder="Informe a instituição de ensino" />
-              <p className="curriculumAccordionText">Ano de conclusão</p>
-              <input type="date" className="curriculumInputFieldExp" />
-
-              <div className="botoes-container">
-                    <button className="btn excluir">
-                      <span className="icon">🗑️</span> Excluir
-                    </button>
-                    <button className="btn editar">
-                      <span className="icon">✏️</span> Editar
-                    </button>
-
+                {cursos.map((curso, idx) => (
+                  <div key={idx}>
+                    <p className="curriculumAccordionText">Nome do Curso/certificação</p>
+                    <input
+                      type="text"
+                      className="curriculumInputFieldFa"
+                      placeholder="Informe o nome do curso/certificação"
+                      value={curso.nome}
+                      onChange={e => atualizarCurso(idx, "nome", e.target.value)}
+                    />
+                    <p className="curriculumAccordionText">Ano de conclusão</p>
+                    <input
+                      type="date"
+                      className="curriculumInputFieldExp"
+                      value={curso.anoConclusao}
+                      onChange={e => atualizarCurso(idx, "anoConclusao", e.target.value)}
+                    />
+                    <div className="botoes-container">
+                      <button
+                        className="btn excluir"
+                        type="button"
+                        onClick={() => excluirCurso(idx)}
+                      >
+                        <span className="icon">🗑️</span> Excluir
+                      </button>
+                    </div>
                   </div>
-              
-                  </div>
-                  
-                  <div className="add-button-container">
-                  <button className="add-button">＋</button>
-                </div>
+                ))}
+              </div>
+              <div className="add-button-container">
+                <button className="add-button" type="button" onClick={adicionarCurso}>＋</button>
+              </div>
             </AccordionBox>
             
             
             <div className="curriculumAccordionContainer">
             <AccordionBox title="Línguas">
               <div className="curriculumFormContainerIe">
-              <p className="curriculumAccordionText">Idioma</p>
-                <select className="curriculumInputFieldFa">
-                <option value="ingles">Inglês</option>
-                <option value="espanhol">Espanhol</option>
-                <option value="frances">Francês</option>
-                <option value="alemao">Alemão</option>
-                <option value="outro">Outro</option>
-              </select>
+                {linguas.map((lingua, idx) => (
+                  <div key={idx}>
+                    <p className="curriculumAccordionText">Idioma</p>
+                    <select
+                      className="curriculumInputFieldFa"
+                      value={lingua.idioma}
+                      onChange={e => atualizarLingua(idx, "idioma", e.target.value)}
+                    >
+                      <option value="">Selecione</option>
+                      <option value="ingles">Inglês</option>
+                      <option value="espanhol">Espanhol</option>
+                      <option value="frances">Francês</option>
+                      <option value="alemao">Alemão</option>
+                      <option value="outro">Outro</option>
+                    </select>
 
-              <p className="curriculumAccordionText">Nível</p>
-                <select className="curriculumInputFieldFa">
-                <option value="basico">Básico</option>
-                <option value="intermediario">Intermediário</option>
-                <option value="avancado">Avançado</option>
-                <option value="fluente">Fluente</option>
-              </select>
+                    <p className="curriculumAccordionText">Nível</p>
+                    <select
+                      className="curriculumInputFieldFa"
+                      value={lingua.nivel}
+                      onChange={e => atualizarLingua(idx, "nivel", e.target.value)}
+                    >
+                      <option value="">Selecione</option>
+                      <option value="basico">Básico</option>
+                      <option value="intermediario">Intermediário</option>
+                      <option value="avancado">Avançado</option>
+                      <option value="fluente">Fluente</option>
+                    </select>
 
-              <div className="botoes-container">
-                <button className="btn excluir">
-                <span className="icon">🗑️</span> Excluir
-                </button>
-                 
+                    <div className="botoes-container">
+                      <button
+                        className="btn excluir"
+                        type="button"
+                        onClick={() => excluirLingua(idx)}
+                      >
+                        <span className="icon">🗑️</span> Excluir
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
+              <div className="add-button-container">
+                <button className="add-button" type="button" onClick={adicionarLingua}>＋</button>
               </div>
-                  
-                <div className="add-button-container">
-                  <button className="add-button">＋</button>
-                </div>
             </AccordionBox>
           </div>
 
           <div className="curriculumAccordionContainer">
             <AccordionBox title="Habilidades e Competências">
               <div className="curriculumFormContainerIe">
-                <p className="curriculumAccordionText">Habilidade</p>
-                <select className="curriculumInputFieldFa">
-                  <option value="comunicacao">Comunicação</option>
-                  <option value="trabalho-em-equipe">Trabalho em equipe</option>
-                  <option value="lideranca">Liderança</option>
-                  <option value="resolucao-de-problemas">Resolução de problemas</option>
-                  <option value="criatividade">Criatividade</option>
-                  <option value="adaptabilidade">Adaptabilidade</option>
-                  <option value="pensamento-critico">Pensamento crítico</option>
-                  <option value="gestao-de-tempo">Gestão de tempo</option>
-                </select>
+                {habilidades.map((hab, idx) => (
+                  <div key={idx}>
+                    <p className="curriculumAccordionText">Habilidade</p>
+                    <select
+                      className="curriculumInputFieldFa"
+                      value={hab.habilidade}
+                      onChange={e => atualizarHabilidade(idx, "habilidade", e.target.value)}
+                    >
+                      <option value="">Selecione</option>
+                      <option value="comunicacao">Comunicação</option>
+                      <option value="trabalho-em-equipe">Trabalho em equipe</option>
+                      <option value="lideranca">Liderança</option>
+                      <option value="resolucao-de-problemas">Resolução de problemas</option>
+                      <option value="criatividade">Criatividade</option>
+                      <option value="adaptabilidade">Adaptabilidade</option>
+                      <option value="pensamento-critico">Pensamento crítico</option>
+                      <option value="gestao-de-tempo">Gestão de tempo</option>
+                    </select>
 
-                <p className="curriculumAccordionText">Nível</p>
-                <select className="curriculumInputFieldFa">
-                  <option value="iniciante">Iniciante</option>
-                  <option value="intermediario">Intermediário</option>
-                  <option value="avancado">Avançado</option>
-                  <option value="especialista">Especialista</option>
-                </select>
+                    <p className="curriculumAccordionText">Nível</p>
+                    <select
+                      className="curriculumInputFieldFa"
+                      value={hab.nivel}
+                      onChange={e => atualizarHabilidade(idx, "nivel", e.target.value)}
+                    >
+                      <option value="">Selecione</option>
+                      <option value="iniciante">Iniciante</option>
+                      <option value="intermediario">Intermediário</option>
+                      <option value="avancado">Avançado</option>
+                      <option value="especialista">Especialista</option>
+                    </select>
 
-                <div className="botoes-container">
-                  <button className="btn excluir">
-                    <span className="icon">🗑️</span> Excluir
-                  </button>
-                </div>
+                    <div className="botoes-container">
+                      <button
+                        className="btn excluir"
+                        type="button"
+                        onClick={() => excluirHabilidade(idx)}
+                      >
+                        <span className="icon">🗑️</span> Excluir
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
-
               <div className="add-button-container">
-                <button className="add-button">＋</button>
+                <button className="add-button" type="button" onClick={adicionarHabilidade}>＋</button>
               </div>
             </AccordionBox>
           </div>
