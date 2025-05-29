@@ -10,6 +10,7 @@
 }
 
 .filter-button .toggle {
+    cursor: pointer;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -23,6 +24,7 @@
 }
 
 .filter-button .toggle.open {
+    cursor: pointer;
     width: 100%;
 }
 
@@ -30,7 +32,6 @@
     display: inline-block;
     max-width: 0;
     overflow: hidden;
-    white-space: nowrap;
     opacity: 0;
     transition: max-height 0.5s ease, opacity 0.5s ease;
 }
@@ -50,6 +51,7 @@
 }
 
 .filter-button .submit {
+    cursor: pointer;
     background-color: #012369;
     color: #fff;
     border: none;
