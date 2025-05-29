@@ -1,14 +1,7 @@
-.externalContainer {
+.card-grid {
     max-height: 100vh;
     max-width: 100%;
-  }
-  
-  .externalContainer .grid-container {
-    top: 15rem;
-    left: 7rem;
-    max-height: 30rem;
-    max-width: 82rem;
-    padding: 0.5rem;
+    padding: 50px;
     gap: 1rem;
     display: flex;
     justify-content: center;
@@ -16,4 +9,4 @@
     position: relative;
     overflow-y: scroll;
     border: 1px solid black;
-  }
+}
