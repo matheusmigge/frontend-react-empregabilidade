@@ -61,7 +61,6 @@ function HomeCandidateContent({ userLocation, viewMode }: HomeCandidateContentPr
                 />
             ) : (
                 <div>
-                    {/* Substitua por seu componente de lista */}
                     <CandidateTableView jobs={jobs} candidate={candidate} />
                 </div>
             )}

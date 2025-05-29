@@ -21,15 +21,15 @@ interface CandidateMapViewProps {
         label: string
     }[],
     jobs: Job[],
-    candidate: Candidate ;
+    candidate: Candidate;
 }
 
 function CandidateMapView({ userLocation, jobLocations, jobs, candidate }: CandidateMapViewProps) {
-    
+
     return (
         <div className="candidate-map-view">
             <FiltersBar columns={JOB_COLUMNS}></FiltersBar>
-            <Map userLocation={ userLocation } markerLocations={jobLocations} />
+            <Map userLocation={userLocation} markerLocations={jobLocations} />
 
             <div className="card-list">
                 {jobs.map((job) => {
@@ -37,7 +37,8 @@ function CandidateMapView({ userLocation, jobLocations, jobs, candidate }: Candi
                     return (
                         <Link key={job.id} to="/vacancy" className="linkStyle">
                             <Card
-                                companyName={job.company.name}
+                                layoutMode="job"
+                                topText={job.company.name}
                                 logoName={job.company.logoUrl}
                                 jobTitle={job.title}
                                 available={job.jobAvailable}
