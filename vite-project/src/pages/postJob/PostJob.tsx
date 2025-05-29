@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import "./CadastroDeVaga.css";
+import "./PostJob.css";
 import Header from "../../components/header/Header";
 import bellIcon from "../../components/header/assets/bell.svg";
 import goBackVector from "../vacancy/assets/goBackVector.svg";
 import userIcon from "../../components/header/assets/Ellipse 1.svg";
 
-function CadastroVaga() {
+function PostJob() {
   const [skills, setSkills] = useState<string[]>([]);
   const [newSkill, setNewSkill] = useState("");
   const [showInput, setShowInput] = useState(false);
@@ -238,7 +238,7 @@ function CadastroVaga() {
   );
 }
 
-export default CadastroVaga;
+export default PostJob;
 
 
 
