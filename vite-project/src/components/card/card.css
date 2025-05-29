@@ -25,13 +25,24 @@
         justify-content: space-between;
     }
 
-    .name {
+    .logo-text {
         display: flex;
         align-items: center;
         gap: 5px;
 
         .logo {
             width: 50px;
+        }
+
+        .candidate-logo {
+            color: #ffffff;
+            background-color: #012369;
+            border-radius: 100px;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 
@@ -50,18 +61,18 @@
             width: 1rem;
         }
     }
-    .info {
+    .text {
         display: flex;
         align-items: center;
         gap: 15px;
         font-size: 14px;
 
-        .case {
+        img {
             width: 1.5rem;
         }
     }
     .textual-button-container {
-      width: 90px;
+        width: 90px;
     }
     .textual-button-container button {
         display: flex;
@@ -74,12 +85,4 @@
             height: 20px;
         }
     }
-}
-
-.card.available {
-    /* border-color: #259821; */
-}
-
-.card.unavailable {
-    /* border-color: #ff0000; */
 }
