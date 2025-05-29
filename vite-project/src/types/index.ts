@@ -97,8 +97,8 @@ export type Candidate = {
 
 export type Application = {
   id: string;
-  jobId: string;
-  candidateId: string;
+  job: Job;
+  candidate: Candidate;
   applicationDate: string;
   status: string;
 };
