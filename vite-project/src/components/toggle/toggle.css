@@ -36,10 +36,11 @@
 }
 
 @media (max-width: 768px) {
-    .toggleContainer {
-        width: 10rem;
-        height: 40px;
-        gap: 8px;
+  .toggleContainer {
+    width: 10rem;
+    height: 40px;
+    gap: 8px;
+    margin: 1.5% 0 0 0;
 
         .toggleButton {
             padding: 6px 8px;

@@ -1,29 +1,160 @@
+/* .card-container{
+    margin-top: 10rem;
+    min-height: 100vh;
+    max-width: 69%;
+    padding: 0.5rem;
+    gap: 1rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content:center;
+    flex-flow: wrap;
+    position: relative;
+} */
+
 .card {
-    border: 1px solid grey;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 1.25rem;
+  height: 160px;
+  width: 400px;
+  display: flex;
+  flex-flow: column;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.card .div-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .div-middle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .div-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card.available {
+  border-color: #259821;
+}
+
+.card.unavailable {
+  border-color: #ff0000;
+}
+
+.card .name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .logo {
+    width: 1.5rem;
+  }
+}
+
+.card .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card .status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .statuslogo {
+    align-items: center;
+    width: 1rem;
+  }
+}
+
+.card .info {
+  display: flex;
+  gap: 6px;
+
+  .case {
+    width: 1.5rem;
+  }
+}
+
+.card .amount {
+  display: flex;
+  gap: 7px;
+
+  .user {
+    width: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1014px) {
+  .card {
+    border: 2px solid black;
     background-color: white;
-    box-shadow: 0px 0px 10px rgba(1, 1, 1, 0.5);
     border-radius: 1.25rem;
-    height: 160px;
-    width: 400px;
+    height: 10rem;
+    width: 20rem;
     display: flex;
     flex-flow: column;
+    gap: 1.8rem;
     justify-content: space-between;
     padding: 10px 20px;
+  }
 
-    .div-top {
-        display: flex;
-        justify-content: space-between;
-    }
+  .card .div-top {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .div-middle {
-        display: flex;
-        justify-content: space-between;
-    }
+  .card .div-middle {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .div-bottom {
-        display: flex;
-        justify-content: space-between;
+  .card .div-bottom {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+  }
+
+  .card.available {
+    border-color: #259821;
+  }
+
+  .card.unavailable {
+    border-color: #ff0000;
+  }
+
+  .card .name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* border: 1px solid red; */
+
+    .logo {
+      width: 1.5rem;
     }
+  }
+
+  .card .title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .card .status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .statuslogo {
+      align-items: center;
+      width: 1rem;
+    }
+  }
 
     .logo-text {
         display: flex;
@@ -44,23 +175,74 @@
             justify-content: center;
             align-items: center;
         }
-    }
+  .card .info {
+    display: flex;
+    gap: 6px;
 
-    .title {
-        font-size: 20px;
-        font-weight: bold;
+    .case {
+      width: 1.5rem;
     }
+  }
 
-    .status {
-        display: flex;
-        align-items: center;
-        gap: 5px;
+  .card .amount {
+    display: flex;
+    gap: 7px;
+    /* border: 1px solid red; */
 
-        .statuslogo {
-            align-items: center;
-            width: 1rem;
-        }
+    .user {
+      width: 1.5rem;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 1.25rem;
+    height: 10rem;
+    width: 18rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1.8rem;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .card .div-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card .div-middle {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card .div-bottom {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+  }
+
+  .card.available {
+    border-color: #259821;
+  }
+
+  .card.unavailable {
+    border-color: #ff0000;
+  }
+
+  .card .name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* border: 1px solid red; */
+
+    .logo {
+      width: 1.5rem;
+    }
+    
     .text {
         display: flex;
         align-items: center;
@@ -71,18 +253,141 @@
             width: 1.5rem;
         }
     }
+    
     .textual-button-container {
         width: 90px;
+  }
+
+  .card .title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .card .status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .statuslogo {
+      align-items: center;
+      width: 1rem;
     }
-    .textual-button-container button {
-        display: flex;
-        height: 35px;
-        gap: 2px;
-        padding: 0 5px 0 0;
-        background-color: #ef6b01;
-        font-size: 15px;
-        img {
-            height: 20px;
-        }
+  }
+
+  .card .info {
+    display: flex;
+    gap: 6px;
+
+    .case {
+      width: 1.5rem;
     }
+  }
+
+  .card .amount {
+    display: flex;
+    gap: 7px;
+    /* border: 1px solid red; */
+
+    .user {
+      width: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .card {
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 1.25rem;
+    height: 11rem;
+    width: 110%;
+    display: flex;
+    flex-flow: row;
+    flex-flow: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content:center;
+    padding: 10px 20px;
+  }
+
+  .card .div-top {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0.3rem;
+    /* border: 1px solid red; */
+  }
+
+  .card .div-middle {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card .div-bottom {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+  }
+
+  .card.available {
+    border-color: #259821;
+  }
+
+  .card.unavailable {
+    border-color: #ff0000;
+  }
+
+  .card .name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* border: 1px solid red; */
+
+    .logo {
+      width: 1rem;
+    }
+  }
+
+  .card .title {
+    /* border: 1px solid red; */
+    height: 2rem;
+    font-size: 100%;
+    font-weight: bold;
+  }
+
+  .card .status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* border: 1px solid red; */
+
+    .statuslogo {
+      align-items: center;
+      width: 1rem;
+    }
+  }
+
+  .card .info {
+    display: flex;
+    gap: 6px;
+
+    .case {
+      width: 1.5rem;
+    }
+  }
+
+  .card .amount {
+    display: flex;
+    gap: 7px;
+    /* border: 1px solid red; */
+
+    .user {
+      width: 1.5rem;
+    }
+  }
 }

@@ -27,7 +27,6 @@
     background-color: #f2f2f2;
     border-radius: 50px;
     border: none;
-    margin-bottom: 8px;
   }
 
   input::placeholder {
@@ -39,12 +38,12 @@
     align-items: center;
     position: relative;
   }
-  
+
   .passwordInputContainer input {
     flex: 1;
     height: 6vh;
   }
-  
+
   .togglePasswordButton {
     position: absolute;
     right: 10%;
@@ -58,18 +57,18 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .togglePasswordButton img {
     width: 100%;
     height: 3vh;
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
-  
+
   .togglePasswordButton:active img {
     transform: scale(0.9);
     opacity: 0.8;
   }
-  
+
   .togglePasswordButton:active {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
@@ -78,16 +77,18 @@
   .submitContainer {
     margin: auto;
     width: 80%;
-    
+
     .submit {
       height: 6vh;
       padding: 0;
-
       background-color: #259821;
       font-size: 1em;
+      margin-top: 2em;
+    }
+    .submit:hover {
+      background: #259821c7;
     }
   }
-
 
   .hr-text {
     border: 0;
@@ -122,15 +123,25 @@
       padding: 0;
       width: 80%;
     }
-  }
+    .externalRegistrationButton:hover {
+      background: #012369c7;
+    }
 
-  .signup-now {
-    text-align: center;
+    .signup-now {
+      text-align: center;
 
-    a {
-      font-style: italic;
-      color: black;
-      font-weight: bold;
+      button {
+        color: black;
+        font-weight: bold;
+        font-style: italic;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 105%;
+      }
+      button:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
