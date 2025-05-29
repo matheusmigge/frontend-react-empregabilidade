@@ -1,0 +1,12 @@
+.company-cards-view {
+    .filters-bar {
+        z-index: 1;
+        height: calc(100vh - 80px);
+    }
+
+    .card-grid {
+        z-index: 0;
+        height: calc(100vh - 80px);
+        align-items: center;
+    }
+}
