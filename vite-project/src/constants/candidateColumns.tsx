@@ -8,7 +8,7 @@ import certificationsIcon from "../assets/candidates-icons/award.svg";
 import formerExperiencesIcon from "../assets/candidates-icons/trending-up.svg";
 import { FilterButtonProps } from "../components/filter-button/FilterButton"
 
-const CANDIDATE_COLUMN: Pick<FilterButtonProps, 'iconUrl' | 'text'>[] = [
+const CANDIDATE_COLUMNS: Pick<FilterButtonProps, 'iconUrl' | 'text'>[] = [
 
     { iconUrl: nameIcon, text: "Nome" },
     { iconUrl: distanceIcon, text: "Distância" },
@@ -21,4 +21,4 @@ const CANDIDATE_COLUMN: Pick<FilterButtonProps, 'iconUrl' | 'text'>[] = [
 
 ];
 
-export default CANDIDATE_COLUMN;
+export default CANDIDATE_COLUMNS;
