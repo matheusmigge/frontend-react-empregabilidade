@@ -2,12 +2,9 @@ import "./userCurriculum.css";
 import { FaPlus, FaCheck } from "react-icons/fa";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-
-import Header from "../../../components/header/Header";
-import bellIcon from "../../../components/header/assets/bell.svg";
-import userIcon from "../../../components/header/assets/Ellipse 1.svg";
-import goBackVector from "../../vacancy/assets/goBackVector.svg";
 import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+
 import AccordionBox from "../../vacancy/accordionBox/AccordionBox";
 
 export default function UserCurriculum () {
@@ -67,7 +64,6 @@ export default function UserCurriculum () {
     }
   ]);
 
-  // Adicione esses estados para os campos de dados pessoais
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [cpf, setCpf] = useState("");
@@ -231,7 +227,7 @@ export default function UserCurriculum () {
     setHabilidades(habilidades.filter((_, i) => i !== index));
   }
 
-    // Função para montar e enviar o candidato
+   
     async function salvarCandidato() {
       const novoCandidato = {
         firstName,
@@ -243,7 +239,7 @@ export default function UserCurriculum () {
         password,
         address: {
           cep,
-          addressType: "", // Adapte se tiver campo
+          addressType: "",
           addressName: rua,
           address: rua,
           state: estado,
@@ -295,12 +291,11 @@ export default function UserCurriculum () {
       });
     }
 
-    // Novo estado para entrada múltipla de habilidades
+    
     const [habilidadesInput, setHabilidadesInput] = useState("");
     const [nivelHabilidadeInput, setNivelHabilidadeInput] = useState("");
     const [adicionandoHabilidade, setAdicionandoHabilidade] = useState(false);
 
-    // Função para adicionar várias habilidades de uma vez
     function adicionarVariasHabilidades() {
       if (!habilidadesInput.trim() || !nivelHabilidadeInput) return;
       setAdicionandoHabilidade(true);
@@ -314,19 +309,26 @@ export default function UserCurriculum () {
         setHabilidadesInput("");
         setNivelHabilidadeInput("");
         setAdicionandoHabilidade(false);
-      }, 400); // pequena animação de feedback
+      }, 400);
+    }
+
+    function CustomHeader() {
+      return (
+        <div className="custom-header">
+          <Link to="/userSignUp2" style={{ textDecoration: "none" }}>
+            <button className="back-btn" title="Voltar">
+              <FaArrowLeft className="back-arrow" />
+            </button>
+          </Link>
+        </div>
+      );
     }
 
     return (
       <>
+      <CustomHeader />
       <div>
-        <Link to="/userSignUp2" className="linkStyle">
-          <Header
-            imgUrl1={bellIcon}
-            imgUrl2={userIcon}
-            imgUrl={goBackVector}
-          ></Header>
-        </Link>
+        
       </div>
       
       <body className="body-container">

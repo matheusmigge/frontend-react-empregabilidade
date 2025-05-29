@@ -304,3 +304,41 @@
   background: #333;
   transform: rotate(-15deg);
 }
+
+
+
+.custom-header {
+  background: #012369;
+  width: 100vw;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  margin-bottom: 0;
+}
+
+.custom-header .back-btn {
+  background: #ff7a00;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #01236922;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.custom-header .back-btn:active {
+  transform: scale(0.97);
+}
+
+.custom-header .back-arrow {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-left: -2px;
+  user-select: none;
+}
