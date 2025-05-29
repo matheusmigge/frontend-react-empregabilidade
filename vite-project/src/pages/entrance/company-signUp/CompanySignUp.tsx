@@ -136,6 +136,8 @@ function CompanySignUp({ onLoginClick }: { onLoginClick?: () => void }) {
         ...dataToSend,
         managers: managersFiltered,
       });
+      // Exibe alerta de sucesso ao fazer login automaticamente após cadastro
+      showSuccessAlert("Login realizado com sucesso!");
       navigate("/home");
     } catch (error) {
       showErrorAlert("Erro ao cadastrar empresa!");

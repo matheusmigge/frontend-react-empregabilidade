@@ -6,6 +6,7 @@ import InputMask from "react-input-mask";
 import "./CompanySignIn.css";
 import { useNavigate } from "react-router-dom";
 import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
+import { showSuccessAlert } from "../../../components/alerts/SuccessAlert";
 
 function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
   // Estados para controle de senha, CNPJ, erro e navegação
@@ -45,7 +46,8 @@ function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
         return;
       }
 
-      // Login bem-sucedido, redireciona para home
+      // Login bem-sucedido: redireciona para home e exibe alerta de sucesso ao fazer login
+      showSuccessAlert("Login realizado com sucesso!");
       navigate("/home");
     } catch (err) {
       setError("Erro ao conectar ao servidor.");

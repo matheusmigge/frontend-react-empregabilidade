@@ -7,6 +7,7 @@ import hidePasswordVector from "../../../assets/hidePasswordVector.svg";
 import "./UserSignIn.css";
 import { useNavigate } from "react-router-dom";
 import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
+import { showSuccessAlert } from "../../../components/alerts/SuccessAlert";
 
 function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
   // Estados para controle de senha, email, erro e navegação
@@ -39,7 +40,8 @@ function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
         return;
       }
 
-      // Login válido, redireciona para home
+      // Login válido: redireciona para home e exibe alerta de sucesso ao fazer login
+      showSuccessAlert("Login realizado com sucesso!");
       navigate("/home");
     } catch (err) {
       setError("Erro ao conectar ao servidor.");

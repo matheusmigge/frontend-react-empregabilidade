@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
+import { showSuccessAlert } from "../../../components/alerts/SuccessAlert";
 
 function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
   // Estados principais do formulário
@@ -176,6 +177,8 @@ function UserSignUp({ onLoginClick }: { onLoginClick?: () => void }) {
           languages: [],
         },
       });
+      // Exibe alerta de sucesso ao fazer login automaticamente após cadastro
+      showSuccessAlert("Login realizado com sucesso!");
       navigate("/home");
     } catch (error) {
       showErrorAlert("Erro ao cadastrar candidato!");
