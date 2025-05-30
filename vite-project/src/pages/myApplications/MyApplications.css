@@ -1,0 +1,15 @@
+.my-applications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .textual-button-container {
+        width: 200px;
+        position: fixed;
+        bottom: 100px;
+        button {
+            background-color: #259821;
+        }
+    }
+}
