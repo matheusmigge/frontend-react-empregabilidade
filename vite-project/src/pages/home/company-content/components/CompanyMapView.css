@@ -1,0 +1,25 @@
+.company-map-view {
+    .filters-bar {
+        z-index: 1;
+        height: calc(100vh - 80px);
+    }
+
+    .leaflet-container {
+        z-index: 0;
+        height: calc(100vh - 80px);
+        width: 100vw;
+    }
+
+    .card-list {
+        height: calc(100vh - 80px);
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        position: absolute;
+        top: 80px;
+        right: 1vw;
+        gap: 20px;
+        padding: 50px 15px;
+    }
+}

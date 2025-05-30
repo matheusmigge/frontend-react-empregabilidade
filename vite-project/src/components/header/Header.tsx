@@ -5,17 +5,24 @@ import mapIcon from "./assets/mapIcon.svg";
 import mapIconOff from "./assets/mapIconOff.svg";
 import listIcon from "./assets/iconList.svg";
 import listIconOff from "./assets/iconListOff.svg";
+import cardsIcon from "./assets/cardsIcon.svg";
+import cardsIconOff from "./assets/cardsIconOff.svg";
+import userIcon from "./assets/Ellipse 1.svg";
+import bellIcon from "./assets/bell.svg";
+import menuIcon from "./assets/Menu.svg";
 
 interface HeaderProps {
   title?: string;
-  imgUrl?: string;
-  imgUrl1?: string;
-  imgUrl2?: string;
+  useMenu?: boolean;
+  useNotification?: boolean;
+  useProfile?: boolean;
   useToggle?: boolean;
-  inputText?: boolean;
+  useSearch?: boolean;
+  UserType?: "candidate" | "company";
+  onToggleChange?: (mode: "view1" | "view2") => void;
 }
 
-function Header({ title, imgUrl, imgUrl1, imgUrl2, useToggle, inputText }: HeaderProps) {
+function Header({ title, useMenu, useNotification, useProfile, useToggle, useSearch, UserType, onToggleChange }: HeaderProps) {
   const InputWithIcon = () => (
     <div className="input-with-icon">
       <input type="text" placeholder="Pesquisar..." className="input-Src" />
@@ -28,8 +35,8 @@ function Header({ title, imgUrl, imgUrl1, imgUrl2, useToggle, inputText }: Heade
       <header className="header-container">
         <section className="left-Header">
           <button className="menu">
-            {imgUrl && (
-              <img src={imgUrl} alt="Menu Hamburguer" className="menu" />
+            {useMenu && (
+              <img src={menuIcon} alt="Menu Hamburguer" className="menu" />
             )}
           </button>
 
@@ -38,27 +45,28 @@ function Header({ title, imgUrl, imgUrl1, imgUrl2, useToggle, inputText }: Heade
 
         {useToggle && (
           <Toggle
-            img1On={mapIcon}
-            img1Off={mapIconOff}
-            text1="Mapa"
-            img2On={listIcon}
-            img2Off={listIconOff}
-            text2="Lista"
+            img1On={UserType == "candidate" ? mapIcon : cardsIcon}
+            img1Off={UserType == "candidate" ? mapIconOff : cardsIconOff}
+            text1={UserType == "candidate" ? "Mapa" : "Cards"}
+            img2On={UserType == "candidate" ? listIcon : mapIcon}
+            img2Off={UserType == "candidate" ? listIconOff : mapIconOff}
+            text2={UserType == "candidate" ? "Lista" : "Mapa"}
+            onToggle={(isSwitchOn) => onToggleChange?.(!isSwitchOn ? "view1" : "view2")}
           ></Toggle>
         )}
 
         <section className="right-Header">
-          {inputText && <InputWithIcon />}
+          {useSearch && <InputWithIcon />}
 
           <div className="icons-container">
             <button className="sino">
-              {imgUrl1 && (
-                <img src={imgUrl1} alt="Sino de notificação" className="sino" />
+              {useNotification && (
+                <img src={bellIcon} alt="Sino de notificação" className="sino" />
               )}
             </button>
             <button className="perfil">
-              {imgUrl2 && (
-                <img src={imgUrl2} alt="Ícone de perfil" className="perfil" />
+              {useProfile && (
+                <img src={userIcon} alt="Ícone de perfil" className="perfil" />
               )}
             </button>
           </div>

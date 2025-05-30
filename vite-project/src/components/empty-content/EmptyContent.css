@@ -1,0 +1,27 @@
+.empty-content {
+    height: calc(100vh - 80px);
+    padding: 10px;
+    gap: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .empty-content {
+        height: calc(100vh - 60px);
+        padding: 5px;
+        img {
+            width: 150px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}

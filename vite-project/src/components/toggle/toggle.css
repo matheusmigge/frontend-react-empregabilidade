@@ -1,37 +1,38 @@
 .toggleContainer {
-  background-color: #ef6b01;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 11rem;
-  height: 45px;
-  border-radius: 1.7rem;
-  gap: 10px;
+    background-color: #ef6b01;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 11rem;
+    height: 45px;
+    border-radius: 1.7rem;
+    gap: 10px;
 }
 
 .toggleButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1.7rem;
-  border: none;
-  padding: 7px 9px;
-  gap: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.7rem;
+    border: none;
+    padding: 7px 9px;
+    gap: 6px;
 }
 
 .toggleButton.on {
-  background-color: white;
-  color: black;
-  transition: 0.2s;
+    background-color: white;
+    color: black;
+    transition: 0.2s;
 }
 
 .toggleButton.off {
-  color: white;
-  background-color: transparent;
+    color: white;
+    background-color: transparent;
 }
 
 .logoToggle {
-  height: 19px;
+    height: 19px;
 }
 
 @media (max-width: 768px) {
@@ -41,33 +42,33 @@
     gap: 8px;
     margin: 1.5% 0 0 0;
 
-    .toggleButton {
-      padding: 6px 8px;
-      gap: 5px;
-    }
+        .toggleButton {
+            padding: 6px 8px;
+            gap: 5px;
+        }
 
-    .logoToggle {
-      height: 1rem;
+        .logoToggle {
+            height: 1rem;
+        }
     }
-  }
 }
 
 @media (max-width: 430px) {
-  .toggleContainer {
-    width: 8.5rem;
-    height: 2rem;
-    gap: 5px;
-    z-index: 3;
-    position: absolute;
-    margin-top: 1%;
+    .toggleContainer {
+        width: 8.5rem;
+        height: 2rem;
+        gap: 5px;
+        z-index: 3;
+        position: absolute;
+        margin-top: 1%;
 
-    .toggleButton {
-      padding: 5px 7px;
-      gap: 4px;
-    }
+        .toggleButton {
+            padding: 5px 7px;
+            gap: 4px;
+        }
 
-    .logoToggle {
-      height: 14px;
+        .logoToggle {
+            height: 14px;
+        }
     }
-  }
 }

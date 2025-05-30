@@ -1,0 +1,36 @@
+.table-container {
+    margin-top: 40px;
+    padding: 30px;
+
+    .table-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 10px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .table-cell {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 10px;
+
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    }
+
+    .table-status-cell {
+        background-color: #ef6b01;
+        color: #fff;
+        padding: 5px 20px;
+        border-radius: 30px;
+    }
+}
