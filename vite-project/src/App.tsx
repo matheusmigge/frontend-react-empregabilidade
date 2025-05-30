@@ -8,6 +8,7 @@ import Home from "./pages/home/Home";
 import Vacancy from "./pages/vacancy/Vacancy";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MyApplications from "./pages/myApplications/MyApplications";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/companySignUp" element={<CompanySignUp/>}/>
           <Route path="/home" element={<Home/>} />
           <Route path="/vacancy" element={<Vacancy/>}/>
+          <Route path="/my-applications" element={<MyApplications/>}/>
         </Routes>
       </Router>
       <ToastContainer />
