@@ -23,7 +23,7 @@ function MyApplications() {
         // }
 
         if (!userData && !userType) {
-            setUserType("company");
+            setUserType("candidate");
             setUserData({
                 "id": "1",
                 "firstName": "João",
