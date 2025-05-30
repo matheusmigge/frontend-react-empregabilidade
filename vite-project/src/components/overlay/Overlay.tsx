@@ -1,23 +1,52 @@
 import "./overlay.css";
+import { useAuth } from "../../context/AuthContext";
+import { Candidate, Company } from "../../types";
+import { Link, useNavigate } from "react-router-dom";
 
 interface OverlayProps {
   fallbackImage?: string;
-  user: UserData;
-  onLogout: () => void;
   onClose: () => void;
 }
 
-interface UserData {
-  firstName: string;
-  lastName: string;
-  email?: string;
-  profileImage?: string;
+function isCandidate(user: Candidate | Company): user is Candidate {
+  return "firstName" in user && "lastName" in user;
 }
 
-function Overlay({ fallbackImage, user, onLogout, onClose }: OverlayProps) {
-  const fullName = `${user.firstName} ${user.lastName}`;
-  const image = user.profileImage || fallbackImage || "/default-profile.png";
-  if (!user) return <div className="perfil-overlay">Carregando...</div>;
+function isCompany(user: Candidate | Company): user is Company {
+  return "name" in user && "cnpj" in user;
+}
+
+function Overlay({ fallbackImage, onClose }: OverlayProps) {
+  const { userData, setUserData, setUserType } = useAuth();
+  const navigate = useNavigate();
+
+  if (!userData) return <div className="perfil-overlay">Carregando...</div>;
+
+  let fullName = "";
+  let profileImage = fallbackImage || "/default-profile.png";
+
+  if (isCandidate(userData)) {
+    fullName = `${userData.firstName} ${userData.lastName}`;
+    profileImage =
+      (userData as any).profileImage || fallbackImage || "/default-profile.png";
+  } else if (isCompany(userData)) {
+    fullName = userData.name;
+    profileImage = userData.logoUrl || fallbackImage || "/default-profile.png";
+  }
+
+  // Função de logout
+  const handleLogout = () => {
+    // Limpa o contexto de autenticação
+    setUserData(null);
+    setUserType(null);
+
+    // Limpa sessionStorage/localStorage se usado
+    sessionStorage.clear();
+    localStorage.clear();
+    // Redireciona para entrance
+    navigate("/entrance");
+  };
+
   return (
     <div className="perfil-overlay">
       <div className="overlay-header">
@@ -28,17 +57,34 @@ function Overlay({ fallbackImage, user, onLogout, onClose }: OverlayProps) {
       </div>
 
       <div className="user-info-row">
-        <img src={image} className="profile-image" alt="Imagem de perfil" />
+        <img
+          src={profileImage}
+          className="profile-image"
+          alt="Imagem de perfil"
+        />
         <div className="user-details">
-          <p className="user-name">{fullName}</p>
-          <p className="edit-profile">Editar perfil</p>
+          <div>
+            <p className="user-name">{fullName}</p>
+          </div>
+          <div className="edit-profile_container">
+            <Link to="" className="edit-profile">Editar perfil</Link>
+          </div>
         </div>
       </div>
 
       <div className="overlay-options">
-        <button className="option-button">Minhas candidaturas</button>
-        <button className="option-button">Suporte ao candidato</button>
-        <button className="option-button logout" onClick={onLogout}>
+        {isCandidate(userData) ? (
+          <>
+            <button className="option-button">Minhas candidaturas</button>
+            <button className="option-button">Suporte ao candidato</button>
+          </>
+        ) : (
+          <>
+            <button className="option-button">Vagas publicadas</button>
+            <button className="option-button">Painel da empresa</button>
+          </>
+        )}
+        <button className="option-button logout" onClick={handleLogout}>
           Sair
         </button>
       </div>
