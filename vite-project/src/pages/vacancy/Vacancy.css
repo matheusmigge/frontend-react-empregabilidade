@@ -1,103 +1,119 @@
 .vacancyHeader {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .vacancyContent {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  padding: 2em;
-  margin: auto;
-  gap: 2em;
-  margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 2em;
+    margin: auto;
+    gap: 2em;
+    margin-top: 4rem;
 }
 
 .vacancyBannerContainer {
-  background-color: #f2f2f2;
-  border-radius: 2.5em;
-  height: 12em;
+    background-color: #f2f2f2;
+    border-radius: 2.5em;
+    height: 12em;
 }
 
 .vacancyBannerContainer img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2.5em;
 }
 
 .vacancyInformationContainer {
-  display: flex;
-  gap: 2em;
-  justify-content: space-between;
+    display: flex;
+    align-items: end;
+    gap: 2em;
+    justify-content: space-between;
 }
 
 .vacancyInformation {
-  width: 100%;
+    width: 100%;
 }
 
 .vacancyInformationTitle {
-  padding-left: 5%;
-  font-size: 0.9em;
+    padding-left: 5%;
+    font-size: 0.9em;
 }
 
 .vacancyInformationContent {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  font-size: 1.2em;
-  border-radius: 0.5em;
-  padding: 0.5em;
-  width: 100%;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    width: 100%;
 }
 
 .vacancyLocationContainer {
-  .vacancyLocationHeader {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #012369;
-    color: white;
-    font-size: 1.1em;
-    border-radius: 1em 1em 0 0;
-    padding: 0.5em;
+    .vacancyLocationHeader {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #012369;
+        color: white;
+        font-size: 1.1em;
+        border-radius: 1em 1em 0 0;
+        padding: 0.5em;
 
-    input {
-      width: 40%;
-      border-radius: 1em;
-      border: none;
-      padding: 0.5em 1.1em;
+        input {
+            width: 40%;
+            border-radius: 1em;
+            border: none;
+            padding: 0.5em 1.1em;
+        }
     }
-  }
 
-  .vacancyLocationContent {
-    background-color: #f2f2f2;
-    height: 40vh;
-    border-radius: 0 0 1em 1em;
-  }
+    .vacancyLocationContent {
+        background-color: #f2f2f2;
+        height: 40vh;
+        border-radius: 0 0 1em 1em;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+
+        .leaflet-container {
+            height: 40vh;
+            width: 100%;
+        }
+    }
 }
 
 .stepsContainer {
-  background-color: #f2f2f2;
-  border-radius: 1em;
+    background-color: #f2f2f2;
+    border-radius: 1em;
 
-  .stepsHeader {
-    display: flex;
-    padding-left: 2em;
-    margin: 1em;
-    font-weight: bold;
-    align-items: center;
-  }
-
-  .stepsContent {
-    display: flex;
-    padding: 1em 3em;
-    height: 25vh;
-    align-items: center;
-
-    img {
-      width: 100%;
+    .stepsHeader {
+        display: flex;
+        padding-left: 2em;
+        margin: 1em;
+        font-weight: bold;
+        align-items: center;
     }
-  }
+
+    .stepsContent {
+        display: flex;
+        padding: 1em 3em;
+        height: 15vh;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 100%;
+        }
+
+        button {
+          background-color: #012369;
+        }
+    }
 }
