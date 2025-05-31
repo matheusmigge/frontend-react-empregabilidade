@@ -31,7 +31,7 @@ function CompanyMapView({ userLocation, aplications, candidateLocations }: Compa
                 {aplications.map((aplication) => {
 
                     return (
-                        <Link key={aplication.id} to="/vacancy" className="linkStyle">
+                        <Link key={aplication.id} to={`/vacancy/${aplication.job.id}`} className="linkStyle">
                             <Card
                                 layoutMode="application"
                                 topText={`${aplication.candidate.firstName} ${aplication.candidate.lastName}`}

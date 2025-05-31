@@ -35,7 +35,7 @@ function CandidateMapView({ userLocation, jobLocations, jobs, candidate }: Candi
                 {jobs.map((job) => {
 
                     return (
-                        <Link key={job.id} to="/vacancy" className="linkStyle">
+                        <Link key={job.id} to={`/vacancy/${job.id}`} className="linkStyle">
                             <Card
                                 layoutMode="job"
                                 topText={job.company.name}
