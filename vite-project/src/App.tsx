@@ -9,6 +9,7 @@ import Vacancy from "./pages/vacancy/Vacancy";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyApplications from "./pages/myApplications/MyApplications";
+import UserCurriculum from "./pages/entrance/user-curriculum/userCurriculum";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/home" element={<Home/>} />
           <Route path="/vacancy/:id" element={<Vacancy />} />
           <Route path="/my-applications" element={<MyApplications/>}/>
+          <Route path="/userCurriculum" element={<UserCurriculum/>}/>
         </Routes>
       </Router>
       <ToastContainer />
