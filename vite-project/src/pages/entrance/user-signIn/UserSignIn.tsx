@@ -8,8 +8,10 @@ import "./UserSignIn.css";
 import { useNavigate } from "react-router-dom";
 import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
 import { showSuccessAlert } from "../../../components/alerts/SuccessAlert";
+import { useAuth } from "../../../context/UseAuth";
 
 function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
+  const { setUserType, setUserData } = useAuth();
   // Estados para controle de senha, email, erro e navegação
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -42,8 +44,10 @@ function UserSignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
 
       // Login válido: redireciona para home e exibe alerta de sucesso ao fazer login
       showSuccessAlert("Login realizado com sucesso!");
+      setUserType("candidate");
+      setUserData(candidates[0]);
       navigate("/home");
-    } catch (err) {
+    } catch {
       setError("Erro ao conectar ao servidor.");
     }
   };
