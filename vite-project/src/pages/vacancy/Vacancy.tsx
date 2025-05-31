@@ -1,102 +1,101 @@
 import "./Vacancy.css";
 import AccordionBox from "./accordionBox/AccordionBox";
 import Header from "../../components/header/Header";
-import goBackVector from "./assets/goBackVector.svg";
-import copyLinkVector from "./assets/copyLinkVector.svg";
-import applyVector from "./assets/applyVector.svg";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Job } from "../../types";
+import Map from "../../components/map/Map";
+import TextualButton from "../../components/textual-button/TextualButton";
 
-interface VacancyProps {
-  vacancyBannerUrl?: string;
-  vacancyRemuneration?: number;
-  vacancyWorkSystem?: string;
-  vacancyHiringType?: string;
-  vacancyMaxDistance?: number;
-  vacancyDescription?: string;
-  vacancyResponsibilities?: string;
-  vacancyRequirements?: string;
-  vacancyChancesImprovement?: string;
-  vacancySkills?: string;
-  vacancyLocation?: string[];
-  vacancySteps?: string;
-}
+const Vacancy = () => {
+  const [jobContent, setJobContent] = useState<Job>({} as Job);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
-const Vacancy = ({
-  vacancyBannerUrl,
-  vacancyRemuneration,
-  vacancyWorkSystem,
-  vacancyHiringType,
-  vacancyMaxDistance,
-  vacancyDescription,
-  vacancyResponsibilities,
-  vacancyRequirements,
-  vacancyChancesImprovement,
-  vacancySkills,
-  vacancyLocation,
-  vacancySteps,
-}: VacancyProps) => {
-  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const allJobsRes = await axios.get("http://localhost:3000/jobs");
+        const allJobs = allJobsRes.data;
+        const jobContent = allJobs.find((job: { id: string; }) => job.id == id);
+        setJobContent(jobContent);
+        setLoading(false);
+
+      } catch (error) {
+        console.error("Erro ao buscar dados:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [id, jobContent, setJobContent]);
+
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <>
       <div className="vacancy">
         <div className="vacancyHeader">
           <Link to="/home" className="linkStyle">
-          <Header
-            imgUrl={goBackVector}
-            title="Desenvolvedor Front-End (React/Node.js)"
-            imgUrl1={copyLinkVector}
-            imgUrl2={applyVector}
-          ></Header>
+            <Header
+              title={jobContent.title}
+            ></Header>
           </Link>
         </div>
 
         <div className="vacancyContent">
-          <div className="vacancyBannerContainer">{vacancyBannerUrl}</div>
+          <div className="vacancyBannerContainer">
+            <img src={jobContent.bannerUrl} />
+          </div>
 
           <div className="vacancyInformationContainer">
             <div className="vacancyInformation">
               <p className="vacancyInformationTitle">Remuneração</p>
               <p className="vacancyInformationContent">
-                R$ {vacancyRemuneration}
+                R$ {jobContent.salary}
               </p>
             </div>
 
             <div className="vacancyInformation">
               <p className="vacancyInformationTitle">Modelo de trabalho</p>
-              <p className="vacancyInformationContent">{vacancyWorkSystem}</p>
+              <p className="vacancyInformationContent">{jobContent.workModel}</p>
             </div>
 
             <div className="vacancyInformation">
               <p className="vacancyInformationTitle">Contratação</p>
-              <p className="vacancyInformationContent">{vacancyHiringType}</p>
+              <p className="vacancyInformationContent">{jobContent.hiringType}</p>
             </div>
 
             <div className="vacancyInformation">
               <p className="vacancyInformationTitle">Distância máxima</p>
               <p className="vacancyInformationContent">
-                {vacancyMaxDistance} km
+                {jobContent.maximumAcceptedDistanceInKm} km
               </p>
             </div>
           </div>
 
           <AccordionBox title="Descrição da Vaga">
-            {vacancyDescription}
+            {jobContent.jobDescription}
           </AccordionBox>
 
           <AccordionBox title="Responsabilidades e atribuições">
-            {vacancyResponsibilities}
+            {jobContent.responsibilitiesAndDuties}
           </AccordionBox>
 
           <AccordionBox title="Requisitos e qualificações">
-            {vacancyRequirements}
+            {jobContent.requirementsAndQualifications}
           </AccordionBox>
 
           <AccordionBox title="O que aumenta as suas chances?">
-            {vacancyChancesImprovement}
+            {jobContent.whatIncreasesYourChances}
           </AccordionBox>
 
           <AccordionBox title="Habilidades e competências">
-            {vacancySkills}
+            {jobContent.responsibilitiesAndDuties}
           </AccordionBox>
 
           <div className="vacancyLocationContainer">
@@ -104,12 +103,22 @@ const Vacancy = ({
               Endereço da vaga
               <input type="text" placeholder="Localização" />
             </div>
-            <div className="vacancyLocationContent">{vacancyLocation}</div>
+            <div className="vacancyLocationContent">
+              <Map markerLocations={[{
+                latitude: Number(jobContent.address.lat),
+                longitude: Number(jobContent.address.lng),
+                id: jobContent.id,
+                label: jobContent.title,
+              }]} />
+            </div>
           </div>
 
           <div className="stepsContainer">
             <div className="stepsHeader">Etapas do processo</div>
-            <div className="stepsContent">{vacancySteps}</div>
+            <div className="stepsContent">{jobContent.selectionProcessStages &&
+              jobContent.selectionProcessStages.map((stage) => (
+                <TextualButton text={stage}/>
+              ))}</div>
           </div>
         </div>
       </div>
