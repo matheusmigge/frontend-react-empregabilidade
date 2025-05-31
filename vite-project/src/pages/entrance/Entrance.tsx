@@ -45,7 +45,7 @@ function Entrance() {
 
   return (
     <>
-      <body className="body-container">
+      <body className="entrance">
         <section className="leftSide">
           {/* Logo */}
           <div className="logoContainer">

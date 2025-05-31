@@ -1,4 +1,4 @@
-.body-container {
+.entrance {
   height: 100vh;
   display: flex;
   justify-content: space-around;
@@ -86,7 +86,7 @@
 }
 
 @media (max-width: 768px) {
-  .body-container {
+  .entrance {
     flex-direction: column;
 
     .leftSide {
@@ -129,7 +129,7 @@
 }
 
 @media (max-width: 430px) {
-  .body-container {
+  .entrance {
     flex-direction: column;
 
     .leftSide {
