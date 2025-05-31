@@ -15,7 +15,7 @@ function CardGrid({ jobs, cardLayoutMode }: CardGridProps) {
         {jobs.map((job) => {
 
           return (
-            <Link key={job.id} to="/vacancy" className="linkStyle">
+            <Link key={job.id} to={`/vacancy/${job.id}`} className="linkStyle">
               <Card
                 layoutMode={cardLayoutMode}
                 topText={job.company.name}
