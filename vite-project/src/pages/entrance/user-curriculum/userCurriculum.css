@@ -1,5 +1,11 @@
 /* Titulo e barra separadora */
-
+.user-curriculum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 150px;
+}
 
 .blueBar{
     background-color: #012369;
@@ -18,7 +24,7 @@
     font-weight: bold;;
 }
 
-.titleContainer{
+.user-curriculum .titleContainer{
     width: 65%;
     height: 13%;
     justify-items: center;
