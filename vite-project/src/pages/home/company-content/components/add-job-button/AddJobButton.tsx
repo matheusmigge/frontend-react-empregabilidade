@@ -11,7 +11,7 @@ interface AddJobButtonProps {
 function AddJobButton({ showArrow = false }: AddJobButtonProps) {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate("/newVacancy");
+        navigate("/post-job");
     };
 
     return (
