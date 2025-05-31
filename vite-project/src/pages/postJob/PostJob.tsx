@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./PostJob.css";
 import Header from "../../components/header/Header";
-import bellIcon from "../../components/header/assets/bell.svg";
-import goBackVector from "../vacancy/assets/goBackVector.svg";
-import userIcon from "../../components/header/assets/Ellipse 1.svg";
 
 function PostJob() {
   const [skills, setSkills] = useState<string[]>([]);
@@ -69,10 +66,7 @@ function PostJob() {
   return (
     <>
       <Header
-        imgUrl={goBackVector}
         title="Cadastrar Vaga"
-        imgUrl1={bellIcon}
-        imgUrl2={userIcon}
       />
 
       <div className="cadastro-container">
