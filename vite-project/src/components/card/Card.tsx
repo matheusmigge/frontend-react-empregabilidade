@@ -1,27 +1,42 @@
 import "../card/card.css";
 import infoIcon from "./assets/case.svg";
-import candidatesIcon from "./assets/users.svg";
 import availableIcon from "./assets/availableIcon.svg";
 import unavailableIcon from "./assets/unavailableIcon.svg";
+import MapPinIcon from "../card/assets/map-pin-white.svg";
+import candidatesIcon from "../../assets/candidates.svg";
+import TextualButton from "../textual-button/TextualButton";
 
 interface CardProps {
-  companyName: string;
-  logoName: string;
+  layoutMode: "job" | "application";
+  topText: string;
+  logoName?: string;
   jobTitle: string;
   available: boolean;
   info: string;
-  amount: string;
+  radiusDistance?: string;
+  maximumApplications?: number;
+  currentApplications?: number;
+}
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((n) => n[0]?.toUpperCase())
+    .join("");
 }
 
 function Card({
-  companyName,
+  layoutMode,
+  topText,
   logoName,
   jobTitle,
   available,
   info,
-  amount,
+  radiusDistance,
+  maximumApplications,
+  currentApplications
 }: CardProps) {
-  const statusText = available ? "Disponível" : "Indisponível";
+  const statusText = available ? "Em andamento" : "Encerrada";
   const statusIcon = available ? availableIcon : unavailableIcon;
 
   return (
@@ -30,11 +45,14 @@ function Card({
 
         <div className="div-top">
 
-          <p className="name">
-            {logoName && (
+          <p className="logo-text">
+
+            {layoutMode === "job" && logoName ? (
               <img src={logoName} alt="Logo empresa" className="logo" />
-            )}
-            {companyName}
+            ) : (<div className="candidate-logo">
+              <p>{getInitials(topText)}</p>
+            </div>)}
+            {topText}
           </p>
           <p className="status">
             {statusText}
@@ -43,20 +61,25 @@ function Card({
         </div>
 
         <div className="div-middle">
-          <p className="title">{`・ ${jobTitle}`}</p>
+          <p className="title">{jobTitle}</p>
         </div>
 
         <div className="div-bottom">
 
-          <p className="info">
+          <p className="text">
 
-            {info && <img src={infoIcon} alt="" className="case" />}
+            {info && <img src={infoIcon} alt="" />}
             {info}
           </p>
-          <p className="amount">
-            <img src={candidatesIcon} alt="" className="candidates" />
-            {amount}
-          </p>
+
+          {radiusDistance && (<TextualButton imageUrl={MapPinIcon} text={radiusDistance} />)}
+
+          {maximumApplications && currentApplications && (
+            <p className="text">
+              <img src={candidatesIcon} alt="" />
+              {currentApplications} / {maximumApplications}
+            </p>)}
+
         </div>
       </div>
     </>

@@ -8,35 +8,34 @@ interface ToggleProps {
   img2On?: string;
   img1Off?: string;
   img2Off?: string;
+  onToggle?: (isSwitchOn: boolean) => void;
 }
 
-function Toggle({ text1, text2, img1On, img2On, img1Off, img2Off }: ToggleProps) {
-  const [isOn, setIsOn] = useState(true);
-  const [On, setOn] = useState(false);
+function Toggle({ text1, text2, img1On, img2On, img1Off, img2Off, onToggle }: ToggleProps) {
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
 
-  const ToggleSwitch = () => {
-    setIsOn((prevState) => !prevState);
-    setOn((prevState) => !prevState);
-
+  const handleToggle = (setting: boolean) => {
+    setIsSwitchOn(setting);
+    if (onToggle) onToggle(setting);
   };
 
-  const img1 = isOn ? img1On : img1Off;
-  const img2 = On ? img2On : img2Off;
+  const img1 = !isSwitchOn ? img1On : img1Off;
+  const img2 = isSwitchOn ? img2On : img2Off;
 
   return (
     <>
       <div className="toggleContainer">
         <button
-          onClick={ToggleSwitch}
-          className={`toggleButton ${isOn ? "on" : "off"}`}
+          onClick={() => handleToggle(false)}
+          className={`toggleButton ${!isSwitchOn ? "on" : "off"}`}
         >
           {img1 && <img src={img1} alt="Logo do Toggle" className={`logoToggle`} />}
 
           {text1}
         </button>
         <button
-          onClick={ToggleSwitch}
-          className={`toggleButton ${On ? "on" : "off"}`}
+          onClick={() => handleToggle(true)}
+          className={`toggleButton ${isSwitchOn ? "on" : "off"}`}
         >
           {img2 && <img src={img2} alt="Logo do Toggle" className={`logoToggle`} />}
 

@@ -10,14 +10,14 @@ function LandingPage () {
 
     return (
         <>
-            <body className="landingPage">
+            <div className="landingPage">
                 <Hero></Hero>
                 <UserCta></UserCta>
                 <AdvantagesCards></AdvantagesCards>
                 <EnterpriseAdvantages></EnterpriseAdvantages>
                 <PartnerCompanies></PartnerCompanies>
                 <MapView></MapView>
-            </body>
+            </div>
         </>
     );
 }

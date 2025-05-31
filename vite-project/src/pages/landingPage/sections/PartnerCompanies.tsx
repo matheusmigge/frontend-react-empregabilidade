@@ -1,43 +1,39 @@
-import "./PartnerCompanies.css"
-import LogoSoftex from "../assets/LogoSoftex.svg"
-import LogoPortoDigital from "../assets/LogoPortoDigital.svg"
+import "./PartnerCompanies.css";
+import LogoSoftex from "../assets/LogoSoftex.svg";
+import LogoPortoDigital from "../assets/LogoPortoDigital.svg";
 
+function PartnerCompanies() {
+  return (
+    <section className="partinerCompanies">
+      <h2 className="title">Conheça algumas empresas parceiras do projeto:</h2>
 
-function PartnerCompanies () {
+      <div className="gridCards">
+        <div className="cardCompanie">
+          <img src={LogoSoftex} alt="" className="imgLogo" />
+        </div>
 
-    return (
-        <section className="partinerCompanies">
-            <h2 className="title">Conheça algumas empresas parceiras do projeto:</h2>
-            
-            <div className="gridCards">
-                
-                <div className="cardCompanie">
-                    <img src={LogoSoftex} alt="" />
-                </div>
+        <div className="cardCompanie">
+          <img src={LogoPortoDigital} alt="" className="imgLogo" />
+        </div>
 
-                <div className="cardCompanie">
-                    <img src={LogoPortoDigital} alt="" />
-                </div>
+        <div className="cardCompanie">
+          <img src={LogoSoftex} alt="" className="imgLogo" />
+        </div>
 
-                <div className="cardCompanie">
-                    <img src={LogoSoftex} alt="" />
-                </div>
+        <div className="cardCompanie">
+          <img src={LogoPortoDigital} alt="" className="imgLogo" />
+        </div>
 
-                <div className="cardCompanie">
-                    <img src={LogoPortoDigital} alt="" />
-                </div>
+        <div className="cardCompanie">
+          <img src={LogoSoftex} alt="" className="imgLogo" />
+        </div>
 
-                <div className="cardCompanie">
-                    <img src={LogoSoftex} alt="" />
-                </div>
-
-                <div className="cardCompanie">
-                    <img src={LogoPortoDigital} alt="" />
-                </div>
-
-            </div>
-        </section>
-    )
+        <div className="cardCompanie">
+          <img src={LogoPortoDigital} alt="" className="imgLogo" />
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default PartnerCompanies
+export default PartnerCompanies;

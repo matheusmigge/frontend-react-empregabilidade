@@ -1,27 +1,19 @@
 .titleContainer {
-  @media (max-width: 768px) {
-    flex-direction: column;
-    font-size: 0.8em;
-    padding: 1em;
-  }
+  margin-bottom: 1vh;
 }
 .formContainer {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2em;
-  padding: 1em;
 
   input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
   .formContent {
-    width: 50%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 0.5em;
   }
   input[type="number"] {
     -moz-appearance: textfield;
@@ -30,8 +22,9 @@
   .inputContainer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    gap: 1em;
+    justify-content: center;
+    gap: 1vw;
+    margin-bottom: 0.5em;
   }
 
   .inputForm {
@@ -62,70 +55,130 @@
   }
   input {
     width: 100%;
-    padding: 1.25em 2.5em;
+    height: 6vh;
+    padding: 0 8%;
     background-color: #f2f2f2;
     border-radius: 2em;
     border: none;
-    margin-bottom: 0.5em;
   }
   input[type="date"] {
     color: #adabc3;
+    padding: 1.25em 2.5em;
   }
   input::placeholder {
     color: #adabc3;
   }
+  .passwordInputContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .passwordInputContainer input {
+    flex: 1;
+    height: 6vh;
+  }
+
+  .togglePasswordButton {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .togglePasswordButton img {
+    width: 100%;
+    height: 3vh;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .togglePasswordButton:active img {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+
+  .togglePasswordButton:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+  }
 }
 
 .a {
-  width: 100%;
-  padding: 0 1em;
+  width: 80%;
+  margin-top: 2vh;
 
   .submit {
-    width: 50%;
+    height: 6vh;
+    padding: 0;
     background-color: #259821;
-    font-size: 1em;
+    font-size: medium;
+  }
+
+  .submit:hover {
+    background: #259821c7;
+    border: #259821c7;
   }
 }
 
 .optionsContainer {
   display: flex;
-  gap: 2em;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2vh;
   font-size: 0.8em;
-
-  .submit {
-    width: 15em;
-  }
+  margin-top: 2vh;
+  width: 100%;
 
   .goBackButton {
     button {
       color: #ef6b01;
       border: 2px solid #ef6b01;
       background-color: white;
+      width: 12vw;
+      height: 6vh;
+    }
+    .backButton:hover {
+      background: #ef6c0123;
     }
   }
 
   .registerCurriculumButton {
     button {
       background-color: #259821;
+      width: 12vw;
+      height: 6vh;
+    }
+    .submit:hover {
+      background: #259821c7;
+      border: #259821c7;
     }
   }
 
   .finishLaterButton {
     button {
       background-color: #012369;
+      width: 12vw;
+      height: 6vh;
+    }
+    .submit:hover {
+      background: #012369c7;
     }
   }
 }
 
 .buttonContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   gap: 2em;
-  justify-content: center;
   margin: 1em;
 
   .symbol-button {
@@ -136,6 +189,10 @@
       padding: 0.5em;
     }
 
+    .symbol-button:hover {
+      background: #012369c7;
+    }
+
     img {
       height: 2.5em;
       width: 2.5em;
@@ -144,19 +201,57 @@
 }
 
 .loginContainer {
-  a {
+  button {
     color: black;
     font-weight: bold;
+    font-style: italic;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 105%;
+  }
+  button:hover {
+    text-decoration: underline;
   }
 }
 
 .informationContainer {
   color: #959595;
   text-align: center;
-  margin: 1em;
-  padding: 0 8em;
 
   a {
     color: #959595;
+  }
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    gap: 0;
+
+    .formContent {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .a {
+    .submit {
+      font-size: 80%;
+    }
+  }
+
+  .optionsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+
+    .goBackButton {
+      display: none;
+    }
+
+    .submit {
+      padding: 1vh 20vw;
+    }
   }
 }

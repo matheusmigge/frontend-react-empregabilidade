@@ -1,10 +1,9 @@
-.user-login {
-  max-width: 500px;
-  padding: 0 20px;
+.company-login {
+  padding: 0;
 
   h1 {
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
 
   form {
@@ -22,22 +21,32 @@
 
   input {
     width: 100%;
-    padding: 20px 40px;
+    height: 6vh;
+    padding: 0 8%;
     background-color: #f2f2f2;
     border-radius: 50px;
     border: none;
-    margin-bottom: 8px;
+    margin: 0;
   }
 
   input::placeholder {
     color: #adabc3;
   }
 
-  .submit {
-    margin-top: 40px;
-    width: 100%;
-    background-color: #259821;
-    font-size: 1em;
+  .submitContainer {
+    margin: auto;
+    width: 80%;
+
+    .submit {
+      height: 6vh;
+      padding: 0;
+      background-color: #259821;
+      font-size: 1em;
+      margin-top: 2em;
+    }
+    .submit:hover {
+      background: #259821c7;
+    }
   }
 
   .hr-text {
@@ -56,28 +65,68 @@
   }
 
   hr {
-    margin: 2em 0;
+    margin: 0;
   }
 
-  .buttonContainer {
+  .buttonsContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
     gap: 1em;
+    margin: 2em 0;
+    .signup-now {
+      text-align: center;
 
-    button {
-      background-color: #012369;
-      font-size: 1em;
+      button {
+        color: black;
+        font-weight: bold;
+        font-style: italic;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 105%;
+      }
+      button:hover {
+        text-decoration: underline;
+      }
     }
   }
-
-  .signup-now {
-    text-align: center;
-
-    a {
-      font-style: italic;
-      color: black;
-      font-weight: bold;
-    }
+  
+  .passwordInputContainer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .passwordInputContainer input {
+    flex: 1;
+    height: 6vh;
+  }
+  
+  .togglePasswordButton {
+    position: absolute;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .togglePasswordButton img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .togglePasswordButton:active img {
+    transform: scale(0.9);
+    opacity: 0.8;
   }
 }
+

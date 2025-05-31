@@ -1,56 +1,197 @@
 .advantagesCards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3.75rem;
-    padding-bottom: 3.75rem;
-    background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.75rem;
+  padding-bottom: 3.75rem;
+  background-color: #f2f2f2;
+  width: 100vw;
+  /* border: 3px solid black; */
 }
 
 .advantagesCards .cardsTitle {
-    margin-top: 5rem;
-    font-size: 2.5rem;
-    font-weight: 500;
-    align-items: center;
-    text-align: center;
-    width: 60%;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  align-items: center;
+  text-align: center;
+  width: 60%;
 }
 
 .advantagesCards .cardsContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-bottom: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  padding: 0 1.5rem;
 }
 
 .advantagesCards .cardsContainer .lpCard {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3.75rem 2.5rem;
-    gap: 3.75rem;
-    border-radius: 1.25rem;
-    justify-content: center;
-    box-shadow: 6px 7px 28px -3px rgba(0,0,0,0.25);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  gap: 3.75rem;
+  border-radius: 1.25rem;
+  justify-content: center;
+  box-shadow: 6px 7px 28px -3px rgba(0, 0, 0, 0.25);
+  width: 95%;
 
-    .textCard {
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
+  .text-container {
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .textCard {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
 }
 
 .advantagesCards .cardsContainer .lpCard img {
-    height: 15rem;
-    width: 15rem;
+  height: 70%;
+  width: 70%;
 }
 
 .advantagesCards .ctaButton {
-    padding: 0.75rem 2rem;
-    margin-bottom: 5rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    background-color: #EF6B01;
-    width: 900px;
+  padding: 0.75rem 2rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #ef6b01;
+  width: 100%;
 }
 
+@media (max-width: 768px) {
+  .advantagesCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3.75rem;
+    padding-bottom: 3.75rem;
+    width: 100vw;
+
+    .cardsTitle {
+      /* margin-top: 2rem; */
+      font-size: 150%;
+      font-weight: 500;
+      align-items: center;
+      text-align: center;
+      width: 60%;
+    }
+
+    .cardsContainer {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+
+      .lpCard {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        border-radius: 1.25rem;
+        justify-content: center;
+        box-shadow: 6px 7px 28px -3px rgba(0, 0, 0, 0.25);
+        width: 50vw;
+        height: 40vh;
+        padding: 1rem 1rem;
+
+        .text-container {
+          margin-top: 1rem;
+        }
+
+        .textCard {
+          font-size: 1.2rem;
+          font-weight: 500;
+          /* background-color: blue; */
+        }
+      }
+      .lpCard img {
+        height: 8rem;
+        width: 10rem;
+        margin-bottom: 1rem;
+      }
+      .cardsContainer .ctaButton {
+        padding: 0.75rem 2rem;
+        margin-bottom: 5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        background-color: black;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .advantagesCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3.75rem;
+    padding-bottom: 3.75rem;
+    width: 100vw;
+
+    .cardsTitle {
+      margin-top: 2rem;
+      font-weight: 500;
+      align-items: center;
+      text-align: center;
+      letter-spacing: -1px;
+      width: 100%;
+      padding: 0 1.5rem;
+    }
+
+    .cardsContainer {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+
+      .lpCard {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        border-radius: 1.25rem;
+        justify-content: center;
+        box-shadow: 6px 7px 28px -3px rgba(0, 0, 0, 0.25);
+        width: 50vw;
+        height: 40vh;
+        padding: 1rem 1rem;
+
+        .text-container {
+          margin-top: 1rem;
+        }
+
+        .textCard {
+          font-size: 1rem;
+          font-weight: 500;
+        }
+      }
+      .lpCard img {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .cardsContainer .ctaButton {
+        padding: 0.75rem 2rem;
+        margin-bottom: 5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        width: 100%;
+      }
+    }
+  }
+}

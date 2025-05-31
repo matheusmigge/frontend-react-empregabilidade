@@ -14,17 +14,23 @@ function AdvantagesCards() {
 
       <div className="cardsContainer">
         <div className="lpCard">
-          <h3 className="textCard">Menos gasto com transporte</h3>
+          <span className="text-container">
+            <h3 className="textCard">Menos gasto com transporte</h3>
+          </span>
           <img src={busSvg} alt="busIcon" />
         </div>
 
         <div className="lpCard">
-          <h3 className="textCard">Menos tempo de deslocamento</h3>
+          <span className="text-container">
+            <h3 className="textCard">Menos tempo de deslocamento</h3>
+          </span>
           <img src={clockSvg} alt="busIcon" />
         </div>
 
         <div className="lpCard">
-          <h3 className="textCard">Maior prudutividade</h3>
+          <span className="text-container">
+            <h3 className="textCard">Maior produtividade</h3>
+          </span>
           <img src={jobSvg} alt="busIcon" />
         </div>
       </div>
