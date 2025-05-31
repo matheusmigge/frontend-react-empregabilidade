@@ -7,8 +7,10 @@ import "./CompanySignIn.css";
 import { useNavigate } from "react-router-dom";
 import { showErrorAlert } from "../../../components/alerts/ErrorAlert";
 import { showSuccessAlert } from "../../../components/alerts/SuccessAlert";
+import { useAuth } from "../../../context/UseAuth";
 
 function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
+  const { setUserType, setUserData } = useAuth();
   // Estados para controle de senha, CNPJ, erro e navegação
   const [showPassword, setShowPassword] = useState(false);
   const [cnpj, setCnpj] = useState("");
@@ -48,8 +50,10 @@ function CompanySignIn({ onSignUpClick }: { onSignUpClick?: () => void }) {
 
       // Login bem-sucedido: redireciona para home e exibe alerta de sucesso ao fazer login
       showSuccessAlert("Login realizado com sucesso!");
+      setUserType("company");
+      setUserData(companies[0]);
       navigate("/home");
-    } catch (err) {
+    } catch {
       setError("Erro ao conectar ao servidor.");
     }
   };
